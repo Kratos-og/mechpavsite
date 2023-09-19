@@ -1,9 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: white;
+  background: black;
 }
 
 a {
@@ -15,12 +21,22 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+@font-face {
+  font-family: "rajdhani-light";
+  src: URL("../public/assets/fonts/Rajdhani-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "rajdhani";
+  src: URL("../public/assets/fonts/Rajdhani-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "rajdhani-medium";
+  src: URL("../public/assets/fonts/Rajdhani-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "rajdhani-bold";
+  src: URL("../public/assets/fonts/Rajdhani-Bold.ttf") format("truetype");
 }
