@@ -11,76 +11,52 @@ const Model = props => {
 
     const onScroll = (y) => {
         // let index = snapPoints.indexOf(y.toFixed(2) * 100);
-        // if (index >= 0)
+        // if (index > 0)
         //     orbitModel(index);
         const val = y.toFixed(2) * 100;
-        console.log(val, prevScroll)
+        let perc = (val / 33) * 100;
+        let theta, phi, radius;
+        const currentVals = document.querySelector('#mech-model')?.cameraOrbit?.split(' ');
         if (val < 33) {
             if (prevScroll < val) {
                 //down
-                console.log('down')
-                orbitModel(1);
+                //goal - -60deg 110deg 2m
+                theta = parseInt(currentVals[0]) - ((perc / 100) * (60 + parseInt(currentVals[0])));
+                phi = 105 + ((perc / 100) * 5);
+                radius = 6 - ((perc / 100) * 4)
+                orbitModel(theta, phi, radius);
             }
             else if (prevScroll > val) {
                 //up
-                console.log('up')
-                orbitModel(0);
+                theta = -60 + ((perc / 100) * 60);
+                phi = 110 - ((perc / 100) * 5);
+                radius = 2 + ((perc / 100) * 4)
+                console.log(parseInt(currentVals[0]), (perc / 100) * 60)
+                orbitModel(0, 105, 6);
             }
         }
-        else if (val < 67 && val > 33) {
-            if (prevScroll < val) {
-                //down
-                console.log('down')
-                orbitModel(2);
-            }
-            else if (prevScroll > val) {
-                //up
-                console.log('up')
-                orbitModel(1);
-            }
-        }
-        else if (val <= 100 && val > 67) {
-            if (prevScroll < val) {
-                //down
-                console.log('down')
-                orbitModel(3);
-            }
-            else if (prevScroll > val) {
-                //up
-                console.log('up')
-                orbitModel(2);
-            }
-        }
+
         prevScroll = val;
     }
 
-    const orbitModel = (index) => {
+    const orbitModel = (theta, phi, radius) => {
         const modelViewer = document.querySelector('#mech-model');
         const orbitCycle = [
-            "-360deg 105deg 6m",
+            "0deg 105deg 6m",
             '-60deg 110deg 2m', // 0m 1m 0m
             '140deg 45deg 7m', // "1m 1.5m 0m"
-            "-90deg 90deg 6m", //"1m 1.5m 0m"
+            "-90deg 90deg 6m", //"1m 1.5m 0m" 
         ];
-
-        const cameraTargets = [
-            "0m 1m 0m",
-            '0m 1m 0m', // 0m 1m 0m
-            '1m 1.5m 0m', // "1m 1.5m 0m"
-            "0m 1.25m 0m", //"1m 1.5m 0m"
-        ];
-
-        const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
-        if (modelViewer.cameraOrbit !== orbitCycle[index]) {
-            modelViewer.cameraOrbit = orbitCycle[index];
-            modelViewer.cameraTarget = cameraTargets[index];
-        }
+        //console.log(theta, phi, radius)
+        //if (modelViewer.cameraOrbit !== orbitCycle[index]) {
+        modelViewer.cameraOrbit = `${theta}deg ${phi}deg ${radius}m`;
+        //}
 
     }
     return (
         <div className='w-full h-full'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
-            <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="-360deg 105deg 6m"></model-viewer>
+            <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" ></model-viewer>
         </div>
     )
 }
