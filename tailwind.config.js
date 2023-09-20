@@ -9,7 +9,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        squeeze: {
+          '0%': { transform: 'scaleX(-1)' },
+          '1000%': { transform: 'scaleX(-1)' },
+        }
+      }
+    },
     fontFamily: {
       'sans': ['rajdhani', 'sans-serif'],
       'light': ['rajdhani-light', 'rajdhani', 'sans-serif'],
