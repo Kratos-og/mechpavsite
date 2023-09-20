@@ -16,7 +16,7 @@ export default function index() {
           <div>CAREER MANAGEMENT SERVICE FOR FRONTEND DEVELOPERS</div>
         </div>
         <div className="flex items-center justify-between">
-          <div className="pt-20 w-[12rem]">
+          <div className="">
             <Button text={"join as developer"} />
           </div>
           <div className="w-16 translate-y-11">

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Index({ text }) {
   const variants = {
     initial: {
-      x: 1,
       opacity: 1,
       rotate: 45,
     },
@@ -12,7 +11,7 @@ export default function Index({ text }) {
       rotate: 0,
       transition: {
         duration: 2,
-        delay: 1,
+        delay: 0.5,
         type: "spring",
         stiffness: 150,
         display: "none",
@@ -22,9 +21,10 @@ export default function Index({ text }) {
 
   return (
     <>
-      <div className="flex justify-center items-center">
+      <div className="w-48 h-16 flex items-center justify-center relative">
+        {/* left border */}
         <motion.svg
-          className="w-[0.15rem] relative z-20"
+          className="w-[0.15rem] absolute left-0 top-0 z-20"
           fill="none"
           viewBox="0 0 3 74"
           astro-icon="button-border"
@@ -37,28 +37,43 @@ export default function Index({ text }) {
             d="M3 74V55.5 74Zm0 0V55.5 74Zm0 0V55.5 74ZM0 0h3v19.5L1 22v30l2 3.5V74l-3-.189V0Z"
           ></motion.path>
         </motion.svg>
+        {/* left border */}
+
+        {/* top & bottom borders */}
+        <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 4 }} className="absolute top-0 w-full h-[0.1rem] bg-white opacity-25" ></motion.div>
+        <motion.div initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1, delay: 4.25 }} className="absolute bottom-0 w-full h-[0.1rem] bg-white opacity-25" ></motion.div>
+        {/* top & bottom borders */}
+
 
         <motion.div
-          animate={{ paddingRight: 70 }}
-          transition={{ duration: 0.5, delay: 2 }}
-          className="py-2 bg-white"
+          initial={{ rotate: 45, opacity: 0 }}
+          animate={[
+            { opacity: 1, transition: { delay: 1, duration: 0.5 } },
+            { rotate: 0, transition: { delay: 1.5, duration: 2, type: "spring", stiffness: 150, } },
+            { display: 'none', transition: { delay: 2.5 } }
+          ]}
+          className="w-2 h-2 bg-white relative m-auto z-10 ease"
         ></motion.div>
 
-        <motion.div
-          variants={variants}
-          initial="initial"
-          animate="animate"
-          className="p-2 bg-white text-black absolute z-10"
-        ></motion.div>
+
+        {/* text */}
 
         <motion.div
-          animate={{ paddingLeft: 70 }}
-          transition={{ duration: 0.5, delay: 2,}}
-          className="py-2 bg-white"
+          initial={{ opacity: 0 }}
+          animate={[{ scaleX: 10, opacity: 1 }, { scaleX: 0 }]}
+          transition={{
+            duration: 1, delay: 2.5,
+          }}
+          className=" bg-white absolute w-2 h-2 m-auto z-20 origin-right"
         ></motion.div>
-
-        <motion.div
-          initial={{ paddingLeft: 0, paddingRight: 0, display: "none"}}
+        {/*  <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ scaleX: 10, opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+          className=" bg-white absolute w-2 h-2 m-auto z-20 origin-left"
+        ></motion.div> */}
+        {/* <motion.div
+          initial={{ paddingLeft: 0, paddingRight: 0, display: "none" }}
           animate={{
             paddingLeft: 80,
             paddingRight: 80,
@@ -66,13 +81,21 @@ export default function Index({ text }) {
             display: "flex",
           }}
           transition={{ duration: 1, delay: 3 }}
-          className="uppercase text-[0.70rem] tracking-[0.1rem] absolute z-10"
+          className="uppercase text-[0.70rem] tracking-[0.1rem] absolute z-10 w-full"
         >
           {text}
-        </motion.div>
+        </motion.div> */}
+        {/* <motion.div
+          animate={{ paddingLeft: 70 }}
+          transition={{ duration: 0.5, delay: 2, }}
+          className="py-2 bg-white"
+        ></motion.div> */}
 
+        {/* text */}
+
+        {/* right border */}
         <motion.svg
-          className="w-[0.15rem] rotate-180 relative z-20"
+          className="w-[0.15rem] rotate-180 absolute right-0 top-0 z-20"
           fill="none"
           viewBox="0 0 3 74"
           astro-icon="button-border"
@@ -85,6 +108,7 @@ export default function Index({ text }) {
             d="M3 74V55.5 74Zm0 0V55.5 74Zm0 0V55.5 74ZM0 0h3v19.5L1 22v30l2 3.5V74l-3-.189V0Z"
           ></motion.path>
         </motion.svg>
+        {/* right border */}
       </div>
 
       {/* <div className="flex">
