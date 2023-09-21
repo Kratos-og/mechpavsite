@@ -1,5 +1,7 @@
 import React from 'react'
 import Hero from "../Hero"
+import Button from '../Hero/Button'
+import Mouse from '../Hero/Mouse'
 
 export default function index() {
   return (
