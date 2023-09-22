@@ -10,7 +10,7 @@ export default function Home() {
       <div className="w-full h-full fixed z-10">
         <Model />
       </div>
-      <div className="w-full h-screen snap-parent-y-mandatory z-30 relative" id="cont">
+      <div className="w-full h-screen snap-parent-y-mandatory relative" id="cont">
         <Hero />
         <Section2 />
         <Section3 />
