@@ -93,7 +93,7 @@ const Model = props => {
         modelViewer.cameraTarget = `${camTheta}m ${camPhi}m 0m`;
     }
     return (
-        <div className='w-full h-full'>
+        <div className='w-full h-full fixed z-20'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
             <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m 0m"></model-viewer>
         </div>

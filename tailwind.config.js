@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '2xl': '2000px'
+      }
+    },
     fontFamily: {
       'sans': ['rajdhani', 'sans-serif'],
       'light': ['rajdhani-light', 'rajdhani', 'sans-serif'],

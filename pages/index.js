@@ -7,10 +7,8 @@ import Model from "../components/Layout/Model";
 export default function Home() {
   return (
     <div className="w-full min-h-screen m-auto relative">
-      <div className="w-full h-full fixed z-10">
-        <Model />
-      </div>
       <div className="w-full h-screen snap-parent-y-mandatory relative" id="cont">
+        <Model />
         <Hero />
         <Section2 />
         <Section3 />
