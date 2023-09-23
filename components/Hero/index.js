@@ -1,10 +1,15 @@
 import React from "react";
 import Button from "./Button";
 import Mouse from "./Mouse";
+import { delay, motion } from "framer-motion";
 
 export default function index() {
   return (
-    <div className="flex items-center h-screen w-full">
+    <motion.div 
+    initial={{display:"none"}}
+    animate={{display:"flex"}}
+    transition={{delay:5}}
+    className="flex items-center h-screen w-full px-[10rem] absolute z-[1] bg-black">
       <div className="w-full">
         <div className="text-[18rem] font-extrabold leading-none flex justify-center">
           <p>MECHPAVS</p>
@@ -25,6 +30,6 @@ export default function index() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
