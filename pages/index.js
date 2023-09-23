@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen m-auto relative">
       <div className="w-full h-screen snap-parent-y-mandatory relative" id="cont">
-        <Model />
+        {/* <Model /> */}
         <Hero />
         <Section2 />
         <Section3 />
