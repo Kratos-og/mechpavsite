@@ -1,8 +1,37 @@
+import { scroll, motion, useScroll, useTransform, useSpring } from "framer-motion";
+
+
+    
+
+
 const Section = props => {
+        const opacity = useTransform(
+            props.progress,
+            // Map x from these values:
+            [0.375, 0.50,0.675],
+            // Into these values:
+            [0, 1,0]
+        )
+        const y = useTransform(
+            props.progress,
+            // Map x from these values:
+            [0.375, 0.50],
+            // Into these values:
+            [0, 100]
+        )
+        const springY = useSpring(y)
     return (
-        <div className="w-full h-screen snap-child-start relative snap-child-stop">
-            Section3
-        </div>
+        <div className="w-full h-screen snap-child-start relative z-20 overflow-x-hidden">
+            <motion.div className="fixed w-full left-0 top-0 h-screen flex flex-col items-center justify-center" style={{ opacity, y }}>
+                <div className="text-[70px] 2xl:text-[298px] font-bold tracking-wider">EXPLORE THE LORE</div>
+                <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
+                    <div className="w-1/4 flex flex-col gap-4 -mt-10">
+                        <div>LEARN MORE ABOUT THESE MYSTERIOUS PAVS AND WHERE THEY CAME FROM WHILE YOU EXPLORE THE PAST AND DISCOVER THE SECRETS.</div>
+                        <div>READ THROUGH CHRONOLOGICAL EVENTS AND DISCOVER HOW PAVS AND MECHS COMBINED TO BECOME THE ULTIMATE FORCE.</div>
+                    </div>
+                </div>
+            </motion.div>
+        </div >
     )
 }
 
