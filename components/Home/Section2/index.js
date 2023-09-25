@@ -22,7 +22,7 @@ const Section = props => {
     return (
         <div className="w-full h-screen snap-child-start relative overflow-hidden">
             <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col px-40 justify-center" style={{ opacity, y }}>
-                <div className="text-[70px] 2xl:text-[298px] font-bold tracking-wider">MECH MINT</div>
+                <div className="text-[70px] 2xl:text-[100px] font-bold tracking-wider">MECH MINT</div>
                 <div className="w-full z-40 relative text-[11px] tracking-widest">
                     <div className="w-1/4 flex flex-col gap-4">
                         <div>BUY A MECH CRATE AND RECEIVE 5 RANDOM PARTS THAT ASSEMBLE A COMPLETE MECH.</div>

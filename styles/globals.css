@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root{
+  --min-hotspot-opacity: 0
+}
+
 html,
 body {
   padding: 0;
