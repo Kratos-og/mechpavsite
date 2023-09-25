@@ -14,7 +14,9 @@ const Section = props => {
         [0.165, 0.33, 0.495],
         // Into these values:
         [-100, 0, -100],
-
+        {
+            ease: cubicBezier(0.17, 0.67, 0.83, 0.67)
+        }
     )
 
     return (
@@ -26,7 +28,6 @@ const Section = props => {
                         <div>BUY A MECH CRATE AND RECEIVE 5 RANDOM PARTS THAT ASSEMBLE A COMPLETE MECH.</div>
                         <div>BUILD YOUR MECH TO USE AS AN AVATAR TO EXPLORE PAVIA. COLLECT, BUILD, AND INTERCHANGE MECH PARTS USING OUR UNIQUE MECH BUILDER.</div>
                     </div>
-                    <button onClick={() => alert('Hello')}>Hello</button>
                 </div>
             </motion.div>
         </div >

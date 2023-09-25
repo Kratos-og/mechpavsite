@@ -65,14 +65,14 @@ const Model = props => {
         else if (val <= 100 && val > 67) {
             if (prevScroll < val) {
                 //down
-                //goal -> camOrbit = -90deg 90deg 6m, camTarget = 0m 1.25m 0m
+                //goal -> camOrbit = -90deg 90deg 6m, camTarget = 0m 1.25m -1m
                 let perc = ((val - 67) / 33) * 100;
                 theta = -220 + (perc * (130 / 100));
                 phi = 45 + (perc * (45 / 100));
                 radius = 7 - (perc * (1 / 100));
-                camTheta = -1 - (perc * (1 / 100));
+                camTheta = -1 + (perc * (1 / 100));
                 camPhi = 0.5 + (perc * (0.75 / 100));
-                camRad = 0.1 - (perc * (0.1 / 100))
+                camRad = 0.1 - (perc * (1.1 / 100))
                 orbitModel(theta, phi, radius, camTheta, camPhi, camRad);
             }
             else if (prevScroll > val) {
@@ -84,7 +84,7 @@ const Model = props => {
                 radius = 6 - (perc * (1 / 100));
                 camTheta = 0 + (perc * (1 / 100));
                 camPhi = 1.25 + (perc * (0.75 / 100));
-                camRad = 0 - (perc * (0.1 / 100))
+                camRad = -1 - (perc * (1.1 / 100))
                 orbitModel(theta, phi, radius, camTheta, camPhi, camRad);
             }
         }
