@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function index() {
+export default function Pointer() {
     return (
-        <div className="w-full h-screen relative flex justify-center">
+        <div className="w-full h-screen fixed flex justify-center">
             <motion.svg
                 version="1.1"
                 id="Layer_1"

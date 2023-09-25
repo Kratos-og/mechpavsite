@@ -1,6 +1,7 @@
 import { scroll } from 'framer-motion';
 import Script from 'next/script';
 import { useEffect } from 'react';
+import Pointer1 from '../../Home/Hero/Pointers/Pointer1';
 
 const Model = props => {
     let prevScroll = 0;
@@ -32,7 +33,7 @@ const Model = props => {
                 phi = 110 + (perc * (5 / 100));
                 radius = 2 - (perc * (4 / 100))
                 camPhi = 1.1 + (perc * (0.1 / 100));
-                camRad = -0.5 - (perc * (0.5 / 100))
+                camRad = -0.5 - (perc * (0.2 / 100))
                 orbitModel(theta, phi, radius, 0, camPhi, camRad);
             }
         }
@@ -101,7 +102,11 @@ const Model = props => {
     return (
         <div className='w-full h-full fixed top-0 pointer-events-none'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
-            <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m 0m"></model-viewer>
+            <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
+                {/* <div class="hotspot" slot="hotspot-hand" data-position="-0.7m 2m 0.1" data-normal="-0.73 0.05 0.69">
+                    <Pointer1 />
+                </div> */}
+            </model-viewer>
         </div>
     )
 }

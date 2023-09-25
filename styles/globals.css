@@ -23,11 +23,6 @@ a {
 }
 
 @font-face {
-  font-family: "rajdhani-light";
-  src: URL("../public/assets/fonts/Rajdhani-Light.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "rajdhani";
   src: URL("../public/assets/fonts/Poppins-Regular.ttf") format("truetype");
 }
@@ -41,6 +36,8 @@ a {
   font-family: "rajdhani-bold";
   src: URL("../public/assets/fonts/Poppins-Bold.ttf") format("truetype");
 }
+
+
 
 model-viewer {
   width: 100%;

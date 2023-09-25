@@ -1,6 +1,8 @@
 import { scroll, motion, useScroll, useTransform, useSpring, cubicBezier } from "framer-motion";
 import Mouse from "../../UI/Svg/Mouse";
 import { useEffect, useRef } from "react";
+import Pointer from "./Pointers";
+import Pointer1 from "./Pointers/Pointer1";
 
 const Hero = props => {
     const opacity = useTransform(
@@ -31,11 +33,11 @@ const Hero = props => {
                         <div>5 CLASSES, 5 PARTS, 5 SKINS AND OVER 1 MILLION COMBINATIONS. COLLECT AND BUILD INTERCHANGEABLE MECH PARTS TO BUILD A FULLY USEABLE AVATAR.</div>
                     </div>
                 </div>
-                <div className="w-full ml-[15%] mt-20">
+                {/* <div className="w-full ml-[15%]">
                     <div className="w-16 left-[10%]">
                         <Mouse />
                     </div>
-                </div>
+                </div> */}
             </motion.div>
         </div >
     )
