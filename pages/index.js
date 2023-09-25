@@ -18,12 +18,13 @@ export default function Home() {
   })
 
   return (
-    <div className="w-full h-screen m-auto z-50 relative snap-parent-y-mandatory" id="cont" ref={ref}>
-      {/* <Model /> */}
+    <div className="w-full h-screen relative snap-parent-y-mandatory" id="cont" ref={ref}>
+   
       <Hero progress={scrollYProgress} />
       <Section2 progress={scrollYProgress} />
       <Section3 progress={scrollYProgress} />
       <Section4 progress={scrollYProgress} />
+      <Model />
     </div>
   );
 };

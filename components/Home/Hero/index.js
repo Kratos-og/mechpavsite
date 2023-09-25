@@ -1,4 +1,4 @@
-import { scroll, motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { scroll, motion, useScroll, useTransform, useSpring, cubicBezier } from "framer-motion";
 import Mouse from "../../UI/Svg/Mouse";
 import { useEffect, useRef } from "react";
 
@@ -6,21 +6,24 @@ const Hero = props => {
     const opacity = useTransform(
         props.progress,
         // Map x from these values:
-        [0, 0.125],
+        [0, 0.165],
         // Into these values:
         [1, 0]
     )
     const y = useTransform(
         props.progress,
         // Map x from these values:
-        [0, 0.125],
+        [0, 0.165],
         // Into these values:
-        [0, -100]
+        [0, -100],
+        {
+            ease: cubicBezier(0.17, 0.67, 0.83, 0.67)
+        }
     )
-    const springY = useSpring(y, {damping: 10})
+    const springY = useSpring(y, { damping: 10 })
     return (
-        <div className="w-full h-screen snap-child-start relative z-20 overflow-x-hidden">
-            <motion.div className="fixed w-full left-0 top-0 h-screen flex flex-col items-center justify-center" style={{ opacity, y }}>
+        <div className="w-full h-screen snap-child-start overflow-x-hidden" id="hero">
+            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center" style={{ opacity, y }}>
                 <div className="text-[208px] 2xl:text-[298px] font-bold tracking-wider">MECH PAVS</div>
                 <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
                     <div className="w-1/4 flex flex-col gap-4 -mt-10">
