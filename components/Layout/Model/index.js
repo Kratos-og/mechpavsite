@@ -21,8 +21,8 @@ const Model = props => {
                 theta = 0 - (perc * (60 / 100));
                 phi = 105 + (perc * (5 / 100));
                 radius = 6 - (perc * (4 / 100));
-                camPhi = 1 + (perc * (0.1 / 100))
-                camRad = 0 - (perc * (0.5 / 100))
+                camPhi = 1 + (perc * (0.1 / 100));
+                camRad = -0.3 - (perc * (0.2 / 100));
                 orbitModel(theta, phi, radius, 0, camPhi, camRad);
             }
             else if (prevScroll > val) {
@@ -103,9 +103,9 @@ const Model = props => {
         <div className='w-full h-full fixed top-0 pointer-events-none'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
             <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
-                {/* <div class="hotspot" slot="hotspot-hand" data-position="-0.7m 2m 0.1" data-normal="-0.73 0.05 0.69">
+                <div class="hotspot" slot="hotspot-hand" data-position="-0.7m 2m 0.1" data-normal="-0.73 0.05 0.69">
                     <Pointer1 />
-                </div> */}
+                </div>
             </model-viewer>
         </div>
     )
