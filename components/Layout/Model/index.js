@@ -22,7 +22,7 @@ const Model = props => {
                 phi = 105 + (perc * (5 / 100));
                 radius = 6 - (perc * (4 / 100));
                 camPhi = 1 + (perc * (0.1 / 100))
-                camRad = 0 - (perc * (0.5 / 100))
+                camRad = -0.3 - (perc * (0.2 / 100));
                 orbitModel(theta, phi, radius, 0, camPhi, camRad);
             }
             else if (prevScroll > val) {
