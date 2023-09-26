@@ -21,15 +21,7 @@ const Section = props => {
 
     return (
         <div className="w-full h-screen snap-child-start relative overflow-hidden">
-            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col px-40 justify-center" >
-
-                {/* <AnimatePresence>
-                    {isInView && (<motion.div 
-                initial={{paddingRight:"0rem"}}
-                animate={[{paddingRight: isInView ? "28rem" :"0rem",transition:{ delay:0.5, duration:0.3}}]}
-                // exit={{paddingRight:"28rem", transition: {delay:0.1,duration:1}}}
-                className="bg-black pt-[4%] absolute left-[10%] top-[37.5%]"></motion.div>)}
-            </AnimatePresence> */}
+            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col px-40 justify-center">
                 <div className="relative w-fit overflow-hidden">
                     <AnimatePresence>
                         {isInView && (
@@ -45,8 +37,8 @@ const Section = props => {
                                     initial={{ paddingRight: "0rem", width: 0 }}
                                     animate={
                                         [
-                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.1, duration: 0.4 } },
-                                            { left: isInView ? "100%" : "0rem", transition: { delay: 0.5, duration: 0.4 } }
+                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0, duration: 0.4 } },
+                                            { left: isInView ? "100%" : "0rem", transition: { delay: 0.4, duration: 0.4 } }
                                         ]
                                     }
                                     exit={
@@ -64,28 +56,13 @@ const Section = props => {
                     </AnimatePresence>
                 </div>
 
-{/* 
-                <AnimatePresence>
-                    {isInView && (<motion.div
-                        initial={{ paddingRight: "0rem" }}
-                        animate={[{ paddingRight: isInView ? "20rem" : "0rem", transition: { delay: 0.3, duration: 0.4 } }]}
-                        className="bg-white pt-[8%] absolute left-[10%] top-[49%]"></motion.div>)}
-                </AnimatePresence>
-
-                <AnimatePresence>
-                    {isInView && (<motion.div
-                        initial={{ paddingRight: "0rem" }}
-                        animate={[{ paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.8, duration: 0.3 } }]}
-                        className="bg-black pt-[8%] absolute left-[10%] top-[49%]"></motion.div>)}
-                </AnimatePresence> */}
-
                 <div className="relative w-1/4 overflow-hidden">
                     <AnimatePresence>
                         {isInView && (
                             <>
                                 <motion.div
                                     initial={{ visibility: "hidden" }}
-                                    animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 1 } }}
+                                    animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 0 } }}
                                     exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
                                     className="z-40 relative text-[11px] tracking-widest">
                                     <div className="flex flex-col gap-4">
@@ -97,8 +74,8 @@ const Section = props => {
                                     initial={{ paddingRight: "0rem", width: 0 }}
                                     animate={
                                         [
-                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.4, duration: 0.4 } },
-                                            { left: isInView ? "100%" : "0rem", transition: { delay: 0.8, duration: 0.5 } }
+                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.2, duration: 0.3 } },
+                                            { left: isInView ? "100%" : "0rem", transition: { delay: 0.3, duration: 0.5 } }
                                         ]
                                     }
                                     exit={
