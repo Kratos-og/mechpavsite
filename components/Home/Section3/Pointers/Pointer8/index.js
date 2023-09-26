@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Pointer8 = props => {
     return (
-        <div className="-ml-60 -mt-20 text-center flex flex-col items-start">
+        <div className="-ml-72 2xl:-ml-96 -mt-20 text-center flex flex-col items-start">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{
@@ -21,7 +21,7 @@ const Pointer8 = props => {
                 y="0px"
                 viewBox="0 0 775.8 222.1"
                 fill="#ffffff"
-                className="w-[15rem]"
+                className="w-[20rem] 2xl:w-[25rem]"
             >
                 <motion.circle
                     initial={{ opacity: 0 }}
