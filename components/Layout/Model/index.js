@@ -15,6 +15,7 @@ import Pointer11 from '../../Home/Section4/Pointers/Pointer11';
 import Pointer12 from '../../Home/Section4/Pointers/Pointer12';
 
 const Model = props => {
+    const [show, setShow] = useState(false);
     const [sec, setSec] = useState(null)
     let prevScroll = 0;
 
@@ -25,6 +26,9 @@ const Model = props => {
         modelViewer.addEventListener('progress', (event) => {
             props.setModelLoad(event.detail.totalProgress * 100)
             if (event.detail.totalProgress == 1) {
+                setTimeout(() => {
+                    setShow(true)
+                }, [2000])
                 setTimeout(() => {
                     setSec(0)
                 }, 2200)
@@ -129,7 +133,7 @@ const Model = props => {
         }
         prevScroll = val;
     }
-    console.log('render')
+
     const orbitModel = (theta, phi, radius, camTheta, camPhi, camRad = 0) => {
         const modelViewer = document.querySelector('#mech-model');
         //console.log(theta.toFixed(2), phi.toFixed(2), radius.toFixed(2), camTheta.toFixed(2), camPhi.toFixed(2))
@@ -141,7 +145,7 @@ const Model = props => {
     return (
         <div className='w-full h-full fixed top-0 pointer-events-none'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
-            <model-viewer id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
+            <model-viewer style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
                 <div slot="hotspot-joint" data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer1 />}
                 </div>

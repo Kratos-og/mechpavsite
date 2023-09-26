@@ -17,7 +17,6 @@ const Section = props => {
         // Into these values:
         [0, 1, 0]
     )
-    console.log(isInView)
 
     return (
         <div className="w-full h-screen snap-child-start relative overflow-hidden">

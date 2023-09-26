@@ -42,7 +42,7 @@ const Hero = props => {
                     initial={{ paddingRight: "0rem", opacity: 0 }}
                     animate={{ paddingRight: !isInView ? "85rem" : "0rem", opacity: 1, transition: { delay: 0, duration: 0.25 } }}
                     className="bg-black pt-[11%] absolute left-[5%] top-[34%]"></motion.p>
-                {props.loadVal !== 100 &&
+                {props.init && props.loadVal !== 100 &&
                     <AnimatePresence>
                         <motion.div exit={{ opacity: 0, transition: { duration: 0.5 } }} className="flex items-end justify-end w-full px-40">
                             <div className="w-60 h-7 border-opacity-20 border flex -mt-10">
@@ -56,7 +56,8 @@ const Hero = props => {
                 }
                 <motion.div
                     initial={{ paddingRight: "25rem" }}
-                    animate={{ paddingRight: "0rem", transition: { delay: 1, duration: 1 } }}
+                    animate={{ paddingRight: "0rem", transition: { delay: 0.5, duration: 1 } }}
+                    onAnimationComplete={() => props.setInit(true)}
                     className="bg-black pt-[8%] absolute right-[67%] top-[61%] z-50"></motion.div>
                 <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
                     <div className="w-1/4 flex flex-col gap-4 -mt-10">
