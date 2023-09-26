@@ -4,6 +4,7 @@ import Section2 from "../components/Home/Section2";
 import Section3 from "../components/Home/Section3";
 import Section4 from "../components/Home/Section4";
 import Model from "../components/Layout/Model";
+import Lore from "./Lore"
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -20,7 +21,8 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen relative snap-parent-y-mandatory overflow-x-hidden" id="cont" ref={ref}>
-      <Hero progress={scrollYProgress} loadVal={modelLoad} setInit={setInit} init={init} />
+      <Lore/>
+      {/* <Hero progress={scrollYProgress} loadVal={modelLoad} setInit={setInit} init={init} />
       <Section2 progress={scrollYProgress} />
       <Section3 progress={scrollYProgress} />
       <Section4 progress={scrollYProgress} />
@@ -40,7 +42,7 @@ export default function Home() {
             className="bg-black absolute top-0 left-0 h-screen"
           ></motion.div>
         </AnimatePresence>
-      }
+      } */}
     </div>
   );
 };
