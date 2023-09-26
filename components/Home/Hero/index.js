@@ -10,29 +10,9 @@ const Hero = props => {
         else { setIsInView(false) }
     })
 
-    const opacity = useTransform(
-        props.progress,
-        // Map x from these values:
-        [0, 0.165],
-        // Into these values:
-        [1, 0]
-    )
-    const y = useTransform(
-        props.progress,
-        // Map x from these values:
-        [0, 0.165],
-        // Into these values:
-        [0, -100],
-        {
-            ease: cubicBezier(0.17, 0.67, 0.83, 0.67)
-        }
-    )
-
     return (
         <div className="w-full h-screen snap-child-start overflow-x-hidden" id="hero">
-            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center">
-
-
+            <div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center">
                 <div className="text-[208px] 2xl:text-[298px] font-bold tracking-wider relative overflow-hidden">
                     <AnimatePresence>
                         {isInView && (
@@ -40,29 +20,27 @@ const Hero = props => {
                                 <motion.div
                                     initial={{ width: "100%" }}
                                     animate={{ left: "100%", transition: { delay: 0.5, duration: 1 } }}
-                                    // exit={[{paddingRight:"0%"},{x:"100%", transition:{delay:0.5,duration:0.5}}]}
                                     className="w-full bg-black h-full top-20 absolute"></motion.div>
                                 <motion.span
                                     initial={{ visibility: "hidden" }}
                                     animate={{ visibility: "visible", transition: { delay: 0.5 } }}
-                                    exit={{ visibility: "hidden" }}
-                                >MECH PAVS</motion.span>
+                                    exit={{ visibility: "hidden" }}>
+                                    MECH PAVS
+                                </motion.span>
                             </>
                         )}
                     </AnimatePresence>
                 </div>
 
                 {props.init && props.loadVal !== 100 &&
-                    <AnimatePresence>
-                        <motion.div exit={{ opacity: 0, transition: { duration: 0.5 } }} className="flex items-end justify-end w-full px-40">
-                            <div className="w-60 h-7 border-opacity-20 border flex -mt-10">
-                                <div className="w-4/5 px-3 flex items-center ">
-                                    <motion.div initial={{ width: '0%' }} animate={{ width: props.loadVal + '%', transition: { duration: 0.3 } }} className="h-0.5 bg-white"></motion.div>
-                                </div>
-                                <div className="border-l w-1/5 text-[9px] flex items-center justify-center">{props.loadVal}%</div>
+                    <motion.div className="flex items-end justify-end w-full px-40">
+                        <div className="w-60 h-7 border-opacity-20 border flex -mt-10">
+                            <div className="w-4/5 px-3 flex items-center ">
+                                <motion.div initial={{ width: '0%' }} animate={{ width: props.loadVal + '%', transition: { duration: 0.3 } }} className="h-0.5 bg-white"></motion.div>
                             </div>
-                        </motion.div>
-                    </AnimatePresence>
+                            <div className="border-l w-1/5 text-[9px] flex items-center justify-center">{props.loadVal?.toFixed(0)}%</div>
+                        </div>
+                    </motion.div>
                 }
                 <AnimatePresence>
                     {isInView && (
@@ -84,9 +62,7 @@ const Hero = props => {
                         </div>
                     )}
                 </AnimatePresence>
-
-
-            </motion.div>
+            </div>
         </div >
     )
 }
