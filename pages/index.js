@@ -14,7 +14,7 @@ export default function Home() {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", latest)
+    // console.log("Page scroll: ", latest)
   })
 
   return (

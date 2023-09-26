@@ -94,7 +94,7 @@ const Model = props => {
 
     const orbitModel = (theta, phi, radius, camTheta, camPhi, camRad = 0) => {
         const modelViewer = document.querySelector('#mech-model');
-        console.log(theta.toFixed(2), phi.toFixed(2), radius.toFixed(2), camTheta.toFixed(2), camPhi.toFixed(2))
+        // console.log(theta.toFixed(2), phi.toFixed(2), radius.toFixed(2), camTheta.toFixed(2), camPhi.toFixed(2))
 
         modelViewer.cameraOrbit = `${theta}deg ${phi}deg ${radius}m`;
         modelViewer.cameraTarget = `${camTheta}m ${camPhi}m ${camRad}m`;
