@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Pointer9 = props => {
     return (
-        <div className="flex items-end ml-60 mt-20">
+        <div className="flex items-end gap-5 ml-60 mt-20">
             <motion.svg
                 version="1.1"
                 id="Layer_1"
@@ -48,7 +48,7 @@ const Pointer9 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] -ml-10"
+                className="text-[10px] -ml-5"
             >
                 <span>Mass Amplifier</span>
             </motion.div>

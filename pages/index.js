@@ -27,12 +27,13 @@ export default function Home() {
             initial={{ paddingRight: 0 }}
             animate={[{
               paddingRight: ['0%', '100%'],
-              transition: { delay: 0, duration: 0.5 },
+              transition: { delay: 0, duration: 0.5, ease: 'easeIn' },
             }, {
               left: ['0%', '100%'],
-              transition: { delay: 0.75, duration: 0.5 },
+              transition: { delay: 0.75, duration: 0.5, ease: 'easeIn' },
             }]
             }
+            onAnimationEnd={() => console.log('done')}
             className="bg-black absolute top-0 left-0 h-screen"
           ></motion.div>
         </>

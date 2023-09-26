@@ -25,14 +25,14 @@ const Model = props => {
         modelViewer.addEventListener('progress', (event) => {
             props.setModelLoad(event.detail.totalProgress * 100)
             if (event.detail.totalProgress == 1) {
-                setSec(0)
+                setTimeout(() => {
+                    setSec(0)
+                }, 2200)
             }
         })
-
     }, []);
 
     useMotionValueEvent(props.progress, "change", (latest) => {
-        console.log(latest)
         let prevScroll = latest.toFixed(2) * 100;
         if (prevScroll == 0) {
             setSec(0)
@@ -92,7 +92,7 @@ const Model = props => {
                 //up
                 //goal -> camOrbit = -60deg 110deg 2m, camTarget = 0m 1.1m -0.5m
                 let perc = ((val - 33) / 33) * 100 - 100;
-                theta = -216 - (perc * (160 / 100));
+                theta = -214 - (perc * (160 / 100));
                 phi = 46 - (perc * (65 / 100));
                 radius = 7 + (perc * (5 / 100));
                 camTheta = -1 - (perc * (1 / 100));
@@ -129,10 +129,10 @@ const Model = props => {
         }
         prevScroll = val;
     }
-
+    console.log('render')
     const orbitModel = (theta, phi, radius, camTheta, camPhi, camRad = 0) => {
         const modelViewer = document.querySelector('#mech-model');
-        // console.log(theta.toFixed(2), phi.toFixed(2), radius.toFixed(2), camTheta.toFixed(2), camPhi.toFixed(2))
+        //console.log(theta.toFixed(2), phi.toFixed(2), radius.toFixed(2), camTheta.toFixed(2), camPhi.toFixed(2))
 
 
         modelViewer.cameraOrbit = `${theta}deg ${phi}deg ${radius}m`;
@@ -163,7 +163,7 @@ const Model = props => {
                 <div slot="hotspot-relay" data-position="-0.3260658813478937m 2.2191808755076137m 0.08110660898803036m" data-normal="0.9590549161033266m 0.27799174600638094m 0.05416878298767026m" data-visibility-attribute="visible">
                     {sec == 2 && <Pointer7 />}
                 </div>
-                <div slot="hotspot-ecu" data-position="0.1823259967367047m 1.580797887443596m -0.07378811475978522m" data-normal="0.75536260885868m -0.6429215328909964m -0.12680391036281294m" data-visibility-attribute="visible">
+                <div slot="hotspot-ecu" data-position="0.1823259967367047m 1.580797887443596m -0.07378811475978522m" data-normal="0.4506055410952404m 0.08581378728688681m -0.8885891290386951m" data-visibility-attribute="visible">
                     {sec == 2 && <Pointer8 />}
                 </div>
                 <div slot="hotspot-amplifier" data-position="0.037157066288441065m 1.7368252730522067m -0.48900141689526055m" data-normal="-0.026045127223037635m 0.619920137782393m -0.7842325382944746m" data-visibility-attribute="visible">
