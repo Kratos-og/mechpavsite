@@ -29,7 +29,7 @@ const Section = props => {
                                 <>
                                     <motion.p
                                         initial={{ visibility: "hidden" }}
-                                        animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.3, duration: 0 } }}
+                                        animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 0 } }}
                                         exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
                                         className="text-[70px] 2xl:text-[100px] font-bold overflow-hidden tracking-wider w-fit relative">
                                         <span>EXPLORE THE LORE</span>
@@ -38,7 +38,7 @@ const Section = props => {
                                         initial={{ paddingRight: "0rem", width: 0 }}
                                         animate={
                                             [
-                                                { paddingRight: isInView ? "43rem" : "0rem", transition: { delay: 0, duration: 0.1 } },
+                                                { paddingRight: isInView ? "100%" : "0rem", transition: { delay: 0, duration: 0.1 } },
                                                 { left: isInView ? "100%" : "0rem", transition: { delay: 0.3, duration: 0.5 } }
                                             ]
                                         }
@@ -73,7 +73,7 @@ const Section = props => {
                                         initial={{ paddingRight: "0rem", width: 0 }}
                                         animate={
                                             [
-                                                { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.2, duration: 0.3 } },
+                                                { paddingRight: isInView ? "100%" : "0rem", transition: { delay: 0.2, duration: 0.3 } },
                                                 { left: isInView ? "100%" : "0rem", transition: { delay: 0.3, duration: 0.5 } }
                                             ]
                                         }

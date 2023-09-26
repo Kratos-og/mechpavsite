@@ -36,7 +36,7 @@ const Section = props => {
                                     initial={{ paddingRight: "0rem", width: 0 }}
                                     animate={
                                         [
-                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0, duration: 0.4 } },
+                                            { paddingRight: isInView ? "100%" : "0rem", transition: { delay: 0, duration: 0.4 } },
                                             { left: isInView ? "100%" : "0rem", transition: { delay: 0.4, duration: 0.4 } }
                                         ]
                                     }
@@ -73,7 +73,7 @@ const Section = props => {
                                     initial={{ paddingRight: "0rem", width: 0 }}
                                     animate={
                                         [
-                                            { paddingRight: isInView ? "28rem" : "0rem", transition: { delay: 0.2, duration: 0.3 } },
+                                            { paddingRight: isInView ? "100%" : "0rem", transition: { delay: 0.2, duration: 0.3 } },
                                             { left: isInView ? "100%" : "0rem", transition: { delay: 0.3, duration: 0.5 } }
                                         ]
                                     }

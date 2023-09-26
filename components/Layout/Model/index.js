@@ -21,17 +21,16 @@ const Model = props => {
 
     useEffect(() => {
         scroll(onScroll, { axis: "y", source: document.getElementById("cont") });
-
         const modelViewer = document.querySelector('#mech-model');
         modelViewer.addEventListener('progress', (event) => {
             props.setModelLoad(event.detail.totalProgress * 100)
             if (event.detail.totalProgress == 1) {
                 setTimeout(() => {
                     setShow(true)
-                }, [2000])
+                }, [500])
                 setTimeout(() => {
                     setSec(0)
-                }, 2200)
+                }, 800)
             }
         })
     }, []);
@@ -145,7 +144,7 @@ const Model = props => {
     return (
         <div className='w-full h-full fixed top-0 pointer-events-none'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
-            <model-viewer style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
+            <model-viewer loading="eager" style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/defender.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
                 <div slot="hotspot-joint" data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer1 />}
                 </div>

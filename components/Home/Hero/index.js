@@ -31,26 +31,27 @@ const Hero = props => {
     return (
         <div className="w-full h-screen snap-child-start overflow-x-hidden" id="hero">
             <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center">
-                
+
 
                 <div className="text-[208px] 2xl:text-[298px] font-bold tracking-wider relative overflow-hidden">
-                <AnimatePresence>
-                    {isInView && (<>
-                    <motion.div 
-                    initial={{width: "100%"}}
-                    animate={{left:"100%", transition:{delay:0.5,duration:1}}}
-                    // exit={[{paddingRight:"0%"},{x:"100%", transition:{delay:0.5,duration:0.5}}]}
-                    className="w-full bg-black h-[50%] top-20 absolute"></motion.div>
-                    <motion.span
-                    initial={{visibility:"hidden"}}
-                    animate={{visibility:"visible",transition:{delay:0.5}}}
-                    exit={{visibility:"hidden"}}
-                    >MECH PAVS</motion.span>
-                    </>
-                    )}
-                </AnimatePresence>
+                    <AnimatePresence>
+                        {isInView && (
+                            <>
+                                <motion.div
+                                    initial={{ width: "100%" }}
+                                    animate={{ left: "100%", transition: { delay: 0.5, duration: 1 } }}
+                                    // exit={[{paddingRight:"0%"},{x:"100%", transition:{delay:0.5,duration:0.5}}]}
+                                    className="w-full bg-black h-full top-20 absolute"></motion.div>
+                                <motion.span
+                                    initial={{ visibility: "hidden" }}
+                                    animate={{ visibility: "visible", transition: { delay: 0.5 } }}
+                                    exit={{ visibility: "hidden" }}
+                                >MECH PAVS</motion.span>
+                            </>
+                        )}
+                    </AnimatePresence>
                 </div>
-                
+
                 {props.init && props.loadVal !== 100 &&
                     <AnimatePresence>
                         <motion.div exit={{ opacity: 0, transition: { duration: 0.5 } }} className="flex items-end justify-end w-full px-40">
@@ -63,26 +64,27 @@ const Hero = props => {
                         </motion.div>
                     </AnimatePresence>
                 }
-              <AnimatePresence>
-                {isInView && (
-                <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
-                    <div className="w-1/4 flex -mt-10 relative">
-                    <motion.div 
-                    initial={{width: "100%"}}
-                    animate={{left:"100%", transition:{delay:0.8,duration:1}}}
-                    className=" w-full h-full absolute bg-black"></motion.div>
-                    <motion.div 
-                    initial={{visibility:"hidden"}}
-                    animate={{visibility:"visible",transition:{delay:0.5}}}
-                    className="flex flex-col gap-4">
-                        <div>CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT HERE ON <b>OCTOBER 19TH</b>.</div>
-                        <div>5 CLASSES, 5 PARTS, 5 SKINS AND OVER 1 MILLION COMBINATIONS. COLLECT AND BUILD INTERCHANGEABLE MECH PARTS TO BUILD A FULLY USEABLE AVATAR.</div>
-                    </motion.div>
-                    </div>
-                </div>
-                )}
-              </AnimatePresence>
-                
+                <AnimatePresence>
+                    {isInView && (
+                        <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
+                            <div className="w-1/4 flex -mt-10 relative">
+                                <motion.div
+                                    initial={{ width: "100%" }}
+                                    animate={{ left: "100%", transition: { delay: 0.8, duration: 1 } }}
+                                    onAnimationComplete={() => props.setInit(true)}
+                                    className=" w-full h-full absolute bg-black"></motion.div>
+                                <motion.div
+                                    initial={{ visibility: "hidden" }}
+                                    animate={{ visibility: "visible", transition: { delay: 0.5 } }}
+                                    className="flex flex-col gap-4">
+                                    <div>CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT HERE ON <b>OCTOBER 19TH</b>.</div>
+                                    <div>5 CLASSES, 5 PARTS, 5 SKINS AND OVER 1 MILLION COMBINATIONS. COLLECT AND BUILD INTERCHANGEABLE MECH PARTS TO BUILD A FULLY USEABLE AVATAR.</div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    )}
+                </AnimatePresence>
+
 
             </motion.div>
         </div >

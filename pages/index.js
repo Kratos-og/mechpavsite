@@ -7,8 +7,9 @@ import Model from "../components/Layout/Model";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
-  const [init, setInit] = useState(false)
+  const [init, setInit] = useState(false);
   const [modelLoad, setModelLoad] = useState(0);
+
   const ref = useRef();
   let { scrollYProgress } = useScroll({
     container: ref,
