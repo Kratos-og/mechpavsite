@@ -23,7 +23,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute right-0 w-[0.15rem] h-full text-white rotate-180 group-hover:translate-x-1 duration-200 ease-in-out"
+                        " absolute right-0 w-[0.15rem] h-full text-[#14fecd] rotate-180 group-hover:translate-x-1 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -40,7 +40,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute left-0 w-[0.15rem] h-full text-white group-hover:-translate-x-1 duration-200 ease-in-out"
+                        " absolute left-0 w-[0.15rem] h-full text-[#14fecd] group-hover:-translate-x-1 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -63,7 +63,7 @@ const Button = (props) => {
                         },
                         { paddingRight: "61%", transition: { delay: 1, duration: 0.5 } },
                     ]}
-                    className="bg-white p-2 absolute"
+                    className="bg-[#14fecd] p-2 absolute"
                 />
                 {/* Dot */}
 
@@ -80,7 +80,7 @@ const Button = (props) => {
                 <motion.div
                     initial={{ display: "none", y: 0 }}
                     animate={{ display: "block", transition: { delay: 1.5 } }}
-                    className=" text-white uppercase absolute z-[2] text-xs w-full h-full hover:bg-white pt-5"
+                    className=" text-[#14fecd] uppercase absolute z-[2] text-xs w-full h-full hover:bg-[#14fecd] pt-5"
                 >
                     <motion.div className=" w-full h-4 overflow-hidden ">
                         <div className="group-hover:-translate-y-3 duration-300 ease-in-out">

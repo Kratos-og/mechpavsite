@@ -21,8 +21,7 @@ export default function Home() {
 
   return (
     <div className="w-full h-screen relative snap-parent-y-mandatory overflow-x-hidden" id="cont" ref={ref}>
-      <Lore/>
-      {/* <Hero progress={scrollYProgress} loadVal={modelLoad} setInit={setInit} init={init} />
+      <Hero progress={scrollYProgress} loadVal={modelLoad} setInit={setInit} init={init} />
       <Section2 progress={scrollYProgress} />
       <Section3 progress={scrollYProgress} />
       <Section4 progress={scrollYProgress} />
@@ -42,7 +41,7 @@ export default function Home() {
             className="bg-black absolute top-0 left-0 h-screen"
           ></motion.div>
         </AnimatePresence>
-      } */}
+      }
     </div>
   );
 };

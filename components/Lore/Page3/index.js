@@ -4,11 +4,11 @@ import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 
 export default function Index(props) {
-  const [scroll, setScroll] = useState();
+  const [scroll, setScroll] = useState(0);
   const [inView, setInView] = useState(false);
   useMotionValueEvent(props.progress, "change", (latest) => {
     setScroll(latest.toFixed(2));
-    if (scroll >= 0.5 && scroll <= 0.7) {
+    if (scroll >= 0.3 && scroll <= 0.7) {
       setInView(true);
     } else {
       setInView(false);
@@ -24,7 +24,7 @@ export default function Index(props) {
         }}
       >
         <div className="fixed top-0 text-[10rem] w-full font-bold  overflow-hidden">
-          <AnimatePresence>
+          {/* <AnimatePresence>
             {inView && (
               <motion.p
                 initial={{ y: 300 }}
@@ -34,12 +34,12 @@ export default function Index(props) {
                 LORE
               </motion.p>
             )}
-          </AnimatePresence>
+          </AnimatePresence> */}
         </div>
         <div className="flex">
           <div className="fixed top-[36%] mx-[5rem] flex overflow-hidden gap-10">
             <div className="overflow-hidden">
-              <div className="text-2xl  border-b-2 border-green-400 pb-5  ">
+              <div className="text-2xl  border-b-2 border-[#14fecd] pb-5  ">
                 OVERVIEW
               </div>
 

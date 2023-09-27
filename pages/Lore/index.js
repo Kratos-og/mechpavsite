@@ -2,10 +2,10 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import star from "../../public/assets/img/star.jpg";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
-import Page3 from "./Page3";
-import Page4 from "./Page4";
+import Page1 from "../../components/Lore/Page1"
+import Page2 from "../../components/Lore/Page2";
+import Page3 from "../../components/Lore/Page3";
+import Page4 from "../../components/Lore/Page4";
 
 export default function Lore() {
   const ref = useRef();
