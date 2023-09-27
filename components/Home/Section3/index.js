@@ -22,8 +22,8 @@ const Section = props => {
     return (
         <div className="w-full h-screen snap-child-start relative overflow-x-hidden">
             <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-end justify-center" >
-                <div className="w-1/2">
-                    <div className="relative w-fit overflow-hidden ml-5">
+                <div className="w-1/2 -mr-[5rem]">
+                    <div className="relative w-fit overflow-hidden">
                         <AnimatePresence>
                             {isInView && (
                                 <>
@@ -31,7 +31,7 @@ const Section = props => {
                                         initial={{ visibility: "hidden" }}
                                         animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 0 } }}
                                         exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
-                                        className="text-[70px] 2xl:text-[100px] font-bold overflow-hidden tracking-wider w-fit relative">
+                                        className="text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[5px]">
                                         <span>EXPLORE THE LORE</span>
                                     </motion.p>
                                     <motion.div
@@ -55,7 +55,7 @@ const Section = props => {
                             )}
                         </AnimatePresence>
                     </div>
-                    <div className="relative w-2/3 overflow-hidden ml-5">
+                    <div className="relative w-2/3 overflow-hidden">
                         <AnimatePresence>
                             {isInView && (
                                 <>

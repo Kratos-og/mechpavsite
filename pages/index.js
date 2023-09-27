@@ -3,7 +3,7 @@ import Hero from "../components/Home/Hero";
 import Section2 from "../components/Home/Section2";
 import Section3 from "../components/Home/Section3";
 import Section4 from "../components/Home/Section4";
-import Model from "../components/Layout/Model";
+import Model from "../components/Home/Model";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -15,8 +15,6 @@ export default function Home() {
     container: ref,
     axis: "y"
   });
-
-  console.log(modelLoad)
 
   return (
     <div className="w-full h-screen relative snap-parent-y-mandatory overflow-x-hidden" id="cont" ref={ref}>

@@ -29,7 +29,7 @@ const Section = props => {
                                     initial={{ visibility: "hidden" }}
                                     animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 1 } }}
                                     exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
-                                    className="text-[70px] 2xl:text-[100px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[3px]">
+                                    className="text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[3px]">
                                     <span>MECH MINT</span>
                                 </motion.p>
                                 <motion.div
