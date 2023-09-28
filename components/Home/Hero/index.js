@@ -48,8 +48,8 @@ const Hero = props => {
         }
         <AnimatePresence>
           {isInView && (
-            <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
-              <div className="w-1/4 flex -mt-10 relative">
+            <div className="w-full relative z-40 relative text-[11px] ml-[15%] tracking-widest">
+              <div className="w-1/4 flex flex-col -mt-10 relative">
                 <motion.div
                   initial={{ width: "100%" }}
                   animate={{ left: "100%", transition: { delay: 0.8, duration: 1 } }}
@@ -62,21 +62,23 @@ const Hero = props => {
                   <div>CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT HERE ON <b>OCTOBER 19TH</b>.</div>
                   <div>5 CLASSES, 5 PARTS, 5 SKINS AND OVER 1 MILLION COMBINATIONS. COLLECT AND BUILD INTERCHANGEABLE MECH PARTS TO BUILD A FULLY USEABLE AVATAR.</div>
                 </motion.div>
+
               </div>
+              <AnimatePresence>
+                {props.init && props.loadVal == 100 && (
+                  <motion.div
+                    initial={{ y: 50 }}
+                    animate={{ y: 5 }}
+                    exit={{ display: "none" }}
+                    className="w-[4rem] absolute mt-10 hidden lg:block 2xl:mt-40 left-20">
+                    <Mouse />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           )}
         </AnimatePresence>
-        <AnimatePresence>
-          {props.init && props.loadVal == 100 && (
-            <motion.div
-              initial={{ y: 50 }}
-              animate={{ y: 5 }}
-              exit={{ display: "none" }}
-              className="w-[4rem] bottom-[5%] absolute left-[10%]">
-              <Mouse />
-            </motion.div>
-          )}
-        </AnimatePresence>
+
       </div>
     </div>
   )
