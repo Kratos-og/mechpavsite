@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const Hero = props => {
   const [isInView, setIsInView] = useState(true);
-
   useMotionValueEvent(props.progress, "change", (latest) => {
     if (latest.toFixed(2) == 0) {
       setIsInView(true)
