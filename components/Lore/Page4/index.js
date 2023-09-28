@@ -25,7 +25,7 @@ export default function Index(props) {
           transition: { delay: 0, duration: 0.2 },
         }}
       >
-        <div className="fixed top-10 mx-[5rem] flex flex-col overflow-hidden justify-center h-screen pointer-events-none gap-10 z-30">
+        <div className="fixed top-10 mx-[5rem] flex flex-col overflow-hidden justify-start mt-20 h-screen pointer-events-none gap-10 z-30">
 
           <AnimatePresence>
             {scroll == 1 && (
