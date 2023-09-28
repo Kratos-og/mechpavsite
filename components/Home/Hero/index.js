@@ -68,7 +68,7 @@ const Hero = props => {
           )}
         </AnimatePresence>
         <AnimatePresence>
-          {isInView && (
+          {props.init && props.loadVal == 100 && (
             <motion.div
               initial={{ y: 50 }}
               animate={{ y: 5 }}
