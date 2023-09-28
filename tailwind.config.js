@@ -10,6 +10,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'pavia-green': '#14fecd'
+      },
       screens: {
         '2xl': '2000px'
       }
