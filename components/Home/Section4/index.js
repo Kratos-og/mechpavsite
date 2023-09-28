@@ -1,5 +1,6 @@
 import { scroll, motion, useScroll, useTransform, useSpring, AnimatePresence, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import Button from "../../UI/Button"
 
 const Section = props => {
     const [isInView, setIsInView] = useState(false);
@@ -89,6 +90,15 @@ const Section = props => {
                     </AnimatePresence>
                 </div>
             </motion.div>
+            <AnimatePresence>
+        {isInView && (
+            <motion.div 
+            exit={{display:"none"}}
+            className="absolute flex top-[70%] left-[15%]">
+            <Button>LEARN MORE</Button>
+            </motion.div>
+            )}
+            </AnimatePresence>
         </div >
     )
 }
