@@ -1,0 +1,397 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v3.2.40",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0,
+        1
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "MARV_Capsule_Body"
+    },
+    {
+      "mesh": 1,
+      "name": "MARV_Capsule_Glass"
+    }
+  ],
+  "animations": [
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 0,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 0,
+            "path": "rotation"
+          }
+        },
+        {
+          "sampler": 2,
+          "target": {
+            "node": 0,
+            "path": "scale"
+          }
+        }
+      ],
+      "name": "MARV_Capsule_Body",
+      "samplers": [
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 9
+        },
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 10
+        },
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 11
+        }
+      ]
+    },
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 1,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 1,
+            "path": "rotation"
+          }
+        },
+        {
+          "sampler": 2,
+          "target": {
+            "node": 1,
+            "path": "scale"
+          }
+        }
+      ],
+      "name": "MARV_Capsule_Glass",
+      "samplers": [
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 12
+        },
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 13
+        },
+        {
+          "input": 8,
+          "interpolation": "LINEAR",
+          "output": 14
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "MP_CAPSULE",
+      "normalTexture": {
+        "index": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 1
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        },
+        "roughnessFactor": 0.5
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Mesh.009",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Mesh.010",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ],
+  "images": [
+    {
+      "name": "MP_Capsule_N",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Capsule_N.jpg"
+    },
+    {
+      "name": "MP_Capsule_A-MP_Capsule_T",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Capsule_A-MP_Capsule_T.png"
+    },
+    {
+      "name": "MP_Capsule_M",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Capsule_M.png"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 4102,
+      "max": [
+        0.15172076225280762,
+        2.109302282333374,
+        0.15370947122573853
+      ],
+      "min": [
+        -0.15172076225280762,
+        1.8258706331253052,
+        -0.103023000061512
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 4102,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 4102,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5123,
+      "count": 4176,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 648,
+      "max": [
+        0.09418857097625732,
+        2.102006673812866,
+        0.16202622652053833
+      ],
+      "min": [
+        -0.09441427141427994,
+        1.8486696481704712,
+        -0.08230672776699066
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 648,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 648,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 648,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 301,
+      "max": [
+        10
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 49224,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 49224,
+      "byteOffset": 49224
+    },
+    {
+      "buffer": 0,
+      "byteLength": 32816,
+      "byteOffset": 98448
+    },
+    {
+      "buffer": 0,
+      "byteLength": 8352,
+      "byteOffset": 131264
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7776,
+      "byteOffset": 139616
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7776,
+      "byteOffset": 147392
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5184,
+      "byteOffset": 155168
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1296,
+      "byteOffset": 160352
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1204,
+      "byteOffset": 161648
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 162852
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4816,
+      "byteOffset": 166464
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 171280
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 174892
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4816,
+      "byteOffset": 178504
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 183320
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "capsule_data.bin",
+      "byteLength": 186932
+    }
+  ]
+}

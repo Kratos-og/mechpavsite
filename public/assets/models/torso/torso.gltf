@@ -1,0 +1,371 @@
+{
+  "asset": {
+    "generator": "Khronos glTF Blender I/O v3.2.40",
+    "version": "2.0"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "MP_FRAME_TORSO",
+      "rotation": [
+        0.7071068286895752,
+        0,
+        0,
+        0.7071067094802856
+      ],
+      "scale": [
+        0.009999999776482582,
+        0.009999999776482582,
+        0.009999999776482582
+      ]
+    }
+  ],
+  "animations": [
+    {
+      "channels": [
+        {
+          "sampler": 0,
+          "target": {
+            "node": 0,
+            "path": "translation"
+          }
+        },
+        {
+          "sampler": 1,
+          "target": {
+            "node": 0,
+            "path": "rotation"
+          }
+        },
+        {
+          "sampler": 2,
+          "target": {
+            "node": 0,
+            "path": "scale"
+          }
+        }
+      ],
+      "name": "MP_FRAME_TORSO",
+      "samplers": [
+        {
+          "input": 12,
+          "interpolation": "LINEAR",
+          "output": 13
+        },
+        {
+          "input": 12,
+          "interpolation": "LINEAR",
+          "output": 14
+        },
+        {
+          "input": 12,
+          "interpolation": "LINEAR",
+          "output": 15
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "emissiveTexture": {
+        "index": 0
+      },
+      "name": "MP_FRAME",
+      "normalTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 2
+        },
+        "metallicRoughnessTexture": {
+          "index": 3
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Mesh.015",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2,
+            "TEXCOORD_1": 3,
+            "TEXCOORD_2": 4,
+            "TEXCOORD_3": 5,
+            "TEXCOORD_4": 6,
+            "TEXCOORD_5": 7,
+            "TEXCOORD_6": 8,
+            "TEXCOORD_7": 9,
+            "COLOR_0": 10
+          },
+          "indices": 11,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    }
+  ],
+  "images": [
+    {
+      "name": "MP_Frame_E",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_E.jpg"
+    },
+    {
+      "name": "MP_Frame_N",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_N.jpg"
+    },
+    {
+      "name": "MP_Frame_A",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_A.jpg"
+    },
+    {
+      "name": "MP_Frame_M-MP_Frame_R",
+      "uri": "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_M-MP_Frame_R.png"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 21770,
+      "max": [
+        32.44817352294922,
+        18.061111450195312,
+        -135.85073852539062
+      ],
+      "min": [
+        -32.44817352294922,
+        -16.20905113220215,
+        -226.8215789794922
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 21770,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5123,
+      "count": 21770,
+      "normalized": true,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5123,
+      "count": 31794,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 301,
+      "max": [
+        10
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 14,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 15,
+      "componentType": 5126,
+      "count": 301,
+      "type": "VEC3"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 261240,
+      "byteOffset": 0
+    },
+    {
+      "buffer": 0,
+      "byteLength": 261240,
+      "byteOffset": 261240
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 522480
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 696640
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 870800
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1044960
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1219120
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1393280
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1567440
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1741600
+    },
+    {
+      "buffer": 0,
+      "byteLength": 174160,
+      "byteOffset": 1915760
+    },
+    {
+      "buffer": 0,
+      "byteLength": 63588,
+      "byteOffset": 2089920
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1204,
+      "byteOffset": 2153508
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 2154712
+    },
+    {
+      "buffer": 0,
+      "byteLength": 4816,
+      "byteOffset": 2158324
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3612,
+      "byteOffset": 2163140
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "torso_data.bin",
+      "byteLength": 2166752
+    }
+  ]
+}

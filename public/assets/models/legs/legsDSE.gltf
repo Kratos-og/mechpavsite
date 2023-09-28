@@ -1,0 +1,402 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.2.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "MP_DS_Legs"
+        },
+        {
+            "mesh" : 1,
+            "name" : "MP_DS_Frame_Legs"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 0
+            },
+            "name" : "MP_DSE_ClassSpecific",
+            "normalTexture" : {
+                "index" : 1
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 3
+                },
+                "roughnessFactor" : 0.30000001192092896
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 4
+            },
+            "name" : "MP_FRAME",
+            "normalTexture" : {
+                "index" : 5
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 6
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 7
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh.023",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Mesh.024",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6,
+                        "TEXCOORD_1" : 7,
+                        "TEXCOORD_2" : 8,
+                        "TEXCOORD_3" : 9,
+                        "TEXCOORD_4" : 10,
+                        "TEXCOORD_5" : 11,
+                        "TEXCOORD_6" : 12,
+                        "TEXCOORD_7" : 13,
+                        "COLOR_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
+        },
+        {
+            "sampler" : 0,
+            "source" : 6
+        },
+        {
+            "sampler" : 0,
+            "source" : 7
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_DS_ClassSpecific_E",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_E.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_DS_ClassSpecific_N",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_N.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_DS_ClassSpecific_A-MP_DS_ClassSpecific_T",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_A-MP_DS_ClassSpecific_T.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_DS_ClassSpecific_M",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_M.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_E",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_E.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_N",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_N.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_A",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_A.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_Frame_M-MP_Frame_R",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_M-MP_Frame_R.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 5850,
+            "max" : [
+                0.5505397319793701,
+                1.6017296314239502,
+                0.3607740104198456
+            ],
+            "min" : [
+                -0.5342254042625427,
+                -0.0007744478061795235,
+                -0.3122660517692566
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 5850,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 5850,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 28746,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 7920,
+            "max" : [
+                0.5140084624290466,
+                1.549950122833252,
+                0.31139758229255676
+            ],
+            "min" : [
+                -0.49639663100242615,
+                0.004168858285993338,
+                -0.28632301092147827
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 7920,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5123,
+            "count" : 7920,
+            "normalized" : true,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 11580,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 70200,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 70200,
+            "byteOffset" : 70200
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 46800,
+            "byteOffset" : 140400
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 57492,
+            "byteOffset" : 187200
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 95040,
+            "byteOffset" : 244692
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 95040,
+            "byteOffset" : 339732
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 434772
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 498132
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 561492
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 624852
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 688212
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 751572
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 814932
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 878292
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 63360,
+            "byteOffset" : 941652
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 23160,
+            "byteOffset" : 1005012
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1028172,
+            "uri" : "legsDSE.bin"
+        }
+    ]
+}

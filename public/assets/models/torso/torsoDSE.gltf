@@ -1,0 +1,542 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.2.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "PavSeat",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.009999999776482582,
+                0.009999999776482582,
+                0.009999999776482582
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "MP_DS_Torso"
+        },
+        {
+            "mesh" : 2,
+            "name" : "MP_DS_Frame_Torso"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "MP_CHAIR",
+            "normalTexture" : {
+                "index" : 0
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                },
+                "roughnessFactor" : 0.30000001192092896
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 3
+            },
+            "name" : "MP_DSE_ClassSpecific",
+            "normalTexture" : {
+                "index" : 4
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 5
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 6
+                },
+                "roughnessFactor" : 0.30000001192092896
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                1,
+                1,
+                1
+            ],
+            "emissiveTexture" : {
+                "index" : 7
+            },
+            "name" : "MP_FRAME",
+            "normalTexture" : {
+                "index" : 8
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 9
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 10
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh.026",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "COLOR_0" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Mesh.025",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7
+                    },
+                    "indices" : 8,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Mesh.027",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 9,
+                        "NORMAL" : 10,
+                        "TEXCOORD_0" : 11,
+                        "TEXCOORD_1" : 12,
+                        "TEXCOORD_2" : 13,
+                        "TEXCOORD_3" : 14,
+                        "TEXCOORD_4" : 15,
+                        "TEXCOORD_5" : 16,
+                        "TEXCOORD_6" : 17,
+                        "TEXCOORD_7" : 18,
+                        "COLOR_0" : 19
+                    },
+                    "indices" : 20,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        },
+        {
+            "sampler" : 0,
+            "source" : 5
+        },
+        {
+            "sampler" : 0,
+            "source" : 6
+        },
+        {
+            "sampler" : 0,
+            "source" : 7
+        },
+        {
+            "sampler" : 0,
+            "source" : 8
+        },
+        {
+            "sampler" : 0,
+            "source" : 9
+        },
+        {
+            "sampler" : 0,
+            "source" : 10
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Seat_N",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Seat_N.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Seat_A",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Seat_A.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_Seat_M",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Seat_M.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_DS_ClassSpecific_E",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_E.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_DS_ClassSpecific_N",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_N.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_DS_ClassSpecific_A-MP_DS_ClassSpecific_T",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_A-MP_DS_ClassSpecific_T.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_DS_ClassSpecific_M",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_DS_ClassSpecific_M.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_E",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_E.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_N",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_N.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MP_Frame_A",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_A.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "MP_Frame_M-MP_Frame_R",
+            "uri" : "https://mechpavs.vercel.app/assets/models/textures/MP_Frame_M-MP_Frame_R.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 7528,
+            "max" : [
+                15.537012100219727,
+                14.447677612304688,
+                -187.58494567871094
+            ],
+            "min" : [
+                -15.537012100219727,
+                -10.620955467224121,
+                -237.862060546875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 7528,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 7528,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 7528,
+            "normalized" : true,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 11076,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 3314,
+            "max" : [
+                0.3214249312877655,
+                2.4931390285491943,
+                0.3995269536972046
+            ],
+            "min" : [
+                -0.3214244544506073,
+                1.3404327630996704,
+                -0.24674870073795319
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 3314,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 3314,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 16812,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 13278,
+            "max" : [
+                0.324481725692749,
+                2.171168327331543,
+                0.18061161041259766
+            ],
+            "min" : [
+                -0.324481725692749,
+                1.3585073947906494,
+                -0.1355646848678589
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 13278,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5123,
+            "count" : 13278,
+            "normalized" : true,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 20,
+            "componentType" : 5123,
+            "count" : 19302,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 90336,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 90336,
+            "byteOffset" : 90336
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60224,
+            "byteOffset" : 180672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 60224,
+            "byteOffset" : 240896
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 22152,
+            "byteOffset" : 301120
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 39768,
+            "byteOffset" : 323272
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 39768,
+            "byteOffset" : 363040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 26512,
+            "byteOffset" : 402808
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 33624,
+            "byteOffset" : 429320
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 159336,
+            "byteOffset" : 462944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 159336,
+            "byteOffset" : 622280
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 781616
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 887840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 994064
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1100288
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1206512
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1312736
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1418960
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1525184
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 106224,
+            "byteOffset" : 1631408
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 38604,
+            "byteOffset" : 1737632
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1776236,
+            "uri" : "torsoDSE.bin"
+        }
+    ]
+}
