@@ -11,13 +11,6 @@ const Section = props => {
         }
         else { setIsInView(false) }
     })
-    const opacity = useTransform(
-        props.progress,
-        // Map x from these values:
-        [0.165, 0.33, 0.495],
-        // Into these values:
-        [0, 1, 0]
-    )
 
     return (
         <div className="w-full h-screen snap-child-start relative overflow-hidden">
@@ -93,13 +86,13 @@ const Section = props => {
                 </div>
             </motion.div>
             <AnimatePresence>
-        {isInView && (
-            <motion.div 
-            exit={{display:"none"}}
-            className="absolute flex top-[70%] left-[15%]">
-            <Button>LEARN MORE</Button>
-            </motion.div>
-            )}
+                {isInView && (
+                    <motion.div
+                        exit={{ display: "none" }}
+                        className="absolute flex top-[70%] left-[15%]">
+                        <Button>LEARN MORE</Button>
+                    </motion.div>
+                )}
             </AnimatePresence>
         </div >
     )

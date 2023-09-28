@@ -1,6 +1,7 @@
 import { scroll, motion, useScroll, useTransform, useSpring, AnimatePresence, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Button from "../../UI/Button"
+import Link from "next/link";
 
 const Section = props => {
     const [isInView, setIsInView] = useState(false);
@@ -11,13 +12,6 @@ const Section = props => {
         }
         else { setIsInView(false) }
     })
-    const opacity = useTransform(
-        props.progress,
-        // Map x from these values:
-        [0.825, 0.95],
-        // Into these values:
-        [0, 1]
-    )
 
     return (
         <div className="w-full h-screen snap-child-start relative overflow-x-hidden">
@@ -91,13 +85,15 @@ const Section = props => {
                 </div>
             </motion.div>
             <AnimatePresence>
-        {isInView && (
-            <motion.div 
-            exit={{display:"none"}}
-            className="absolute flex top-[70%] left-[15%]">
-            <Button>LEARN MORE</Button>
-            </motion.div>
-            )}
+                {isInView && (
+                    <Link href="/pavs">
+                        <motion.div
+                            exit={{ display: "none" }}
+                            className="absolute flex top-[70%] left-[15%]">
+                            <Button>LEARN MORE</Button>
+                        </motion.div>
+                    </Link>
+                )}
             </AnimatePresence>
         </div >
     )
