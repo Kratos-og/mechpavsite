@@ -9,15 +9,15 @@ const PavItem = props => {
                     <div className="font-bold mt-4">{props.name}</div>
                     <div className="flex flex-col gap-2 mt-4">
                         <div className="text-xs mt-1 font-bold flex items-center justify-between">
-                            <div className=" text-gray">Rarity</div>
+                            <div>Rarity</div>
                             <div>{props.rarity}</div>
                         </div>
                         <div className="text-xs mt-1 font-bold flex items-center justify-between">
-                            <div className=" text-gray">Mech Compatible</div>
+                            <div>Mech Compatible</div>
                             <div>{props.mechCompatible ? 'Yes' : 'No'}</div>
                         </div>
                         <div className="text-xs mt-1 font-bold flex items-center justify-between">
-                            <div className=" text-gray">Supply</div>
+                            <div>Supply</div>
                             <div>{props.supply}</div>
                         </div>
                     </div>

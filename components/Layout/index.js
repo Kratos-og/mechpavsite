@@ -4,6 +4,7 @@ import LeftMenu from "./LeftMenu";
 import { motion } from "framer-motion";
 import useMenuAnimation from "./LeftMenu/useMenu";
 import Footer from "./Footer";
+
 const Layout = props => {
     const [showMenu, setShowMenu] = useState(false);
     const scope = useMenuAnimation(showMenu);
@@ -24,7 +25,7 @@ const Layout = props => {
             <motion.div animate={{ scale: showMenu ? 0.85 : 1, transition: { duration: 0.4 } }} className="overflow-x-hidden">
                 {props.children}
             </motion.div>
-            <Footer />
+            {props.component !== 'Home' && <Footer />}
         </div>
     )
 }

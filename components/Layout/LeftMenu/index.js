@@ -28,8 +28,8 @@ const LeftMenu = props => {
                                 </div>
                             </motion.div>
                         </div>
-                        <nav className="menu">
-                            <ul className="flex flex-col gap-5 mt-28">
+                        <nav className="menu mt-28">
+                            <ul className="flex flex-col gap-5">
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/')}>Home</li>
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('mint')}>Mech Mint</li>
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('pavs')}>Pavs</li>

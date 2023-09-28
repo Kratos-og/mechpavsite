@@ -63,8 +63,6 @@ const Pavs = props => {
         document.activeElement.blur();
     }
 
-    let names = data.map(item => item.name);
-    console.log(names)
     let filteredData = [...data];
     //filters
     filteredData = filteredData.filter(item => {
@@ -113,28 +111,30 @@ const Pavs = props => {
     const pavs = filteredData.map(pav => <PavItem key={pav.id} {...pav} />)
 
     return (
-        <div className="min-h-screen w-full h-full bg-gradient py-10 relative pt-28" id="cont">
-            <div className="flex gap-6 w-full h-full mt-5 px-5 md:px-10">
-                <div className="w-[400px] blurredBg text-white hidden md:block">
-                    <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
+        <div className="min-h-screen w-full h-full bg-gradient py-10 relative pt-20" id="cont">
+            <div className="flex flex-col gap-7 w-full h-full mt-5 px-5 md:px-10">
+                <div className="flex items-center justify-end">
+                    <Sort sortType={sortType} sortOrder={sortOrder} setSortType={onSort} setSortOrder={setSortOrder} />
                 </div>
-                <div className="w-full flex flex-col gap-5">
-                    <div className="flex items-center justify-between">
-                        <div className="text-white font-exBold text-xl">Discover <span className="text-pavs-red">Pavs</span></div>
-                        <Sort sortType={sortType} sortOrder={sortOrder} setSortType={onSort} setSortOrder={setSortOrder} />
-                    </div>
-                    <div className="flex items-end pt-2 justify-end md:hidden">
-                        <div className="px-8 py-3 flex items-center font-bold justify-center gap-4 bg-pavs-red text-white rounded-lg" onClick={() => setShowMenu(!showMenu)}>
-                            <span>Filters</span>
-                            <HiFilter className="text-xl" />
-                        </div>
-                    </div>
-                    <div className={`w-[400px] bg-gradient text-white md:hidden py-5 fixed h-screen z-50 top-20 transition-all duration-100 ${showMenu ? 'left-0' : '-left-full'}`}>
-                        <IoCloseSharp className="text-2xl absolute top-5 right-5" onClick={() => setShowMenu(false)} />
+                <div className="flex gap-6">
+                    <div className="w-[400px] blurredBg text-white hidden md:block">
                         <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
                     </div>
-                    <div className="w-full flex flex-wrap gap-5">
-                        {pavs}
+                    <div className="w-full flex flex-col gap-5">
+
+                        <div className="flex items-end pt-2 justify-end md:hidden">
+                            <div className="px-8 py-3 flex items-center font-bold justify-center gap-4 bg-pavs-red text-white rounded-lg" onClick={() => setShowMenu(!showMenu)}>
+                                <span>Filters</span>
+                                <HiFilter className="text-xl" />
+                            </div>
+                        </div>
+                        <div className={`w-[400px] bg-gradient text-white md:hidden py-5 fixed h-screen z-50 top-20 transition-all duration-100 ${showMenu ? 'left-0' : '-left-full'}`}>
+                            <IoCloseSharp className="text-2xl absolute top-5 right-5" onClick={() => setShowMenu(false)} />
+                            <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
+                        </div>
+                        <div className="w-full flex flex-wrap gap-5">
+                            {pavs}
+                        </div>
                     </div>
                 </div>
             </div>
