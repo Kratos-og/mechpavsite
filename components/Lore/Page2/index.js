@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent } from 'framer-motion'
-import Mouse from '../../Layout/Model/mouse';
+import Mouse from '@/components/Home/Model/mouse';
 
 export default function Index(props) {
   let scroll = props.progress.get()?.toFixed(2);

@@ -7,7 +7,7 @@ import Page5 from "../../components/Lore/Page5";
 import Page6 from "../../components/Lore/Page6";
 import Page7 from "../../components/Lore/Page7";
 
-export default function Lore() {
+const Lore = () => {
   const ref = useRef();
   let { scrollYProgress } = useScroll({
     container: ref,
@@ -19,13 +19,13 @@ export default function Lore() {
   });
   console.log(scroll)
   return (
-    <div className={`w-full h-screen relative snap-parent-y-mandatory`} ref={ref}>
+    <div className={`w-full h-screen relative snap-parent-y-mandatory`} ref={ref} id="cont">
       <motion.div
         className="fixed h-screen snap-child-start top-0 w-full pointer-events-none -z-10">
-        <img src={'/assets/images/star.jpg'} alt="space" className="top-0 fixed w-[98%] z-20 h-full" />
+        <img src={'/assets/images/star.jpg'} alt="space" className="top-0 fixed w-[98%] h-screen z-20" />
         <motion.img
           animate={{ scale: 1 + scroll * 20, transition: { duration: 0.5 } }}
-          src={'/assets/images/spacewindow.png'} alt="spacewindow" className="top-0 fixed w-[99%] h-full z-30 object-cover" />
+          src={'/assets/images/spacewindow.png'} alt="spacewindow" className="top-0 fixed w-[99%] h-screen z-30 object-cover" />
       </motion.div>
       <Page2 progress={scrollYProgress} />
       <Page3 progress={scrollYProgress} />
@@ -36,3 +36,7 @@ export default function Lore() {
     </div>
   );
 }
+
+Lore.DisplayName = 'Lore';
+
+export default Lore;
