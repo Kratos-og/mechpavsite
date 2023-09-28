@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
-import { motion, useMotionValueEvent } from 'framer-motion'
+import { AnimatePresence, motion, useMotionValueEvent } from 'framer-motion'
+import Mouse from '../../Layout/Model/mouse';
 
 export default function Index(props) {
-  const [scroll,setScroll] = useState(0);
-  useMotionValueEvent(props.progress, "change", (latest) => {
-    setScroll(latest.toFixed(2))
-  });
+  let scroll = props.progress.get()?.toFixed(2);
+
   return (
-    <div className="w-full h-screen">
-    <motion.div 
-    initial={{opacity:0,y:0}}
-    animate={{opacity: scroll<=0.7 ? 1 : 0 ,y: scroll>=0.2 ? -200 : 0, transition:{delay:0,duration:0.2}}}
-    className="fixed  w-full h-full text-[10rem] top-0 flex justify-center items-center font-bold">LORE</motion.div>
+    <div className="w-full h-screen snap-child-start relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: scroll >= 0.2 ? '-40%' : 0, transition: { delay: 0, duration: 0.4 } }}
+        className=" w-full h-screen flex flex-col text-[10rem] top-20 fixed justify-center items-center font-bold  pointer-events-none">
+        <span>LORE</span>
+        <AnimatePresence>
+          {scroll <= 0.2 ? <motion.div exit={{ opacity: 0 }} className='w-16 '>
+            <Mouse />
+          </motion.div> : null}
+        </AnimatePresence>
+      </motion.div>
     </div>
   )
 }
