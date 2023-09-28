@@ -6,7 +6,7 @@ import Section4 from "../components/Home/Section4";
 import Model from "../components/Home/Model";
 import { useScroll, motion, AnimatePresence } from "framer-motion";
 
-export default function Home() {
+export default function Home(props) {
   const [init, setInit] = useState(false);
   const [modelLoad, setModelLoad] = useState(0);
 
