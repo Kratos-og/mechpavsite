@@ -12,10 +12,10 @@ export default function Index(props) {
   };
 
   useEffect(() => {
-    if (scroll == 0.20 && current > 0) {
+    if (scroll == 1 && current > 0) {
       setCurrent(0);
     }
-    if(scroll == 0.20 && scroll <= 0.33){
+    if(scroll == 1){
       setInView(true)
     }else{setInView(false)}
   }, [scroll])
@@ -30,14 +30,14 @@ export default function Index(props) {
         }}
       >
         <div className="fixed top-10 mx-[5rem] flex overflow-hidden items-center h-screen pointer-events-none gap-10 z-30 w-full">
-          <div className="overflow-hidden absolute top-[25%]">
+          <div className="overflow-hidden absolute top-[27%] left-[32%] pt-16">
           <AnimatePresence>
             {inView && (
               <motion.div 
               initial={{opacity:0}}
               animate={{opacity:1,transition:{delay:0.3,duration:0.5}}}
               className="text-2xl pb-5">
-              OVERVIEW
+              The Crimson Lake
             </motion.div>
               )}
               </AnimatePresence>
@@ -51,18 +51,12 @@ export default function Index(props) {
                       y: 0,
                       transition: { delay: 0, duration: 1 },
                     }}
-                    className="flex flex-col gap-5 text-sm  pt-5 tracking-widest w-[50rem] "
+                    className="flex flex-col gap-5 text-sm  pt-5 tracking-widest w-[25rem] "
                   >
                     <AnimatePresence>{inView && (
-                      <AnimatedTextWord words={"Pavs are 4-legged creatures from the planet Pavia. They are light-dependant animals that can create energy and clean air by converting sunlight within their bodies. They are composed of a variety of unknown elements believed to be derived from nearby, meteors and asteroids from local solar systems. Pavs are incredibly resistant and even have the unique ability to regenerate lost limbs, though this process has been found to be slow."} handleCurrent={handleCurrent} value={1}/>
+                      <AnimatedTextWord words={"The Crimson Lake is located in the center of the Pavia forest and is known for its distinctive red water surrounded by trees with red leaves. Not much is known about the Crimson Lake but it is said to have special but dangerous powers for those who drink it. Early settlers on Pavia do not know if it was there before or after Pavs arrived."} handleCurrent={handleCurrent} value={1}/>
                       )}</AnimatePresence>
-                    <AnimatePresence>{inView &&  current>=1 && (
-                      <AnimatedTextWord words={"Pavs are curious and inquisitive in nature and though they are extremely loyal, generally avoid interactions with humans. They are telepathic and have no vocal cords to speak so communicate by producing grunts and whistles from time to time,"} value={2} handleCurrent={handleCurrent}/>
-                      )}</AnimatePresence>
-                  
-                    <AnimatePresence>{inView && current == 2 && (
-                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={5} loop={1}/>
-                      )}</AnimatePresence>
+                    
                       
                   </motion.div>
                 </div>
@@ -71,15 +65,26 @@ export default function Index(props) {
           </div>
           <AnimatePresence>
             {inView && (
+                <>
+              <motion.div
+                initial={{ y: 500 }}
+                animate={{
+                    y: 25,
+                    transition: { delay: 0, duration: 1 },
+                }}
+                className="absolute right-[10%] w-[30%]">
+                <img src={"/assets/images/crimson_lake.png"} alt={"pavs"} className="rounded-lg" />
+              </motion.div>
               <motion.div
                 initial={{ y: 500 }}
                 animate={{
                   y: 25,
                   transition: { delay: 0, duration: 1 },
                 }}
-                className="absolute right-[10%] w-[35%]">
-                <img src={"/assets/img/pav.png"} alt={"pavs"} className="rounded-lg" />
+                className="absolute left-0 w-[30%]">
+                <img src={"/assets/images/lake.jpg"} alt={"pavs"} className="rounded-lg" />
               </motion.div>
+                    </>
             )}
           </AnimatePresence>
         </div>

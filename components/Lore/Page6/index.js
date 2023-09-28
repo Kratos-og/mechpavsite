@@ -12,10 +12,10 @@ export default function Index(props) {
   };
 
   useEffect(() => {
-    if (scroll == 0.20 && current > 0) {
+    if (scroll == 0.8 && current > 0) {
       setCurrent(0);
     }
-    if(scroll == 0.20 && scroll <= 0.33){
+    if(scroll == 0.8){
       setInView(true)
     }else{setInView(false)}
   }, [scroll])
@@ -37,7 +37,7 @@ export default function Index(props) {
               initial={{opacity:0}}
               animate={{opacity:1,transition:{delay:0.3,duration:0.5}}}
               className="text-2xl pb-5">
-              OVERVIEW
+              Mech PAVs
             </motion.div>
               )}
               </AnimatePresence>
@@ -54,14 +54,17 @@ export default function Index(props) {
                     className="flex flex-col gap-5 text-sm  pt-5 tracking-widest w-[50rem] "
                   >
                     <AnimatePresence>{inView && (
-                      <AnimatedTextWord words={"Pavs are 4-legged creatures from the planet Pavia. They are light-dependant animals that can create energy and clean air by converting sunlight within their bodies. They are composed of a variety of unknown elements believed to be derived from nearby, meteors and asteroids from local solar systems. Pavs are incredibly resistant and even have the unique ability to regenerate lost limbs, though this process has been found to be slow."} handleCurrent={handleCurrent} value={1}/>
+                      <AnimatedTextWord words={"Over the following years, PAVS would slowly adapt to human settlement. Acclimatizing to their culture and interacting more with humans on a day-to-day basis. Humans would eventually work closely alongside PAVS, allowing them to study and utilize their energy capabilities while they helped humanity consume and store power. This would inevitably lead to the invention of the Mech PAV, an energy-powered armored suit, that is powered by consuming energy from the PAV controlling it. Mech suits were designed to explore terrain normally unobtainable to humans such as dense forests and rocky mountains. Heavy and durable, these suits allowed PAVS to gather resources from different parts of Pavia, however not every PAV is Mech compatible and compatibility depends entirely on how much energy a PAV produces."} handleCurrent={handleCurrent} value={1}/>
                       )}</AnimatePresence>
-                    <AnimatePresence>{inView &&  current>=1 && (
-                      <AnimatedTextWord words={"Pavs are curious and inquisitive in nature and though they are extremely loyal, generally avoid interactions with humans. They are telepathic and have no vocal cords to speak so communicate by producing grunts and whistles from time to time,"} value={2} handleCurrent={handleCurrent}/>
+                    <AnimatePresence>{inView &&  current==1 && (
+                        <>
+                      <div className="text-2xl">Catching Pavs</div>
+                      <motion.div className=" h-[1.5px] bg-[#14fecd]" initial={{ width: 0 }} animate={{ width: inView ? '100%' : 0, transition: { delay: 0.2 } }}></motion.div>
+                      </>
                       )}</AnimatePresence>
                   
-                    <AnimatePresence>{inView && current == 2 && (
-                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={5} loop={1}/>
+                    <AnimatePresence>{inView && current == 1 && (
+                      <Typewriter words={["In recent years PAVS have evolved to become illusive and harder to find, settling in dense parts of the forest and mountains well out of reach from humans, making them rarer to find. To counter this, humans would catch PAVS in an attempt to tame and befriend them"]} typeSpeed={5} loop={1}/>
                       )}</AnimatePresence>
                       
                   </motion.div>
@@ -78,7 +81,7 @@ export default function Index(props) {
                   transition: { delay: 0, duration: 1 },
                 }}
                 className="absolute right-[10%] w-[35%]">
-                <img src={"/assets/img/pav.png"} alt={"pavs"} className="rounded-lg" />
+                <img src={"/assets/images/mech_pav.png"} alt={"pavs"} className="rounded-lg" />
               </motion.div>
             )}
           </AnimatePresence>
