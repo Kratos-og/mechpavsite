@@ -15,10 +15,10 @@ export default function Index(props) {
       <motion.div
         initial={{ opacity: 0, y: -100, scale: 0 }}
         animate={{ opacity: 1, y: inView ? '-40%' : 0, scale: 0.7, transition: { delay: 0, duration: 0.4 } }}
-        className=" w-full h-screen flex flex-col text-[10rem] top-20 fixed justify-center items-center font-bold  pointer-events-none pb-[10%]">
+        className=" w-full h-screen flex flex-col lg:text-[10rem] lg:top-20 fixed justify-center items-center font-bold  pointer-events-none pb-[10%] text-[5rem] top-6">
         <span>LORE</span>
         <AnimatePresence>
-          {!inView ? <motion.div exit={{ opacity: 0 }} className='w-16 absolute bottom-[35%]'>
+          {!inView ? <motion.div exit={{ opacity: 0 }} className='w-16 absolute bottom-[35%] max-sm:hidden'>
             <Mouse />
           </motion.div> : null}
         </AnimatePresence>
