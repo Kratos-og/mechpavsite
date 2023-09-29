@@ -3,7 +3,7 @@ import {
   motion,
   useMotionValueEvent,
 } from "framer-motion";
-import Mouse from "../Model/mouse";
+import Mouse from "@/components/UI/Svg/Mouse";
 import { useState } from "react";
 
 const Hero = props => {
@@ -48,7 +48,7 @@ const Hero = props => {
         }
         <AnimatePresence>
           {isInView && (
-            <div className="w-full relative z-40 relative text-[11px] ml-[15%] tracking-widest">
+            <div className="w-full z-40 relative text-[11px] ml-[15%] tracking-widest">
               <div className="w-1/4 flex flex-col -mt-10 relative">
                 <motion.div
                   initial={{ width: "100%" }}
