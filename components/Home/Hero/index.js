@@ -3,7 +3,7 @@ import {
   motion,
   useMotionValueEvent,
 } from "framer-motion";
-import Mouse from "../Model/mouse";
+import Mouse from "@/components/UI/Svg/Mouse";
 import { useState } from "react";
 
 const Hero = props => {

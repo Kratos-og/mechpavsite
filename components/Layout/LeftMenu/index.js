@@ -33,7 +33,7 @@ const LeftMenu = props => {
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/')}>Home</li>
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('mint')}>Mech Mint</li>
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('pavs')}>Pavs</li>
-                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('lore')}>Lore</li>
+                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('Lore')}>Lore</li>
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('builder')}>Mech Builder</li>
                             </ul>
                         </nav>
