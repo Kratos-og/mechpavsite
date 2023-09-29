@@ -14,7 +14,7 @@ const Section = props => {
 
     return (
         <div className="w-full h-screen snap-child-start relative overflow-hidden">
-            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col px-40 justify-center">
+            <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col lg:px-40 lg:justify-center px-10 max-sm:justify-start max-sm:pt-[6rem]">
                 <div className="relative w-fit overflow-hidden">
                     <AnimatePresence>
                         {isInView && (
@@ -23,7 +23,7 @@ const Section = props => {
                                     initial={{ visibility: "hidden" }}
                                     animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 1 } }}
                                     exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
-                                    className="text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[3px]">
+                                    className="lg:text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[3px] text-[2rem]">
                                     <span>MECH MINT</span>
                                 </motion.p>
                                 <motion.div
@@ -49,7 +49,7 @@ const Section = props => {
                     </AnimatePresence>
                 </div>
 
-                <div className="relative w-1/4 overflow-hidden">
+                <div className="relative lg:w-1/4 overflow-hidden w-[50%]">
                     <AnimatePresence>
                         {isInView && (
                             <>
@@ -57,7 +57,7 @@ const Section = props => {
                                     initial={{ visibility: "hidden" }}
                                     animate={{ visibility: isInView ? "visible" : "hidden", transition: { delay: 0.4, duration: 0 } }}
                                     exit={{ visibility: "hidden", transition: { delay: 0.1, duration: 0.1 } }}
-                                    className="z-40 relative text-[11px] tracking-widest">
+                                    className="z-40 relative lg:text-[11px] tracking-widest text-[0.5rem]">
                                     <div className="flex flex-col gap-4">
                                         <div>BUY A MECH CRATE AND RECEIVE 5 RANDOM PARTS THAT ASSEMBLE A COMPLETE MECH.</div>
                                         <div>BUILD YOUR MECH TO USE AS AN AVATAR TO EXPLORE PAVIA. COLLECT, BUILD, AND INTERCHANGE MECH PARTS USING OUR UNIQUE MECH BUILDER.</div>

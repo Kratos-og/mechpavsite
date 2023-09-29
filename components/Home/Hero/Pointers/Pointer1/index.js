@@ -9,7 +9,7 @@ const Pointer1 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] "
+                className="text-[10px] text-[#14fecd]"
             >
                 <span>Apollo joint connectors. <br />Version 2</span>
             </motion.div>

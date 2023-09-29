@@ -9,7 +9,7 @@ const Pointer10 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px]"
+                className="text-[10px] text-[#14fecd]"
             >
                 <span>Apollo joint <br />connectors. <br />Version 2</span>
             </motion.div>
@@ -30,9 +30,9 @@ const Pointer10 = props => {
                     r="5"
                 />
                 <motion.path
-                    initial={{ pathLength: 0 }}
+                    initial={{ pathLength: 0 ,pathOffset:1}}
                     animate={{
-                        pathLength: 1,
+                        pathLength: 1 ,pathOffset:0,
                         transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
                     }}
                     d="M39,17l104.3,0.1c38.7,0,62,30.3,62,69l2.8,100.7"

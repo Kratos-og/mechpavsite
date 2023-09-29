@@ -20,9 +20,9 @@ const Pointer11 = props => {
                     r="5"
                 />
                 <motion.path
-                    initial={{ pathLength: 0 }}
+                    initial={{ pathLength: 0,pathOffset:1 }}
                     animate={{
-                        pathLength: 1,
+                        pathLength: 1,pathOffset:0,
                         transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
                     }}
                     d="M488.9,24.4l-375.6-1c-38.9,0.3-70.1,32.3-69.5,71.2l0,122.9"
@@ -37,7 +37,7 @@ const Pointer11 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px]"
+                className="text-[10px] text-[#14fecd]"
             >
                 <span>Power Charge <br /> Indicators</span>
             </motion.div>

@@ -16,8 +16,8 @@ const Hero = props => {
   })
   return (
     <div className="w-full h-screen snap-child-start overflow-x-hidden" id="hero">
-      <div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center">
-        <div className="text-[208px] 2xl:text-[298px] font-bold tracking-wider relative overflow-hidden">
+      <div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center max-sm:justify-start max-sm:top-[20%]">
+        <div className="lg:text-[208px] 2xl:text-[298px] font-bold tracking-wider relative overflow-hidden text-[3rem]">
           <AnimatePresence>
             {isInView && (
               <>
@@ -48,8 +48,8 @@ const Hero = props => {
         }
         <AnimatePresence>
           {isInView && (
-            <div className="w-full relative z-40 relative text-[11px] ml-[15%] tracking-widest">
-              <div className="w-1/4 flex flex-col -mt-10 relative">
+            <div className="w-full relative z-40 text-[11px] ml-[15%] tracking-widest max-sm:pt-10">
+              <div className="w-1/4 flex flex-col -mt-10 relative max-sm:w-1/2">
                 <motion.div
                   initial={{ width: "100%" }}
                   animate={{ left: "100%", transition: { delay: 0.8, duration: 1 } }}
@@ -58,7 +58,7 @@ const Hero = props => {
                 <motion.div
                   initial={{ visibility: "hidden" }}
                   animate={{ visibility: "visible", transition: { delay: 0.5 } }}
-                  className="flex flex-col gap-4">
+                  className="flex flex-col gap-4 max-sm:text-[0.4rem] ">
                   <div>CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT HERE ON <b>OCTOBER 19TH</b>.</div>
                   <div>5 CLASSES, 5 PARTS, 5 SKINS AND OVER 1 MILLION COMBINATIONS. COLLECT AND BUILD INTERCHANGEABLE MECH PARTS TO BUILD A FULLY USEABLE AVATAR.</div>
                 </motion.div>

@@ -20,9 +20,9 @@ const Pointer9 = props => {
                     r="5"
                 />
                 <motion.path
-                    initial={{ pathLength: 0 }}
+                    initial={{ pathLength: 0 ,pathOffset:1}}
                     animate={{
-                        pathLength: 1,
+                        pathLength: 1,pathOffset:0,
                         transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
                     }}
                     d="M286.5,256.4H90.2c-38.7,0-62-30.3-62-69L25.3,26.7"
@@ -37,7 +37,7 @@ const Pointer9 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] -ml-5"
+                className="text-[10px] -ml-5 text-[#14fecd]"
             >
                 <span>Mass Amplifier</span>
             </motion.div>

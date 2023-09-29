@@ -20,9 +20,9 @@ const Pointer12 = props => {
                     r="1.5"
                 />
                 <motion.path
-                    initial={{ pathLength: 0 }}
+                    initial={{ pathLength: 0,pathOffset:1 }}
                     animate={{
-                        pathLength: 1,
+                        pathLength: 1,pathOffset:0,
                         transition: { delay: 0.5, duration: 1, ease: "easeInOut" },
                     }}
                     d="M92.2,9.2H60.1"
@@ -38,7 +38,7 @@ const Pointer12 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] mt-3"
+                className="text-[10px] mt-3 text-[#14fecd]"
             >
                 <span>Pav Capsule Housing</span>
             </motion.div>
