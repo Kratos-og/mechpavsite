@@ -18,8 +18,8 @@ const Pav = props => {
     }, [router.isReady])
 
     return (
-        <div className="min-h-screen w-full bg-gradient py-20 text-white" id="cont">
-            <div className=" container m-auto">
+        <div className="min-h-screen w-full bg-[url('/assets/images/star.jpg')] bg-fixed py-20 text-white" id="cont">
+            <div className="container m-auto">
                 <div className="flex flex-col mt-10 gap-5 items-start px-10 xl:px-20">
                     <Link href="/pavs">
                         <div className="bg-white p-1 px-7 cursor-pointer hover:bg-pavs-red transition-all group rounded-full w-fit">
@@ -36,7 +36,7 @@ const Pav = props => {
                         <img src={`/assets/images/pavs/${pavDetails?.name}.jpg`} className="w-full rounded-md" />
                     </div>
                 </div>
-                <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20">
+                <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20 backdrop-saturate-200 bg-white/10 rounded-lg">
                     <div className="text-xl font-bold">Pav Sales History</div>
                     <Sales name={pavDetails?.name} image={`/assets/images/pavs/gen${pavDetails?.generation}/${pavDetails?.name}_sm.gif`} />
                 </div>

@@ -5,7 +5,7 @@ export default function Index({handleCurrent,words,value}) {
     let [text] = useTypewriter({
     words: [words],
     loop: 1,
-    typeSpeed:5,delaySpeed:1000,
+    typeSpeed:0,
     onLoopDone: () => handleCurrent(value)
   })
   return (

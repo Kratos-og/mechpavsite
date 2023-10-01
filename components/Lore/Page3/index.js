@@ -59,7 +59,7 @@ export default function Index(props) {
                     )}</AnimatePresence>
 
                     <AnimatePresence>{inView && current == 2 && (
-                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={5} loop={1} />
+                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={0} loop={1} />
                     )}</AnimatePresence>
 
                   </motion.div>

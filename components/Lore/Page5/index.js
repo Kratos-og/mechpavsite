@@ -75,7 +75,7 @@ export default function Index(props) {
                     )}</AnimatePresence>
 
                     <AnimatePresence>{inView && current == 1 && (
-                      <Typewriter words={["In the year 61AK humans would colonize Pavia, discovering thousands of different types of PAVS, many of which had unique abilities and traits. Humans would later come to accept PAVS as an integral part of the planet's ecosystem and in the year 62AK the people of Pavia passed a law stating that no human could harm a PAV making them a protected species throughout the planet. Although they are independent and free-thinking animals, humans primarily kept their distance from PAVS as their behavior could be irrational and unpredictable, staying clear of mountains and jungle areas where PAVS presided."]} typeSpeed={5} loop={1} />
+                      <Typewriter words={["In the year 61AK humans would colonize Pavia, discovering thousands of different types of PAVS, many of which had unique abilities and traits. Humans would later come to accept PAVS as an integral part of the planet's ecosystem and in the year 62AK the people of Pavia passed a law stating that no human could harm a PAV making them a protected species throughout the planet. Although they are independent and free-thinking animals, humans primarily kept their distance from PAVS as their behavior could be irrational and unpredictable, staying clear of mountains and jungle areas where PAVS presided."]} typeSpeed={0} loop={1} />
                     )}</AnimatePresence>
 
                   </motion.div>
