@@ -125,9 +125,9 @@ const Section = (props) => {
           {isInView && (
             <motion.div
               exit={{ display: "none" }}
-              className="relative flex lg:pt-4"
+              className="relative flex lg:pt-4 ml-1"
             >
-                <div className="max-md:scale-75">
+                <div className="max-md:scale-75 pointer-events-auto">
               <Button>LEARN MORE</Button>
                 </div>
             </motion.div>
