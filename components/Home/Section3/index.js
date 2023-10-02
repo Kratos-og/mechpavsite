@@ -24,8 +24,8 @@ const Section = (props) => {
 
   return (
     <div className="w-full h-screen snap-child-start relative overflow-x-hidden">
-      <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-end justify-center">
-        <div className="w-1/2">
+      <motion.div className="fixed pointer-events-none w-full left-0 lg:top-0 top-24 h-screen flex flex-col items-end lg:justify-center">
+        <div className="w-full lg:w-1/2 max-md:pl-10">
           <div className="relative w-fit overflow-hidden">
             <AnimatePresence>
               {isInView && (
@@ -68,7 +68,7 @@ const Section = (props) => {
                       },
                       { x: "100%", transition: { delay: 0.1, duration: 0.1 } },
                     ]}
-                    className="bg-white absolute h-3/5 top-5"
+                    className="bg-white absolute h-3/5 lg:top-5 top-3"
                   ></motion.div>
                 </>
               )}

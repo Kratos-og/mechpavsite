@@ -80,9 +80,9 @@ const Hero = (props) => {
                               initial={{ y: 50 }}
                               animate={{ y: 5 }}
                               exit={{ display: "none" }}
-                              className="pt-4 relative flex justify-center w-full max-md:hidden"
+                              className="pt-2 relative flex justify-center w-full max-md:hidden"
                             >
-                              <div className="w-16">
+                              <div className="w-16 mb-1">
                                 <Mouse />
                               </div>
                             </motion.div>

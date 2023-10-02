@@ -79,10 +79,11 @@ const Button = (props) => {
                 ></motion.div>
                 <motion.div
                     initial={{ display: "none", y: 0 }}
-                    animate={{ display: "block", transition: { delay: 1.5 } }}
+                    animate={{ display: "block", transition: { delay: 2.5 } }}
                     className=" text-[#000000] uppercase absolute z-[2] text-xs w-full h-full hover:bg-transparent pt-5 bg-[#14fecd]"
                 >
-                    <motion.div className=" w-full h-4 overflow-hidden ">
+                    <motion.div 
+                    className=" w-full h-4 overflow-hidden">
                         <div className="group-hover:-translate-y-3 duration-300 ease-in-out">
                             {props.children}
                         </div>
