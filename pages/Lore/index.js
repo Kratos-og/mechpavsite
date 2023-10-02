@@ -45,7 +45,7 @@ const Lore = () => {
           <motion.div
           initial={{x:0,y:0}}
           animate={{x:[30,0,15,0,10,0,5,0],transition:{delay:0.5,duration:0.5}}}
-          className="text-[#14fecd] text-[10rem]">
+          className="text-[#14fecd] lg:text-[10rem] max-md:text-[5rem] pb-5">
           <TbLockExclamation/>
           </motion.div>
           LOCKED
