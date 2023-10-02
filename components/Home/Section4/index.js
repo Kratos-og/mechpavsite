@@ -56,7 +56,7 @@ const Section = (props) => {
                     { width: "100%", transition: { delay: 0, duration: 0.1 } },
                     { x: "100%", transition: { delay: 0.1, duration: 0.1 } },
                   ]}
-                  className="bg-white absolute h-3/5 top-5"
+                  className="bg-white absolute h-3/5 lg:top-5 top-3"
                 ></motion.div>
               </>
             )}
@@ -120,7 +120,7 @@ const Section = (props) => {
                     <Link href="/pavs">
                       <motion.div
                         exit={{ display: "none" }}
-                        className="relative flex lg:pt-5 max-md:scale-75 mb-1"
+                        className="relative flex lg:pt-5 max-md:scale-75 mb-1 pointer-events-auto ml-1"
                       >
                         <Button>LEARN MORE</Button>
                       </motion.div>

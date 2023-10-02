@@ -8,12 +8,12 @@ const Button = (props) => {
                 <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "100%", transition: { delay: 2.5, duration: 0.5 } }}
-                    className="absolute bg-gray-500 h-[0.01rem] top-0 group-hover:hidden"
+                    className="absolute bg-gray-500 h-[0.05rem] top-0"
                 />
                 <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: "100%", transition: { delay: 2.7, duration: 0.5 } }}
-                    className="absolute bg-gray-500 h-[0.01rem] bottom-0 group-hover:hidden"
+                    className="absolute bg-gray-500 h-[0.01rem] bottom-0"
                 />
                 {/* Top & Bottom Border */}
 
@@ -23,7 +23,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute right-0 w-[0.15rem] h-full text-[#14fecd] rotate-180 group-hover:translate-x-1 duration-200 ease-in-out"
+                        " absolute right-0 w-[0.15rem] h-full text-[#14fecd] rotate-180 group-hover:translate-x-0 translate-x-1 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -40,7 +40,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute left-0 w-[0.15rem] h-full text-[#14fecd] group-hover:-translate-x-1 duration-200 ease-in-out"
+                        " absolute left-0 w-[0.15rem] h-full text-[#14fecd] -translate-x-1 group-hover:translate-x-0 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -75,18 +75,19 @@ const Button = (props) => {
                         display: "block",
                         transition: { delay: 2, duration: 0.5 },
                     }}
-                    className="bg-black absolute py-2 z-[1]"
+                    className="bg-black absolute py-4 z-[1]"
                 ></motion.div>
                 <motion.div
                     initial={{ display: "none", y: 0 }}
-                    animate={{ display: "block", transition: { delay: 1.5 } }}
-                    className=" text-[#14fecd] uppercase absolute z-[2] text-xs w-full h-full hover:bg-[#14fecd] pt-5"
+                    animate={{ display: "block", transition: { delay: 2.5 } }}
+                    className=" text-[#000000] uppercase absolute z-[2] text-xs w-full h-full hover:bg-transparent pt-5 bg-[#14fecd]"
                 >
-                    <motion.div className=" w-full h-4 overflow-hidden ">
+                    <motion.div 
+                    className=" w-full h-4 overflow-hidden">
                         <div className="group-hover:-translate-y-3 duration-300 ease-in-out">
                             {props.children}
                         </div>
-                        <div className=" text-black mb-3 group-hover:-translate-y-4 duration-300 ease-in-out">
+                        <div className=" text-[#14fecd] mb-3 group-hover:-translate-y-4 duration-300 ease-in-out">
                             {props.children}
                         </div>
                     </motion.div>
