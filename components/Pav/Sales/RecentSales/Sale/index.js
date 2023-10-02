@@ -3,10 +3,10 @@ import { minifyAddress } from "../../../../Common/utils";
 
 const Sale = props => {
     return (
-        <div className="w-full bg-gradient blurredBg h-20 p-3 rounded-md flex items-center gap-16">
+        <div className="w-fit px-7 bg-gradient blurredBg h-20 p-3 rounded-md flex items-center gap-16">
             <img src={props.image} className="w-14 rounded-md" />
             <div className="flex flex-col gap-1 text-sm">
-                <div className="font-bold text-xs text-pavs-red">Asset Name</div>
+                <div className="font-bold text-xs text-pavs-red whitespace-nowrap">Asset Name</div>
                 <div className="font-semibold">{props.name}</div>
             </div>
             <div className="flex flex-col gap-1 text-sm">
@@ -17,10 +17,10 @@ const Sale = props => {
                 <div className="font-bold text-xs text-pavs-red">Marketplace</div>
                 <div className="font-semibold">CNFT.IO</div>
             </div>
-            <div className="flex flex-col gap-1 text-sm">
+            {/* <div className="flex flex-col gap-1 text-sm">
                 <div className="font-bold text-xs text-pavs-red">Seller</div>
                 <div className="font-semibold">addr1....ajaodmod</div>
-            </div>
+            </div> */}
             <div className="flex flex-col gap-1 text-sm">
                 <div className="font-bold text-xs text-pavs-red">Buyer</div>
                 <div className="font-semibold">addr1....ada11es</div>

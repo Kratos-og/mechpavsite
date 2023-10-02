@@ -38,7 +38,7 @@ const Pav = props => {
                 </div>
                 <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20">
                     <div className="text-xl font-bold">Pav Sales History</div>
-                    <Sales name={pavDetails?.name} image={`/assets/images/pavs/gen${pavDetails?.generation}/${pavDetails?.name}_sm.gif`} />
+                    <Sales name={pavDetails?.name} image={`/assets/images/pavs/${pavDetails?.name}.jpg`} />
                 </div>
             </div>
         </div>
