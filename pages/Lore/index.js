@@ -6,6 +6,7 @@ import Page4 from "../../components/Lore/Page4";
 import Page5 from "../../components/Lore/Page5";
 import Page6 from "../../components/Lore/Page6";
 import Page7 from "../../components/Lore/Page7";
+import {TbLockExclamation} from "react-icons/tb"
 
 const Lore = () => {
   const ref = useRef();
@@ -20,7 +21,34 @@ const Lore = () => {
   console.log(scroll)
   return (
     <div className={`w-full h-screen relative snap-parent-y-mandatory`} ref={ref} id="cont">
-      <motion.div
+        <div
+      className="h-[35rem] flex justify-center items-center relative overflow-hidden pt-28"
+      id="cont"
+    >
+      <div>
+        <motion.div
+          initial={{ width: "100%" }}
+          animate={{
+            left: "100%",
+            transition: { delay: 0.5, duration: 1 },
+          }}
+          className="w-full bg-black h-full top-20 absolute"
+        ></motion.div>
+        <motion.span
+          initial={{ visibility: "hidden" }}
+          animate={{
+            visibility: "visible",
+            transition: { delay: 0.5 },
+          }}
+          exit={{ visibility: "hidden" }}
+          className="lg:-ml-3 lg:text-[8rem] 2xl:text-[298px] font-bold tracking-wider text-[3rem] flex flex-col items-center" 
+        >
+          <TbLockExclamation/>
+          LOCKED
+        </motion.span>
+      </div>
+    </div>
+      {/* <motion.div
         className="fixed h-screen snap-child-start top-0 w-full pointer-events-none -z-10">
         <img src={'/assets/images/star.jpg'} alt="space" className="top-0 fixed w-[98%] h-screen z-20" />
         <motion.img
@@ -32,7 +60,7 @@ const Lore = () => {
       <Page4 progress={scrollYProgress} />
       <Page5 progress={scrollYProgress} />
       <Page6 progress={scrollYProgress} />
-      <Page7 progress={scrollYProgress} />
+      <Page7 progress={scrollYProgress} /> */}
     </div>
   );
 }
