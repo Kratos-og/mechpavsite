@@ -20,9 +20,8 @@ const Lore = () => {
   });
   console.log(scroll)
   return (
-    <div className={`w-full h-screen relative snap-parent-y-mandatory`} ref={ref} id="cont">
-        <div
-      className="h-[35rem] flex justify-center items-center relative overflow-hidden pt-28"
+    <div
+      className="h-screen flex justify-center items-center relative overflow-hidden"
       id="cont"
     >
       <div>
@@ -32,7 +31,7 @@ const Lore = () => {
             left: "100%",
             transition: { delay: 0.5, duration: 1 },
           }}
-          className="w-full bg-black h-full top-20 absolute"
+          className="w-full bg-black h-full"
         ></motion.div>
         <motion.span
           initial={{ visibility: "hidden" }}
@@ -43,25 +42,31 @@ const Lore = () => {
           exit={{ visibility: "hidden" }}
           className="lg:-ml-3 lg:text-[8rem] 2xl:text-[298px] font-bold tracking-wider text-[3rem] flex flex-col items-center" 
         >
+          <motion.div
+          initial={{x:0,y:0}}
+          animate={{x:[30,0,15,0,10,0,5,0],transition:{delay:0.5,duration:0.5}}}
+          className="text-[#14fecd] text-[10rem]">
           <TbLockExclamation/>
+          </motion.div>
           LOCKED
         </motion.span>
       </div>
     </div>
-      {/* <motion.div
-        className="fixed h-screen snap-child-start top-0 w-full pointer-events-none -z-10">
-        <img src={'/assets/images/star.jpg'} alt="space" className="top-0 fixed w-[98%] h-screen z-20" />
-        <motion.img
-          animate={{ scale: 1 + scroll * 20, transition: { duration: 0.5 } }}
-          src={'/assets/images/spacewindow.png'} alt="spacewindow" className="top-0 fixed w-[99%] h-screen z-30 object-cover" />
-      </motion.div>
-      <Page2 progress={scrollYProgress} />
-      <Page3 progress={scrollYProgress} />
-      <Page4 progress={scrollYProgress} />
-      <Page5 progress={scrollYProgress} />
-      <Page6 progress={scrollYProgress} />
-      <Page7 progress={scrollYProgress} /> */}
-    </div>
+    // <div className={`w-full h-screen relative snap-parent-y-mandatory`} ref={ref} id="cont">
+    //   <motion.div
+    //     className="fixed h-screen snap-child-start top-0 w-full pointer-events-none -z-10">
+    //     <img src={'/assets/images/star.jpg'} alt="space" className="top-0 fixed w-[98%] h-screen z-20" />
+    //     <motion.img
+    //       animate={{ scale: 1 + scroll * 20, transition: { duration: 0.5 } }}
+    //       src={'/assets/images/spacewindow.png'} alt="spacewindow" className="top-0 fixed w-[99%] h-screen z-30 object-cover" />
+    //   </motion.div>
+    //   <Page2 progress={scrollYProgress} />
+    //   <Page3 progress={scrollYProgress} />
+    //   <Page4 progress={scrollYProgress} />
+    //   <Page5 progress={scrollYProgress} />
+    //   <Page6 progress={scrollYProgress} />
+    //   <Page7 progress={scrollYProgress} />
+    // </div>
   );
 }
 
