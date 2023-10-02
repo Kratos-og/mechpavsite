@@ -26,7 +26,7 @@ export default function Index(props) {
           transition: { delay: 0, duration: 0.2 },
         }}
       >
-        <div className="fixed top-10 mx-[5rem] flex overflow-hidden mt-40 h-screen pointer-events-none gap-10 z-30 w-full">
+        <div className="fixed top-0 lg:mx-[5rem] px-6 flex overflow-hidden lg:py-40 max-md:mt-28 h-screen pointer-events-none lg:gap-10 z-30 w-full max-md:flex-wrap max-md:flex-col ">
           <AnimatePresence>
             {inView && (
               <motion.div
@@ -35,19 +35,19 @@ export default function Index(props) {
                   y: 25,
                   transition: { delay: 0, duration: 1 },
                 }}
-                className="w-[22%]">
-                <img src={"/assets/images/crimson_lake.png"} alt={"pavs"} className="rounded-lg" />
+                className="lg:w-[22%] w-full">
+                <img src={"/assets/images/crimson_lake.png"} alt={"pavs"} className="rounded-lg h-[80%] lg:h-full object-cover w-full" />
               </motion.div>
             )}
           </AnimatePresence>
 
-          <div className="w-[40%]">
+          <div className="lg:w-[40%] flex justify-center items-center flex-col">
             <AnimatePresence>
               {inView && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.5 } }}
-                  className="text-2xl pb-5">
+                  className="lg:text-2xl lg:pb-5">
                   The Crimson Lake
                 </motion.div>
               )}
@@ -62,7 +62,7 @@ export default function Index(props) {
                       y: 0,
                       transition: { delay: 0, duration: 1 },
                     }}
-                    className="flex flex-col gap-5 text-sm  pt-5 tracking-widest"
+                    className="flex flex-col lg:gap-5 text-[10px] max-md:leading-4 lg:text-sm tracking-widest pt-2"
                   >
                     <AnimatePresence>{inView && (
                       <AnimatedTextWord words={"The Crimson Lake is located in the center of the Pavia forest and is known for its distinctive red water surrounded by trees with red leaves. Not much is known about the Crimson Lake but it is said to have special but dangerous powers for those who drink it. Early settlers on Pavia do not know if it was there before or after Pavs arrived."} handleCurrent={handleCurrent} value={1} />
@@ -83,8 +83,8 @@ export default function Index(props) {
                   y: 25,
                   transition: { delay: 0, duration: 1 },
                 }}
-                className="w-[22%]">
-                <img src={"/assets/images/lake.jpg"} alt={"pavs"} className="rounded-lg" />
+                className="lg:w-[22%] w-full">
+                <img src={"/assets/images/lake.jpg"} alt={"pavs"} className="rounded-lg h-[80%] lg:h-full object-cover w-full" />
               </motion.div>
             )}
           </AnimatePresence>

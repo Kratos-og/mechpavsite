@@ -19,7 +19,7 @@ export default function Index(props) {
   }, [scroll]);
 
   return (
-    <div className="w-full h-screen snap-child-start">
+    <div className="w-full h-screen snap-child-start container">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
@@ -27,14 +27,14 @@ export default function Index(props) {
           transition: { delay: 0, duration: 0.2 },
         }}
       >
-        <div className="fixed top-0 mx-[5rem] flex overflow-hidden mt-60 h-screen pointer-events-none gap-10 z-30 w-full">
-          <div className="overflow-hidden w-1/2">
+        <div className="fixed top-0 pointer-events-none z-30 w-full px-5 lg:px-20 mt-28 lg:mt-40 flex gap-x-10 flex-wrap-reverse lg:flex-nowrap ">
+          <div className="overflow-hidden w-full lg:w-[60%]">
             <AnimatePresence>
               {inView && (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.5 } }}
-                  className="text-2xl pb-5">
+                  className="lg:text-2xl lg:pb-5 pb-2">
                   OVERVIEW
                 </motion.div>
               )}
@@ -49,7 +49,7 @@ export default function Index(props) {
                       y: 0,
                       transition: { delay: 0, duration: 1 },
                     }}
-                    className="flex flex-col gap-5 text-sm  pt-5 tracking-widest "
+                    className="flex flex-col lg:gap-5 gap-2 text-[10px] max-md:leading-4 lg:text-sm pt-5 tracking-widest"
                   >
                     <AnimatePresence>{inView && (
                       <AnimatedTextWord words={"Pavs are 4-legged creatures from the planet Pavia. They are light-dependant animals that can create energy and clean air by converting sunlight within their bodies. They are composed of a variety of unknown elements believed to be derived from nearby, meteors and asteroids from local solar systems. Pavs are incredibly resistant and even have the unique ability to regenerate lost limbs, though this process has been found to be slow."} handleCurrent={handleCurrent} value={1} />
@@ -59,7 +59,7 @@ export default function Index(props) {
                     )}</AnimatePresence>
 
                     <AnimatePresence>{inView && current == 2 && (
-                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={5} loop={1} />
+                      <Typewriter words={["They can often be found in rough terrains such as mountains and forests and. although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament."]} typeSpeed={0} loop={1} />
                     )}</AnimatePresence>
 
                   </motion.div>
@@ -70,13 +70,13 @@ export default function Index(props) {
           <AnimatePresence>
             {inView && (
               <motion.div
-                initial={{ y: 500 }}
+                initial={{ y: 200 }}
                 animate={{
                   y: 25,
-                  transition: { delay: 0, duration: 1 },
+                  transition: { delay: 0, duration: 1.5 },
                 }}
-                className="absolute right-[10%] w-[35%]">
-                <img src={"/assets/images/pav.png"} alt={"pavs"} className="rounded-lg" />
+                className="w-full lg:w-[40%] ">
+                <img src={"/assets/images/pav.png"} alt={"pavs"} className="rounded-lg h-[80%] lg:h-full object-cover w-full" />
               </motion.div>
             )}
           </AnimatePresence>

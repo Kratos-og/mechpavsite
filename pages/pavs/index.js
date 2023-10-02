@@ -111,13 +111,13 @@ const Pavs = props => {
     const pavs = filteredData.map(pav => <PavItem key={pav.id} {...pav} />)
 
     return (
-        <div className="min-h-screen w-full h-full bg-gradient py-10 relative pt-20" id="cont">
+        <div className="min-h-screen w-full h-full bg-[url('/assets/images/star.jpg')] bg-fixed py-10 relative pt-20" id="cont">
             <div className="flex flex-col gap-7 w-full h-full mt-5 px-5 md:px-10">
                 <div className="flex items-center justify-end">
                     <Sort sortType={sortType} sortOrder={sortOrder} setSortType={onSort} setSortOrder={setSortOrder} />
                 </div>
                 <div className="flex gap-6">
-                    <div className="w-[400px] blurredBg text-white hidden md:block">
+                    <div className="w-[400px] backdrop-saturate-200 bg-white/10 text-white hidden md:block rounded-lg">
                         <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
                     </div>
                     <div className="w-full flex flex-col gap-5">
