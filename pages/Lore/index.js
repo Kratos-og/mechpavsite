@@ -38,20 +38,17 @@ const Lore = () => {
     <div className="bg-[url('/assets/images/star.jpg')] bg-fixed relative" id="cont">
       <motion.img
           initial={{scale:1}}
-          animate={[{ scale: 5, transition: { delay:1.5,duration: 2 } },{display:"none",transition:{delay:3.5}}]}
+          animate={[{ scale: 5, transition: { delay:1,duration: 1.5 } },{display:"none",transition:{delay:2}}]}
           src={"/assets/images/spacewindow.png"}
           alt="spacewindow"
           className="top-0 fixed w-screen h-screen z-30 object-cover"
         />
       <motion.div 
       initial={{opacity:1,y:0}}
-      animate={{opacity:0,y:100,display:"none",transition:{delay:1.5,duration:2}}}
+      animate={{opacity:0,y:100,display:"none",transition:{delay:1,duration:1.5}}}
       className="h-screen w-screen">
         <div className="flex justify-center items-center h-screen w-screen flex-col absolute">
           <p className="text-9xl font-bold pt-16">LORE</p>
-          <div className="w-16">
-          <Mouse />
-          </div>
         </div>
       </motion.div>
 
@@ -59,7 +56,7 @@ const Lore = () => {
 
             <motion.div
             initial={{opacity:0,y:50,display:"none"}}
-            animate={{opacity:1,y:[50,0],display:"block",transition:{delay:2,duration:0.5}}}
+            animate={{opacity:1,y:[50,0],display:"block",transition:{delay:1.5,duration:0.5}}}
             >
               <First_Part />
               <Second_Part/>

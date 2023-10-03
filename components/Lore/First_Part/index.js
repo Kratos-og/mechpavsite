@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 export default function Index() {
   return (
-    <div className="h-screen w-screen lg:px-40 px-10 flex flex-col justify-center">
+    <div className="h-screen w-screen lg:px-40 px-10 flex flex-col justify-center max-md:mt-16">
       <motion.div>
         <div className=" flex lg:gap-10 gap-2 max-md:flex-col-reverse">
           <div className="w-full">
-            <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-1">
+            <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-2 pt-2">
               PAVS
             </p>
             <p className="lg:text-sm text-justify text-[0.60rem]">
@@ -30,16 +30,16 @@ export default function Index() {
           <div className="lg:w-[40rem]">
             <img
               src="assets/images/pav.png"
-              alt="hi"
-              className="rounded-xl max-md:h-24 w-full object-cover"
+              alt="PAV"
+              className="rounded-xl w-full object-cover max-md:h-[10rem]"
             />
           </div>
         </div>
         <div>
-          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-1">
+          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-2 pt-2">
             Origins
           </p>
-          <div className="flex flex-col lg:gap-3 gap-1 lg:text-sm text-[0.60rem] text-justify">
+          <div className="flex flex-col lg:gap-3 gap-2 lg:text-sm text-[0.60rem] text-justify">
             <p>
               PAVS were first discovered when Pavia Corp was exploring the
               planet Pavia on an expedition mission. The team would discover
@@ -64,7 +64,7 @@ export default function Index() {
           </div>
         </div>
         <div>
-          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:my-3 mb-1">
+          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:my-3 mb-2 pt-2">
             Settlement on Pavia
           </p>
           <p className="lg:text-sm text-[0.60rem] text-justify">
