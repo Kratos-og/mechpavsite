@@ -32,37 +32,38 @@ const Lore = () => {
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScroll(latest.toFixed(2));
   });
-  console.log(scroll);
+
 
   return (
     <div className="bg-[url('/assets/images/star.jpg')] bg-fixed relative" id="cont">
-      <div className="h-screen w-screen">
-        <div className="flex justify-center items-center absolute top-0 h-screen w-screen flex-col">
+      <motion.img
+          initial={{scale:1}}
+          animate={[{ scale: 5, transition: { delay:1.5,duration: 2 } },{display:"none",transition:{delay:3.5}}]}
+          src={"/assets/images/spacewindow.png"}
+          alt="spacewindow"
+          className="top-0 fixed w-screen h-screen z-30 object-cover"
+        />
+      <motion.div 
+      initial={{opacity:1,y:0}}
+      animate={{opacity:0,y:100,display:"none",transition:{delay:1.5,duration:2}}}
+      className="h-screen w-screen">
+        <div className="flex justify-center items-center h-screen w-screen flex-col absolute">
           <p className="text-9xl font-bold pt-16">LORE</p>
           <div className="w-16">
           <Mouse />
           </div>
         </div>
+      </motion.div>
 
-        <motion.img
-          animate={{ scale: 1 + scroll * 5, transition: { duration: 0.5 } }}
-          src={"/assets/images/spacewindow.png"}
-          alt="spacewindow"
-          className="top-0 fixed w-screen h-screen z-30 object-cover"
-        />
-      </div>
+      <div className="w-screen h-screen">
 
-      <div className="w-screen h-screen overflow-hidden">
-        <AnimatePresence>
-          {scroll >= 0.7 && (
             <motion.div
-            initial={{opacity:0,y:50}}
-            animate={{opacity:1,y:0,transition:{delay:0.1,duration:0.5}}}
+            initial={{opacity:0,y:50,display:"none"}}
+            animate={{opacity:1,y:[50,0],display:"block",transition:{delay:2,duration:0.5}}}
             >
               <First_Part />
+              <Second_Part/>
             </motion.div>
-          )}
-        </AnimatePresence>
 
       </div>
     </div>
