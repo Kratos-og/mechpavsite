@@ -18,7 +18,7 @@ const Pav = props => {
     }, [router.isReady])
 
     return (
-        <div className="min-h-screen w-full bg-[url('/assets/images/star.jpg')] bg-fixed py-20 text-white" id="cont">
+        <div className="min-h-screen w-full bg-black bg-fixed py-20 text-white" id="cont">
             <div className="container m-auto">
                 <div className="flex flex-col mt-10 gap-5 items-start px-10 xl:px-20">
                     <Link href="/pavs">

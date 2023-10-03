@@ -3,7 +3,7 @@ import Item from "./Item";
 const PavDetails = props => {
     return (
         <div className="w-full h-full rounded-xl md:p-10 relative">
-            <div className="flex gap-5 flex-wrap md:overflow-auto py-4 border-secondary relative justify-center">
+            <div className="flex gap-10 flex-wrap md:overflow-auto py-4 border-secondary relative justify-center">
                 {/* <CgPushChevronDownO className="z-40 absolute text-2xl bottom-2 -right-0"/> */}
                 <Item image="speed" value={props.speed} name="speed">
                     Pav&apos;s remarkable speed and agility make them nifty navigators, deftly dodging obstacles and threats.

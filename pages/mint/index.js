@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function index() {
   return (
     <div
-      className="h-[35rem] w-screen flex justify-center items-center relative overflow-hidden pt-28 bg-[url('/assets/images/star.jpg')] bg-fixed"
+      className="h-screen w-screen flex justify-center items-center relative overflow-hidden bg-fixed"
       id="cont"
     >
       <div>
@@ -13,7 +13,7 @@ export default function index() {
             left: "100%",
             transition: { delay: 0.5, duration: 1 },
           }}
-          className="w-full bg-black h-full top-20 absolute"
+          className="w-full bg-black h-full absolute"
         ></motion.div>
         <motion.span
           initial={{ visibility: "hidden" }}
@@ -22,7 +22,7 @@ export default function index() {
             transition: { delay: 0.5 },
           }}
           exit={{ visibility: "hidden" }}
-          className="lg:-ml-3 lg:text-[8rem] 2xl:text-[298px] font-bold tracking-wider text-[3rem]"
+          className=" lg:text-[8rem] 2xl:text-[200px] whitespace-nowrap font-bold tracking-wider text-[3rem]"
         >
           COMING SOON
         </motion.span>

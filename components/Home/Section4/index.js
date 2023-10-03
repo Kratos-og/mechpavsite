@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import Button from "../../UI/Button";
+import Footer from "@/components/Layout/Footer";
 
 const Section = (props) => {
   const [isInView, setIsInView] = useState(false);
@@ -132,6 +133,9 @@ const Section = (props) => {
           </AnimatePresence>
         </div>
       </motion.div>
+      <div className="absolute bottom-0 m-auto w-full flex items-center justify-center">
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import Button from "../../UI/Button";
+import Link from "next/link";
 
 const Section = (props) => {
   const [isInView, setIsInView] = useState(false);
@@ -122,20 +123,20 @@ const Section = (props) => {
           </AnimatePresence>
 
           <AnimatePresence>
-          {isInView && (
-            <motion.div
-              exit={{ display: "none" }}
-              className="relative flex lg:pt-4 ml-1"
-            >
-                <div className="max-md:scale-75 pointer-events-auto">
-              <Button>LEARN MORE</Button>
-                </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            {isInView && (
+              <Link href={"/mint"}>
+                <motion.div
+                  exit={{ display: "none" }}
+                  className="relative flex lg:pt-4 ml-1"
+                >
+                  <div className="max-md:scale-75 pointer-events-auto">
+                    <Button>LEARN MORE</Button>
+                  </div>
+                </motion.div>
+              </Link>
+            )}
+          </AnimatePresence>
         </div>
-
-        
       </motion.div>
     </div>
   );

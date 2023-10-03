@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Button = (props) => {
     return (
         <div className="bg-black flex justify-center items-center">
-            <button className=" w-[30rem] h-[6rem] relative flex group justify-center items-center">
+            <button className="w-[30rem] h-[6rem] relative flex group justify-center items-center">
                 {/* Top & Bottom Border */}
                 <motion.div
                     initial={{ width: 0 }}

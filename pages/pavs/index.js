@@ -111,7 +111,7 @@ const Pavs = props => {
     const pavs = filteredData.map(pav => <PavItem key={pav.id} {...pav} />)
 
     return (
-        <div className="min-h-screen w-full h-full bg-[url('/assets/images/star.jpg')] bg-fixed py-10 relative pt-20" id="cont">
+        <div className="min-h-screen w-full h-full bg-black bg-fixed py-10 relative pt-20" id="cont">
             <div className="flex flex-col gap-7 w-full h-full mt-5 px-5 md:px-10">
                 <div className="flex items-center justify-end">
                     <Sort sortType={sortType} sortOrder={sortOrder} setSortType={onSort} setSortOrder={setSortOrder} />
