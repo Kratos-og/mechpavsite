@@ -2,14 +2,14 @@
 import { motion } from "framer-motion";
 export default function Index() {
   return (
-    <div className="h-screen w-screen lg:px-40 px-10 flex flex-col justify-center max-md:mt-16">
+    <div className="w-screen container m-auto snap-child-start px-10 flex flex-col justify-center items-center min-h-screen py-16">
       <motion.div>
         <div className=" flex lg:gap-10 gap-2 max-md:flex-col-reverse">
-          <div className="w-full">
-            <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-2 pt-2">
+          <div className="w-full lg:w-3/5">
+            <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
               PAVS
             </p>
-            <p className="lg:text-sm text-justify text-[0.60rem]">
+            <p className="text-xs lg:text-sm text-justify">
               PAVS are 4-legged creatures from the planet Pavia. They are
               light-dependant animals that can create energy and clean air by
               converting sunlight within their bodies. They are composed of a
@@ -27,7 +27,7 @@ export default function Index() {
               humans due to their short temperament.
             </p>
           </div>
-          <div className="lg:w-[40rem]">
+          <div className="lg:w-2/5">
             <img
               src="assets/images/pav.png"
               alt="PAV"
@@ -35,11 +35,11 @@ export default function Index() {
             />
           </div>
         </div>
-        <div>
-          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:mb-3 mb-2 pt-2">
+        <div className="mt-5">
+          <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
             Origins
           </p>
-          <div className="flex flex-col lg:gap-3 gap-2 lg:text-sm text-[0.60rem] text-justify">
+          <div className="flex flex-col lg:gap-3 gap-2 lg:text-sm text-xs text-justify">
             <p>
               PAVS were first discovered when Pavia Corp was exploring the
               planet Pavia on an expedition mission. The team would discover
@@ -63,11 +63,11 @@ export default function Index() {
             </p>
           </div>
         </div>
-        <div>
-          <p className="lg:text-2xl font-bold border-b-[1px] border-white lg:pb-3 lg:my-3 mb-2 pt-2">
+        <div className="mt-5">
+          <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
             Settlement on Pavia
           </p>
-          <p className="lg:text-sm text-[0.60rem] text-justify">
+          <p className="lg:text-sm text-xs text-justify">
             It is believed that since the crash that brought them here, PAVS
             would spread across the land, multiplying and evolving into
             different forms. Over the next 40 years, their bodies would produce
@@ -77,6 +77,9 @@ export default function Index() {
             form rivers and oceans, becoming habitable for humanity. In the year
             2AP, the first PAVS would be discovered by humans and it is said
             that the very first PAV ever spotted was golden.
+          </p>
+          <p className=" snap-child-end mt-28 lg:hidden">
+
           </p>
         </div>
       </motion.div>

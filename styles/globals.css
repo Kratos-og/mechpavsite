@@ -85,6 +85,12 @@ model-viewer {
   flex: none;
 }
 
+.snap-child-end {
+  z-index: 10;
+  scroll-snap-align: end;
+  flex: none;
+}
+
 .progress-bar {
   position: fixed;
   top: 0;
