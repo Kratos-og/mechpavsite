@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import {TbLockExclamation} from "react-icons/tb"
 export default function index() {
   return (
     <div
@@ -15,6 +15,12 @@ export default function index() {
           }}
           className="w-full bg-black h-full absolute"
         ></motion.div>
+         <motion.div
+            initial={{ x: 0, y: 0 }}
+            animate={{ x: [30, 0, 15, 0, 10, 0, 5, 0], transition: { delay: 0.5, duration: 0.5 } }}
+            className="text-[#14fecd] lg:text-[10rem] max-md:text-[5rem] pb-5 w-full items-center flex justify-center">
+            <TbLockExclamation />
+          </motion.div>
         <motion.span
           initial={{ visibility: "hidden" }}
           animate={{
