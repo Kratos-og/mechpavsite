@@ -32,7 +32,7 @@ const Lore = () => {
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     setScroll(latest.toFixed(2));
   });
-
+console.log(scroll)
 
   return (
     <div className="bg-[url('/assets/images/star.jpg')] bg-fixed relative" id="cont">
@@ -57,7 +57,7 @@ const Lore = () => {
           initial={{ opacity: 0, y: 50, display: "none" }}
           animate={{ opacity: 1, y: [50, 0], display: "block", transition: { delay: 1.5, duration: 0.5 } }}
         >
-          <First_Part />
+          <First_Part progress={scrollYProgress}/>
           <Second_Part />
         </motion.div>
 
