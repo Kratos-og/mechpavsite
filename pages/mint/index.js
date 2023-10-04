@@ -3,7 +3,7 @@ import {TbLockExclamation} from "react-icons/tb"
 export default function index() {
   return (
     <div
-      className="h-screen w-screen flex justify-center items-center relative overflow-hidden bg-fixed"
+      className="h-screen w-screen flex justify-center items-center relative overflow-hidden bg-fixed px-10"
       id="cont"
     >
       <div>
@@ -18,8 +18,10 @@ export default function index() {
          <motion.div
             initial={{ x: 0, y: 0 }}
             animate={{ x: [30, 0, 15, 0, 10, 0, 5, 0], transition: { delay: 0.5, duration: 0.5 } }}
-            className="text-[#14fecd] lg:text-[10rem] max-md:text-[5rem] pb-5 w-full items-center flex justify-center">
+            className="text-black lg:text-[10rem] max-md:text-[4rem] pb-5 w-full items-center flex justify-center">
+              <div className="bg-white rounded-full p-4">
             <TbLockExclamation />
+              </div>
           </motion.div>
         <motion.span
           initial={{ visibility: "hidden" }}
@@ -28,7 +30,7 @@ export default function index() {
             transition: { delay: 0.5 },
           }}
           exit={{ visibility: "hidden" }}
-          className=" lg:text-[8rem] 2xl:text-[200px] whitespace-nowrap font-bold tracking-wider text-[3rem]"
+          className="lg:text-[8rem] 2xl:text-[200px] whitespace-nowrap font-bold tracking-wider text-[2.5rem]"
         >
           COMING SOON
         </motion.span>

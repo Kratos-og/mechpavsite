@@ -17,7 +17,7 @@ const Section = (props) => {
 
   return (
     <div className="w-full h-screen snap-child-start relative overflow-x-hidden">
-      <motion.div className="fixed pointer-events-none w-full left-0 lg:top-0 h-screen flex flex-col lg:px-40 px-10 lg:justify-center top-[8rem]">
+      <motion.div className="fixed pointer-events-none w-full left-0 lg:top-0 h-screen flex flex-col lg:px-40 px-10 lg:justify-center top-[6rem]">
         <div className="relative w-fit overflow-hidden">
           <AnimatePresence>
             {isInView && (
@@ -63,7 +63,7 @@ const Section = (props) => {
             )}
           </AnimatePresence>
         </div>
-        <div className="relative lg:w-1/4 w-[50%] overflow-hidden">
+        <div className="relative lg:w-1/4 w-full overflow-hidden">
           <AnimatePresence>
             {isInView && (
               <>
@@ -121,7 +121,7 @@ const Section = (props) => {
                     <Link href="/pavs">
                       <motion.div
                         exit={{ display: "none" }}
-                        className="relative flex lg:pt-5 max-md:scale-75 mb-1 pointer-events-auto ml-1"
+                        className="relative flex lg:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
                       >
                         <Button>LEARN MORE</Button>
                       </motion.div>

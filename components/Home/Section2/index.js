@@ -67,7 +67,7 @@ const Section = (props) => {
           </AnimatePresence>
         </div>
 
-        <div className="relative lg:w-1/4 overflow-hidden w-[50%]">
+        <div className="relative lg:w-1/4 overflow-hidden w-full">
           <AnimatePresence>
             {isInView && (
               <div className="relative">
@@ -127,9 +127,9 @@ const Section = (props) => {
               <Link href={"/mint"}>
                 <motion.div
                   exit={{ display: "none" }}
-                  className="relative flex lg:pt-4 ml-1"
+                  className="relative flex lg:pt-4 lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
                 >
-                  <div className="max-md:scale-75 pointer-events-auto">
+                  <div className=" pointer-events-auto">
                     <Button>LEARN MORE</Button>
                   </div>
                 </motion.div>

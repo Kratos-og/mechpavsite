@@ -16,8 +16,8 @@ const Hero = (props) => {
       className="w-full h-screen snap-child-start overflow-x-hidden"
       id="hero"
     >
-      <div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center max-sm:justify-start max-sm:top-[20%]">
-        <div className="relative overflow-hidden mt-[6%] max-md:pl-14">
+      <div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col items-center justify-center max-sm:justify-start max-sm:top-[20%] ">
+        <div className="relative overflow-hidden mt-[6%] max-md:pl-8">
           <AnimatePresence>
             {isInView && (
               <>
@@ -37,7 +37,7 @@ const Hero = (props) => {
                       transition: { delay: 0.5 },
                     }}
                     exit={{ visibility: "hidden" }}
-                    className="lg:-ml-3 lg:text-[208px] 2xl:text-[298px] font-bold tracking-wider text-[3rem]"
+                    className="lg:-ml-3 lg:text-[208px] 2xl:text-[298px] font-bold tracking-wider text-[3.3rem]"
                   >
                     MECH PAVS
                   </motion.span>
@@ -98,7 +98,7 @@ const Hero = (props) => {
         </div>
 
         {props.init && props.loadVal !== 100 && (
-          <motion.div className="flex items-end justify-end w-full px-40 max-md:items-center">
+          <motion.div className="flex items-end justify-end w-full lg:px-40 max-md:items-center max-md:absolute top-1/2 left-[-4rem]">
             <div className="w-60 h-7 border-opacity-20 border flex -mt-10">
               <div className="w-4/5 px-3 flex items-center ">
                 <motion.div

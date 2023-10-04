@@ -128,7 +128,7 @@ const Pavs = props => {
                                 <HiFilter className="text-xl" />
                             </div>
                         </div>
-                        <div className={`w-[400px] bg-gradient text-white md:hidden py-5 fixed h-screen z-50 top-20 transition-all duration-100 ${showMenu ? 'left-0' : '-left-full'}`}>
+                        <div className={`lg:w-[400px] w-screen bg-gradient text-white md:hidden py-5 fixed h-screen z-50 lg:top-20 top-0 transition-all duration-100 ${showMenu ? 'left-0' : '-left-full'}`}>
                             <IoCloseSharp className="text-2xl absolute top-5 right-5" onClick={() => setShowMenu(false)} />
                             <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
                         </div>
