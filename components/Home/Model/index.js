@@ -146,10 +146,10 @@ const Model = props => {
         <div className='w-full h-full fixed top-0 pointer-events-none overflow-hidden'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
             <model-viewer loading="eager" style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/mechpav2.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
-                <div slot="hotspot-joint" className='hidden md:block pointer-events-none' data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
+                <div slot="hotspot-joint" className='hidden  pointer-events-none' data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer1 />}
                 </div>
-                <div slot="hotspot-power" className='hidden md:block pointer-events-none' data-position="0.43510659046118166m 2.3449143444104177m -0.020444515362532667m" data-normal="0.3562008098499449m -0.7497927133223989m 0.5576126523949025m" data-visibility-attribute="visible">
+                <div slot="hotspot-power" className='hidden  pointer-events-none' data-position="0.43510659046118166m 2.3449143444104177m -0.020444515362532667m" data-normal="0.3562008098499449m -0.7497927133223989m 0.5576126523949025m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer2 />}
                 </div>
                 <div slot="hotspot-comms" className='hidden md:block pointer-events-none' data-position="0.552986303782536m 1.191848466727976m 0.0461898164571104m" data-normal="-0.008542551277086018m 0.04836819180809083m 0.9987930430469038m" data-visibility-attribute="visible">

@@ -18,7 +18,7 @@ export default function index() {
          <motion.div
             initial={{ x: 0, y: 0 }}
             animate={{ x: [30, 0, 15, 0, 10, 0, 5, 0], transition: { delay: 0.5, duration: 0.5 } }}
-            className="text-black lg:text-[10rem] max-md:text-[2rem] pb-5 w-full items-center flex justify-center">
+            className="text-black lg:text-[7rem] max-md:text-[2rem] pb-5 w-full items-center flex justify-center">
               <div className="bg-white rounded-full p-4">
             <TbLockExclamation />
               </div>

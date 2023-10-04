@@ -4,6 +4,7 @@ import LeftMenu from "./LeftMenu";
 import { motion } from "framer-motion";
 import useMenuAnimation from "./LeftMenu/useMenu";
 import Footer from "./Footer";
+import MetaTags from "./MetaTags";
 
 const Layout = props => {
     const [showMenu, setShowMenu] = useState(false);
@@ -20,6 +21,7 @@ const Layout = props => {
     }
     return (
         <div ref={scope}>
+            <MetaTags />
             <Header toggleMenu={toggleMenu} />
             <LeftMenu show={showMenu} toggleMenu={toggleMenu} />
             <motion.div animate={{ scale: showMenu ? 0.85 : 1, transition: { duration: 0.4 } }} className="overflow-x-hidden">
