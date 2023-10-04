@@ -78,7 +78,7 @@ export default function Index() {
             2AP, the first PAVS would be discovered by humans and it is said
             that the very first PAV ever spotted was golden.
           </p>
-          <p className=" snap-child-end mt-28 lg:hidden">
+          <p className=" snap-child-end mt-28">
 
           </p>
         </div>
