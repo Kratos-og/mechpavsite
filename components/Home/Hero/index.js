@@ -45,8 +45,27 @@ const Hero = (props) => {
 
                 <AnimatePresence>
                   {isInView && (
-                    <div className="w-full relative z-40 text-[11px] tracking-widest max-sm:pt-10 h-full pb-1">
-                      <div className="w-1/4 flex flex-col -mt-10 relative max-sm:w-1/2">
+                    <div className="w-full relative flex flex-col-reverse md:flex-col z-40 text-[11px] tracking-widest max-sm:pt-10 pb-1">
+                      {props.init && props.loadVal != 100 && (
+                        <motion.div className="flex items-end justify-start md:justify-end w-full mt-5 md:mt-0">
+                          <div className="w-60 h-7 border-opacity-20 border flex md:-mt-10">
+                            <div className="w-4/5 px-3 flex items-center ">
+                              <motion.div
+                                initial={{ width: "0%" }}
+                                animate={{
+                                  width: props.loadVal + "%",
+                                  transition: { duration: 0.3 },
+                                }}
+                                className="h-0.5 bg-white"
+                              ></motion.div>
+                            </div>
+                            <div className="border-l w-1/5 text-[9px] flex items-center justify-center">
+                              {props.loadVal?.toFixed(0)}%
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                      <div className="w-1/4 flex flex-col -mt-10 relative max-sm:w-full">
                         <motion.div
                           initial={{ width: "100%" }}
                           animate={{
@@ -62,7 +81,7 @@ const Hero = (props) => {
                             visibility: "visible",
                             transition: { delay: 0.5 },
                           }}
-                          className="flex flex-col gap-4 max-sm:text-[0.4rem] "
+                          className="flex flex-col gap-4 max-sm:text-[0.4rem] w-2/3 md:w-full"
                         >
                           <div>
                             CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT
@@ -80,7 +99,7 @@ const Hero = (props) => {
                               initial={{ y: 50 }}
                               animate={{ y: 5 }}
                               exit={{ display: "none" }}
-                              className="pt-2 relative flex justify-center w-full max-md:hidden"
+                              className="pt-2 relative flex justify-center w-fit md:w-full"
                             >
                               <div className="w-16 mb-1">
                                 <Mouse />
@@ -89,6 +108,7 @@ const Hero = (props) => {
                           )}
                         </AnimatePresence>
                       </div>
+
                     </div>
                   )}
                 </AnimatePresence>
@@ -96,26 +116,6 @@ const Hero = (props) => {
             )}
           </AnimatePresence>
         </div>
-
-        {props.init && props.loadVal !== 100 && (
-          <motion.div className="flex items-end justify-end w-full lg:px-40 max-md:items-center max-md:absolute top-1/2 left-[-4rem]">
-            <div className="w-60 h-7 border-opacity-20 border flex -mt-10">
-              <div className="w-4/5 px-3 flex items-center ">
-                <motion.div
-                  initial={{ width: "0%" }}
-                  animate={{
-                    width: props.loadVal + "%",
-                    transition: { duration: 0.3 },
-                  }}
-                  className="h-0.5 bg-white"
-                ></motion.div>
-              </div>
-              <div className="border-l w-1/5 text-[9px] flex items-center justify-center">
-                {props.loadVal?.toFixed(0)}%
-              </div>
-            </div>
-          </motion.div>
-        )}
       </div>
     </div>
   );

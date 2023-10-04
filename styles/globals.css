@@ -39,8 +39,7 @@ a {
 }
 
 model-viewer {
-  width: 100%;
-  height: 190%;
+  @apply w-full h-[160%] mt-60 md:mt-0 md:h-[190%];
 }
 
 .bg-gradient {
