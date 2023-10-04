@@ -9,7 +9,7 @@ const Pointer4 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] -ml-7 text-[#14fecd]"
+                className="text-[10px] -ml-7 text-white"
             >
                 <span>thrusters <br />(opened position)</span>
             </motion.div>

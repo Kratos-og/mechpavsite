@@ -9,7 +9,7 @@ const Pointer6 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[9px] text-[#14fecd]"
+                className="text-[9px] text-white"
             >
                 <div className="pb-4 text-center">MARV TECHNICAL SPECIFICATIONS</div>
                 <div className="flex gap-10">
@@ -44,7 +44,7 @@ const Pointer6 = props => {
                         opacity: [0, 0.5, 0, 1, 0, 1],
                         transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                     }}
-                    className="text-[10px] mt-4 text-[#14fecd]"
+                    className="text-[10px] mt-4 text-white"
                 >
                     <span>Maglock Cylinder <br /> Knee Joint</span>
                 </motion.div>

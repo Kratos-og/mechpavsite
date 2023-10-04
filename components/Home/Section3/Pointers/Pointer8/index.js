@@ -9,7 +9,7 @@ const Pointer8 = props => {
                     opacity: [0, 0.5, 0, 1, 0, 1],
                     transition: { delay: 1.5, duration: 1, ease: "easeOut" },
                 }}
-                className="text-[10px] -ml-10 text-[#14fecd]"
+                className="text-[10px] -ml-10 text-white"
             >
                 <span>Energy Conversion <br />Unity E.C.U</span>
             </motion.div>
