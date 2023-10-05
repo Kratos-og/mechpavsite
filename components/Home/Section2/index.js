@@ -20,7 +20,7 @@ const Section = (props) => {
 
   return (
     <div className="w-full h-screen snap-child-start relative overflow-hidden">
-      <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col lg:px-40 lg:justify-center px-10 max-sm:justify-start max-sm:pt-[6rem]">
+      <motion.div className="fixed pointer-events-none w-full left-0 top-0 h-screen flex flex-col lg:px-40 lg:justify-center px-10 justify-start pt-[6rem] lg:pt-0">
         <div className="relative w-fit overflow-hidden">
           <AnimatePresence>
             {isInView && (
@@ -67,7 +67,7 @@ const Section = (props) => {
           </AnimatePresence>
         </div>
 
-        <div className="relative lg:w-1/4 overflow-hidden w-full">
+        <div className="relative lg:w-1/4 overflow-hidden w-full md:w-1/2">
           <AnimatePresence>
             {isInView && (
               <div className="relative">
@@ -85,13 +85,12 @@ const Section = (props) => {
                 >
                   <div className="flex flex-col gap-4">
                     <div>
-                      BUY A MECH CRATE AND RECEIVE 5 RANDOM PARTS THAT ASSEMBLE
-                      A COMPLETE MECH.
+                      PURCHASE A MECH CRATE NFT AND UNBOX LATER TO REVEAL 5 RANDOMLY SELECTED PARTS, GUARANTEED TO FORM A COMPLETE MECH.
                     </div>
                     <div>
-                      BUILD YOUR MECH TO USE AS AN AVATAR TO EXPLORE PAVIA.
-                      COLLECT, BUILD, AND INTERCHANGE MECH PARTS USING OUR
-                      UNIQUE MECH BUILDER.
+                      BUILD YOUR MECH TO USE AS AN AVATAR TO EXPLORE PAVIA AND ENJOY A FUTURE OF EXCLUSIVE MECH UTILITY.
+                      COLLECT, BUILD AND INTERCHANGE NFT MECH PARTS USING OUR CUSTOM ONLINE MECH BUILDER.
+
                     </div>
                   </div>
                 </motion.div>
@@ -127,7 +126,7 @@ const Section = (props) => {
               <Link href={"/mint"}>
                 <motion.div
                   exit={{ display: "none" }}
-                  className="relative flex lg:pt-4 lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                  className="relative flex md:pt-4 mb-1 lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
                 >
                   <div className=" pointer-events-auto">
                     <Button>LEARN MORE</Button>

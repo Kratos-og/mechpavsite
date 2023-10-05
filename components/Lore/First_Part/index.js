@@ -10,7 +10,7 @@ export default function Index(props) {
   return (
     <div className="w-screen container m-auto snap-child-start px-10 flex flex-col justify-center items-center min-h-screen py-16">
       <motion.div>
-        <div className=" flex lg:gap-10 gap-2 max-md:flex-col-reverse">
+        <div className=" flex lg:gap-10 gap-2 flex-col-reverse lg:flex-row">
           <div className="w-full lg:w-3/5">
             <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
               PAVS

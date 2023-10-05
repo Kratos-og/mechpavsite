@@ -146,40 +146,40 @@ const Model = props => {
         <div className='w-full h-full fixed top-0 pointer-events-none overflow-hidden'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
             <model-viewer loading="eager" style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/mechpav2.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
-                <div slot="hotspot-joint" className='hidden md:block pointer-events-none' data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
+                <div slot="hotspot-joint" className='hidden lg:block pointer-events-none' data-position="-0.5149577618441041m 2.09811277128951m 0.1024543010534596m" data-normal="-0.6801849221212255m -0.5010402242127877m 0.5350767846204335m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer1 />}
                 </div>
-                <div slot="hotspot-power" className='hidden md:block pointer-events-none' data-position="0.43510659046118166m 2.3449143444104177m -0.020444515362532667m" data-normal="0.3562008098499449m -0.7497927133223989m 0.5576126523949025m" data-visibility-attribute="visible">
+                <div slot="hotspot-power" className='hidden lg:block pointer-events-none' data-position="0.43510659046118166m 2.3449143444104177m -0.020444515362532667m" data-normal="0.3562008098499449m -0.7497927133223989m 0.5576126523949025m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer2 />}
                 </div>
-                <div slot="hotspot-comms" className='hidden md:block pointer-events-none' data-position="0.552986303782536m 1.191848466727976m 0.0461898164571104m" data-normal="-0.008542551277086018m 0.04836819180809083m 0.9987930430469038m" data-visibility-attribute="visible">
+                <div slot="hotspot-comms" className='hidden lg:block pointer-events-none' data-position="0.552986303782536m 1.191848466727976m 0.0461898164571104m" data-normal="-0.008542551277086018m 0.04836819180809083m 0.9987930430469038m" data-visibility-attribute="visible">
                     {sec == 0 && <Pointer3 />}
                 </div>
-                <div slot="hotspot-thrusters" className='hidden md:block pointer-events-none' data-position="-0.27510633454099054m 1.8884688337958009m -0.5783333303111975m" data-normal="-0.7956495794291473m 0.6055132102890399m 0.017190082014992083m" data-visibility-attribute="visible">
+                <div slot="hotspot-thrusters" className='hidden lg:block pointer-events-none' data-position="-0.27510633454099054m 1.8884688337958009m -0.5783333303111975m" data-normal="-0.7956495794291473m 0.6055132102890399m 0.017190082014992083m" data-visibility-attribute="visible">
                     {sec == 1 && <Pointer4 />}
                 </div>
-                <div slot="hotspot-sphere" className='hidden md:block pointer-events-none' data-position="0.12111167112024407m 1.5207365652739415m 0.12019724007161348m" data-normal="0.2072737367225641m -0.07405186667697373m 0.9754762524565737m" data-visibility-attribute="visible">
+                <div slot="hotspot-sphere" className='hidden lg:block pointer-events-none' data-position="0.12111167112024407m 1.5207365652739415m 0.12019724007161348m" data-normal="0.2072737367225641m -0.07405186667697373m 0.9754762524565737m" data-visibility-attribute="visible">
                     {sec == 1 && <Pointer5 />}
                 </div>
-                <div slot="hotspot-specs" className='hidden md:block pointer-events-none' data-position="-0.3802012979830295m 0.91970893734972m -0.027219689063627428m" data-normal="-0.3108169827807575m 0.5162640218460754m 0.7980377578550913m" data-visibility-attribute="visible">
+                <div slot="hotspot-specs" className='hidden lg:block pointer-events-none' data-position="-0.3802012979830295m 0.91970893734972m -0.027219689063627428m" data-normal="-0.3108169827807575m 0.5162640218460754m 0.7980377578550913m" data-visibility-attribute="visible">
                     {sec == 1 && <Pointer6 />}
                 </div>
-                <div slot="hotspot-relay" className='hidden md:block pointer-events-none' data-position="-0.3260658813478937m 2.2191808755076137m 0.08110660898803036m" data-normal="0.9590549161033266m 0.27799174600638094m 0.05416878298767026m" data-visibility-attribute="visible">
+                <div slot="hotspot-relay" className='hidden lg:block pointer-events-none' data-position="-0.3260658813478937m 2.2191808755076137m 0.08110660898803036m" data-normal="0.9590549161033266m 0.27799174600638094m 0.05416878298767026m" data-visibility-attribute="visible">
                     {sec == 2 && <Pointer7 />}
                 </div>
-                <div slot="hotspot-ecu" className='hidden md:block pointer-events-none' data-position="0.1823259967367047m 1.580797887443596m -0.07378811475978522m" data-normal="0.4506055410952404m 0.08581378728688681m -0.8885891290386951m" data-visibility-attribute="visible">
+                <div slot="hotspot-ecu" className='hidden lg:block pointer-events-none' data-position="0.1823259967367047m 1.580797887443596m -0.07378811475978522m" data-normal="0.4506055410952404m 0.08581378728688681m -0.8885891290386951m" data-visibility-attribute="visible">
                     {sec == 2 && <Pointer8 />}
                 </div>
-                <div slot="hotspot-amplifier" className='hidden md:block pointer-events-none' data-position="0.037157066288441065m 1.7368252730522067m -0.48900141689526055m" data-normal="-0.026045127223037635m 0.619920137782393m -0.7842325382944746m" data-visibility-attribute="visible">
+                <div slot="hotspot-amplifier" className='hidden lg:block pointer-events-none' data-position="0.037157066288441065m 1.7368252730522067m -0.48900141689526055m" data-normal="-0.026045127223037635m 0.619920137782393m -0.7842325382944746m" data-visibility-attribute="visible">
                     {sec == 2 && <Pointer9 />}
                 </div>
-                <div slot="hotspot-conn" className='hidden md:block pointer-events-none' data-position="-0.2199260402848111m 2.262953753075747m -0.432881495629741m" data-normal="-0.9705128685499225m 0.15024632149775904m 0.18849619321194044m" data-visibility-attribute="visible">
+                <div slot="hotspot-conn" className='hidden lg:block pointer-events-none' data-position="-0.2199260402848111m 2.262953753075747m -0.432881495629741m" data-normal="-0.9705128685499225m 0.15024632149775904m 0.18849619321194044m" data-visibility-attribute="visible">
                     {sec == 3 && <Pointer10 />}
                 </div>
-                <div slot="hotspot-charge" className='hidden md:block pointer-events-none' data-position="-0.7626033461071079m 2.3600790048999243m -0.005532984158591282m" data-normal="-0.9048021907510201m -0.4247098253749699m -0.030895951872657455m" data-visibility-attribute="visible">
+                <div slot="hotspot-charge" className='hidden lg:block pointer-events-none' data-position="-0.7626033461071079m 2.3600790048999243m -0.005532984158591282m" data-normal="-0.9048021907510201m -0.4247098253749699m -0.030895951872657455m" data-visibility-attribute="visible">
                     {sec == 3 && <Pointer11 />}
                 </div>
-                <div slot="hotspot-capsule" className='hidden md:block pointer-events-none' data-position="-0.11624147465525236m 1.850261758646575m 0.22435609312602545m" data-normal="-0.62m -0.48m -1m" data-visibility-attribute="visible">
+                <div slot="hotspot-capsule" className='hidden lg:block pointer-events-none' data-position="-0.11624147465525236m 1.850261758646575m 0.22435609312602545m" data-normal="-0.62m -0.48m -1m" data-visibility-attribute="visible">
                     {sec == 3 && <Pointer12 />}
                 </div>
             </model-viewer>

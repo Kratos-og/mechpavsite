@@ -25,7 +25,7 @@ const Section = (props) => {
   return (
     <div className="w-full h-screen snap-child-start relative overflow-x-hidden">
       <motion.div className="fixed pointer-events-none w-full lg:left-8 left-0 lg:top-0 top-24 h-screen flex flex-col items-end lg:justify-center">
-        <div className="w-full lg:w-1/2 max-md:pl-10">
+        <div className="w-full lg:w-1/2 pl-10 lg:pl-0">
           <div className="relative w-fit overflow-hidden">
             <AnimatePresence>
               {isInView && (
@@ -92,13 +92,10 @@ const Section = (props) => {
                   >
                     <div className="flex flex-col gap-4 w-full">
                       <div>
-                        LEARN MORE ABOUT THESE MYSTERIOUS PAVS AND WHERE THEY
-                        CAME FROM WHILE YOU EXPLORE THE PAST AND DISCOVER THE
-                        SECRETS.
+                        MECHS ARE PILOTED BY PAVS. LEARN MORE ABOUT THESE MYSTERIOUS CREATURES, WHERE THEY CAME FROM AND HOW MECHS CAME TO BE.
                       </div>
                       <div>
-                        READ THROUGH CHRONOLOGICAL EVENTS AND DISCOVER HOW PAVS
-                        AND MECHS COMBINED TO BECOME THE ULTIMATE FORCE.
+                        READ THROUGH CHRONOLOGICAL EVENTS AND DISCOVER HOW PAVS AND MECHS COMBINED TO BECOME THE ULTIMATE FORCE.
                       </div>
                     </div>
                   </motion.div>
@@ -136,7 +133,7 @@ const Section = (props) => {
                 <Link href={"/Lore"}>
                   <motion.div
                     exit={{ display: "none" }}
-                    className="relative flex lg:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.7rem]"
+                    className="relative flex md:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.7rem]"
                   >
                     <Button onClick={() => console.log('click')}>LEARN MORE</Button>
                   </motion.div>

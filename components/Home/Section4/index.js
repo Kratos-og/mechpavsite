@@ -121,7 +121,7 @@ const Section = (props) => {
                     <Link href="/pavs">
                       <motion.div
                         exit={{ display: "none" }}
-                        className="relative flex lg:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                        className="relative flex md:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
                       >
                         <Button>LEARN MORE</Button>
                       </motion.div>
