@@ -133,7 +133,7 @@ const Pavs = props => {
                             <IoCloseSharp className="text-2xl absolute top-5 right-5" onClick={() => setShowMenu(false)} />
                             <Filters onFiltersChange={onFiltersChange} eventTypeChange={eventTypeChange} filters={filters} clear={onClear} />
                         </div>
-                        <div className="w-full flex flex-wrap md:gap-2 lg:gap-5">
+                        <div className="w-full flex flex-wrap gap-5 md:gap-2 lg:gap-5">
                             {pavs}
                         </div>
                     </div>
