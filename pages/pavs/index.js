@@ -74,7 +74,8 @@ const Pavs = props => {
         });
         if (filters['mechCompatible'] && !item['mechCompatible'])
             res = false;
-
+        if (filters['mechCompatible'] == false && item['mechCompatible'])
+            res = false;
         //event
         if (filters.types.length && !filters.types.includes(item.eventType)) {
             res = false

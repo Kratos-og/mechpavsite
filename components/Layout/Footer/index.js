@@ -11,7 +11,7 @@ const Footer = props => {
                 <a href="https://twitter.com/Pavs_io" target="_blank">
                     <img src="/assets/images/icon-x.png" className="w-6" />
                 </a>
-                <a href="https://twitter.com/Pavs_io" target="_blank">
+                <a href="https://www.youtube.com/c/paviacorp" target="_blank">
                     <BiLogoYoutube className="text-[35px]" />
                 </a>
             </div>

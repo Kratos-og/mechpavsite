@@ -36,10 +36,10 @@ const Pav = props => {
                         <img src={`/assets/images/pavs/${pavDetails?.name}.jpg`} className="w-full rounded-md" />
                     </div>
                 </div>
-                <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20 backdrop-saturate-200 bg-white/10 rounded-lg max-md:mt-10">
+                {/* <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20 backdrop-saturate-200 bg-white/10 rounded-lg max-md:mt-10">
                     <div className="text-xl font-bold">Pav Sales History</div>
                     <Sales name={pavDetails?.name} image={`/assets/images/pavs/${pavDetails?.name}.jpg`} />
-                </div>
+                </div> */}
             </div>
         </div>
     )

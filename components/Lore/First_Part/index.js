@@ -6,7 +6,7 @@ export default function Index(props) {
   useMotionValueEvent(props.progress, "change", (latest) => {
     setScroll(latest.toFixed(2));
   });
-console.log(scroll)
+  console.log(scroll)
   return (
     <div className="w-screen container m-auto snap-child-start px-10 flex flex-col justify-center items-center min-h-screen py-16">
       <motion.div>
@@ -68,22 +68,6 @@ console.log(scroll)
               elements from nearby meteors, stars, and asteroids.
             </p>
           </div>
-        </div>
-        <div className="mt-5">
-          <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
-            Settlement on Pavia
-          </p>
-          <p className="lg:text-sm text-xs text-justify">
-            It is believed that since the crash that brought them here, PAVS
-            would spread across the land, multiplying and evolving into
-            different forms. Over the next 40 years, their bodies would produce
-            enough energy and oxygen to transform the atmosphere into breathable
-            air, and in the few years leading up to the Horizon landing the
-            lands across Pavia would grow grass, trees, plants and eventually
-            form rivers and oceans, becoming habitable for humanity. In the year
-            2AP, the first PAVS would be discovered by humans and it is said
-            that the very first PAV ever spotted was golden.
-          </p>
           <p className=" snap-child-end mt-28">
 
           </p>
