@@ -16,15 +16,15 @@ const Hero = (props) => {
       className="w-full h-screen snap-child-start overflow-x-hidden"
       id="hero"
     >
-      <div className="fixed pointer-events-none w-full left-0 lg:top-0 h-screen flex flex-col items-center lg:justify-center justify-start top-[20%] md:top-[10%] ">
-        <div className="relative overflow-hidden mt-[6%] pl-8 lg:pl-0 lg:mx-28">
+      <div className="fixed pointer-events-none w-full left-0 xl:top-0 h-screen flex flex-col items-center xl:justify-center justify-start top-[20%] md:top-[10%] ">
+        <div className="relative overflow-hidden mt-[6%] pl-8 xl:pl-0 xl:mx-28">
           <AnimatePresence>
             {isInView && (
               <>
                 <div>
                   <motion.div
                     animate={{
-                      left: "100%",
+                      left: "200%",
                       transition: { delay: 0.5, duration: 1 },
                     }}
                     className="w-full bg-black h-full top-20 absolute"
@@ -36,7 +36,7 @@ const Hero = (props) => {
                       transition: { delay: 0.5 },
                     }}
                     exit={{ visibility: "hidden" }}
-                    className="lg:-ml-3 lg:text-[208px] 2xl:text-[298px] font-bold tracking-wider text-[3.3rem]"
+                    className="xl:-ml-3 xl:text-[208px] 2xl:text-[298px] font-bold tracking-wider whitespace-nowrap text-[3.3rem]"
                   >
                     MECH PAVS
                   </motion.span>
@@ -44,7 +44,7 @@ const Hero = (props) => {
 
                 <AnimatePresence>
                   {isInView && (
-                    <div className="w-full relative flex flex-col-reverse md:flex-col z-40 text-[11px] tracking-widest pt-10 lg:pt-0 pb-1">
+                    <div className="w-full relative flex flex-col-reverse md:flex-col z-40 text-[11px] tracking-widest pt-10 xl:pt-0 pb-1">
                       {props.init && props.loadVal != 100 && (
                         <motion.div className="flex items-end justify-start md:justify-end w-full mt-5 md:mt-0">
                           <div className="w-60 h-7 border-opacity-20 border flex md:-mt-10">
@@ -64,10 +64,11 @@ const Hero = (props) => {
                           </div>
                         </motion.div>
                       )}
-                      <div className="lg:w-1/4 flex flex-col -mt-10 relative w-full md:w-1/2">
+                      <div className="xl:w-1/4 flex flex-col -mt-10 relative w-full md:w-1/2">
                         <motion.div
+                          initial={{ left: 0 }}
                           animate={{
-                            left: "100%",
+                            left: "200%",
                             transition: { delay: 0.8, duration: 1 },
                           }}
                           onAnimationComplete={() => props.setInit(true)}
@@ -95,7 +96,7 @@ const Hero = (props) => {
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: props.init && props.loadVal && 5, opacity: props.init && props.loadVal && 1, transition: { delay: 1 } }}
                             exit={{ display: "none" }}
-                            className="pt-2 relative flex justify-center w-fit lg:w-full"
+                            className="pt-2 relative flex justify-center w-fit xl:w-full"
                           >
                             <div className="w-16 mb-1">
                               <Mouse />
