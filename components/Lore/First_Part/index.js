@@ -8,7 +8,7 @@ export default function Index(props) {
   });
   console.log(scroll)
   return (
-    <div className="w-screen container m-auto snap-child-start px-10 flex flex-col justify-center items-center min-h-screen py-16">
+    <div className="w-screen container m-auto snap-child-start px-10 flex flex-col justify-center items-center min-h-screen max-md:pt-16">
       <motion.div>
         <div className=" flex lg:gap-10 gap-2 flex-col-reverse lg:flex-row">
           <div className="w-full lg:w-3/5">
@@ -24,7 +24,7 @@ export default function Index(props) {
               PAVS are incredibly resilient and even have the unique ability to regenerate lost limbs, though this process has been found to be slow. Curious and inquisitive in nature, PAVS are found to be extremely loyal once nurtured, but as a rule do not make good house pets. PAVS have no vocal cords to speak so communicate by producing grunts and whistles from time to time, however, it has been proven that they also have a form of telepathic capability. They can often be found in rough terrains such as mountains and forests. Although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament.
             </p>
           </div>
-          <div className="lg:w-2/5">
+          <div className="lg:w-2/5 flex flex-col justify-center">
             <img
               src="assets/images/pav.png"
               alt="PAV"
@@ -59,7 +59,7 @@ export default function Index(props) {
               elements from nearby meteors, stars, and asteroids.
             </p>
           </div>
-          <p className=" snap-child-end mt-28">
+          <p className="snap-child-end max-md:pb-28 xl:hidden">
 
           </p>
         </div>

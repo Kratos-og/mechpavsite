@@ -133,7 +133,7 @@ const Section = (props) => {
                 <Link href={"/Lore"}>
                   <motion.div
                     exit={{ display: "none" }}
-                    className="relative flex md:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.7rem]"
+                    className="relative flex md:pt-5 mb-1 pointer-events-auto md:ml-1 max-md:scale-75 max-md:ml-[-2.7rem]"
                   >
                     <Button onClick={() => console.log('click')}>LEARN MORE</Button>
                   </motion.div>

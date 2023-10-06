@@ -19,6 +19,8 @@ import Page6 from "../../components/Lore/Page6";
 import Page7 from "../../components/Lore/Page7";
 import First_Part from "../../components/Lore/First_Part";
 import Second_Part from "../../components/Lore/Second_Part";
+import Third_Part from "../../components/Lore/Third_Part";
+import Locked from "../../components/Lore/Locked";
 import { TbLockExclamation } from "react-icons/tb";
 import Mouse from "@/components/UI/Svg/Mouse";
 
@@ -59,6 +61,8 @@ console.log(scroll)
         >
           <First_Part progress={scrollYProgress}/>
           <Second_Part />
+          <Third_Part />
+          <Locked/>
         </motion.div>
 
       </div>
