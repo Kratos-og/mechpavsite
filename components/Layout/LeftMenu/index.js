@@ -31,10 +31,10 @@ const LeftMenu = props => {
                         <nav className="menu mt-28">
                             <ul className="flex flex-col gap-5">
                                 <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/')}>Home</li>
-                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('mint')}>Mech Mint</li>
-                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('pavs')}>Pavs</li>
-                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('Lore')}>Lore</li>
-                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('builder')}>Mech Builder</li>
+                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/mint')}>Mech Mint</li>
+                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/pavs')}>Pavs</li>
+                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/Lore')}>Lore</li>
+                                <li className="cursor-pointer hover:text-pavia-green text-lg transition-all" onClick={() => openLink('/builder')}>Mech Builder</li>
                             </ul>
                         </nav>
                     </motion.div>

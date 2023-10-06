@@ -19,7 +19,7 @@ const Pav = props => {
 
     const buyNow = (e) => {
         e.preventDefault();
-        window.open(`https://www.jpg.store/collection/pavs?searchText=${pavDetails?.name}`, "_blank")
+        window.open(`https://www.jpg.store/collection/pavs?searchText=${pavDetails?.searchText}`, "_blank")
     }
     return (
         <div className="min-h-screen w-full bg-black bg-fixed py-20 text-white" id="cont">

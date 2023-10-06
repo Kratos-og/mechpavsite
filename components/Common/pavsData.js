@@ -1,6 +1,7 @@
 export const data = [
     {
         name: 'Alfonso',
+        searchText: 'Alfonso',
         supply: 50,
         generation: 1,
         properties: {
@@ -22,6 +23,7 @@ export const data = [
     },
     {
         name: 'Astro',
+        searchText: 'Astro',
         supply: 100,
         generation: 1,
         properties: {
@@ -43,6 +45,7 @@ export const data = [
     },
     {
         name: 'Cyber',
+        searchText: 'Cyber',
         generation: 1,
         supply: 450,
         properties: {
@@ -64,6 +67,7 @@ export const data = [
     },
     {
         name: 'Lucia',
+        searchText: 'Lucia',
         supply: 100,
         generation: 1,
         properties: {
@@ -85,6 +89,7 @@ export const data = [
     },
     {
         name: 'Max',
+        searchText: 'Max',
         generation: 1,
         supply: 850,
         properties: {
@@ -106,6 +111,7 @@ export const data = [
     },
     {
         name: 'Mittens',
+        searchText: 'Mittens',
         generation: 1,
         supply: 800,
         properties: {
@@ -127,6 +133,7 @@ export const data = [
     },
     {
         name: 'Mucca',
+        searchText: 'Mucca',
         generation: 1,
         supply: 650,
         properties: {
@@ -148,6 +155,7 @@ export const data = [
     },
     {
         name: 'PavBot',
+        searchText: 'Bot',
         generation: 1,
         supply: 150,
         properties: {
@@ -169,6 +177,7 @@ export const data = [
     },
     {
         name: 'PavyJones',
+        searchText: 'Pavy',
         generation: 1,
         supply: 500,
         properties: {
@@ -190,6 +199,7 @@ export const data = [
     },
     {
         name: 'Rex',
+        searchText: 'Rex',
         generation: 1,
         supply: 700,
         properties: {
@@ -211,6 +221,7 @@ export const data = [
     },
     {
         name: 'Shell',
+        searchText: 'Shell',
         generation: 1,
         supply: 400,
         properties: {
@@ -232,6 +243,7 @@ export const data = [
     },
     {
         name: 'Sky',
+        searchText: 'Sky',
         generation: 1,
         supply: 600,
         properties: {
@@ -253,6 +265,7 @@ export const data = [
     },
     {
         name: 'Sparkles',
+        searchText: 'Sparkles',
         generation: 1,
         supply: 750,
         properties: {
@@ -274,6 +287,7 @@ export const data = [
     },
     {
         name: 'Jones',
+        searchText: 'Jones',
         supply: 550,
         generation: 2,
         properties: {
@@ -295,6 +309,7 @@ export const data = [
     },
     {
         name: 'London',
+        searchText: 'London',
         generation: 2,
         supply: 250,
         properties: {
@@ -316,6 +331,7 @@ export const data = [
     },
     {
         name: 'Akira',
+        searchText: 'Akira',
         generation: 2,
         supply: 644,
         properties: {
@@ -337,6 +353,7 @@ export const data = [
     },
     {
         name: 'Alpha',
+        searchText: 'Alpha',
         generation: 2,
         supply: 628,
         properties: {
@@ -358,6 +375,7 @@ export const data = [
     },
     {
         name: 'App',
+        searchText: 'App',
         generation: 2,
         supply: 648,
         properties: {
@@ -379,6 +397,7 @@ export const data = [
     },
     {
         name: 'Arin',
+        searchText: 'Arin',
         generation: 2,
         supply: 636,
         properties: {
@@ -400,6 +419,7 @@ export const data = [
     },
     {
         name: 'Auto',
+        searchText: 'Auto',
         generation: 2,
         supply: 617,
         properties: {
@@ -421,6 +441,7 @@ export const data = [
     },
     {
         name: 'Axis',
+        searchText: 'Axis',
         generation: 2,
         supply: 652,
         properties: {

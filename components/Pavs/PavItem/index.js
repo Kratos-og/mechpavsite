@@ -4,7 +4,7 @@ const PavItem = props => {
 
     const buyNow = (e) => {
         e.preventDefault();
-        window.open(`https://www.jpg.store/collection/pavs?searchText=${props.name}`, "_blank")
+        window.open(`https://www.jpg.store/collection/pavs?searchText=${props.searchText}`, "_blank")
     }
 
     return (
