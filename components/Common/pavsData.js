@@ -179,7 +179,7 @@ export const data = [
         name: 'PavyJones',
         searchText: 'Pavy',
         generation: 1,
-        supply: 500,
+        supply: 50,
         properties: {
             speed: 80,
             weight: 0,
