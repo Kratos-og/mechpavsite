@@ -16,21 +16,12 @@ export default function Index(props) {
               PAVS
             </p>
             <p className="text-xs lg:text-sm text-justify">
-              PAVS are 4-legged creatures from the planet Pavia. They are
-              light-dependant animals that can create energy and clean air by
-              converting sunlight within their bodies. They are composed of a
-              variety of unknown elements believed to be derived from nearby
-              meteors and asteroids from local solar systems. PAVS are
-              incredibly resistant and even have the unique ability to
-              regenerate lost limbs, though this process has been found to be
-              slow. PAVS are curious and inquisitive in nature and though they
-              are extremely loyal, generally avoid interactions with humans.
-              They are telepathic and have no vocal cords to speak so
-              communicate by producing grunts and whistles from time to time.
-              They can often be found in rough terrains such as mountains and
-              forests and although harmless at first glance, they can be
-              aggressive when threatened and have been known to seriously injure
-              humans due to their short temperament.
+              PAVS are 4-legged creatures first discovered inhabiting the off-world outpost known as Pavia. Early human settlers to Pavia spent much time trying to better understand PAVS, why they were there, where they may have originated, but above all, their curious role within the ecology of Pavia.  To the uneducated it would be easy to dismiss PAVS as minion-like, subservient and lacking in any evolutionary sophistication. But to underestimate them would be a mistake.
+
+            </p>
+            <p className="text-xs lg:text-sm text-justify mt-2">
+              As a species they were seemingly unaware of the deep importance they played in the ecology of their surrounding environment. Remarkably, they appeared to be sunlight-dependant beings capable of creating both electrical energy and clean air by converting sunlight within their bodies. Much of the lushness and beauty of Pavia has been credited to their very existence.
+              PAVS are incredibly resilient and even have the unique ability to regenerate lost limbs, though this process has been found to be slow. Curious and inquisitive in nature, PAVS are found to be extremely loyal once nurtured, but as a rule do not make good house pets. PAVS have no vocal cords to speak so communicate by producing grunts and whistles from time to time, however, it has been proven that they also have a form of telepathic capability. They can often be found in rough terrains such as mountains and forests. Although harmless at first glance, they can be aggressive when threatened and have been known to seriously injure humans due to their short temperament.
             </p>
           </div>
           <div className="lg:w-2/5">
