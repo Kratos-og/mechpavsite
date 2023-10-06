@@ -1,6 +1,12 @@
 import Link from "next/link";
 
 const PavItem = props => {
+
+    const buyNow = (e) => {
+        e.preventDefault();
+        window.open(`https://www.jpg.store/collection/pavs?searchText=${props.name}`, "_blank")
+    }
+
     return (
         <Link href={"/pav/" + props.name.toLowerCase()}>
             <div className="w-full md:w-[250px] flex flex-col items-center bg-white/10 relative rounded-lg p-5 text-white cursor-pointer hover:-translate-y-1 transition-all">
@@ -21,6 +27,7 @@ const PavItem = props => {
                             <div>{props.supply}</div>
                         </div>
                     </div>
+                    <button onClick={buyNow} className="btn btn-primary capitalize px-10 mt-5">Buy Now</button>
                 </div>
             </div>
         </Link>

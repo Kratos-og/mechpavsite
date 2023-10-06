@@ -17,6 +17,10 @@ const Pav = props => {
         setLoading(false);
     }, [router.isReady])
 
+    const buyNow = (e) => {
+        e.preventDefault();
+        window.open(`https://www.jpg.store/collection/pavs?searchText=${pavDetails?.name}`, "_blank")
+    }
     return (
         <div className="min-h-screen w-full bg-black bg-fixed py-20 text-white" id="cont">
             <div className="container m-auto">
@@ -32,8 +36,9 @@ const Pav = props => {
                     <div className="w-full md:w-[70%]">
                         <PavDetails {...pavDetails?.properties} mechCompatible={pavDetails?.mechCompatible} />
                     </div>
-                    <div className="flex flex-col w-full md:w-[30%] gap-10 lg:h-[500px] max-md:pb-5">
+                    <div className="flex flex-col items-center w-full md:w-[30%] gap-10 lg:h-[500px] max-md:pb-5">
                         <img src={`/assets/images/pavs/${pavDetails?.name}.jpg`} className="w-full rounded-md" />
+                        <button onClick={buyNow} className="btn btn-primary capitalize px-12 mt-5">Buy Now</button>
                     </div>
                 </div>
                 {/* <div className="w-full flex flex-col gap-10 py-10 items-start justify-center px-10 md:px-20 backdrop-saturate-200 bg-white/10 rounded-lg max-md:mt-10">
