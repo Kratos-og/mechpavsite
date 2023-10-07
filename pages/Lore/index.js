@@ -61,7 +61,7 @@ console.log(scroll)
         >
           <First_Part progress={scrollYProgress}/>
           <Second_Part />
-          <Third_Part />
+          {/* <Third_Part /> */}
           <Locked/>
         </motion.div>
 
