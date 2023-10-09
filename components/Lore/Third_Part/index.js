@@ -57,7 +57,7 @@ export default function index() {
           </div>
             <div className="lg:w-full lg:flex flex-col justify-center max-lg:pt-10">
               <img
-                src="assets/images/Crimson_lake.png"
+                src="assets/images/crimson_lake.png"
                 alt="PAV"
                 className="rounded-xl w-full object-cover max-md:h-[15rem]"
               />
