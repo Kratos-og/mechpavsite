@@ -62,7 +62,7 @@ export default function index() {
                 className="rounded-xl w-full object-cover max-md:h-[15rem]"
               />
             </div>
-                <p className="snap-child-end max-md:pb-36 xl:hidden"></p>
+                <p className="snap-child-end max-md:pb-36 md:hidden"></p>
         </div>
       </motion.div>
     </div>

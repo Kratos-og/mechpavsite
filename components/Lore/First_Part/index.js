@@ -59,7 +59,7 @@ export default function Index(props) {
               elements from nearby meteors, stars, and asteroids.
             </p>
           </div>
-          <p className="snap-child-end max-md:pb-28 xl:hidden">
+          <p className="snap-child-end max-md:pb-28 md:hidden">
 
           </p>
         </div>

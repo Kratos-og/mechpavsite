@@ -20,6 +20,9 @@ import Page7 from "../../components/Lore/Page7";
 import First_Part from "../../components/Lore/First_Part";
 import Second_Part from "../../components/Lore/Second_Part";
 import Third_Part from "../../components/Lore/Third_Part";
+import Fourth_Part_1 from "../../components/Lore/Fourth_Part_1";
+import Fourth_Part_2 from "../../components/Lore/Fourth_Part_2";
+import Fourth_Part_3 from "../../components/Lore/Fourth_Part_3";
 import Locked from "../../components/Lore/Locked";
 import { TbLockExclamation } from "react-icons/tb";
 import Mouse from "@/components/UI/Svg/Mouse";
@@ -62,6 +65,9 @@ const Lore = () => {
           <First_Part progress={scrollYProgress} />
           <Second_Part />
           <Third_Part />
+          <Fourth_Part_1 />
+          <Fourth_Part_2 />
+          <Fourth_Part_3 />
           <Locked />
         </motion.div>
 
