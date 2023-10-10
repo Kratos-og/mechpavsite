@@ -61,7 +61,7 @@ export default function Index(props) {
                   <div className="lg:py-1">
                     <AnimatePresence>{inView && current == 2 && (
                       <div className="max-md:text-[10px] max-md:leading-4">
-                      <Typewriter words={["It is believed that since the crash that brought them here, Pavs would spread across the land, multiplying and evolving into different. forms. Over the next 40 years, their bodies would produce enough energy and oxygen to transform the atmosphere into breathable air, and in the few years leading up to the Horizon landing the lands across Payia would grow grass; trees, and plants and eventually form rivers and oceans, becoming habitable for humanity. In the year 2AP, the first Pavs would be discovered by humans and it is said that the very first Pav ever spotted was golden."]} typeSpeed={0} loop={1} />
+                      <Typewriter words={["It is believed that since the crash that brought them here, Pavs would spread across the land, multiplying and evolving into different. forms. Over the next 40 years, their bodies would produce enough energy and oxygen to transform the atmosphere into breathable air, and in the few years leading up to the Horizon landing the lands across Pavia would grow grass; trees, and plants and eventually form rivers and oceans, becoming habitable for humanity. In the year 2AP, the first Pavs would be discovered by humans and it is said that the very first Pav ever spotted was golden."]} typeSpeed={0} loop={1} />
                       </div>
                     )}</AnimatePresence>
 

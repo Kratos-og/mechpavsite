@@ -12,11 +12,11 @@ export default function index() {
             </p>
             <p className="text-xs lg:text-sm text-justify">
               Mech Suits were invented as a solution to the evolving
-              relationship between humans and Pays on Pavia. These advanced
-              exo-suits were powered by pays and primarily built to improve
+              relationship between humans and Pavs on Pavia. These advanced
+              exo-suits were powered by pavs and primarily built to improve
               mobility and to convert and store energy created through the Pav
-              itself. Not every Pay is able to power a mech and compatibility
-              depends entirely on how much energy a Pav produces
+              itself. Not every Pav is able to power a mech and compatibility
+              depends entirely on how much energy a Pav produces.
             </p>
           </div>
         </div>

@@ -33,7 +33,7 @@ const PavDetails = props => {
                     The base colour of Pavs varies widely, providing excellent camouflage and contributing to their charming appearance.
                 </Item>
                 <Item image="mech" value={props.mechCompatible ? 'Yes' : 'No'} name="Mech Compatible">
-                    Mech Compatible Pavs can adapt into mech suits, transforming them for enhanced Paiva exploration.
+                    Mech Compatible Pavs can adapt into mech suits, transforming them for enhanced Pavia exploration.
                 </Item>
             </div>
         </div>
