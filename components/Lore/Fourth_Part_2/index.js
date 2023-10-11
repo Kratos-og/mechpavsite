@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { TbLockExclamation } from "react-icons/tb";
 
 export default function index() {
   return (
@@ -7,7 +6,7 @@ export default function index() {
       <motion.div>
         <div className=" flex lg:gap-10 gap-2">
           <div className="w-full ">
-            <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4 w-full flex justify-center">
+            <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4 w-full flex">
               TIMELINE OF EVENTS
             </p>
             <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
@@ -47,7 +46,7 @@ export default function index() {
               consciousness onto the ship&apos;s system core to conserve his
               memory. In years to follow, Finkso&apos;s encrypted records
               remained a puzzle, a testament to his determination to safeguard
-              knowledge beyond the grave
+              knowledge beyond the grave.
             </p>
             <p className="lg:text-2xl font-bold border-b border-white py-3 mb-4">
               OAP Moonforce landing
