@@ -73,7 +73,7 @@ export default function index() {
               spacecraft anywhere in the area. Shortly after the discovery of
               Pavia, the Horizon crew formed an expedition team named 'Pavia
               Corp' whose purpose was to explore the surface of Pavia, setting
-              up a number of different outposts along their journey
+              up a number of different outposts along their journey.
             </p>
             <p className="snap-child-end max-md:pb-36 md:hidden"></p>
           </div>
