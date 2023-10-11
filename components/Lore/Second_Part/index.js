@@ -40,7 +40,7 @@ export default function index() {
               <p>
                 Thought to have been created between 20BP - 30BP, the Pilla of
                 Vita (translated to the Pillar Of life) was believed to be a
-                sacred shrine built by the PAVS. Discovered in 50AK, a human
+                sacred shrine built by the PAVS. Discovered in 50AP, a human
                 recon team discovered a large altar built from colossal pieces
                 of stone amongst the jungle on the Planet&apos;s surface. The
                 stones were tall and each was engraved with different markings
@@ -55,11 +55,11 @@ export default function index() {
             </p>
             <div className="flex flex-col lg:gap-3 gap-2 lg:text-sm text-xs text-justify">
               <p>
-                In the year 61AK humans would colonize Pavia, discovering
+                In the year 61AP humans would colonize Pavia, discovering
                 thousands of different types of PAVS, many of which had unique
                 abilities and traits. Humans would later come to accept PAVS as
                 an integral part of the planet&apos;s ecosystem and in the year
-                62AK the people of Pavia passed a law stating that no human
+                62AP the people of Pavia passed a law stating that no human
                 could harm a PAV making them a protected species throughout the
                 planet. Although they are independent and free-thinking animals,
                 humans primarily kept their distance from PAVS as their behavior
