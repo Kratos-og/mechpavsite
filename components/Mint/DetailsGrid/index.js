@@ -2,8 +2,8 @@ const DetailsGrid = props => {
     return (
         <div className="w-full uppercase text-xl flex flex-col justify-center gap-4 relative">
             <div className="flex items-center gap-10">
-                <div className="w-1/2 text-right text-pavia-green">Price</div>
-                <div className="w-1/2 text-left">Guideline Price*</div>
+                <div className="w-1/2 text-right text-pavia-green">Guideline Price*</div>
+                <div className="w-1/2 text-left">400 ADA</div>
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">MINT Date</div>
