@@ -89,7 +89,7 @@ export default function index() {
             opacity: 1,
             x: 0,
             transition: { delay: 0, duration: 1 },
-          }}>
+          }} className="w-full  md:w-1/2">
           <div className="w-full flex items-center flex-col">
             <div className="text-6xl font-black mb-6 max-md:text-4xl">PAVS UTILITY</div>
             <div className="w-[60%] flex flex-col gap-5 max-md:w-full max-md:pb-10">
@@ -105,8 +105,8 @@ export default function index() {
             opacity: 1,
             x: 0,
             transition: { delay: 0, duration: 1 },
-          }}>
-          <div className=" w-full flex items-center flex-col">
+          }} className="w-full  md:w-1/2">
+          <div className="w-full flex items-center flex-col">
             <div className="text-6xl font-black mb-6 max-md:text-4xl">MECH UTILITY</div>
             <div className="w-[60%] flex flex-col gap-5 max-md:w-full">
               <Utility>USEABLE AVATAR THROUGHOUT THE PLAYGROUND AND PAVIA MAP</Utility>
