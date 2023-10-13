@@ -3,7 +3,7 @@ const DetailsGrid = props => {
         <div className="w-full uppercase text-xl flex flex-col justify-center gap-4 relative">
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">Price</div>
-                <div className="w-1/2 text-left">400 ADA</div>
+                <div className="w-1/2 text-left">Guideline Price*</div>
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">MINT Date</div>
@@ -11,11 +11,11 @@ const DetailsGrid = props => {
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">MINT OPENS</div>
-                <div className="w-1/2 text-left">10 pm BST, 4 pm CST</div>
+                <div className="w-1/2 text-left">11AM UTC, 6AM CDT</div>
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">MINT DURATION</div>
-                <div className="w-1/2 text-left">OPEN UNTIL SOLD</div>
+                <div className="w-1/2 text-left">OPEN UNTIL SOLD OUT</div>
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">TOTAL MECH CRATES</div>
