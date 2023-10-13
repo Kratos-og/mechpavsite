@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import Utility from "./Utility";
-import Dot from './Dot'
+import Utility from "../../components/Mint/Utility";
+import Dot from '../../components/Mint/Dot'
 import DetailsGrid from "@/components/Mint/DetailsGrid";
 export default function index() {
   return (
