@@ -108,6 +108,10 @@ model-viewer {
   margin-left: 4px;
 }
 
+.override li{
+  @apply opacity-100 blur-0 scale-100 !important;
+}
+
 .tooltip:after {
   width: 7px;
   height: 6px;
