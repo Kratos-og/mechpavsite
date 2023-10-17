@@ -62,8 +62,8 @@ export default function Index() {
       >
         MAKE YOUR PAV MECH !!
       </motion.p>
-      {/* {enter ? <Page /> : <Hero enterHandler={enterHandler} />} */}
-      <Page />
+      {enter ? <Page /> : <Hero enterHandler={enterHandler} />}
+      {/* <Page /> */}
       <motion.p
         initial={{ opacity: 1 }}
         animate={{
