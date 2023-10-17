@@ -1,31 +1,31 @@
 import React from "react";
 import { motion } from "framer-motion";
 export default function index(props) {
+  setTimeout(() => {
+    props.enterHandler(true)
+  }, 5000);
   return (
-    <div className="h-screen flex flex-col">
-      <motion.div
-        initial={{ opacity: 1 }}
-        animate={{
-          opacity: [0, 1, 0, 1, 0,0, 1],
-          transition: { delay: 0, repeat: Infinity, repeatDelay: 4 },
-        }}
-        className="w-[80%] m-auto "
-      >
-        <img src="assets/images/mint/mech_pavs.png" alt="HERO" />
-      </motion.div>
-      <div className="w-[15%] m-auto group cursor-pointer p-1 border-2 border-white rounded-full" onClick={()=>{props.enterHandler(true)}}>
-        <div className="  py-5 px-10  rounded-full bg-white group-hover:hidden">
-          <img src="assets/images/mint/enter_2.png" alt="" />
-        </div>
-        <div className=" py-5 px-10  rounded-full bg-white hidden group-hover:block ">
-          <img src="assets/images/mint/enter_1.png" alt=""  className="pb-[0.2rem]"/>
-        </div>
-        <div className="opacity-0 group-hover:opacity-100 ease-in-out duration-500">
-          <div className="top-[51%] w-[10%] right-[42%] absolute">
-            <img src="assets/images/mint/rocket.png" alt="" />
-          </div>
-        </div>
-      </div>
+   <div className="w-screen h-screen flex justify-center items-center flex-col">
+    <motion.div 
+    className="overflow-hidden relative">
+      <div className="border-2 border-[#423F3E] p-10 bg-black"></div>
+      <div className="border-2 border-[#423F3E] p-8 bg-black absolute rotate-45 top-[-60%] left-[-60%] z-10"></div>
+      <motion.div 
+      initial={{y:100}}
+      animate={{y:0,transition:{duration:3,delay:1,ease:"easeInOut"}}}
+      className="p-[2.49rem] absolute bg-[#9DB2BF] top-[0.1rem] left-[0.1rem]"></motion.div>
+      <div className="absolute top-1 z-30 left-3 w-[4rem]">
+    <img src="assets/images/mint/pav.png" alt="pav"/>
     </div>
+    </motion.div>
+    
+    <motion.p
+    initial={{ opacity: 1 }}
+    animate={{
+      opacity: [0, 1, 0, 1, 0, 1],
+      transition: { delay: 0.5, repeat: Infinity, repeatDelay: 2 },
+    }} 
+    className="text-[0.6rem] pt-2">LOADING . . .</motion.p>
+   </div>
   );
 }

@@ -1,67 +1,171 @@
-import React from "react";
-import { motion } from "framer-motion";
-import Button from "@/components/UI/Button";
+import React, { useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
+import Login from "../Login";
+import Wallet from "../Wallet";
 
-export default function index() {
+export default function Index() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [walletConnection, setWalletConnection] = useState(false);
+  const IsLoginHandler = (data) => {
+    setIsLogin(data);
+  };
+  const WalletConnectionHandler = (data) => {
+    setWalletConnection(data);
+  };
   return (
-    <div className="h-screen" id="cont">
-      <motion.p 
-      initial={{opacity:1}}
-      animate={{opacity:[0,1,0,1,0,1], transition:{delay:0,repeat:Infinity, repeatDelay:2}}}
-      className="uppercase font-extrabold absolute top-1 left-[45%] text-lg w-44"><img src="assets/images/mint/mech_pavs.png" alt="mech_pav"/></motion.p>
-      <motion.svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1206.56 47"
-        fill="#ffffff"
-      >
-        <motion.polyline
-          initial={{ pathLength: 0 }}
-          animate={{
-              pathLength: 1,
-              transition: { delay: 0, duration: 1, ease: "easeInOut" },
-          }}
-          class="cls-1"
-          points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
-          strokeWidth={2}
-          stroke={"#7D7C7C"}
-          fill={"transparent"}
-        />
-      </motion.svg>
-          <div className="mx-20 pt-2">
-            <div className="border-2 border-[#7D7C7C] rounded-xl h-[80vh] flex justify-end flex-col w-full items-center">
-              <div className="p-1 flex border-2 border-white rounded-full m-10 group w-[40%]">
-                <div className="bg-gray-50 p-5 flex justify-center rounded-full group-hover:hidden">
-              <img src="assets/images/mint/wallet_1.png" alt="wallet"  className="w-[50%]"/>
-                </div>
-                <div className="bg-gray-50 p-5 justify-center rounded-full hidden group-hover:flex">
-              <img src="assets/images/mint/wallet_2.png" alt="wallet"  className="w-[50%] pb-[0.15rem]"/>
-                </div>
+    <div className="h-screen " id="cont">
+      <div className="flex h-[88vh] pt-20 justify-evenly">
+        <div className="w-[25%] border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest uppercase">
+          <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
+            <Typewriter
+              words={["MECH PAVS", "MECH MINTING STARTED . . . "]}
+              cursorStyle="_"
+              cursor
+              cursorColor="#14fecdff"
+              loop={1}
+            />
+          </p>
+          <div className="px-5 py-2">
+            <p className="text-gray-500 pb-2">
+              <Typewriter
+                words={["> < STARTING . . . >"]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+              />
+            </p>
+            <p className="pb-5">
+              <Typewriter
+                words={["> WELLCOME TO MECH PAVS . . ."]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+              />
+            </p>
+            <p className="text-gray-500 pb-2">
+              <Typewriter
+                words={["> < INTRO >"]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+              />
+            </p>
+            <p className="pb-5">
+              <Typewriter
+                words={[
+                  "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque a aut fugiat labore veritatis nesciunt tempore aperiam voluptatum magnam.",
+                ]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+                typeSpeed={1}
+              />
+            </p>
+            <p className="text-gray-500 pb-2">
+              <Typewriter
+                words={["> < ERROR >"]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+              />
+            </p>
+            <p className="">
+              <Typewriter
+                words={["> Waiting for login . . . !!"]}
+                cursorStyle="_"
+                cursorColor="#14fecdff"
+                loop={1}
+                typeSpeed={1}
+              />
+            </p>
+            {isLogin && (
+              <div>
+                <p className="pb-5 text-[#14fecdff]">
+                  <Typewriter
+                    words={["> login successful . . ."]}
+                    cursorStyle="_"
+                    cursorColor="#14fecdff"
+                    loop={1}
+                    typeSpeed={1}
+                  />
+                </p>
+                <p className="text-gray-500 pb-2">
+                  <Typewriter
+                    words={["> < ERROR >"]}
+                    cursorStyle="_"
+                    cursorColor="#14fecdff"
+                    loop={1}
+                  />
+                </p>
+                <p className="">
+                  <Typewriter
+                    words={["> Waiting for wallet connection . . . !!"]}
+                    cursorStyle="_"
+                    cursorColor="#14fecdff"
+                    loop={1}
+                    typeSpeed={1}
+                  />
+                </p>
+                {walletConnection && (
+                  <div>
+                    <p className="pb-5 text-[#14fecdff]">
+                      <Typewriter
+                        words={["> Wallet connection successful . . . "]}
+                        cursorStyle="_"
+                        cursorColor="#14fecdff"
+                        loop={1}
+                        typeSpeed={1}
+                      />
+                    </p>
+
+                    <p className="text-gray-500 pb-2">
+                      <Typewriter
+                        words={["> < DONE >"]}
+                        cursorStyle="_"
+                        cursorColor="#14fecdff"
+                        loop={1}
+                      />
+                    </p>
+                    <p className=" text-[#14fecdff]">
+                      <Typewriter
+                        words={["> ALL SET FOR MECH MINTING . . . !!"]}
+                        cursorStyle="_"
+                        cursorColor="#14fecdff"
+                        loop={1}
+                        typeSpeed={1}
+                      />
+                    </p>
+                    <div className="w-full px-3 border-2 border-[#423F3E] mt-3">
+                      <button className="border-2 border-[#423F3E] rounded-full w-full mt-3 py-2 uppercase hover:bg-[#14fecdff] hover:text-black ease-in-out duration-300 text-sm ">
+                        NEXT
+                      </button>
+                      <p className="text-[0.65rem] py-3">
+                        <Typewriter
+                          words={["> ERROR: NULL"]}
+                          cursorStyle="_"
+                          cursorColor="#14fecdff"
+                          loop={1}
+                          typeSpeed={1}
+                          cursor
+                        />
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
+            )}
           </div>
-      <motion.svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1206.56 47"
-        fill="#ffffff"
-        className={"rotate-180 absolute bottom-0 "}
-      >
-        <motion.polyline
-          initial={{ pathLength: 0 }}
-          animate={{
-              pathLength: 1,
-              transition: { delay: 0, duration: 1, ease: "easeInOut" },
-          }}
-          class="cls-1"
-          points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
-          strokeWidth={2}
-          stroke={"#7D7C7C"}
-          fill={"transparent"}
-        />
-      </motion.svg>
+          {/* login */}
+          {isLogin ? (
+            walletConnection ? null : (
+              <Wallet WalletConnectionHandler={WalletConnectionHandler} />
+            )
+          ) : (
+            <Login IsLoginHandler={IsLoginHandler} />
+          )}
+        </div>
+        <div className="w-[65%] border-2 border-[#423F3E] "></div>
+      </div>
     </div>
   );
 }
