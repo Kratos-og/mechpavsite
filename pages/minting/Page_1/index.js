@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Login from "../Login";
-import Wallet from "../Wallet";
+import Wallet from "../../../components/Minting/Wallet";
 
 export default function Index() {
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
   const [walletConnection, setWalletConnection] = useState(false);
   const IsLoginHandler = (data) => {
     setIsLogin(data);
@@ -63,7 +63,7 @@ export default function Index() {
             </p>
             <p className="text-gray-500 pb-2">
               <Typewriter
-                words={["> < ERROR >"]}
+                words={["> < INFO >"]}
                 cursorStyle="_"
                 cursorColor="#14fecdff"
                 loop={1}
@@ -71,7 +71,7 @@ export default function Index() {
             </p>
             <p className="">
               <Typewriter
-                words={["> Waiting for login . . . !!"]}
+                words={["> Waiting for User . . . "]}
                 cursorStyle="_"
                 cursorColor="#14fecdff"
                 loop={1}
@@ -91,7 +91,7 @@ export default function Index() {
                 </p>
                 <p className="text-gray-500 pb-2">
                   <Typewriter
-                    words={["> < ERROR >"]}
+                    words={["> < INFO >"]}
                     cursorStyle="_"
                     cursorColor="#14fecdff"
                     loop={1}
@@ -99,7 +99,7 @@ export default function Index() {
                 </p>
                 <p className="">
                   <Typewriter
-                    words={["> Waiting for wallet connection . . . !!"]}
+                    words={["> Waiting for wallet connection . . . "]}
                     cursorStyle="_"
                     cursorColor="#14fecdff"
                     loop={1}
@@ -128,7 +128,7 @@ export default function Index() {
                     </p>
                     <p className=" text-[#14fecdff]">
                       <Typewriter
-                        words={["> ALL SET FOR MECH MINTING . . . !!"]}
+                        words={["> ALL SET FOR MECH MINTING . . . "]}
                         cursorStyle="_"
                         cursorColor="#14fecdff"
                         loop={1}
@@ -164,7 +164,6 @@ export default function Index() {
             <Login IsLoginHandler={IsLoginHandler} />
           )}
         </div>
-        <div className="w-[65%] border-2 border-[#423F3E] "></div>
       </div>
     </div>
   );

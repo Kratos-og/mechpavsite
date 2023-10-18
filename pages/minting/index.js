@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import Hero from "./Hero";
+import Hero from "../../components/Minting/Hero";
 import Page from "./Page_1";
 import { motion } from "framer-motion";
+import Init from "@/components/Minting/Init";
 
 export default function Index() {
   const [enter, setEnter] = useState(false);
-  const enterHandler = (data) => {
-    setEnter(data);
-  };
+ 
   return (
     <div className="h-screen">
       <motion.svg
@@ -37,7 +36,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute top-5 left-[47%] text-[0.6rem] font-black text-[#423F3E] border-x-4 border-[#48ffd7] px-5 
+        className="absolute top-5 left-[47%] text-[0.6rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
         border-opacity-40"
       >
         MECH PAVS
@@ -50,7 +49,7 @@ export default function Index() {
         }}
         className="absolute top-7 right-[2%] text-[0.6rem] font-black text-[#423F3E]"
       >
-        PREPARE YOUR MECH
+        PREPARE YOUR PAVS
       </motion.p>
       <motion.p
         initial={{ opacity: 1 }}
@@ -60,9 +59,9 @@ export default function Index() {
         }}
         className="absolute top-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] "
       >
-        MAKE YOUR PAV MECH !!
+        #PAVSNOTPETS
       </motion.p>
-      {enter ? <Page /> : <Hero enterHandler={enterHandler} />}
+      {enter ? <Init /> : <Hero enterHandler={setEnter} />}
       {/* <Page /> */}
       <motion.p
         initial={{ opacity: 1 }}
@@ -70,7 +69,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute bottom-5 left-[47%] text-[0.6rem] font-black text-[#423F3E] border-x-4 border-[#48ffd7] px-5 
+        className="absolute bottom-5 left-[47%] text-[0.6rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
         border-opacity-40 "
       >
         MECH PAVS
@@ -93,7 +92,7 @@ export default function Index() {
         }}
         className="absolute bottom-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] "
       >
-        ARE YOU READY TO MINT ?
+        GET READY TO MINT
       </motion.p>
       <motion.svg
         id="Layer_1"

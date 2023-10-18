@@ -22,7 +22,7 @@ const Layout = props => {
     return (
         <div ref={scope}>
             <MetaTags />
-            <Header toggleMenu={toggleMenu} />
+            {/* <Header toggleMenu={toggleMenu} /> */}
             <LeftMenu show={showMenu} toggleMenu={toggleMenu} />
             <motion.div animate={{ scale: showMenu ? 0.85 : 1, transition: { duration: 0.4 } }} className="overflow-x-hidden">
                 {props.children}
