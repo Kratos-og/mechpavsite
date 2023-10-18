@@ -5,7 +5,7 @@ import Init from "@/components/Minting/Init";
 
 export default function Index() {
   const [enter, setEnter] = useState(false);
- 
+
   return (
     <div className="h-screen">
       <motion.svg

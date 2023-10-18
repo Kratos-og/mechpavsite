@@ -1,11 +1,16 @@
 import { Typewriter } from "react-simple-typewriter";
 import Wallet from "../Wallet";
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { Platform } from "@/components/Builder/SceneContainer/MechPav/Platform";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import Crate from "../Crate";
 
 const Init = props => {
     const [walletDetails, setWalletDetails] = useState(false);
     return (
-        <div className="flex h-[88vh] pt-20 justify-evenly">
+        <div className="flex h-[88vh] pt-20 px-10 justify-evenly gap-10">
             <div className="w-[25%] border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest uppercase">
                 <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
                     <Typewriter
@@ -123,6 +128,9 @@ const Init = props => {
                     )
                     }
                 </div>
+            </div>
+            <div className="w-3/4 border-2 border-[#423F3E]">
+                <Crate />
             </div>
         </div>
     )
