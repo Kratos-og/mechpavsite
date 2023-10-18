@@ -7,7 +7,7 @@ export default function Index() {
   const [enter, setEnter] = useState(false);
  
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-[url('/assets/images/mint/mesh.jpg')] bg-cover  bg-center">
       <motion.svg
         id="Layer_1"
         data-name="Layer 1"

@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: { 
-      colors: {
+      colors: { 
         'pavia-green': '#14fecd',
         'pavs-red': '#f70817',
       },
