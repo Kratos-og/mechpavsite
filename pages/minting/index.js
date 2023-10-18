@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Hero from "../../components/Minting/Hero";
-import Page from "./Page_1";
 import { motion } from "framer-motion";
 import Init from "@/components/Minting/Init";
 
