@@ -5,7 +5,7 @@ export default function Hero(props) {
   useEffect(() => {
     setTimeout(() => {
       props.enterHandler(true);
-    }, 5000);
+    }, 0);
   });
   return (
     <div className="w-screen h-screen flex justify-center items-center flex-col">

@@ -6,12 +6,12 @@ import { useTypewriter } from "react-simple-typewriter";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Crate = props => {
-    let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb');
+    // let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb');
 
-    useLayoutEffect(() => gltf.scene.traverse(node => {
-        if (!node.isMesh) return;
-        node.material.wireframe = true;
-    }), []);
+    // useLayoutEffect(() => gltf.scene.traverse(node => {
+    //     if (!node.isMesh) return;
+    //     node.material.wireframe = true;
+    // }), []);
     
 
     return (
@@ -41,7 +41,7 @@ const Crate = props => {
         //     </Suspense>
         // </Canvas>
         <div className="w-full h-full flex items-center justify-center">
-            <img src="/assets/images/crate.png" className="w-[20rem] animate-"/>
+            {/* <img src="/assets/images/crate.png" className="w-[20rem] animate-"/> */}
         </div>
     )
 }

@@ -7,14 +7,14 @@ export default function Index() {
   const [enter, setEnter] = useState(false);
 
   return (
-    <div className="h-screen">
+    <div className="h-screen overflow-hidden">
       <motion.svg
         id="Layer_1"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1206.56 47"
         fill="#ffffff"
-        className={"pt-5 absolute"}
+        className={"pt-5 absolute z-10"}
       >
         <motion.polyline
           initial={{ pathLength: 0 }}
@@ -36,7 +36,7 @@ export default function Index() {
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
         className="absolute top-5 left-[47%] text-[0.6rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
-        border-opacity-40"
+        border-opacity-40 z-10"
       >
         MECH PAVS
       </motion.p>
@@ -46,7 +46,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute top-7 right-[2%] text-[0.6rem] font-black text-[#423F3E]"
+        className="absolute top-7 right-[2%] text-[0.6rem] font-black text-[#423F3E] z-10"
       >
         PREPARE YOUR PAVS
       </motion.p>
@@ -56,7 +56,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute top-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] "
+        className="absolute top-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] z-10"
       >
         #PAVSNOTPETS
       </motion.p>
@@ -69,7 +69,7 @@ export default function Index() {
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
         className="absolute bottom-5 left-[47%] text-[0.6rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
-        border-opacity-40 "
+        border-opacity-40 z-10"
       >
         MECH PAVS
       </motion.p>
@@ -79,7 +79,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute bottom-7 right-[2%] text-[0.6rem] font-black text-[#423F3E] "
+        className="absolute bottom-7 right-[2%] text-[0.6rem] font-black text-[#423F3E] z-10"
       >
         REACTOR READY
       </motion.p>
@@ -89,7 +89,7 @@ export default function Index() {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute bottom-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] "
+        className="absolute bottom-7 left-[2%] text-[0.6rem] font-black text-[#423F3E] z-10"
       >
         GET READY TO MINT
       </motion.p>
@@ -99,7 +99,7 @@ export default function Index() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1206.56 47"
         fill="#4ac6adff"
-        className={"rotate-180 absolute bottom-5"}
+        className={"rotate-180 absolute bottom-5 z-10"}
       >
         <motion.polyline
           initial={{ pathLength: 0 }}
