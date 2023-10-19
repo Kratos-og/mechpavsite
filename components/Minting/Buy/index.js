@@ -8,7 +8,7 @@ export default function Buy(props) {
     <div className="w-full border-2 border-[#423F3E] mt-3 relative overflow-hidden">
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: -500, transition: { duration: 7 } }}
+        animate={{ y: -500, transition: { duration: 2 } }}
         className="bg-black w-full h-1/2 absolute top-0 z-[1] "
       ></motion.div>
       <div className="" >
@@ -29,7 +29,7 @@ export default function Buy(props) {
       </div>
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: 500, transition: { duration: 7 } }}
+        animate={{ y: 500, transition: { duration: 2 } }}
         className="bg-black w-full h-1/2 absolute bottom-0 z-[1] "
       ></motion.div>
     </div>
