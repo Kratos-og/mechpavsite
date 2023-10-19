@@ -26,7 +26,8 @@ const Init = props => {
                         loop={1}
                     />}
                 </p>
-                <div className="px-5 py-2">
+                <div className="px-2 py-2 h-[90%]">
+                    <div className="px-3 py-2 overflow-auto custom-scroll h-full">
                     <p className="pt-3 text-gray-500 pb-1">
                         {activeIndex >= 0 ? <Text index={0} onDone={setActiveIndex} text={"> < STARTING . . . >"} speed={30}/> : null}
                     </p>
@@ -52,12 +53,14 @@ const Init = props => {
                             {activeIndex >= 9 && <Buy/>}
                         </div>
                     )}
-                </div>
-                <div>
+                    <div>
                     {activeIndex >= 6 && !walletDetails && (  
                         <Wallet onConnect={setWalletDetails} />
                     )
                     }
+                </div>
+                </div>
+                
                 </div>
             </div>
             <div className="w-3/4 border-2 border-[#423F3E] relative overflow-hidden">

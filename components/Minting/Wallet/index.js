@@ -1,6 +1,7 @@
 
 import SpinnerSm from '@/components/UI/SpinnerSm';
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Wallet(props) {
   const [start, setStart] = useState(false);
