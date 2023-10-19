@@ -129,8 +129,11 @@ const Init = props => {
                     }
                 </div>
             </div>
-            <div className="w-3/4 border-2 border-[#423F3E]">
-                <Crate />
+            <div className="w-3/4 border-2 border-[#423F3E] relative overflow-hidden">
+                <div className="z-10 relative h-full w-full">
+                    <Crate />
+                </div>
+               
             </div>
         </div>
     )
