@@ -3,32 +3,39 @@ import Hero from "../../components/Minting/Hero";
 import { motion } from "framer-motion";
 import Init from "@/components/Minting/Init";
 
-export default function Index() {
+const Minting = () => {
   const [enter, setEnter] = useState(false);
 
   return (
-    <div className="h-screen overflow-hidden">
-      <motion.svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1206.56 47"
-        fill="#ffffff"
-        className={"pt-5 absolute z-10"}
-      >
-        <motion.polyline
-          initial={{ pathLength: 0 }}
-          animate={{
-            pathLength: 1,
-            transition: { delay: 0, duration: 1, ease: "easeInOut" },
-          }}
-          class="cls-1"
-          points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
-          strokeWidth={1}
-          stroke={"#423F3E"}
-          fill={"transparent"}
-        />
-      </motion.svg>
+    <div className="h-screen w-screen overflow-hidden relative">
+      <div class="grid h-[95%] w-full absolute">
+        <div class="grid-fade"></div>
+        <div class="grid-lines"></div>
+      </div>
+      <div className="relative bg-black h-6">
+        <motion.svg
+          id="Layer_1"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1206.56 47"
+          fill="#ffffff"
+          className={"pt-5 absolute z-10"}
+        >
+
+          <motion.polyline
+            initial={{ pathLength: 0 }}
+            animate={{
+              pathLength: 1,
+              transition: { delay: 0, duration: 1, ease: "easeInOut" },
+            }}
+            class="cls-1"
+            points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
+            strokeWidth={1}
+            stroke={"#423F3E"}
+            fill={"black"}
+          />
+        </motion.svg>
+      </div>
       <motion.p
         initial={{ opacity: 1 }}
         animate={{
@@ -69,7 +76,7 @@ export default function Index() {
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
         className="absolute bottom-5 left-[47%] text-[0.6rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
-        border-opacity-40 z-10"
+        border-opacity-40 z-50"
       >
         MECH PAVS
       </motion.p>
@@ -93,27 +100,33 @@ export default function Index() {
       >
         GET READY TO MINT
       </motion.p>
-      <motion.svg
-        id="Layer_1"
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1206.56 47"
-        fill="#4ac6adff"
-        className={"rotate-180 absolute bottom-5 z-10"}
-      >
-        <motion.polyline
-          initial={{ pathLength: 0 }}
-          animate={{
-            pathLength: 1,
-            transition: { delay: 0, duration: 1, ease: "easeInOut" },
-          }}
-          class="cls-1"
-          points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
-          strokeWidth={1}
-          stroke={"#423F3E"}
-          fill={"transparent"}
-        />
-      </motion.svg>
+      <div className="bg-black h-6 absolute bottom-0 w-full">
+        <motion.svg
+          id="Layer_1"
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1206.56 47"
+          fill="#4ac6adff"
+          className={"rotate-180 absolute bottom-5 z-10"}
+        >
+          <motion.polyline
+            initial={{ pathLength: 0 }}
+            animate={{
+              pathLength: 1,
+              transition: { delay: 0, duration: 1, ease: "easeInOut" },
+            }}
+            class="cls-1"
+            points="0 2 411.5 2.5 437.5 26.5 770.5 27.5 798.5 2.5 1206.56 2"
+            strokeWidth={1}
+            stroke={"#423F3E"}
+            fill={"black"}
+          />
+        </motion.svg>
+      </div >
     </div>
   );
 }
+
+Minting.DisplayName = 'Minting';
+
+export default Minting;
