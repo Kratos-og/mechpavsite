@@ -21,7 +21,7 @@ export default function Wallet(props) {
   }
 
   return (
-    <div className='border-2 border-[#423F3E] uppercase mt-2 py-4'>
+    <div className='border-2 border-[#423F3E] uppercase mt-2 py-4 relative overflow-hidden'>
       <div className='flex items-center py-1'>
         <p className='text-gray-500 px-5 text-xs'>Step 1: Connect Wallet</p>
         {loading && <SpinnerSm />}
@@ -62,6 +62,11 @@ export default function Wallet(props) {
         initial={{ y: 0 }}
         animate={{ y: 500, transition: { duration: 7 } }}
         className="bg-black w-full h-1/2 absolute bottom-0 z-[1] "
+      ></motion.div>
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: 500, transition: { duration: 7 } }}
+        className="bg-black w-full h-1/2 absolute top-0 z-[1] "
       ></motion.div>
     </div>
   );

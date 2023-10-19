@@ -9,13 +9,17 @@ import Buy from "../Buy";
 const Init = props => {
     const [walletDetails, setWalletDetails] = useState();
     const [activeIndex, setActiveIndex] = useState(0)
-
+    console.log(walletDetails)
     return (
-        <div className="flex h-[88vh] pt-20 px-10 justify-evenly gap-10">
+        <div className="flex h-[88vh] pt-20 px-10 justify-evenly gap-10 relative">
             <motion.div 
             initial={{y:0}}
             animate={{y:-500,transition:{duration:1}}}
             className="bg-black w-full h-1/2 absolute top-0 z-[1] "></motion.div>
+            <motion.div 
+            initial={{y:0}}
+            animate={{y:500,transition:{duration:1}}}
+            className="bg-black h-1/2 absolute bottom-0 z-[1] w-full"></motion.div>
             <div className="w-[25%] border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest uppercase">
                 <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
                     {<Typewriter
@@ -69,10 +73,7 @@ const Init = props => {
                 </div>
 
             </div>
-            <motion.div 
-            initial={{y:0}}
-            animate={{y:500,transition:{duration:1}}}
-            className="bg-black w-full h-1/2 absolute bottom-0 z-[1] "></motion.div>
+            
         </div>
     )
 }
