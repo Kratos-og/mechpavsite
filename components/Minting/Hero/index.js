@@ -5,14 +5,14 @@ export default function Hero(props) {
   useEffect(() => {
     setTimeout(() => {
       props.enterHandler(true);
-    }, 0);
+    }, 5000);
   });
   return (
     <div className="w-screen h-screen flex justify-center items-center flex-col">
       <motion.div
         className="overflow-hidden relative">
         <div className="border-2 border-[#423F3E] p-10 bg-black"></div>
-        <div className="border-2 border-[#423F3E] p-8 bg-black absolute rotate-45 top-[-60%] left-[-60%] z-10"></div>
+        <div className="border-2 border-[#798777] p-8 bg-black absolute rotate-45 top-[-60%] left-[-60%] z-10"></div>
         <motion.div
           initial={{ y: 100 }}
           animate={{ y: 0, transition: { duration: 3, delay: 1, ease: "easeInOut" } }}

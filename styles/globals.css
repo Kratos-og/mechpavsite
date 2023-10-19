@@ -299,7 +299,7 @@ input[type="number"]::-webkit-outer-spin-button {
   position: absolute;
   z-index: 1;
   background: radial-gradient(
-    ellipse at 50% 50%,
+    ellipse at 50% 80%,
     rgba(14, 20, 22, 0) 0%,
     #0e1416 80%
   );
@@ -308,12 +308,12 @@ input[type="number"]::-webkit-outer-spin-button {
 .grid-lines {
   width: 100%;
   height: 200%;
-  background-image: linear-gradient(to right, #fff 1px, transparent 0),
-    linear-gradient(to bottom, #fff 1px, transparent 0);
-  background-size: 45px 30px;
+  background-image: linear-gradient(to right, #48ffd7 0.5px, transparent 0),
+    linear-gradient(to bottom, #48ffd7 1px, transparent 0);
+  background-size: 16px 16px;
   background-repeat: repeat;
-  transform-origin: 100% 0 0;
-  animation: play 15s linear infinite;
+  transform-origin: 20% 5% 0;
+  animation: play 100s linear infinite;
 }
 
 @keyframes play {
