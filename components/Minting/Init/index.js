@@ -45,14 +45,14 @@ const Init = props => {
                         {activeIndex >= 3 && <Text index={3} onDone={setActiveIndex} text={"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque a aut fugiat labore veritatis nesciunt tempore aperiam voluptatum magnam."} speed={20} />}
                         <p className="pt-5 text-gray-500 pb-1">
                             {activeIndex >= 4 && <Text index={4} onDone={setActiveIndex} text={"> < INFO >"} speed={30} />}</p>
-                        {activeIndex >= 5 && 
-                        <div className="flex">
-                        <Text index={5} onDone={setActiveIndex} text={"> Waiting for User Input . . . "} speed={30} />
-                        {activeIndex==6 &&<motion.p 
-                        initial={{rotateZ:0}}
-                        animate={{rotateZ:[0,45,90,135,180],transition:{duration:0.4,repeat:Infinity}}}
-                        className="ml-3">|</motion.p>}
-                        </div>
+                        {activeIndex >= 5 &&
+                            <div className="flex">
+                                <Text index={5} onDone={setActiveIndex} text={"> Waiting for User Input . . . "} speed={30} />
+                                {activeIndex == 6 && <motion.p
+                                    initial={{ rotateZ: 0 }}
+                                    animate={{ rotateZ: [0, 45, 90, 135, 180], transition: { duration: 0.4, repeat: Infinity } }}
+                                    className="ml-3">|</motion.p>}
+                            </div>
                         }
                         {walletDetails && (
                             <div>
@@ -64,14 +64,14 @@ const Init = props => {
                                     {activeIndex >= 7 && <Text index={7} onDone={setActiveIndex} text={"> < MINT > "} speed={30} />}
                                 </p>
                                 <p className=" text-[#14fecdff]">
-                                    {activeIndex >= 8 && 
-                                    <div className="flex">
-                                    <Text index={8} onDone={setActiveIndex} text={"> ALL SET FOR MECH MINTING . . . "} speed={30} />
-                                    {activeIndex==9 &&<motion.p 
-                        initial={{rotateZ:0}}
-                        animate={{rotateZ:[0,45,90,135,180],transition:{duration:0.4,repeat:Infinity}}}
-                        className="ml-3">|</motion.p>}
-                                    </div>
+                                    {activeIndex >= 8 &&
+                                        <div className="flex">
+                                            <Text index={8} onDone={setActiveIndex} text={"> ALL SET FOR MECH MINTING . . . "} speed={30} />
+                                            {activeIndex == 9 && <motion.p
+                                                initial={{ rotateZ: 0 }}
+                                                animate={{ rotateZ: [0, 45, 90, 135, 180], transition: { duration: 0.4, repeat: Infinity } }}
+                                                className="ml-3">|</motion.p>}
+                                        </div>
                                     }
                                 </p>
                                 {activeIndex >= 9 && confirmedQty == 0 && <Buy onConfirm={setConfirmedQty} />}
@@ -85,37 +85,37 @@ const Init = props => {
                                 {activeIndex >= 10 && <Text index={10} onDone={setActiveIndex} text={`> you have selected ${confirmedQty}x Crates - ${confirmedQty * 450} ADA `} speed={30} />}
                             </p>
                             <p className="">
-                                {activeIndex >= 11 && 
-                                <div className="flex">
-                                <Text index={11} onDone={setActiveIndex} text={`> Initiating Transaction . . .`} speed={30} />
-                                {activeIndex==12 &&<motion.p 
-                        initial={{rotateZ:0}}
-                        animate={{rotateZ:[0,45,90,135,180],transition:{duration:0.4,repeat:Infinity}}}
-                        className="ml-3">|</motion.p>}
-                                </div>
+                                {activeIndex >= 11 &&
+                                    <div className="flex">
+                                        <Text index={11} onDone={setActiveIndex} text={`> Initiating Transaction . . .`} speed={30} />
+                                        {activeIndex == 12 && <motion.p
+                                            initial={{ rotateZ: 0 }}
+                                            animate={{ rotateZ: [0, 45, 90, 135, 180], transition: { duration: 0.4, repeat: Infinity } }}
+                                            className="ml-3">|</motion.p>}
+                                    </div>
                                 }
                             </p>
-                            
+
                             <p className="">
-                                {activeIndex >= 12 && 
-                                <div className="flex">
-                                <Text index={13} onDone={setActiveIndex} text={`> Choosing a mech . . .`} speed={30} />
-                                {activeIndex==14 &&<motion.p 
-                        initial={{rotateZ:0}}
-                        animate={{rotateZ:[0,45,90,135,180],transition:{duration:0.4,repeat:Infinity}}}
-                        className="ml-3">|</motion.p>}
-                                </div>
+                                {activeIndex >= 12 &&
+                                    <div className="flex">
+                                        <Text index={13} onDone={setActiveIndex} text={`> Choosing a mech . . .`} speed={30} />
+                                        {activeIndex == 14 && <motion.p
+                                            initial={{ rotateZ: 0 }}
+                                            animate={{ rotateZ: [0, 45, 90, 135, 180], transition: { duration: 0.4, repeat: Infinity } }}
+                                            className="ml-3">|</motion.p>}
+                                    </div>
                                 }
                             </p>
                             <p className="">
-                                {activeIndex >= 13 && 
-                                <div className="flex">
-                                <Text index={15} onDone={setActiveIndex} text={`> Creating Transaction . . .`} speed={30} />
-                                {activeIndex==16 &&<motion.p 
-                        initial={{rotateZ:0}}
-                        animate={{rotateZ:[0,45,90,135,180],transition:{duration:0.4,repeat:Infinity}}}
-                        className="ml-3">|</motion.p>}
-                                </div>
+                                {activeIndex >= 13 &&
+                                    <div className="flex">
+                                        <Text index={15} onDone={setActiveIndex} text={`> Creating Transaction . . .`} speed={30} />
+                                        {activeIndex == 16 && <motion.p
+                                            initial={{ rotateZ: 0 }}
+                                            animate={{ rotateZ: [0, 45, 90, 135, 180], transition: { duration: 0.4, repeat: Infinity } }}
+                                            className="ml-3">|</motion.p>}
+                                    </div>
                                 }
                             </p>
                         </>}
@@ -147,6 +147,13 @@ const Init = props => {
                 </div>
             </div>
             <div className="w-3/4 h-[85%] max-md:w-full mt-5 border-2 relative border-[#423F3E] overflow-hidden bg-black ">
+                <div class="grid h-[110%] w-full absolute z-30 opacity-40">
+                    <div class="grid-fade"></div>
+                    <div class="grid-lines"></div>
+                </div>
+                <div className="relative z-50 h-full w-full">
+                    <Crate />
+                </div>
             </div>
 
         </div>
