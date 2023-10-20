@@ -4,7 +4,7 @@ import { Suspense, useLayoutEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Crate = props => {
-    let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb');
+    let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb',null);
 
     useLayoutEffect(() => gltf.scene.traverse(node => {
         if (!node.isMesh) return;

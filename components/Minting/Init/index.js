@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Crate from "../Crate";
 import Text from "../Text";
 import Wallet from "../Wallet";
@@ -14,6 +14,7 @@ const Init = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [confirm, setConfirm] = useState(false);
   const [done, setDone] = useState(false);
+  const [animDone, setAnimDone] = useState(false)
   return (
     <div className="flex h-[90%] items-center justify-center px-10 gap-10 relative max-md:flex-col">
       <motion.div
@@ -32,6 +33,7 @@ const Init = (props) => {
           x: 0,
           transition: { delay: 2, duration: 1, ease: "easeInOut" },
         }}
+        onAnimationComplete={() => setAnimDone(true)}
         className="w-[25%] max-md:w-full h-[85%] mt-5 border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest bg-black"
       >
         <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
@@ -191,9 +193,8 @@ const Init = (props) => {
                     <Text
                       index={10}
                       onDone={setActiveIndex}
-                      text={`> you have selected ${confirmedQty}x Crates - ${
-                        confirmedQty * 450
-                      } ADA `}
+                      text={`> you have selected ${confirmedQty}x Crates - ${confirmedQty * 450
+                        } ADA `}
                       speed={30}
                     />
                   )}
@@ -325,11 +326,10 @@ const Init = (props) => {
                 )}
               </>
             )}
-            
+
           </div>
         </div>
       </motion.div>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 3, ease: "circOut" } }}
@@ -340,7 +340,7 @@ const Init = (props) => {
           <div class="grid-lines"></div>
         </div>
         <div className="relative z-50 h-full w-full">
-          <Crate />
+          {animDone && <Crate />}
         </div>
       </motion.div>
     </div>
