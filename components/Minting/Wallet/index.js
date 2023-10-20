@@ -38,11 +38,22 @@ export default function Wallet(props) {
   return (
     <div className='border-2 border-[#423F3E] uppercase mt-2 py-4 relative overflow-hidden'>
       <div className='flex items-center py-1'>
-        <p className='text-gray-500 px-5 text-xs'>Step 1: Connect Wallet</p>
+      
+        <p className='text-gray-500 px-5 text-xs'>
+          Step 1: Connect Wallet</p>
         {loading && <SpinnerSm />}
       </div>
       <div className='w-full px-5'>
-        {!start ? <button className='border-2 border-[#423F3E] rounded-full w-full mt-5 py-3 uppercase hover:bg-[#14fecdff] hover:text-black ease-in-out duration-300 text-sm ' onClick={() => setStart(true)}>CONNECT</button>
+        {!start ? <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+          <div className="lines"></div>
+          <div className="angles"></div>
+          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+            <p>CONNECT</p>
+          </div>
+          </div>
+          
+          </button>
           :
           <div className='py-4 flex flex-col gap-4' id='walletPanel'>
             <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('lace')}>

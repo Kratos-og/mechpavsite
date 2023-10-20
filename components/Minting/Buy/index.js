@@ -10,7 +10,7 @@ export default function Buy(props) {
       const mainPanel = document.getElementById('mainPanel');
       mainPanel.scroll({
         behavior: 'smooth',
-        top: document.getElementById('confirmBtn').offsetTop - 100
+        top: document.getElementById('confirmBtn').offsetTop - 90
       })
     }
   }, [selected])
@@ -34,7 +34,15 @@ export default function Buy(props) {
             </div>))}
         </div>
         <div className="px-4 pb-3" id="confirmBtn">
-          <button disabled={selected == 0} onClick={() => props.onConfirm(selected)} className='border-2 border-[#423F3E] disabled:hover:bg-[#423F3E] rounded-full w-full mt-5 py-3 uppercase hover:bg-[#14fecdff] hover:text-black ease-in-out duration-300 text-sm '>Confirm</button>
+          <button disabled={selected == 0} onClick={() => props.onConfirm(selected)} className='text-pavia-green group font-light w-full mt-5 py-7 uppercase text-sm relative newButton'>
+          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+          <div className="lines"></div>
+          <div className="angles"></div>
+          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+            <p>Confirm</p>
+          </div>
+          </div>
+          </button>
         </div>
       </div>
       <motion.div

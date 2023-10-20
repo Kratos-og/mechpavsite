@@ -323,3 +323,47 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: rotateX(60deg) translateY(0);
   }
 }
+
+/* BUTTON CSS */
+
+
+body .frame {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .lines {
+  background: linear-gradient(to bottom, #34495e 2px, transparent 2px) 0 0, linear-gradient(to right, #34495e 2px, transparent 2px) 0 100%, linear-gradient(to left, #34495e 2px, transparent 2px) 100% 0, linear-gradient(to top, #34495e 2px, transparent 2px) 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0px 0px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-size 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+body .angles {
+  background: linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 0, linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 0 0, linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 0, linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 100% 0, linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 100%, linear-gradient(to top, #a6afc0 2px, transparent 2px) 100% 100%, linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 100%, linear-gradient(to top, #a6afc0 2px, transparent 2px) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 7px 7px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.48;
+  transition: background-size 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.newButton:hover .lines {
+  background-size: 100% 100%;
+}
+.newButton:hover .angles {
+  background-size: 14px 14px;
+}
+
+
+
+

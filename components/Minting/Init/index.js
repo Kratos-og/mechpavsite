@@ -46,7 +46,7 @@ const Init = (props) => {
           transition: { delay: 2, duration: 1, ease: "easeInOut" },
         }}
         onAnimationComplete={() => setAnimDone(true)}
-        className="w-[25%] max-md:w-full h-[85%] mt-5 border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest bg-black"
+        className="w-[25%] max-md:w-full h-[85%] mt-5 border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest bg-black uppercase"
       >
         <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
           {
@@ -213,38 +213,41 @@ const Init = (props) => {
                     />
                   )}
                 </p>
-                <p className="">
+                
+              </>
+            )}
+            {activeIndex >= 11 && confirmedQty > 0 && !confirm && (
+              <Confirm confirm={setConfirm} onConfirm={setConfirmedQty} />
+            )}
+            {confirm === "yes" && (
+              <>
+                <p className="text-gray-500 pb-1 pt-5">
                   {activeIndex >= 11 && (
-                    <div className="flex">
-                      <Text
-                        index={11}
-                        onDone={setActiveIndex}
-                        text={`> Initiating Transaction . . .`}
-                        speed={30}
-                      />
-                      {activeIndex == 12 && (
-                        <motion.p
-                          initial={{ rotateZ: 0 }}
-                          animate={{
-                            rotateZ: [0, 45, 90, 135, 180],
-                            transition: { duration: 0.4, repeat: Infinity },
-                          }}
-                          className="ml-3"
-                        >
-                          |
-                        </motion.p>
-                      )}
-                    </div>
+                    <Text
+                      index={11}
+                      onDone={setActiveIndex}
+                      text={"> < INFO > "}
+                      speed={30}
+                    />
                   )}
                 </p>
-
-                <p className="">
+                <p className=" text-[#14fecdff]">
                   {activeIndex >= 12 && (
+                    <Text
+                      index={12}
+                      onDone={setActiveIndex}
+                      text={`> confirmed . . . ! !`}
+                      speed={30}
+                    />
+                  )}
+                </p>
+                <p className="">
+                  {activeIndex >= 13 && (
                     <div className="flex">
                       <Text
                         index={13}
                         onDone={setActiveIndex}
-                        text={`> Choosing a mech . . .`}
+                        text={`> Initiating Transaction . . .`}
                         speed={30}
                       />
                       {activeIndex == 14 && (
@@ -263,7 +266,31 @@ const Init = (props) => {
                   )}
                 </p>
                 <p className="">
-                  {activeIndex >= 13 && (
+                  {activeIndex >= 14 && (
+                    <div className="flex">
+                      <Text
+                        index={14}
+                        onDone={setActiveIndex}
+                        text={`> Choosing a mech . . .`}
+                        speed={30}
+                      />
+                      {activeIndex == 15 && (
+                        <motion.p
+                          initial={{ rotateZ: 0 }}
+                          animate={{
+                            rotateZ: [0, 45, 90, 135, 180],
+                            transition: { duration: 0.4, repeat: Infinity },
+                          }}
+                          className="ml-3"
+                        >
+                          |
+                        </motion.p>
+                      )}
+                    </div>
+                  )}
+                </p>
+                <p className="">
+                  {activeIndex >= 15 && (
                     <div className="flex">
                       <Text
                         index={15}
@@ -286,40 +313,13 @@ const Init = (props) => {
                     </div>
                   )}
                 </p>
-              </>
-            )}
-            {activeIndex >= 14 && confirmedQty > 0 && !confirm && (
-              <Confirm confirm={setConfirm} onConfirm={setConfirmedQty} />
-            )}
-            {confirm === "yes" && (
-              <>
-                <p className="text-gray-500 pb-1 pt-5">
-                  {activeIndex >= 16 && (
-                    <Text
-                      index={16}
-                      onDone={setActiveIndex}
-                      text={"> < INFO > "}
-                      speed={30}
-                    />
-                  )}
-                </p>
-                <p className=" text-[#14fecdff]">
-                  {activeIndex >= 17 && (
-                    <Text
-                      index={17}
-                      onDone={setActiveIndex}
-                      text={`> confirmed . . . ! !`}
-                      speed={30}
-                    />
-                  )}
-                </p>
                 {activeIndex >= 16 && !done && <Mint done={setDone} />}
                 {done && (
                   <>
                     <p className="text-gray-500 pb-1 pt-5">
-                      {activeIndex >= 18 && (
+                      {activeIndex >= 16 && (
                         <Text
-                          index={18}
+                          index={16}
                           onDone={setActiveIndex}
                           text={"> < completed minting > "}
                           speed={30}
@@ -327,9 +327,9 @@ const Init = (props) => {
                       )}
                     </p>
                     <p className=" text-[#14fecdff]">
-                      {activeIndex >= 19 && (
+                      {activeIndex >= 17 && (
                         <Text
-                          index={19}
+                          index={17}
                           onDone={setActiveIndex}
                           text={`> successfully minted YAYAAAA . . . ! ! `}
                           speed={30}
@@ -347,7 +347,7 @@ const Init = (props) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 3, ease: "circOut" } }}
-        className="w-3/4 h-[85%] max-md:w-full mt-5 border-2 relative border-[#423F3E] overflow-hidden bg-black "
+        className="w-3/4 h-[85%] max-md:w-full mt-5 border-2 relative border-[#423F3E] overflow-hidden bg-black max-md:hidden"
       >
         <div class="grid h-[110%] w-full absolute z-30 opacity-40">
           <div class="grid-fade"></div>
