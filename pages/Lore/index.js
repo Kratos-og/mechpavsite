@@ -67,8 +67,8 @@ const Lore = () => {
           <Third_Part />
           <Fourth_Part_1 />
           <Fourth_Part_2 />
-          {/* <Fourth_Part_3 /> */}
-          <Locked />
+          <Fourth_Part_3 />
+          {/* <Locked /> */}
         </motion.div>
 
       </div>
