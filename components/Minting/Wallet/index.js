@@ -3,17 +3,17 @@ import SpinnerSm from '@/components/UI/SpinnerSm';
 import React, { useEffect, useState } from 'react';
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from 'framer-motion';
+import Text from '../Text';
 
 export default function Wallet(props) {
   const [start, setStart] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [walletError,setWalletError] = useState("")
+  const [walletError, setWalletError] = useState("")
 
   const onWalletSelect = async (wallet) => {
     try {
       setLoading(true)
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
-      setWalletError(walletInstance)
       setLoading(false);
       props.onConnect(wallet);
     }
@@ -59,26 +59,23 @@ export default function Wallet(props) {
             </div>
           </div>
         }
-        {walletError && walletError.toLowerCase().startsWith("user") && 
-        <div className='text-red-600'>
-        <Typewriter
-        words={[`> ERROR : ${walletError} !`]}
-        cursorStyle="_"
-        cursor
-        cursorColor="#14fecdff"
-        loop={1}
-        />
-        </div>}
-        {walletError && walletError.toLowerCase().startsWith("cannot") && 
-        <div className='text-red-600'>
-        <Typewriter
-        words={[`> ERROR : NOT INSTALL THE ${walletError.match(/'\w+'/).toString().replaceAll("'","")} WALLET !`]}
-        cursorStyle="_"
-        cursor
-        cursorColor="#14fecdff"
-        loop={1}
-        />
-        </div>}
+        {walletError && walletError.toLowerCase().startsWith("user") &&
+          <div className='text-red-600'>
+            <Typewriter
+              words={[`> ERROR : ${walletError} !`]}
+              cursorStyle="_"
+              cursor
+              cursorColor="#14fecdff"
+              loop={1}
+            />
+          </div>}
+        {walletError && walletError.toLowerCase().startsWith("cannot") &&
+          <div className='text-red-600'>
+            <Text
+              text={`> ERROR : ${walletError.match(/'\w+'/).toString().replaceAll("'", "")} WALLET NOT FOUND!`}
+              speed={30}
+            />
+          </div>}
 
       </div>
       <motion.div
