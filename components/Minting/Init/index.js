@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { AnimatePresence, motion } from "framer-motion";
 import Crate from "../Crate";
@@ -14,7 +14,19 @@ const Init = (props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [confirm, setConfirm] = useState(false);
   const [done, setDone] = useState(false);
-  const [animDone, setAnimDone] = useState(false)
+  const [animDone, setAnimDone] = useState(false);
+
+  useEffect(() => {
+    const mainPanel = document.getElementById('mainPanel');
+    if (activeIndex == 9) {
+      mainPanel.scroll({
+        behavior: 'smooth',
+        top: document.getElementById('buyPanel').offsetTop - 150
+      })
+    }
+  }, [activeIndex])
+
+
   return (
     <div className="flex h-[90%] items-center justify-center px-10 gap-10 relative max-md:flex-col">
       <motion.div
@@ -48,7 +60,7 @@ const Init = (props) => {
           }
         </p>
         <div className="px-2 py-2 h-[90%]">
-          <div className="px-3 py-2 overflow-auto custom-scroll h-full">
+          <div className="px-3 py-2 overflow-auto custom-scroll h-full" id="mainPanel">
             <p className="pt-3 text-gray-500 pb-1">
               {activeIndex >= 0 ? (
                 <Text
@@ -172,7 +184,9 @@ const Init = (props) => {
                   )}
                 </p>
                 {activeIndex >= 9 && confirmedQty == 0 && (
-                  <Buy onConfirm={setConfirmedQty} />
+                  <div id="buyPanel">
+                    <Buy onConfirm={setConfirmedQty} />
+                  </div>
                 )}
               </div>
             )}

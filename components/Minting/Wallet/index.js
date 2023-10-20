@@ -10,6 +10,19 @@ export default function Wallet(props) {
   const [loading, setLoading] = useState(false);
   const [walletError, setWalletError] = useState("")
 
+  useEffect(() => {
+    if (start) {
+      setTimeout(() => {
+        const mainPanel = document.getElementById('mainPanel');
+        mainPanel.scroll({
+          behavior: 'smooth',
+          top: document.getElementById('walletPanel').offsetTop + 100
+        })
+      }, 100)
+
+    }
+  }, [start])
+
   const onWalletSelect = async (wallet) => {
     try {
       setLoading(true)
@@ -31,7 +44,7 @@ export default function Wallet(props) {
       <div className='w-full px-5'>
         {!start ? <button className='border-2 border-[#423F3E] rounded-full w-full mt-5 py-3 uppercase hover:bg-[#14fecdff] hover:text-black ease-in-out duration-300 text-sm ' onClick={() => setStart(true)}>CONNECT</button>
           :
-          <div className='py-4 flex flex-col gap-4'>
+          <div className='py-4 flex flex-col gap-4' id='walletPanel'>
             <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('lace')}>
               <div>| &gt;</div>
               <img src='/assets/images/wallets/lace.svg' className='w-4' />

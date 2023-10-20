@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Buy(props) {
   const availableToMint = 10;
   const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    if (selected > 0) {
+      const mainPanel = document.getElementById('mainPanel');
+      mainPanel.scroll({
+        behavior: 'smooth',
+        top: document.getElementById('confirmBtn').offsetTop - 100
+      })
+    }
+  }, [selected])
   return (
     <div className="w-full border-2 border-[#423F3E] mt-3 relative overflow-hidden">
       <motion.div
@@ -23,7 +33,7 @@ export default function Buy(props) {
               <div>{450 * (unit + 1)} ADA</div>
             </div>))}
         </div>
-        <div className="px-4 pb-3">
+        <div className="px-4 pb-3" id="confirmBtn">
           <button disabled={selected == 0} onClick={() => props.onConfirm(selected)} className='border-2 border-[#423F3E] disabled:hover:bg-[#423F3E] rounded-full w-full mt-5 py-3 uppercase hover:bg-[#14fecdff] hover:text-black ease-in-out duration-300 text-sm '>Confirm</button>
         </div>
       </div>
