@@ -1,25 +1,27 @@
 
 import SpinnerSm from '@/components/UI/SpinnerSm';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Typewriter } from "react-simple-typewriter";
 import { motion } from 'framer-motion';
 
 export default function Wallet(props) {
   const [start, setStart] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [walletError,setWalletError] = useState("")
 
   const onWalletSelect = async (wallet) => {
     try {
       setLoading(true)
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
+      setWalletError(walletInstance)
       setLoading(false);
       props.onConnect(wallet);
     }
     catch (err) {
-      console.log(err);
+      setWalletError(err.message)
       setLoading(false)
     }
   }
-
   return (
     <div className='border-2 border-[#423F3E] uppercase mt-2 py-4 relative overflow-hidden'>
       <div className='flex items-center py-1'>
@@ -57,6 +59,27 @@ export default function Wallet(props) {
             </div>
           </div>
         }
+        {walletError && walletError.toLowerCase().startsWith("user") && 
+        <div className='text-red-600'>
+        <Typewriter
+        words={[`> ERROR : ${walletError} !`]}
+        cursorStyle="_"
+        cursor
+        cursorColor="#14fecdff"
+        loop={1}
+        />
+        </div>}
+        {walletError && walletError.toLowerCase().startsWith("cannot") && 
+        <div className='text-red-600'>
+        <Typewriter
+        words={[`> ERROR : NOT INSTALL THE ${walletError.match(/'\w+'/).toString().replaceAll("'","")} WALLET !`]}
+        cursorStyle="_"
+        cursor
+        cursorColor="#14fecdff"
+        loop={1}
+        />
+        </div>}
+
       </div>
       <motion.div
         initial={{ y: 0 }}

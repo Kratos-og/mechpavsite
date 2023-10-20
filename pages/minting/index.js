@@ -78,7 +78,7 @@ const Minting = () => {
         #PAVSNOTPETS
       </motion.p>
       {enter ? <Init /> : <Hero enterHandler={setEnter} />}
-      {/* <Page /> */}
+      {/* <Init />  */}
       <motion.p
         initial={{ opacity: 1 }}
         animate={{
