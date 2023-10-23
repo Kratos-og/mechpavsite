@@ -17,13 +17,14 @@ export function SceneContainer(props) {
                 shadow-mapSize-height={512}
                 shadow-mapSize-width={512}
             />
+            
             {/*<pointLight ref={lightRef} position={[-70, 25, 70]} intensity={1} castShadow />
                <pointLight position={[70, 15, 70]} intensity={1.5} castShadow={true} />
             <pointLight position={[-70, 45, -70]} intensity={1.5} /> */}
             {/* <Environment background={"only"} files={"/assets/models/textures/bg.hdr"} /> */}
 
             <Environment background files={`/assets/models/environments/${props.env}.hdr`} />
-
+            
             <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
             <OrbitControls target={[1, 5, 0]} maxPolarAngle={Math.PI * 0.5} maxDistance={35} minDistance={6} />
 

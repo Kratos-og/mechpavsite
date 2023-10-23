@@ -1,103 +1,32 @@
-import MainPartControls from "@/components/Builder/Controls/MainParts";
-import Options from "@/components/Builder/Controls/Options";
-import { SceneContainer } from "@/components/Builder/SceneContainer";
-import Spinner from "@/components/UI/Spinner";
-import { Canvas, useLoader } from '@react-three/fiber';
-import { useEffect, useState } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { BsFillGearFill } from 'react-icons/bs';
-import Settings from "@/components/Builder/SceneContainer/Settings";
-import { motion } from "framer-motion";
-import { TbLockExclamation } from "react-icons/tb"
+import Builder from '@/components/Builder'
+import React, { useState } from 'react'
 
-export default function Builder() {
-  const [activeMainPart, setActiveMainPart] = useState(null);
-  const [selectedParts, setSelectedParts] = useState({});
-  const [loadingModels, setLoadingModels] = useState(true);
-  const [env, setEnv] = useState('kloppenheim');
-  const [showSettings, setShowSettings] = useState(false);
-  const onSelect = (type, name) => {
-    const modSelection = { ...selectedParts };
-    modSelection[type] = name;
-    setSelectedParts(modSelection);
-  }
-
-  // useEffect(() => {
-  //     //platform
-  //     try {
-  //         if (localStorage.env)
-  //             setEnv(localStorage.env)
-  //         let model = useLoader(
-  //             GLTFLoader,
-  //             `/assets/models/platform.gltf`
-  //         );
-  //         if (model?.scene) {
-  //             setLoadingModels(false)
-  //         }
-  //     }
-  //     catch (err) {
-  //         setLoadingModels(false)
-  //     }
-  // }, []);
-
-  const onEnvChange = (env) => {
-    localStorage.setItem('env', env)
-    setEnv(env)
-  }
-
+export default function Index() {
+  const [isLogin,setIsLogin] = useState(false) 
   return (
-    <div
-      className="h-screen w-screen flex justify-center items-center relative overflow-hidden bg-fixed px-10"
-      id="cont"
-    >
-      <div>
-        <motion.div
-          initial={{ width: "100%" }}
-          animate={{
-            left: "100%",
-            transition: { delay: 0.5, duration: 1 },
-          }}
-          className="w-full bg-black h-full absolute"
-        ></motion.div>
-        <motion.div
-          initial={{ x: 0, y: 0 }}
-          animate={{ x: [30, 0, 15, 0, 10, 0, 5, 0], transition: { delay: 0.5, duration: 0.5 } }}
-          className="text-black lg:text-[4rem] max-md:text-[2rem] pb-5 w-full items-center flex justify-center">
-          <div className="bg-white rounded-full p-4">
-            <TbLockExclamation />
+    <>    {isLogin ? <Builder/> : 
+    <div className="h-screen flex justify-center items-center bg-transparent">
+      <div className='absolute w-[80%] top-0'>
+      <img src="assets/images/builder/group.png" alt="mech" />
+      </div>
+      <div className='border-2 border-gray-600 rounded-lg absolute bg-white/10'>
+        <div className='flex flex-col p-10 gap-5 justify-center items-center'>
+        <p className='font-black text-5xl text-white'>MECH BUILDER</p>
+        <button className='w-96 h-20 mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setIsLogin(true)}>
+          <div className='frame  w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+          <div className="lines"></div>
+          <div className="angles"></div>
+          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+            <p className='text-xl'>LOGIN</p>
           </div>
-        </motion.div>
-        <motion.span
-          initial={{ visibility: "hidden" }}
-          animate={{
-            visibility: "visible",
-            transition: { delay: 0.5 },
-          }}
-          exit={{ visibility: "hidden" }}
-          className="lg:text-[4rem] 2xl:text-[200px] whitespace-nowrap font-bold tracking-wider text-[2.5rem]"
-        >
-          COMING SOON
-        </motion.span>
+          </div>
+          </button>
+        </div>
+
       </div>
     </div>
-    // <div className="w-full h-screen relative overflow-hidden" id="cont">
-    //     <div className='p-4 blurred-bg cursor-pointer rounded-lg absolute top-3 right-5 z-50' onClick={() => setShowSettings(true)}>
-    //         <BsFillGearFill className='text-3xl' />
-    //     </div>
-    //     {!loadingModels ? <>
-    //         <div className="absolute top-10 left-0 h-full flex gap-5 items-center z-40 p-10">
-    //             <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} />
-    //             {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />}
-    //         </div>
-    //         <Canvas shadows="percentage">
-    //             <SceneContainer selectedParts={selectedParts} env={env} />
-    //         </Canvas>
-    //     </>
-    //         : <div className="w-full h-full flex flex-col items-center justify-center">
-    //             <Spinner />
-    //         </div>
-    //     }
-    //     <Settings setEnv={onEnvChange} show={showSettings} env={env} close={() => setShowSettings(false)} />
-    // </div>
-  );
+  }
+  </>
+
+  )
 }
