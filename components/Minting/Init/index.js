@@ -1,15 +1,26 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { AnimatePresence, motion } from "framer-motion";
+import axios from '@/components/Common/axios';
 import Crate from "../Crate";
 import Text from "../Text";
 import Wallet from "../Wallet";
 import Buy from "../Buy";
 import Confirm from "../Confirm";
 import Mint from "../Mint";
+import Title from "./Title";
+import Start from "./Start";
+import Intro from "./Intro";
+import Info from "./Info";
+import WalletInfo from "./WalletInfo";
+import MintStatus from "./MintStatus";
+import CountDetails from "./CountDetails";
+import CountConfirmed from "./CountConfirmed";
 
 const Init = (props) => {
-  const [walletDetails, setWalletDetails] = useState();
+  const [walletDetails, setWalletDetails] = useState({});
+  const [mintDetails, setMintDetails] = useState()
+  const [err, setErr] = useState(null)
   const [confirmedQty, setConfirmedQty] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const [confirm, setConfirm] = useState(false);
@@ -17,14 +28,92 @@ const Init = (props) => {
   const [animDone, setAnimDone] = useState(false);
 
   useEffect(() => {
+    if (walletDetails.address) {
+      getStatus();
+    }
+  }, [walletDetails]);
+
+  const getStatus = async () => {
+    try {
+      const status = (await axios.post(`/drop/65363f7d79b53e832360b33d`, {
+        addresses: walletDetails?.address
+      })).data;
+      if (err) {
+        setErr(null)
+      }
+      setMintDetails(status);
+    }
+    catch (error) {
+      setErr(error?.data?.message)
+    }
+  }
+
+  useEffect(() => {
     const mainPanel = document.getElementById('mainPanel');
-    if (activeIndex == 9) {
+    if (activeIndex == 11) {
       mainPanel.scroll({
         behavior: 'smooth',
-        top: document.getElementById('buyPanel').offsetTop - 150
+        top: document.getElementById('buyPanel')?.offsetTop - 150
       })
     }
   }, [activeIndex])
+
+  const onMintInitiate = async () => {
+    setDone(true);
+    try {
+      let data = (await axios.post(`/buy/65363f7d79b53e832360b33d`,
+        {
+          utxoStrings: walletDetails.utxos,
+          number: +confirmedQty,
+          addresses: walletDetails?.address
+        }
+      )).data;
+      if (err) {
+        setErr(null)
+      }
+      const sig = await signTransaction(data?.transactionBodyHex);
+      const submit = await submitTransaction(sig, data?.transactionBodyHex);
+      console.log(submit);
+    }
+    catch (error) {
+      setErr(error?.data?.message);
+      return;
+    }
+  }
+
+  const signTransaction = async (txHex) => {
+    try {
+      const walletInstance = await window.cardano[walletDetails?.name?.toLowerCase()]?.enable();
+      const sig = await walletInstance.signTx(txHex, true);
+      return sig;
+    }
+    catch (error) {
+      setLoading(false);
+      setStep(steps[1]);
+      console.log(error)
+      setErr(error?.message);
+      return;
+    }
+  };
+
+  const submitTransaction = async (witnessSetHex, txHex) => {
+    try {
+      let data = (await axios.post(`/submit`,
+        {
+          witnessSetHex: witnessSetHex,
+          transactionHex: txHex,
+        }
+      )).data;
+      if (err) {
+        setErr(null);
+      }
+      return data;
+    }
+    catch (error) {
+      setErr(error?.data?.message);
+    }
+  };
+
 
 
   return (
@@ -48,257 +137,47 @@ const Init = (props) => {
         onAnimationComplete={() => setAnimDone(true)}
         className="w-[25%] max-md:w-full h-[85%] mt-5 border-2 border-[#423F3E] text-[0.65rem] font-black tracking-widest bg-black uppercase"
       >
-        <p className=" text-xs border-b-2 border-[#423F3E] p-5 text-[#14fecdff]">
-          {
-            <Typewriter
-              words={["MECH PAVS", "MECH MINTING START . . . "]}
-              cursorStyle="_"
-              cursor
-              cursorColor="#14fecdff"
-              loop={1}
-            />
-          }
-        </p>
+        <Title />
         <div className="px-2 py-2 h-[90%]">
           <div className="px-3 py-2 overflow-auto custom-scroll h-full" id="mainPanel">
-            <p className="pt-3 text-gray-500 pb-1">
-              {activeIndex >= 0 ? (
-                <Text
-                  index={0}
-                  onDone={setActiveIndex}
-                  text={"> < STARTING . . . >"}
-                  speed={30}
-                />
-              ) : null}
-            </p>
-            {activeIndex >= 1 && (
-              <Text
-                index={1}
-                onDone={setActiveIndex}
-                text={"> WELCOME TO MECH PAV MINTING . . ."}
-                speed={30}
-              />
-            )}
-            <p className="pt-5 text-gray-500 pb-1">
-              {activeIndex >= 2 && (
-                <Text
-                  index={2}
-                  onDone={setActiveIndex}
-                  text={"> < INTRO >"}
-                  speed={30}
-                />
-              )}
-            </p>
-            {activeIndex >= 3 && (
-              <Text
-                index={3}
-                onDone={setActiveIndex}
-                text={
-                  "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque a aut fugiat labore veritatis nesciunt tempore aperiam voluptatum magnam."
-                }
-                speed={20}
-              />
-            )}
-            <p className="pt-5 text-gray-500 pb-1">
-              {activeIndex >= 4 && (
-                <Text
-                  index={4}
-                  onDone={setActiveIndex}
-                  text={"> < INFO >"}
-                  speed={30}
-                />
-              )}
-            </p>
-            {activeIndex >= 5 && (
-              <div className="flex">
-                <Text
-                  index={5}
-                  onDone={setActiveIndex}
-                  text={"> Waiting for User Input . . . "}
-                  speed={30}
-                />
-                {activeIndex == 6 && (
-                  <motion.p
-                    initial={{ rotateZ: 0 }}
-                    animate={{
-                      rotateZ: [0, 45, 90, 135, 180],
-                      transition: { duration: 0.4, repeat: Infinity },
-                    }}
-                    className="ml-3"
-                  >
-                    |
-                  </motion.p>
-                )}
-              </div>
-            )}
+            <Start activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+            <Intro activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+            <Info activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
             <div>
-              {activeIndex >= 6 && !walletDetails && (
+              {activeIndex >= 6 && !walletDetails.address && (
                 <Wallet onConnect={setWalletDetails} />
               )}
             </div>
-            {walletDetails && (
+            {walletDetails.address && (
               <div>
-                <p className="pb-5 text-[#14fecdff]">
-                  {activeIndex >= 6 && (
-                    <Text
-                      index={6}
-                      onDone={setActiveIndex}
-                      text={`> ${walletDetails} Wallet connected successfully . . . `}
-                      speed={30}
-                    />
-                  )}
-                </p>
-
-                <p className="text-gray-500 pb-1">
-                  {activeIndex >= 7 && (
-                    <Text
-                      index={7}
-                      onDone={setActiveIndex}
-                      text={"> < MINT > "}
-                      speed={30}
-                    />
-                  )}
-                </p>
-                <p className=" text-[#14fecdff]">
-                  {activeIndex >= 8 && (
-                    <div className="flex">
-                      <Text
-                        index={8}
-                        onDone={setActiveIndex}
-                        text={"> ALL SET FOR MECH MINTING . . . "}
-                        speed={30}
-                      />
-                      {activeIndex == 9 && (
-                        <motion.p
-                          initial={{ rotateZ: 0 }}
-                          animate={{
-                            rotateZ: [0, 45, 90, 135, 180],
-                            transition: { duration: 0.4, repeat: Infinity },
-                          }}
-                          className="ml-3 text-white"
-                        >
-                          |
-                        </motion.p>
-                      )}
-                    </div>
-                  )}
-                </p>
-                {activeIndex >= 9 && confirmedQty == 0 && (
+                <WalletInfo activeIndex={activeIndex} setActiveIndex={setActiveIndex} walletDetails={walletDetails} />
+                <MintStatus mintDetails={mintDetails} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+                {activeIndex >= 11 && confirmedQty == 0 && (
                   <div id="buyPanel">
-                    <Buy onConfirm={setConfirmedQty} />
+                    <Buy onConfirm={setConfirmedQty} mintDetails={mintDetails} />
                   </div>
                 )}
               </div>
             )}
             {confirmedQty > 0 && (
-              <>
-                <p className="text-gray-500 pb-1 pt-5">
-                  {activeIndex >= 9 && (
-                    <Text
-                      index={9}
-                      onDone={setActiveIndex}
-                      text={"> < INFO > "}
-                      speed={30}
-                    />
-                  )}
-                </p>
-                <p className=" text-[#14fecdff]">
-                  {activeIndex >= 10 && (
-                    <Text
-                      index={10}
-                      onDone={setActiveIndex}
-                      text={`> you have selected ${confirmedQty}x Crates - ${confirmedQty * 450
-                        } ADA `}
-                      speed={30}
-                    />
-                  )}
-                </p>
-                
-              </>
+              <CountDetails activeIndex={activeIndex} setActiveIndex={setActiveIndex} confirmedQty={confirmedQty} mintDetails={mintDetails} />
             )}
-            {activeIndex >= 11 && confirmedQty > 0 && !confirm && (
-              <Confirm confirm={setConfirm} onConfirm={setConfirmedQty} />
+            {activeIndex >= 14 && confirmedQty > 0 && !confirm && (
+              <Confirm confirm={setConfirm} onCancel={setConfirmedQty} />
             )}
-            {confirm === "yes" && (
+            {confirm && (
               <>
-                <p className="text-gray-500 pb-1 pt-5">
-                  {activeIndex >= 11 && (
-                    <Text
-                      index={11}
-                      onDone={setActiveIndex}
-                      text={"> < INFO > "}
-                      speed={30}
-                    />
-                  )}
-                </p>
-                <p className=" text-[#14fecdff]">
-                  {activeIndex >= 12 && (
-                    <Text
-                      index={12}
-                      onDone={setActiveIndex}
-                      text={`> confirmed . . . ! !`}
-                      speed={30}
-                    />
-                  )}
-                </p>
+                <CountConfirmed activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
                 <p className="">
-                  {activeIndex >= 13 && (
+                  {activeIndex >= 16 && (
                     <div className="flex">
                       <Text
-                        index={13}
-                        onDone={setActiveIndex}
-                        text={`> Initiating Transaction . . .`}
-                        speed={30}
-                      />
-                      {activeIndex == 14 && (
-                        <motion.p
-                          initial={{ rotateZ: 0 }}
-                          animate={{
-                            rotateZ: [0, 45, 90, 135, 180],
-                            transition: { duration: 0.4, repeat: Infinity },
-                          }}
-                          className="ml-3"
-                        >
-                          |
-                        </motion.p>
-                      )}
-                    </div>
-                  )}
-                </p>
-                <p className="">
-                  {activeIndex >= 14 && (
-                    <div className="flex">
-                      <Text
-                        index={14}
-                        onDone={setActiveIndex}
-                        text={`> Choosing a mech . . .`}
-                        speed={30}
-                      />
-                      {activeIndex == 15 && (
-                        <motion.p
-                          initial={{ rotateZ: 0 }}
-                          animate={{
-                            rotateZ: [0, 45, 90, 135, 180],
-                            transition: { duration: 0.4, repeat: Infinity },
-                          }}
-                          className="ml-3"
-                        >
-                          |
-                        </motion.p>
-                      )}
-                    </div>
-                  )}
-                </p>
-                <p className="">
-                  {activeIndex >= 15 && (
-                    <div className="flex">
-                      <Text
-                        index={15}
+                        index={16}
                         onDone={setActiveIndex}
                         text={`> Creating Transaction . . .`}
                         speed={30}
                       />
-                      {activeIndex == 16 && (
+                      {activeIndex == 17 && !done && (
                         <motion.p
                           initial={{ rotateZ: 0 }}
                           animate={{
@@ -313,31 +192,28 @@ const Init = (props) => {
                     </div>
                   )}
                 </p>
-                {activeIndex >= 16 && !done && <Mint done={setDone} />}
-                {done && (
-                  <>
-                    <p className="text-gray-500 pb-1 pt-5">
-                      {activeIndex >= 16 && (
-                        <Text
-                          index={16}
-                          onDone={setActiveIndex}
-                          text={"> < completed minting > "}
-                          speed={30}
-                        />
-                      )}
-                    </p>
-                    <p className=" text-[#14fecdff]">
-                      {activeIndex >= 17 && (
-                        <Text
-                          index={17}
-                          onDone={setActiveIndex}
-                          text={`> successfully minted YAYAAAA . . . ! ! `}
-                          speed={30}
-                        />
-                      )}
-                    </p>
-                  </>
-                )}
+                {activeIndex >= 17 && !done && <Mint done={onMintInitiate} />}
+                {done &&
+                  <div className="flex">
+                    <Text
+                      index={17}
+                      onDone={setActiveIndex}
+                      text={`> Awaiting Signature . . .`}
+                      speed={30}
+                    />
+                    {activeIndex == 18 && (
+                      <motion.p
+                        initial={{ rotateZ: 0 }}
+                        animate={{
+                          rotateZ: [0, 45, 90, 135, 180],
+                          transition: { duration: 0.4, repeat: Infinity },
+                        }}
+                        className="ml-3"
+                      >
+                        |
+                      </motion.p>
+                    )}
+                  </div>}
               </>
             )}
 

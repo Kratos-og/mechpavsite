@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Buy(props) {
-  const availableToMint = 10;
+  const availableToMint = props.mintDetails?.availableToUser;
+  const price = props.mintDetails?.price / 1e6;
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
@@ -30,18 +31,18 @@ export default function Buy(props) {
                 <div className="lowercase">{unit + 1}x</div>
                 <div>Crates</div>
               </div>
-              <div>{450 * (unit + 1)} ADA</div>
+              <div>{price * (unit + 1)} ADA</div>
             </div>))}
         </div>
         <div className="px-4 pb-3" id="confirmBtn">
           <button disabled={selected == 0} onClick={() => props.onConfirm(selected)} className='text-pavia-green group font-light w-full mt-5 py-7 uppercase text-sm relative newButton'>
-          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
-          <div className="lines"></div>
-          <div className="angles"></div>
-          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
-            <p>Confirm</p>
-          </div>
-          </div>
+            <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+              <div className="lines"></div>
+              <div className="angles"></div>
+              <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+                <p>Confirm</p>
+              </div>
+            </div>
           </button>
         </div>
       </div>
