@@ -149,7 +149,7 @@ export default function Builder() {
         </>
       ) : editMode ? (
         <button
-          className="bg-white/10 border-2 border-gray-400 absolute bottom-5 right-5 text-black p-5 rounded-xl font-black tracking-widest"
+          className="bg-white/10 border-2 border-gray-400 absolute bottom-16 left-5 text-black p-3 rounded-xl font-black tracking-widest"
           onClick={() => {
             setEditeMode(false);
           }}
