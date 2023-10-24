@@ -9,14 +9,14 @@ const Minting = () => {
   return (
     <div className="h-screen w-screen overflow-hidden relative">
       <img src="/assets/images/mint/mesh.jpg" className="absolute -top-20" />
-      <div className="relative bg-black h-4 ">
+      <div className="relative bg-black h-[2.5%] ">
         <div className="max-md:hidden">
           <motion.svg
             id="Layer_1"
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1206.56 47"
-            fill="#ffffff"
+            fill="#000"
             className={"pt-5 absolute z-10 w-[102%] -rotate-180"}
           >
 
@@ -62,7 +62,7 @@ const Minting = () => {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute top5 right-[5%] text-[0.7rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
+        className="absolute top-[3%] right-[5%] text-[0.7rem] font-black text-white border-x-4 border-[#48ffd7] px-5 
         border-opacity-40 z-10 max-md:text-[0.5rem] max-md:top-2 max-md:left-[40%]"
       >
         MECH PAVS
@@ -85,7 +85,7 @@ const Minting = () => {
           opacity: [0, 1, 0, 1, 0, 1],
           transition: { delay: 0, repeat: Infinity, repeatDelay: 2 },
         }}
-        className="absolute bottom-5 left-[5%] text-[0.7rem] font-black text-white border-x-4 border-[#48ffd7] px-5
+        className="absolute bottom-[3%] left-[5%] text-[0.7rem] font-black text-white border-x-4 border-[#48ffd7] px-5
         border-opacity-40 z-50 max-md:text-[0.4rem] max-md:bottom-2 max-md:left-[40%]"
       >
         MECH PAVS
@@ -110,7 +110,7 @@ const Minting = () => {
       >
         GET READY TO MINT
       </motion.p>
-      <div className="bg-black h-4 absolute bottom-0 w-full">
+      <div className="bg-black h-[2.5%] absolute bottom-0 w-full">
         <div className="max-md:hidden">
           <motion.svg
             id="Layer_1"

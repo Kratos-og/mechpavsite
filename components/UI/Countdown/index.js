@@ -50,7 +50,7 @@ const Countdown = props => {
     }
 
     return (
-        <div className="grid grid-flow-col gap-2 text-center auto-cols-max">
+        <div className="grid grid-flow-col gap-2 text-center auto-cols-max items-center justify-center">
             <div className="flex flex-col items-center p-2 bg-fadedBlue dark:bg-fadedTurqoise rounded-lg text-white w-16">
                 <span className=" font-bold text-xl leading-[1em]">
                     <span>{remaining.days}</span>

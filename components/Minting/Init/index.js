@@ -118,12 +118,12 @@ const Init = (props) => {
     <div className="flex h-[90%] items-center justify-center px-10 gap-10 relative max-md:flex-col">
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: -500, transition: { duration: 1 } }}
+        animate={{ y: '-200%', transition: { duration: 1 } }}
         className="bg-black w-full h-1/2 absolute top-0 z-[1]"
       ></motion.div>
       <motion.div
         initial={{ y: 0 }}
-        animate={{ y: 500, transition: { duration: 1 } }}
+        animate={{ y: '200%', transition: { duration: 1 } }}
         className="bg-black h-1/2 absolute bottom-0 z-[1] w-full"
       ></motion.div>
       <motion.div
