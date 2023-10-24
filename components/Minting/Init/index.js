@@ -78,6 +78,13 @@ const Init = (props) => {
       const sig = await signTransaction(data?.transactionBodyHex);
       const submit = await submitTransaction(sig, data?.transactionBodyHex);
       setSubmitted(true);
+      setTimeout(() => {
+        setLogsInit(true);
+      }, 2200);
+
+      setTimeout(() => {
+        setMintSuccess(true);
+      }, 10000)
     }
     catch (error) {
       setErr(error?.data?.message);
@@ -89,14 +96,7 @@ const Init = (props) => {
     try {
       const walletInstance = await window.cardano[walletDetails?.name?.toLowerCase()]?.enable();
       const sig = await walletInstance.signTx(txHex, true);
-      setSubmitted(true);
-      setTimeout(() => {
-        setLogsInit(true);
-      }, 2200);
 
-      setTimeout(() => {
-        setMintSuccess(true);
-      }, 10000)
       return sig;
     }
     catch (error) {
