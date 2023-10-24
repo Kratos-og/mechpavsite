@@ -45,14 +45,15 @@ export default function index() {
           <div className="flex justify-center items-center w-full px-5 md:w-1/2">
             <div className="flex flex-col gap-4 text-sm uppercase">
               <Dot>5000 MECH CRATES WILL BE MINTED IN TOTAL WITH 50 BEING HELD BACK FOR THE TEAM AND COMMUNITY GIVEAWAYS.</Dot>
-              <Dot>EACH CRATE CONTAINS 5 RANDOM NFT PARTS THAT GUARANTEE YOU A COMPLETE MECH.</Dot>
+              <Dot>EACH CRATE CONTAINS THE 5 NFT MECH PARTS REQUIRED TO ASSEMBLE A COMPLETE MECH. THESE PARTS ARE RANDOMLY SELECTED AND AS SUCH ARE LIKLEY TO BE A MIXTURE OF CLASSES AND SKIN VARIANTS.</Dot>
+              <Dot>CRATES CAN BE OPENED FROM NOV 1ST. ON OPENING, THE CRATE WILL BE BURNED AND YOU WILL RECEIVE 5 FRESHLY MINTED MECH PARTS</Dot>
               <Dot>THERE ARE DIFFERENT CLASSES OF MECH ALONG WITH A VARIATION OF SKINS TO COLLECT</Dot>
               <Dot>ALL PARTS ARE INTERCHANGEABLE AND CAN BE BOUGHT, SOLD OR TRADED ON THE SECONDARY MARKET</Dot>
               <Dot>MECHS WILL BE USEABLE AVATARS THROUGHOUT THE PLAYGROUND AND PAVIA MAP</Dot>
               <Dot>EACH MECH HAS ADVANCED MOVEMENT MECHANICS AS WELL AS ACCESS TO EXCLUSIVE AREAS OF THE FULL PAVIA MAP WHEN IT LAUNCHES</Dot>
               <Dot>UNLOCK EXTRA UTILITY BY MATCHING CLASSES, SKINS, AND A COMBINATION OF BOTH TO COMPLETE YOUR MECH</Dot>
-              <Dot>To be whitelisted you must hold either <a className="font-bold text-pavia-green" href="https://www.jpg.store/collection/pavia" target="_blank">Pavia Land</a> OR a <a target="_blank" className="font-bold text-pavia-green" href="https://www.jpg.store/collection/pavs">PAV</a>. The PAV does not need to be mech compatible for the whitelist, but you will require a mech compatible PAV later if you wish to pilot the Pavia in game.</Dot>
-              <Dot>* The guideline price is subject to change and will be finalised a few days prior to the mint. This is to allow for any last minute market volatility.</Dot>
+              <Dot>TO BE WHITELISTED YOU MUST HOLD EITHER <a className="font-bold text-pavia-green" href="https://www.jpg.store/collection/pavia" target="_blank">Pavia Land</a> OR a <a target="_blank" className="font-bold text-pavia-green" href="https://www.jpg.store/collection/pavs">PAV</a> IN THE WALLET YOU ARE USING TO PURCHASE THE MECH CRATE. THIS CHECK IS DONE AT THE TIME OF PURCHASE. THERE WAS NO PRIOR SNAPSHOT</Dot>
+      
             </div>
           </div>
         </div>
