@@ -39,7 +39,7 @@ export default function Buy(props) {
             <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
               <div className="lines"></div>
               <div className="angles"></div>
-              <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+              <div className='bg-teal-900 w-full h-full flex justify-center items-center'>
                 <p>Confirm</p>
               </div>
             </div>

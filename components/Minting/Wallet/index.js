@@ -25,7 +25,12 @@ export default function Wallet(props) {
 
   const onWalletSelect = async (wallet) => {
     try {
-      setLoading(true)
+      if (!window.cardano[wallet.toLowerCase()]) {
+        setLoading(false);
+        setWalletError(`${wallet} wallet not found.`);
+        return;
+      }
+      setLoading(true);
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
       const addr = await walletInstance.getUsedAddresses();
       const utxos = await walletInstance.getUtxos();
@@ -46,16 +51,17 @@ export default function Wallet(props) {
         {loading && <SpinnerSm />}
       </div>
       <div className='w-full px-5'>
-        {!start ? <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
-          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
-            <div className="lines"></div>
-            <div className="angles"></div>
-            <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
-              <p>CONNECT</p>
+        {!start ?
+          <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+            <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+              <div className="lines"></div>
+              <div className="angles"></div>
+              <div className='bg-teal-900 w-full h-full flex justify-center items-center'>
+                <p>CONNECT</p>
+              </div>
             </div>
-          </div>
 
-        </button>
+          </button>
           :
           <div className='py-4 flex flex-col gap-4' id='walletPanel'>
             <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('lace')}>
@@ -78,30 +84,36 @@ export default function Wallet(props) {
               <img src='/assets/images/wallets/flint.svg' className='w-4' />
               <div>Flint Wallet</div>
             </div>
-            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('typhon')}>
+            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('gero')}>
+              <div>| &gt;</div>
+              <img src='/assets/images/wallets/gero.ico' className='w-4' />
+              <div>Gero Wallet</div>
+            </div>
+            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('typhoncip30')}>
               <div>| &gt;</div>
               <img src='/assets/images/wallets/typhon.png' className='w-4' />
               <div>Typhon Wallet</div>
             </div>
+            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('vespr')}>
+              <div>| &gt;</div>
+              <img src='/assets/images/wallets/vespr.jpg' className='w-4' />
+              <div>Vespr Wallet</div>
+            </div>
+            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('begin')}>
+              <div>| &gt;</div>
+              <img src='/assets/images/wallets/begin.png' className='w-4' />
+              <div>Begin Wallet</div>
+            </div>
+            <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => onWalletSelect('nufi')}>
+              <div>| &gt;</div>
+              <img src='/assets/images/wallets/nufi.png' className='w-4' />
+              <div>Nufi Wallet</div>
+            </div>
           </div>
         }
-        {walletError && walletError.toLowerCase().startsWith("user") &&
-          <div className='text-red-600'>
-            <Typewriter
-              words={[`> ERROR : ${walletError} !`]}
-              cursorStyle="_"
-              cursor
-              cursorColor="#14fecdff"
-              loop={1}
-            />
-          </div>}
-        {walletError && walletError.toLowerCase().startsWith("cannot") &&
-          <div className='text-red-600'>
-            <Text
-              text={`> ERROR : ${walletError.match(/'\w+'/).toString().replaceAll("'", "")} WALLET NOT FOUND!`}
-              speed={30}
-            />
-          </div>}
+        {walletError &&
+          <div className='text-pavs-red'>Error: {walletError}</div>
+        }
 
       </div>
       <motion.div

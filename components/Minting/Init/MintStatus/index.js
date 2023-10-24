@@ -1,8 +1,11 @@
+import Countdown from "@/components/UI/Countdown";
 import Text from "../../Text";
 import { motion } from "framer-motion";
 
 const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
     const maxAllocation = mintDetails?.availableToUser;
+    const stage = mintDetails?.stage;
+
     return (
         <>
             <p className="text-gray-500 pb-1">
@@ -50,7 +53,7 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                         }
                     </div>
                 )}
-                {activeIndex >= 9 && !maxAllocation && (
+                {activeIndex >= 9 && !maxAllocation && !stage && (
                     <div className="flex text-pavs-red">
                         <Text
                             index={9}
@@ -59,6 +62,36 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                         />
                     </div>
                 )}
+                {!maxAllocation && stage &&
+                    <>
+                        {
+                            activeIndex >= 9 && <div className="flex text-pavs-red">
+                                <Text
+                                    index={9}
+                                    onDone={setActiveIndex}
+                                    text={"> Whitelist Mint Only . . . "}
+                                    speed={30}
+                                />
+                            </div>
+                        }
+                        {
+                            activeIndex >= 10 &&
+                            <div className="flex text-white">
+                                <Text
+                                    index={10}
+                                    text={"> Public Mint Starts in . . . "}
+                                    speed={30}
+                                />
+                            </div>
+                        }
+                        {
+                            activeIndex >= 10 &&
+                            <div className="py-2">
+                                <Countdown time={stage.endDate} />
+                            </div>
+                        }
+                    </>
+                }
             </p>
         </>
     )

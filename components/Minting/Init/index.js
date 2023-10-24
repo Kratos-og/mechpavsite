@@ -114,8 +114,6 @@ const Init = (props) => {
     }
   };
 
-
-
   return (
     <div className="flex h-[90%] items-center justify-center px-10 gap-10 relative max-md:flex-col">
       <motion.div
