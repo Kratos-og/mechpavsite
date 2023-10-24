@@ -35,11 +35,11 @@ export default function Buy(props) {
             </div>))}
         </div>
         <div className="px-4 pb-3" id="confirmBtn">
-          <button disabled={selected == 0} onClick={() => props.onConfirm(selected)} className='text-pavia-green group font-light w-full mt-5 py-7 uppercase text-sm relative newButton'>
+          <button disabled={!selected} onClick={() => props.onConfirm(selected)} className='text-pavia-green group disabled:cursor-not-allowed disabled:text-white/25 font-light w-full mt-5 py-7 uppercase text-sm relative newButton'>
             <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
               <div className="lines"></div>
               <div className="angles"></div>
-              <div className='bg-teal-900 w-full h-full flex justify-center items-center'>
+              <div className={`w-full h-full flex justify-center  items-center ${selected > 0 ? 'bg-teal-900': 'bg-gray-800'}`}>
                 <p>Confirm</p>
               </div>
             </div>

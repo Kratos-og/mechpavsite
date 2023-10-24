@@ -33,7 +33,7 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                                     <Text
                                         index={10}
                                         onDone={setActiveIndex}
-                                        text={`> Crates available for user: ${maxAllocation}     `}
+                                        text={`> Crates available for user: ${maxAllocation}`}
                                         speed={30}
                                     />
                                 </div>
