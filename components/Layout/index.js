@@ -22,12 +22,12 @@ const Layout = props => {
     return (
         <div ref={scope}>
             <MetaTags />
-            <Header toggleMenu={toggleMenu} />
+            {/* <Header toggleMenu={toggleMenu} /> */}
             <LeftMenu show={showMenu} toggleMenu={toggleMenu} />
             <motion.div animate={{ scale: showMenu ? 0.85 : 1, transition: { duration: 0.4 } }} className="overflow-x-hidden">
                 {props.children}
             </motion.div>
-            {props.component !== 'Home' && props.component !== 'Lore' && <Footer />}
+            {props.component !== 'Home' && props.component !== 'Lore' && props.component !== 'Minting' && <Footer />}
         </div>
     )
 }
