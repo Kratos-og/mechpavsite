@@ -38,6 +38,11 @@ a {
   src: URL("../public/assets/fonts/Poppins-Bold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "sohne";
+  src: URL("../public/assets/fonts/soehne-schmal.woff2") format("truetype");
+}
+
 model-viewer {
   @apply w-full h-[160%] mt-60 xl:mt-0 xl:h-[190%];
 }

@@ -21,7 +21,8 @@ module.exports = {
     fontFamily: {
       'sans': ['rajdhani', 'sans-serif'],
       'medium': ['rajdhani-medium', 'rajdhani', 'sans-serif'],
-      'bold': ['rajdhani-bold', 'rajdhani', 'sans-serif']
+      'bold': ['rajdhani-bold', 'rajdhani', 'sans-serif'],
+      'sohne': ['sohne', 'sans-serif'],
     },
   },
   plugins: [require("daisyui")],

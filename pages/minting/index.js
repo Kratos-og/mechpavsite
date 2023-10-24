@@ -19,7 +19,6 @@ const Minting = () => {
             fill="#000"
             className={"pt-5 absolute z-10 w-[102%] -rotate-180"}
           >
-
             <motion.polyline
               initial={{ pathLength: 0 }}
               animate={{
