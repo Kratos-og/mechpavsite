@@ -76,7 +76,7 @@ const Init = (props) => {
         setErr(null)
       }
       const sig = await signTransaction(data?.transactionBodyHex);
-      //  const submit = await submitTransaction(sig, data?.transactionBodyHex);
+      const submit = await submitTransaction(sig, data?.transactionBodyHex);
       setSubmitted(true);
     }
     catch (error) {
