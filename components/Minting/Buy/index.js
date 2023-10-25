@@ -11,7 +11,7 @@ export default function Buy(props) {
       const mainPanel = document.getElementById('mainPanel');
       mainPanel.scroll({
         behavior: 'smooth',
-        top: document.getElementById('confirmBtn').offsetTop - 90
+        top: document.getElementById('confirmBtn').offsetTop 
       })
     }
   }, [selected])

@@ -1,4 +1,3 @@
-import { Typewriter } from "react-simple-typewriter";
 import Text from "../../Text";
 
 const Intro = ({ activeIndex, setActiveIndex }) => {
@@ -19,7 +18,7 @@ const Intro = ({ activeIndex, setActiveIndex }) => {
                     index={3}
                     onDone={setActiveIndex}
                     text={
-                        "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque a aut fugiat labore veritatis nesciunt tempore aperiam voluptatum magnam."
+                        "> Welcome to the MechPav mint!  This is currently 48hr Whitelist Mint and you will require either a Pavia Land NFT OR a PAV NFT in your purchasing wallet to take part.  This mint will go Public on Oct 27th at 11AM UTC | 6AMCDT"
                     }
                     speed={20}
                 />
