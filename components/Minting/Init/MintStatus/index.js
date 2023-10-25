@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
     const maxAllocation = mintDetails?.availableToUser;
     const stage = mintDetails?.stage;
-
+    const status = mintDetails?.status;
+    const hasToken = mintDetails?.hasToken;
     return (
         <>
             <p className="text-gray-500 pb-1">
@@ -19,7 +20,7 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                 )}
             </p>
             <p className=" text-[#14fecdff]">
-                {maxAllocation > 0 && (
+                {maxAllocation > 0 && status == 'None' && (
                     <div>
                         {activeIndex >= 9 && <Text
                             index={9}
@@ -53,7 +54,16 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                         }
                     </div>
                 )}
-                {activeIndex >= 9 && !maxAllocation && !stage && (
+                {maxAllocation > 0 && status != 'None' && (
+                    <div className="flex text-pavs-red">
+                        <Text
+                            index={9}
+                            text={"> You already have a transaction in progress, please wait while it is complete . . . "}
+                            speed={30}
+                        />
+                    </div>
+                )}
+                {activeIndex >= 9 && stage && ((stage?.rules == 'oneToMany' && hasToken && !maxAllocation) || (!maxAllocation && stage?.rules != 'oneToMany')) && (
                     <div className="flex text-pavs-red">
                         <Text
                             index={9}
@@ -62,14 +72,14 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                         />
                     </div>
                 )}
-                {!maxAllocation && stage &&
+                {!maxAllocation && stage?.rules == 'oneToMany' && !hasToken &&
                     <>
                         {
                             activeIndex >= 9 && <div className="flex text-pavs-red">
                                 <Text
                                     index={9}
                                     onDone={setActiveIndex}
-                                    text={"> Whitelist Mint Only . . . "}
+                                    text={"> This is a whitelist mint and you require either Pavia Land NFT or a PAV NFT in your purchasing wallet to take part. Sorry, we have been unable to detect either NFT in your wallet. But don’t worry, this mint soon becomes available to the public on Friday Oct 27th at 11AM UTC / 6AM CDT . . . "}
                                     speed={30}
                                 />
                             </div>
