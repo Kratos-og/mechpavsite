@@ -54,7 +54,7 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                         }
                     </div>
                 )}
-                {maxAllocation > 0 && status != 'None' && (
+                {/* {maxAllocation > 0 && status != 'None' && (
                     <div className="flex text-pavs-red">
                         <Text
                             index={9}
@@ -62,7 +62,7 @@ const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
                             speed={30}
                         />
                     </div>
-                )}
+                )} */}
                 {activeIndex >= 9 && stage && ((stage?.rules == 'oneToMany' && hasToken && !maxAllocation) || (!maxAllocation && stage?.rules != 'oneToMany')) && (
                     <div className="flex text-pavs-red">
                         <Text
