@@ -1,5 +1,7 @@
+import Button from "@/components/UI/Button";
 import Mouse from "@/components/UI/Svg/Mouse";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 const Hero = (props) => {
@@ -96,10 +98,19 @@ const Hero = (props) => {
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: props.init && props.loadVal && 5, opacity: props.init && props.loadVal && 1, transition: { delay: 1 } }}
                             exit={{ display: "none" }}
-                            className="pt-2 relative flex justify-center w-fit xl:w-full"
+                            className="pt-2 relative flex justify-center w-fit xl:w-full ml-7 md:ml-0"
                           >
-                            <div className="w-16 mb-1">
-                              <Mouse />
+                            <div className="">
+                              <Link href={"/minting"}>
+                                <motion.div
+                                  exit={{ display: "none" }}
+                                  className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                                >
+                                  <div className=" pointer-events-auto">
+                                    <Button>Mint Now</Button>
+                                  </div>
+                                </motion.div>
+                              </Link>
                             </div>
                           </motion.div>
 
