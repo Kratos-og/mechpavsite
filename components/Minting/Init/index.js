@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import axios from '@/components/Common/axios';
 import Crate from "../Crate";
@@ -134,9 +134,11 @@ const Init = (props) => {
           utxoStrings: walletDetails.utxos,
         })).data;
         if (status.state && status.state == 'None') {
-          setMintDetails(status);
           clearInterval(interval.current);
           getNftData();
+        }
+        else if (status.state && status.transactionId) {
+          window['transactionId']  = status.transactionId;
         }
       }
       catch (error) {
@@ -148,7 +150,7 @@ const Init = (props) => {
 
   const getNftData = async () => {
     try {
-      const data = (await axios.get(`/tokens/${mintDetails.txId}`)).data;
+      const data = (await axios.get(`/tokens/${window['transactionId']}`)).data;
       if (data.tokens) {
         setNftData(data.tokens);
         setMintSuccess(true);
@@ -323,7 +325,7 @@ const Init = (props) => {
                 <Text
                   index={18}
                   onDone={setActiveIndex}
-                  text={`${confirmedQty > 1 ? `Mech Pav Crate#00025 +${confirmedQty}` : 'Mech Pav Crate#00025'}`}
+                  text={`${confirmedQty > 1 ? `${nftData[0]?.name} +${confirmedQty} others` : `${nftData[0]?.name}`}`}
                   speed={30}
                 /></div>
               <div className="flex items-end justify-end gap-4 py-4">
