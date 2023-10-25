@@ -1,4 +1,3 @@
-import { Typewriter } from "react-simple-typewriter";
 import Text from "../../Text";
 
 const Intro = ({ activeIndex, setActiveIndex }) => {
@@ -19,7 +18,7 @@ const Intro = ({ activeIndex, setActiveIndex }) => {
                     index={3}
                     onDone={setActiveIndex}
                     text={
-                        "> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore itaque a aut fugiat labore veritatis nesciunt tempore aperiam voluptatum magnam."
+                        "> 5 CLASSES, 5 INTERCHANGEABLE MECH PARTS, MULTIPLE SKIN VARIATIONS AND OVER 9 MILLION COMBINATIONS. COLLECT, TRADE AND BUILD WITH INTERCHANGEABLE NFT MECH PARTS TO CREATE YOUR OWN UNIQUE GAME-READY AVATAR."
                     }
                     speed={20}
                 />

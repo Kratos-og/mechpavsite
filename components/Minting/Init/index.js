@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
-import { Typewriter } from "react-simple-typewriter";
-import { AnimatePresence, motion, Repeat } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import axios from '@/components/Common/axios';
 import Crate from "../Crate";
 import Text from "../Text";
@@ -29,6 +28,8 @@ const Init = (props) => {
   const [submitted, setSubmitted] = useState(false);
   const [logsInit, setLogsInit] = useState(false);
   const [mintSuccess, setMintSuccess] = useState(false);
+  const interval = useRef(null);
+  const [nftData, setNftData] = useState(null);
 
   useEffect(() => {
     if (walletDetails.address) {
@@ -76,8 +77,17 @@ const Init = (props) => {
         setErr(null)
       }
       const sig = await signTransaction(data?.transactionBodyHex);
-      //  const submit = await submitTransaction(sig, data?.transactionBodyHex);
-      setSubmitted(true);
+      if (sig) {
+        let submit = await submitTransaction(sig, data?.transactionBodyHex);
+
+        if (submit) {
+          initStatusCheck();
+          setSubmitted(true);
+          setTimeout(() => {
+            setLogsInit(true);
+          }, 2200);
+        }
+      }
     }
     catch (error) {
       setErr(error?.data?.message);
@@ -89,19 +99,9 @@ const Init = (props) => {
     try {
       const walletInstance = await window.cardano[walletDetails?.name?.toLowerCase()]?.enable();
       const sig = await walletInstance.signTx(txHex, true);
-      setSubmitted(true);
-      setTimeout(() => {
-        setLogsInit(true);
-      }, 2200);
-
-      setTimeout(() => {
-        setMintSuccess(true);
-      }, 10000)
       return sig;
     }
     catch (error) {
-      setLoading(false);
-      setStep(steps[1]);
       console.log(error)
       setErr(error?.message);
       return;
@@ -126,7 +126,40 @@ const Init = (props) => {
     }
   };
 
-  const mintMessages = ['<<<<<<<<<<<', 'Checking mintsas asd a dasf s fsfad sf', 'Checking Mech Pavsasdasd ', 'Found a crateaD', 'Bla bnlac crateAdaSDASD', 'Fetching process', 'Checking mint', 'Checking Mech Pavs', 'Found a crate'];
+  const initStatusCheck = () => {
+    interval.current = setInterval(async () => {
+      try {
+        const status = (await axios.post(`/drop/65363f7d79b53e832360b33d`, {
+          addresses: walletDetails?.address,
+          utxoStrings: walletDetails.utxos,
+        })).data;
+        if (status.state && status.state == 'None') {
+          setMintDetails(status);
+          clearInterval(interval.current);
+          getNftData();
+        }
+      }
+      catch (error) {
+        setErr(error?.data?.message);
+      }
+    }, 10000)
+  }
+
+
+  const getNftData = async () => {
+    try {
+      const data = (await axios.get(`/tokens/${mintDetails.txId}`)).data;
+      if (data.tokens) {
+        setNftData(data.tokens);
+        setMintSuccess(true);
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  const mintMessages = ['>>>>>>>>>', 'Checking Mint Status', 'Found a pav moving some crates around', 'PAV capsule calibration initiated', 'Fetching Mech parts. Randomizer engaged', 'Mech assembly quality control underway', 'Crate packing initiated', 'Pavs are not pets', 'Reactors ready'];
 
   let logMsgs = mintMessages.map((item, i) =>
     <motion.div
@@ -250,7 +283,7 @@ const Init = (props) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { delay: 3, ease: "circOut" } }}
-        className="w-3/4 h-[85%] max-md:w-full mt-5 border-2 relative border-[#423F3E] overflow-hidden bg-black max-md:hidden"
+        className={`w-3/4 h-[85%] max-md:w-full mt-5 border-2 relative border-[#423F3E] overflow-hidden bg-black ${logsInit ? '' : 'max-md:hidden'}`}
       >
         <motion.div
           initial={{ opacity: 1 }}
@@ -274,7 +307,7 @@ const Init = (props) => {
               animate={{ opacity: done ? 1 : 0, transition: { duration: 2, delay: 2 } }}
               className="w-full h-full absolute top-0">
               <div className=" z-50 h-full w-full">
-                <img src="/assets/images/mint/crate_final.jpg" />
+                <img src="/assets/images/mint/crate_final.jpg" className="w-full h-full object-cover" />
               </div>
             </motion.div>
             <div className="absolute bottom-3 right-4 text-right">
@@ -282,7 +315,7 @@ const Init = (props) => {
                 <Text
                   index={18}
                   onDone={setActiveIndex}
-                  text={`MINTED SUCCESSFULLY`}
+                  text={`${confirmedQty}x CRATES MINTED SUCCESSFULLY`}
                   speed={30}
                 />
               </div>
@@ -290,17 +323,18 @@ const Init = (props) => {
                 <Text
                   index={18}
                   onDone={setActiveIndex}
-                  text={`Mech Pav Crate#00025`}
+                  text={`${confirmedQty > 1 ? `Mech Pav Crate#00025 +${confirmedQty}` : 'Mech Pav Crate#00025'}`}
                   speed={30}
                 /></div>
-              <div className="flex items-end justify-end gap-6 py-4">
-                <a href="https://discord.com/invite/pavia" target="_blank" className="p-4 border rounded-md">
-                  <img src="/assets/images/icon-discord.svg" className="w-7" />
+              <div className="flex items-end justify-end gap-4 py-4">
+                <a href="https://discord.com/invite/pavia" target="_blank" className="p-3 border rounded-md" title="Join Discord">
+                  <img src="/assets/images/icon-discord.svg" className="w-5" />
                 </a>
-                <a href="https://twitter.com/Pavs_io" target="_blank" className="p-4 border rounded-md">
-                  <img src="/assets/images/icon-x.png" className="w-6" />
+                <a href={`https://twitter.com/intent/tweet?text=Minted a Mech PAV! https://pool.pm/${nftData[0]?.fingerprint}`} target="_blank" className="p-3 border rounded-md">
+                  <img src="/assets/images/icon-x.png" className="w-4" />
                 </a>
               </div>
+              <div className="text-xs cursor-pointer text-pavia-green" onClick={() => location.reload()}>Mint More &rarr;</div>
             </div>
           </AnimatePresence>
         }

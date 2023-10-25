@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Confirm({ confirm, onCancel }) {
+  useEffect(() => {
+    const mainPanel = document.getElementById('mainPanel');
+    mainPanel.scroll({
+      behavior: 'smooth',
+      top: document.getElementById('confirmNo').offsetTop
+    })
+  }, [])
   return (
     <div className="w-full border-2 border-[#423F3E] mt-3 relative overflow-hidden">
       <motion.div
@@ -15,7 +22,7 @@ export default function Confirm({ confirm, onCancel }) {
           <div>| &gt;</div>
           <div>YES</div>
         </div>
-        <div className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => { onCancel(0) }} >
+        <div id="confirmNo" className='flex items-center gap-2 hover:text-pavia-green cursor-pointer hover:translate-x-5 transition-all will-change-transform py-2' onClick={() => { onCancel(0) }} >
           <div>| &gt;</div>
           <div>NO</div>
         </div>
