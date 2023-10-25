@@ -138,7 +138,7 @@ const Init = (props) => {
           getNftData();
         }
         else if (status.state && status.transactionId) {
-          window['transactionId']  = status.transactionId;
+          window['transactionId'] = status.transactionId;
         }
       }
       catch (error) {
@@ -161,14 +161,14 @@ const Init = (props) => {
     }
   }
 
-  const mintMessages = ['>>>>>>>>>', 'Checking Mint Status', 'Found a pav moving some crates around', 'PAV capsule calibration initiated', 'Fetching Mech parts. Randomizer engaged', 'Mech assembly quality control underway', 'Crate packing initiated', 'Pavs are not pets', 'Reactors ready'];
+  const mintMessages = ['Pav Moral Status = Bullish', 'Mech Part Randomizer engaged', 'Crate Assembly Line running smoothly', 'Put the left leg in, put the right leg in…', 'Pav capsule air quality 99.3%', 'Mech Skin Paint Shop status: ONLINE', 'Crate shipping stations: STANDBY', 'Assembly line robotic loaders: 100%', 'Days since last PAV workplace incident: 5', 'Shipping conditions: GOOD', 'Mech Part combinations: 9M+', "Mech's Navigation and Geo Terrain Mapping: ONLINE"];
 
   let logMsgs = mintMessages.map((item, i) =>
     <motion.div
       initial={{ y: 0 }}
       key={i}
-      className="absolute bottom-0 whitespace-nowrap text-pavia-green/60 text-center"
-      animate={{ y: -200, opacity: [0, 1, 1, 1, 1, 1, 1, 1, 0, 0], transition: { duration: 4, repeat: Infinity, delay: 0.9 * i, ease: "linear" } }}
+      className="absolute bottom-0 whitespace-nowrap text-pavia-green/60 text-center mt-0.5"
+      animate={{ y: -200, opacity: [0, 1, 1, 1, 1, 1, 1, 1, 0, 0], transition: { duration: 8, repeat: Infinity, delay: 0.65 * i, ease: "linear" } }}
     >{item}</motion.div>
   )
   return (

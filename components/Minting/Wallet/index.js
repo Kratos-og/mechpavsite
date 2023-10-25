@@ -1,9 +1,7 @@
 
 import SpinnerSm from '@/components/UI/SpinnerSm';
 import React, { useEffect, useState } from 'react';
-import { Typewriter } from "react-simple-typewriter";
 import { motion } from 'framer-motion';
-import Text from '../Text';
 
 export default function Wallet(props) {
   const [start, setStart] = useState(false);
@@ -25,6 +23,11 @@ export default function Wallet(props) {
 
   const onWalletSelect = async (wallet) => {
     try {
+      if (!window.cardano) {
+        setLoading(false);
+        setWalletError(`No cardano wallets found.`);
+        return;
+      }
       if (!window.cardano[wallet.toLowerCase()]) {
         setLoading(false);
         setWalletError(`${wallet} wallet not found.`);
