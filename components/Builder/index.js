@@ -91,9 +91,11 @@ export default function Builder() {
       {!loadingModels ? (
         <>
           {showMenu && 
-          <div className="absolute  right-0 h-screen flex items-center z-40 px-5 py-2 blurred-bg">
-                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu}/>
-                {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />}
+            <div className="absolute right-0 h-screen z-40 w-[30%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  ">
+          <div className="   border-l-2 border-white ">
+                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect}/>
+                {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
+            </div>
             </div>
           }
           <Canvas shadows="percentage">

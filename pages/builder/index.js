@@ -1,7 +1,7 @@
 import Builder from '@/components/Builder'
 import React, { useState } from 'react'
 
-export default function Index() {
+export default function BuilderPage() {
   const [isLogin,setIsLogin] = useState(false) 
   return (
     <>    {isLogin ? <Builder/> : 
@@ -30,3 +30,4 @@ export default function Index() {
 
   )
 }
+BuilderPage.DisplayName = 'Builder';

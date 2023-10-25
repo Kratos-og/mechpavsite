@@ -364,6 +364,7 @@ body .angles {
   background-size: 14px 14px;
 }
 
-
-
+.top-bottom-overflow-fade {
+  mask-image: linear-gradient(transparent, black 40%, black 70%, transparent 100%);
+}
 
