@@ -1,4 +1,12 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 const DetailsGrid = props => {
+    const router = useRouter();
+
+    const openMinting = () => {
+        router.push('/minting');
+    }
     return (
         <div className="w-full uppercase text-lg flex flex-col justify-center gap-4 relative">
             <div className="flex items-center gap-10">
@@ -7,7 +15,9 @@ const DetailsGrid = props => {
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">WHITELIST MINT OPENS</div>
-                <div className="w-1/2 text-left">OCT 25TH, 11AM UTC, 6AM CDT</div>
+
+                <div className="w-1/2 whitespace-nowrap text-left text-pavia-green cursor-pointer" onClick={openMinting}>Live Now</div>
+
             </div>
             <div className="flex items-center gap-10">
                 <div className="w-1/2 text-right text-pavia-green">PUBLIC MINT OPENS</div>

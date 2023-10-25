@@ -7,7 +7,7 @@ const Minting = () => {
   const [enter, setEnter] = useState(false);
 
   return (
-    <div className="h-screen w-screen overflow-hidden relative">
+    <div className="h-screen w-screen overflow-hidden relative" id="cont">
       <img src="/assets/images/mint/mesh.jpg" className="absolute -top-20 max-md:h-full object-cover" />
       <div className="relative bg-black h-[2.5%] ">
         <div className="max-md:hidden">
