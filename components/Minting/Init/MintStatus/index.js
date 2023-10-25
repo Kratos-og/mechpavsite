@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const MintStatus = ({ mintDetails, setActiveIndex, activeIndex }) => {
     const maxAllocation = mintDetails?.availableToUser;
     const stage = mintDetails?.stage;
-    const status = mintDetails?.status;
+    const status = mintDetails?.state;
     const hasToken = mintDetails?.hasToken;
     return (
         <>
