@@ -90,7 +90,8 @@ const Init = (props) => {
       }
     }
     catch (error) {
-      setErr(error?.data?.message);
+      console.log(error)
+      setErr(error?.response?.data?.message);
       return;
     }
   }
@@ -275,7 +276,10 @@ const Init = (props) => {
                       </div>}
                   </>
                 )}
-
+                {err && <div className="tracking-wider font-bold text-pavs-red">
+                  Error : {err}
+                </div>
+                }
               </div>
             </div>
           </motion.div>
