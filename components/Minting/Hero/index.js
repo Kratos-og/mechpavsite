@@ -10,7 +10,7 @@ export default function Hero(props) {
     try {
       let model = useLoader(
         GLTFLoader,
-        `/assets/models/Mech_Crate.glb`,
+        `/assets/models/Mech_Crate_New.glb`,
         null,
         (e) => {
           let progress = (e.loaded / (44673860)) * 100;
