@@ -13,7 +13,8 @@ export default function Hero(props) {
         `/assets/models/Mech_Crate_New.glb`,
         null,
         (e) => {
-          let progress = (e.loaded / (44673860)) * 100;
+          console.log(e.loaded)
+          let progress = (e.loaded / (468592)) * 100;
           if (progress >= 100) {
             setTimeout(() => {
               setLoadDone(true)
