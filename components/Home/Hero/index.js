@@ -84,8 +84,8 @@ const Hero = (props) => {
                           }}
                           className="flex flex-col gap-4 max-sm:text-[0.4rem] w-2/3 md:w-full"
                         >
-                          <div>
-                            CARDANO&apos;S BIGGEST NFT MINT IS HAPPENING RIGHT HERE IN <b>OCTOBER &apos;23</b> (DATE AND TIME TO BE CONFIRMED)
+                          <div className="uppercase">
+                            Welcome to Game-Ready Playable Avatars.  Minting NOW on Cardano and playable in the Pavia Metaverse!
                           </div>
                           <div>
                             5 CLASSES, 5 INTERCHANGEABLE MECH PARTS, MULTIPLE SKIN VARIATIONS AND OVER 9 MILLION COMBINATIONS.

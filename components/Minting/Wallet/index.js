@@ -35,10 +35,16 @@ export default function Wallet(props) {
       }
       setLoading(true);
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
-      const addr = await walletInstance.getUsedAddresses();
+      const usedAddr = await walletInstance.getUsedAddresses();
+      const unUsedAddr = await walletInstance.getUnusedAddresses();
       const utxos = await walletInstance.getUtxos();
       setLoading(false);
-      props.onConnect({ name: wallet, address: addr, utxos });
+      let resUtxos = utxos;
+      if (wallet == 'eternl') {
+        let collateral = await walletInstance.getCollateral();
+        resUtxos = [...utxos, ...collateral]
+      }
+      props.onConnect({ name: wallet, address: [...usedAddr, ...unUsedAddr], utxos: resUtxos });
     }
     catch (err) {
       setWalletError(err.message)
