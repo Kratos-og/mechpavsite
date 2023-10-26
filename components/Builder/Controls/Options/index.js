@@ -9,7 +9,7 @@ import "swiper/css/thumbs";
 import "swiper/css/navigation";
 
 const Options = props => {
-    const [activeSlideIndex, setActiveSlideIndex] = useState(1);
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     const data = { torso: ['torsoDEF', 'torsoDSE', 'torsoDSP','torsoDEF', 'torsoDSE', 'torsoDSP'], leftarm: ['armLDEF', 'armLDSE', 'armLDSP'], rightarm: ['armRDEF', 'armRDSE', 'armRDSP'], backpack: ['backpackDEF', 'backpackDSE', 'backpackDSP'], legs: ['legsDEF', 'legsDSE', 'legsDSP'] };
     let items = [];
     const [loading, setLoading] = useState(null);
@@ -38,7 +38,7 @@ const Options = props => {
     if (props.active) {
         items = data[props.active]?.map((item, index) =>
             <SwiperSlide key={index} className={` `}>
-                <div className={`relative flex items-center justify-center ${index === activeSlideIndex ? 'scale-105 duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out'}`} onClick={() => onItemSelect(props.active, item)} key={index}>
+                <div className={`relative flex items-center justify-center ${index === activeSlideIndex ? 'scale-105 duration-200 ease-in-out' : 'scale-50 duration-200 ease-in-out'}`} onClick={() => onItemSelect(props.active, item)} key={index}>
                     {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
                     <img src={`/assets/images/previews/${props.active}/${item}.png`} className="w-24" />
                 </div>
