@@ -368,3 +368,19 @@ body .angles {
   mask-image: linear-gradient(transparent, black 40%, black 70%, transparent 100%);
 }
 
+swiper-button-next,
+.swiper-button-prev {
+  @apply  w-8 h-8 font-black rounded-full hidden !important;
+}
+
+.swiper:hover .swiper-button-next {
+  @apply flex !important;
+}
+.swiper:hover .swiper-button-prev {
+  @apply flex !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  @apply text-xs text-white !important;
+}

@@ -90,12 +90,12 @@ export default function Builder() {
       </div>
       {!loadingModels ? (
         <>
-          {showMenu && 
-            <div className="absolute right-0 h-screen z-40 w-[30%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  ">
-          <div className="   border-l-2 border-white ">
-                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect}/>
+          {showMenu &&
+            <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  ">
+              <div className="   border-l-2 border-white ">
+                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} />
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
-            </div>
+              </div>
             </div>
           }
           <Canvas shadows="percentage">
@@ -160,7 +160,7 @@ export default function Builder() {
         </button>
       ) : null}
 
-      <Bottom setShowMenu={setShowMenu} setShowSettings={setShowSettings}/>
+      <Bottom setShowMenu={setShowMenu} setShowSettings={setShowSettings} />
     </div>
   );
 }

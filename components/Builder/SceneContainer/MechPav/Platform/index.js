@@ -12,7 +12,7 @@ export function Platform(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[2, -4.5, 0]}
+            position={[-3, -4.5, 0]}
             scale={0.4}
         >
             <primitive object={gltf.scene} />

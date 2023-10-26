@@ -6,16 +6,11 @@ const Item = (props) => {
       onClick={() => props.onClick(props.type)}
     >
       {/* <img src={`/assets/images/controls/${props.name.split(' ').join('').toLowerCase()}.png`} className="w-8" /> */}
-      <p className="flex justify-center w-full">
+      <p className="flex px-12 w-full">
         <div className="flex items-center gap-3">
           {props.name}
-          <div className=" bg-white p-[0.3rem] rounded-md text-black text-xs">4</div>
+          <div className=" bg-white px-2 py-1 rounded-md text-black text-xs">4</div>
         </div>
-        {props.active ? <div className="text-base absolute right-5">
-          <RxChevronDown />
-        </div>:<div className="text-base rotate-90 absolute right-5">
-          <RxChevronDown />
-        </div>}
 
       </p>
       {props.active && (
