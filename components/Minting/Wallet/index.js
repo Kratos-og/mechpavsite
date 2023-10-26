@@ -33,13 +33,19 @@ export default function Wallet(props) {
         setWalletError(`${wallet} wallet not found.`);
         return;
       }
+      console.log(wallet)
       setLoading(true);
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
       const usedAddr = await walletInstance.getUsedAddresses();
       const unUsedAddr = await walletInstance.getUnusedAddresses();
       const utxos = await walletInstance.getUtxos();
       setLoading(false);
-      props.onConnect({ name: wallet, address: [...usedAddr, ...unUsedAddr], utxos });
+      let resUtxos = utxos;
+      if (wallet == 'eternl') {
+        let collateral = await walletInstance.getCollateral();
+        resUtxos = [...utxos, ...collateral]
+      }
+      props.onConnect({ name: wallet, address: [...usedAddr, ...unUsedAddr], utxos: resUtxos });
     }
     catch (err) {
       setWalletError(err.message)
