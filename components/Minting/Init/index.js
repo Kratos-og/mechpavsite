@@ -39,7 +39,7 @@ const Init = (props) => {
 
   const getStatus = async () => {
     try {
-      const status = (await axios.post(`/drop/65382a0e196aec1ab0b02140`, {
+      const status = (await axios.post(`/drop/65363f7d79b53e832360b33d`, {
         addresses: walletDetails?.address,
         utxoStrings: walletDetails.utxos,
       })).data;
@@ -66,7 +66,7 @@ const Init = (props) => {
   const onMintInitiate = async () => {
     setDone(true);
     try {
-      let data = (await axios.post(`/buy/65382a0e196aec1ab0b02140`,
+      let data = (await axios.post(`/buy/65363f7d79b53e832360b33d`,
         {
           utxoStrings: walletDetails.utxos,
           number: +confirmedQty,
@@ -130,7 +130,7 @@ const Init = (props) => {
   const initStatusCheck = () => {
     interval.current = setInterval(async () => {
       try {
-        const status = (await axios.post(`/drop/65382a0e196aec1ab0b02140`, {
+        const status = (await axios.post(`/drop/65363f7d79b53e832360b33d`, {
           addresses: walletDetails?.address,
           utxoStrings: walletDetails.utxos,
         })).data;
