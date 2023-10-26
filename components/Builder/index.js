@@ -23,6 +23,7 @@ export default function Builder() {
   const [editIndex, setEditIndex] = useState();
   const [changeLoadouts, setChangeLoadouts] = useState(false);
   const [update, setUpdate] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
   useEffect(() => {
     if (
       selectedParts.torso &&
@@ -74,26 +75,19 @@ export default function Builder() {
     setEnv(env);
   };
 
-  document.addEventListener('keydown', handleKeyPress);
-  function handleKeyPress(event) {
-    if (event.key === 'F8') {
-      setShowSettings(true)
-    }
-  }
   return (
     <div className="w-full h-screen relative overflow-hidden" id="cont">
       <div
         className="py-1 px-3  border-2 border-black/30 cursor-pointer rounded-[0.3rem] absolute top-2 left-5 z-50 flex gap-3 justify-center items-center bg-white/40"
         onClick={() => setShowSettings(true)}
-      >
-        <p className="bg-pavia-green text-black font-black text-xs p-1 rounded-[0.3rem]">[ F8 ]</p>  <BsFillGearFill className="text-xl text-black" />
+      >  <BsFillGearFill className="text-xl text-black" />
       </div>
       {!loadingModels ? (
         <>
           {showMenu &&
-            <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  ">
-              <div className="   border-l-2 border-white ">
-                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} />
+            <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  overflow-x-hidden">
+              <div className="border-l-2 border-white">
+                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin}/>
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
               </div>
             </div>

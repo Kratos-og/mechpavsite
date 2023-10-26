@@ -9,7 +9,8 @@ import "swiper/css/thumbs";
 import "swiper/css/navigation";
 
 const Options = props => {
-    const data = { torso: ['torsoDEF', 'torsoDSE', 'torsoDSP'], leftarm: ['armLDEF', 'armLDSE', 'armLDSP'], rightarm: ['armRDEF', 'armRDSE', 'armRDSP'], backpack: ['backpackDEF', 'backpackDSE', 'backpackDSP'], legs: ['legsDEF', 'legsDSE', 'legsDSP'] };
+    const [activeSlideIndex, setActiveSlideIndex] = useState(1);
+    const data = { torso: ['torsoDEF', 'torsoDSE', 'torsoDSP','torsoDEF', 'torsoDSE', 'torsoDSP'], leftarm: ['armLDEF', 'armLDSE', 'armLDSP'], rightarm: ['armRDEF', 'armRDSE', 'armRDSP'], backpack: ['backpackDEF', 'backpackDSE', 'backpackDSP'], legs: ['legsDEF', 'legsDSE', 'legsDSP'] };
     let items = [];
     const [loading, setLoading] = useState(null);
 
@@ -36,8 +37,8 @@ const Options = props => {
 
     if (props.active) {
         items = data[props.active]?.map((item, index) =>
-            <SwiperSlide>
-                <div className="relative flex items-center justify-center" onClick={() => onItemSelect(props.active, item)} key={index}>
+            <SwiperSlide key={index} className={` `}>
+                <div className={`relative flex items-center justify-center ${index === activeSlideIndex ? 'scale-105 duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out'}`} onClick={() => onItemSelect(props.active, item)} key={index}>
                     {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
                     <img src={`/assets/images/previews/${props.active}/${item}.png`} className="w-24" />
                 </div>
@@ -51,8 +52,10 @@ const Options = props => {
                 <IoMdClose className="text-xl text-white" />
             </div> */}
             {/* <div className="pb-2 text-sm font-bold uppercase tracking-widest flex"><p className="text-pavia-green">|</p>&nbsp;&nbsp;{props.active}<p className="text-pavia-green">&nbsp;&nbsp;|</p></div> */}
-            <Swiper modules={[Navigation]} slidesPerView={1} grabCursor className="w-full h-full" navigation={true} >
+            <Swiper modules={[Navigation]} slidesPerView={3} grabCursor className="w-full h-full" navigation={true} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}>
+            <SwiperSlide> </SwiperSlide>
                 {items}
+            <SwiperSlide> </SwiperSlide>
             </Swiper>
         </div>
     )
