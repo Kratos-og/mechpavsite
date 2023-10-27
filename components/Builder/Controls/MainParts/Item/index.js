@@ -2,7 +2,7 @@ import { RxChevronDown } from "react-icons/rx";
 const Item = (props) => {
   return (
     <div
-      className={`flex flex-col items-center py-2 my-8 font-bold cursor-pointer w-[25rem] justify-between uppercase text-white tracking-widest `}
+      className={`flex flex-col items-center py-2 mt-5 mb-2 font-bold cursor-pointer w-[25rem] justify-between uppercase text-white tracking-widest `}
       onClick={() => props.onClick(props.type)}
     >
       {/* <img src={`/assets/images/controls/${props.name.split(' ').join('').toLowerCase()}.png`} className="w-8" /> */}

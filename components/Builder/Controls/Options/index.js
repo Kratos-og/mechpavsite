@@ -7,10 +7,10 @@ import "swiper/css";
 import { Navigation } from 'swiper';
 import "swiper/css/thumbs";
 import "swiper/css/navigation";
+import data from "./data"
 
 const Options = props => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-    const data = { torso: ['torsoDEF', 'torsoDSE', 'torsoDSP','torsoDEF', 'torsoDSE', 'torsoDSP'], leftarm: ['armLDEF', 'armLDSE', 'armLDSP'], rightarm: ['armRDEF', 'armRDSE', 'armRDSP'], backpack: ['backpackDEF', 'backpackDSE', 'backpackDSP'], legs: ['legsDEF', 'legsDSE', 'legsDSP'] };
     let items = [];
     const [loading, setLoading] = useState(null);
 
@@ -37,21 +37,19 @@ const Options = props => {
 
     if (props.active) {
         items = data[props.active]?.map((item, index) =>
-            <SwiperSlide key={index} className={` `}>
-                <div className={`relative flex items-center justify-center ${index === activeSlideIndex ? 'scale-105 duration-200 ease-in-out' : 'scale-50 duration-200 ease-in-out'}`} onClick={() => onItemSelect(props.active, item)} key={index}>
+            <SwiperSlide key={index} className={``}>
+                <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, item)} key={index}>
                     {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
-                    <img src={`/assets/images/previews/${props.active}/${item}.png`} className="w-24" />
+                    <p className="w-full h-full">
+                    <img src={`/assets/images/previews/${props.active}/${item}.png`} className="" />
+                    </p>
                 </div>
             </SwiperSlide>
         )
     }
 
     return (
-        <div className=" relative  rounded-md ">
-            {/* <div className="absolute top-3 right-4 cursor-pointer" onClick={props.close}>
-                <IoMdClose className="text-xl text-white" />
-            </div> */}
-            {/* <div className="pb-2 text-sm font-bold uppercase tracking-widest flex"><p className="text-pavia-green">|</p>&nbsp;&nbsp;{props.active}<p className="text-pavia-green">&nbsp;&nbsp;|</p></div> */}
+        <div className="relative  rounded-md ">
             <Swiper modules={[Navigation]} slidesPerView={3} grabCursor className="w-full h-full" navigation={true} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}>
             <SwiperSlide> </SwiperSlide>
                 {items}
