@@ -18,7 +18,7 @@ const Intro = ({ activeIndex, setActiveIndex }) => {
                     index={3}
                     onDone={setActiveIndex}
                     text={
-                        "> Welcome to the MechPav mint! Public Mint is now live!"
+                        "> WELCOME TO THE MECHPAV MINT.  THIS MINT IS NOW PUBLIC AND AVAILABLE TO ALL!"
                     }
                     speed={20}
                 />
