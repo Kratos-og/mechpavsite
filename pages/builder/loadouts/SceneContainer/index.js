@@ -13,26 +13,21 @@ export function SceneContainer(props) {
             <directionalLight
                 position={[70, 15, 70]}
                 intensity={1.25}
-                castShadow
-                shadow-mapSize-height={512}
-                shadow-mapSize-width={512}
             />
-            
-            <pointLight ref={lightRef} position={[-70, 25, 70]} intensity={1} castShadow />
-               <pointLight position={[70, 15, 70]} intensity={1.5} castShadow={true} />
-            <pointLight position={[-70, 45, -70]} intensity={1.5} />
-            {/* <Environment background={"only"} files={"/assets/models/textures/bg.hdr"} /> */}
 
-            {/* <Environment background files={`/assets/models/environments/${props.env}.hdr`} blur={0.06} /> */}
-            
+            <spotLight ref={lightRef} position={[100, 50, 80]} intensity={1} />
+           
+           
             <PerspectiveCamera makeDefault fov={50} position={[0, 5, 25]} />
-            <OrbitControls target={[2, 3, 0]} maxPolarAngle={Math.PI * 0.5} maxDistance={35} minDistance={6} />
+
+            <OrbitControls target={[2, 3, 0]} enableZoom={false} maxPolarAngle={Math.PI * 0.5} />
+
 
             {/* <Platform /> */}
-            <Torso selected={props.selectedParts} />
-            <Arms selected={props.selectedParts} />
-            <Backpack selected={props.selectedParts} />
-            <Legs selected={props.selectedParts} />
+            <Torso selected={props.selectedParts} position={props.position} scale={props.scale} />
+            <Arms selected={props.selectedParts} position={props.position} scale={props.scale} />
+            <Backpack selected={props.selectedParts} position={props.position} scale={props.scale} />
+            <Legs selected={props.selectedParts} position={props.position} scale={props.scale} />
 
         </Suspense>
     );

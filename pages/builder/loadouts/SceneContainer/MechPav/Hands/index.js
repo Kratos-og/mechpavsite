@@ -34,17 +34,13 @@ export function Arms(props) {
                 `/assets/models/rightarm/armR.gltf`
             );
     }
-    useLayoutEffect(() => {
-        armL.scene.traverse(o => o.isMesh && (o.castShadow = true));
-        armR.scene.traverse(o => o.isMesh && (o.castShadow = true))
-    }, [armL, armR])
     return (
         armL || armR ? <Float
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[1.5, -6, 0]}
-            scale={7}
+            position={props.position}
+            scale={props.scale}
         >
             {armL ? <primitive object={armL.scene} /> : null}
             {armR ? <primitive object={armR.scene} /> : null}

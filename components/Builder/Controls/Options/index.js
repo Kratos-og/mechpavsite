@@ -41,7 +41,7 @@ const Options = props => {
                 <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, item)} key={index}>
                     {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
                     <p className="w-full h-full">
-                    <img src={`/assets/images/previews/${props.active}/${item}.png`} className="" />
+                        <img src={`/assets/images/previews/${props.active}/${item}.png`} className="" />
                     </p>
                 </div>
             </SwiperSlide>
@@ -51,9 +51,9 @@ const Options = props => {
     return (
         <div className="relative  rounded-md ">
             <Swiper modules={[Navigation]} slidesPerView={3} grabCursor className="w-full h-full" navigation={true} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}>
-            <SwiperSlide> </SwiperSlide>
+                <SwiperSlide> </SwiperSlide>
                 {items}
-            <SwiperSlide> </SwiperSlide>
+                <SwiperSlide> </SwiperSlide>
             </Swiper>
         </div>
     )

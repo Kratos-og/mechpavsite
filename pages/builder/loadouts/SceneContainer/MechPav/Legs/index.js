@@ -20,14 +20,13 @@ export function Legs(props) {
                 `/assets/models/legs/legs.gltf`
             );
     }
-    useLayoutEffect(() => model.scene.traverse(o => o.isMesh && (o.castShadow = true)), [model])
     return (
         <Float
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[1.5, -6, 0]}
-            scale={7}
+            position={props.position}
+            scale={props.scale}
         >
             <primitive object={model.scene} />
         </Float>

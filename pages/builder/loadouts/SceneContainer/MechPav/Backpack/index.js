@@ -15,14 +15,13 @@ export function Backpack(props) {
                 `/assets/models/backpack/${props.selected?.backpack}.gltf`
             );
     }
-    useLayoutEffect(() => model?.scene.traverse(o => o.isMesh && (o.castShadow = true)), [model])
     return (
         model ? <Float
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[1.5, -6, 0]}
-            scale={7}
+            position={props.position}
+            scale={props.scale}
         >
             <primitive object={model.scene} />
         </Float> : null
