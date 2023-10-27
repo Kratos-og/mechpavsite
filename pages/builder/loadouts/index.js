@@ -22,7 +22,7 @@ export default function Loadouts() {
     setEnv(env);
   };
   return (
-    <div className="h-screen w-screen">
+    <div className="h-screen w-screen loadoutsBg">
 
       <div className="w-full h-full flex">
         <Swiper modules={[Navigation]} slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} grabCursor className="w-full h-full" navigation={true}>

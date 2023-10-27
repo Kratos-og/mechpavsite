@@ -384,3 +384,7 @@ swiper-button-next,
 .swiper-button-prev::after {
   @apply text-xs text-white !important;
 }
+
+.loadoutsBg{
+  background: radial-gradient(circle at center,#282828 0,#0a0a0a 120%) #0a0a0a;
+}
