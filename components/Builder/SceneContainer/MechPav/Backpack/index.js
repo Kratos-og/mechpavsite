@@ -21,7 +21,7 @@ export function Backpack(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[-3, -4, 0]}
+            position={[0, -4, 0]}
             scale={7}
         >
             <primitive object={model.scene} />

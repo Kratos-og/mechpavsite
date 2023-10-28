@@ -27,7 +27,7 @@ export function Legs(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[-3, -4.1, 0]}
+            position={[0, -4.1, 0]}
             scale={7}
         >
             <primitive object={model.scene} />
