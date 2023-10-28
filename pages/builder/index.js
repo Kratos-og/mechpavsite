@@ -2,9 +2,8 @@ import Builder from '@/components/Builder'
 import React, { useState } from 'react'
 
 export default function BuilderPage() {
-
   return (
-  <Builder /> 
+    <Builder />
   )
 }
 BuilderPage.DisplayName = 'Builder';

@@ -61,7 +61,7 @@ export default function Builder() {
     //platform
     try {
       if (localStorage.env) setEnv(localStorage.env);
-      let model = useLoader(GLTFLoader, `/assets/models/platform.gltf`);
+      let model = useLoader(GLTFLoader, `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Plinth.gltf`);
       if (model?.scene) {
         setLoadingModels(false);
       }
@@ -87,7 +87,7 @@ export default function Builder() {
           {showMenu &&
             <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  overflow-x-hidden">
               <div className="border-l-2 border-white">
-                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin}/>
+                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin} />
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
               </div>
             </div>

@@ -1,6 +1,9 @@
 const data = {
   torso: [
-    "Subterra_Torso_CR_thumb",
+    {
+      model: "MP_SBT_CT_Body",
+      img: "Subterra_Torso_CR_thumb",
+    },
     "Subterra_Torso_GR_thumb",
     "Subterra_Torso_HZ_thumb",
     "Subterra_Torso_JG_thumb",
