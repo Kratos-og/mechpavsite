@@ -16,8 +16,7 @@ export function SceneContainer(props) {
             />
 
             <spotLight ref={lightRef} position={[100, 50, 80]} intensity={1} />
-           
-           
+        
             <PerspectiveCamera makeDefault fov={50} position={[0, 5, 25]} />
 
             <OrbitControls target={[2, 3, 0]} enableZoom={false} maxPolarAngle={Math.PI * 0.5} />
