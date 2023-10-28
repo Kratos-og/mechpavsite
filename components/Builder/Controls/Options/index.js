@@ -40,7 +40,7 @@ const Options = props => {
         items = data[props.active]?.map((item, index) =>
             <SwiperSlide key={index} className={``}>
                 <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, index)} key={index}>
-                    {loading && loading.active == props.active && loading.index == index ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
+                    {loading && loading.active == props.active && loading.index == index ? <div className="absolute top-6 right-4 scale-75"><SpinnerSm /></div> : null}
                     <p className="w-full h-full">
                         <img src={`/assets/images/previews/${props.active}/${item.img}.png`} className="" />
                     </p>
