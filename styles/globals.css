@@ -380,7 +380,9 @@ body .angles {
     transparent 100%
   );
 }
-
+.light{
+  mask-image: linear-gradient(transparent, black 0%, black 25%, transparent 100%);
+}
 swiper-button-next,
 .swiper-button-prev {
   @apply w-8 h-8 font-black rounded-full hidden !important;

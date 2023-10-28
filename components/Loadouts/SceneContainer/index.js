@@ -11,13 +11,12 @@ export function SceneContainer(props) {
     return (
         <Suspense fallback={null}>
             <directionalLight
-                position={[70, 15, 70]}
-                intensity={1.25}
+                position={[70, 300, 70]}
+                intensity={2}
             />
 
-            <spotLight ref={lightRef} position={[100, 50, 80]} intensity={1} />
-           
-           
+            <spotLight ref={lightRef} position={[10, 0, 0]} intensity={1} />
+        
             <PerspectiveCamera makeDefault fov={50} position={[0, 5, 25]} />
 
             <OrbitControls target={[2, 3, 0]} enableZoom={false} maxPolarAngle={Math.PI * 0.5} />
