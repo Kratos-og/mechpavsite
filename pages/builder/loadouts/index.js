@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/thumbs";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
+import CustomName from "@/components/Loadouts/CustomName";
 
 export default function Loadouts() {
   const data = { torso: ["torsoDEF", "torsoDSE", "torsoDSP"], rightarm: ["armRDEF", "armRDSE", "armRDSP"], leftarm: ["armLDEF", "armLDSE", "armLDSP"], backpack: ["backpackDEF", "backpackDSE", "backpackDSP"], legs: ["legsDEF", "legsDSE", "legsDSP"] }
@@ -35,27 +36,23 @@ export default function Loadouts() {
           <SwiperSlide></SwiperSlide>
           <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
-              <div className={`${activeSlideIndex == 0 ? 'bg-black absolute top-10':"bg-black absolute top-[25%] left-[33%] scale-75"} text-pavia-green px-10 py-2 rounded-md `}>TITANIUM</div>
+              <CustomName activeSlideIndex={activeSlideIndex} index={0}>TITANIUM</CustomName>
               <Canvas>
-                <SceneContainer active position={activeSlideIndex == 0 ? [2, -7, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 0 ? 8 : 3} index={1} selectedParts={{ torso: data.torso[0], rightarm: data.rightarm[0], leftarm: data.leftarm[0], backpack: data.backpack[0], legs: data.legs[0] }} />
+                <SceneContainer active position={activeSlideIndex == 0 ? [2, -6, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 0 ? 7.5 : 3} index={1} selectedParts={{ torso: data.torso[0], rightarm: data.rightarm[0], leftarm: data.leftarm[0], backpack: data.backpack[0], legs: data.legs[0] }} />
               </Canvas>
-              <div className={`${activeSlideIndex == 0 ? 'bg-black absolute bottom-10 left-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>EDIT</div>
-              <div className={`${activeSlideIndex == 0 ? 'bg-black absolute bottom-10 right-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>DELETE</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-            <div className={`${activeSlideIndex == 1 ? 'bg-black absolute top-10':"bg-black absolute top-[25%] left-[33%] scale-75"} text-pavia-green px-10 py-2 rounded-md `}>VORTEX</div>
+            <CustomName activeSlideIndex={activeSlideIndex} index={1}>VORTEX</CustomName>
               <Canvas>
                 <SceneContainer active position={activeSlideIndex == 1 ? [1.5, -5, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 1 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[1], rightarm: data.rightarm[1], leftarm: data.leftarm[1], backpack: data.backpack[1], legs: data.legs[1] }} />
               </Canvas>
-              <div className={`${activeSlideIndex == 1 ? 'bg-black absolute bottom-10 left-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>EDIT</div>
-              <div className={`${activeSlideIndex == 1 ? 'bg-black absolute bottom-10 right-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>DELETE</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-            <div className={`${activeSlideIndex == 2 ? 'bg-black absolute top-10':"bg-black absolute top-[25%] left-[33%] scale-75"} text-pavia-green px-10 py-2 rounded-md `}>CALYPSO</div>
+            <CustomName activeSlideIndex={activeSlideIndex} index={2}>CALYPSO</CustomName>
               <Canvas>
                 <SceneContainer active position={activeSlideIndex == 2 ? [1.5, -5, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 2 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[2], rightarm: data.rightarm[2], leftarm: data.leftarm[2], backpack: data.backpack[2], legs: data.legs[2] }} />
               </Canvas>
@@ -65,7 +62,7 @@ export default function Loadouts() {
           </SwiperSlide>
           <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-            <div className={`${activeSlideIndex == 3 ? 'bg-black absolute top-10':"bg-black absolute top-[25%] left-[33%] scale-75"} text-pavia-green px-10 py-2 rounded-md `}>WARDON</div>
+            <CustomName activeSlideIndex={activeSlideIndex} index={3}>WARDON</CustomName>
               <Canvas>
                 <SceneContainer active position={activeSlideIndex == 3 ? [1.5, -5, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 3 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[3], rightarm: data.rightarm[3], leftarm: data.leftarm[3], backpack: data.backpack[3], legs: data.legs[3] }} />
               </Canvas>
@@ -73,8 +70,6 @@ export default function Loadouts() {
               <div className={`${activeSlideIndex == 3 ? 'bg-black absolute bottom-10 right-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>DELETE</div>
             </div>
           </SwiperSlide>
-          <SwiperSlide></SwiperSlide>
-          <SwiperSlide></SwiperSlide>
           <SwiperSlide></SwiperSlide>
         </Swiper>
       </div>
