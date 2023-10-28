@@ -37,7 +37,7 @@ export default function Loadouts() {
           <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
               <CustomName activeSlideIndex={activeSlideIndex} index={0}>TITANIUM</CustomName>
-              <Canvas>
+              <Canvas className="cursor-pointer">
                 <SceneContainer active position={activeSlideIndex == 0 ? [2, -6, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 0 ? 7.5 : 3} index={1} selectedParts={{ torso: data.torso[0], rightarm: data.rightarm[0], leftarm: data.leftarm[0], backpack: data.backpack[0], legs: data.legs[0] }} />
               </Canvas>
             </div>
@@ -73,6 +73,7 @@ export default function Loadouts() {
           <SwiperSlide></SwiperSlide>
         </Swiper>
       </div>
+      
 
     </div>
   );
