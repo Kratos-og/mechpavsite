@@ -1,4 +1,6 @@
 import LeftArmAnnotation from "./LeftArmAnnotation";
+import LegAnnotation from "./LegAnnotation";
+import RightArmAnnotation from "./RightArmAnnotation";
 import TorsoAnnotations from "./TorsoAnnotation";
 
 const Annotations = props => {
@@ -6,6 +8,8 @@ const Annotations = props => {
         <>
             <TorsoAnnotations />
             <LeftArmAnnotation />
+            <RightArmAnnotation/>
+            <LegAnnotation/>
         </>
     )
 }

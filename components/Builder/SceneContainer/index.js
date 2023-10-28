@@ -26,8 +26,8 @@ export function SceneContainer(props) {
 
             <Environment background files={`/assets/models/environments/${props.env}.hdr`} blur={0.06} />
 
-            <PerspectiveCamera makeDefault fov={50} position={[-1.75, 10.85, 20.35]} />
-            <OrbitControls target={[1, 3, 0]} maxPolarAngle={Math.PI * 0.5} maxDistance={35} minDistance={6} />
+            <PerspectiveCamera makeDefault fov={50} position={[0, 0,30]} />
+            <OrbitControls target={[0, 2, 0]} maxPolarAngle={Math.PI * 0.5} maxDistance={35} minDistance={6} />
 
             <Platform />
             <Torso selected={props.selectedParts} />

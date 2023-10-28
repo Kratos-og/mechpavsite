@@ -45,7 +45,7 @@ export function Arms(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[-3, -4, 0]}
+            position={[0, -4, 0]}
             scale={7}
         >
             {armL ? <primitive object={armL.scene} /> : null}

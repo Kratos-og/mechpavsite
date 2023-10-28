@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-const LeftArmAnnotation = props => {
+const LegAnnotation = props => {
     const [display, setDisplay] = useState(false);
     return (
-        <Html position={[-5, 5.5, 0]}
+        <Html position={[2.5, 2, 0]}
             
             style={{
                 transition: 'all 0.5s',
@@ -16,7 +16,7 @@ const LeftArmAnnotation = props => {
             distanceFactor={5} scale={10}>
 
 <div
-        className="w-5 h-5 rounded-full bg-white absolute"
+        className="w-5 h-5 rounded-full bg-white absolute rotate-180"
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -43,7 +43,7 @@ animate={{
 }}
 class="st1" d="M489.2,57.2H25.1" stroke="#ffffff" strokeWidth={10}/>
 </svg>
-              <motion.div initial={{opacity:0}} animate={{opacity:[0,1,0,0,1,0,1],transition:{delay:0.5,duration:0.5}}} className="px-7 bg-white/20 border-2 border-white  rounded-md absolute -left-[19rem] -bottom-8">
+              <motion.div initial={{opacity:0}} animate={{opacity:[0,1,0,0,1,0,1],transition:{delay:0.5,duration:0.5}}} className="px-7 bg-white/20 border-2 border-white  rounded-md absolute -left-[19rem] -bottom-8 rotate-180">
                 <div className="relative">
                     <div className="flex items-center justify-center gap-4">
                 <p className="text-[10px]">Type</p>: <p className="font-bold">Torso</p>
@@ -77,4 +77,4 @@ class="st1" d="M489.2,57.2H25.1" stroke="#ffffff" strokeWidth={10}/>
     )
 }
 
-export default LeftArmAnnotation;
+export default LegAnnotation;
