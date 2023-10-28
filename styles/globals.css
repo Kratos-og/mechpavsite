@@ -108,7 +108,7 @@ model-viewer {
   margin-left: 4px;
 }
 
-.override li{
+.override li {
   @apply opacity-100 blur-0 scale-100 !important;
 }
 
@@ -286,7 +286,6 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-
 .grid {
   width: 100%;
   overflow: hidden;
@@ -326,7 +325,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* BUTTON CSS */
 
-
 body .frame {
   display: inline-block;
   position: absolute;
@@ -335,7 +333,10 @@ body .frame {
   transform: translate(-50%, -50%);
 }
 body .lines {
-  background: linear-gradient(to bottom, #34495e 1px, transparent 1px) 0 0, linear-gradient(to right, #34495e 1px, transparent 1px) 0 100%, linear-gradient(to left, #34495e 1px, transparent 1px) 100% 0, linear-gradient(to top, #34495e 1px, transparent 1px) 100% 100%;
+  background: linear-gradient(to bottom, #34495e 1px, transparent 1px) 0 0,
+    linear-gradient(to right, #34495e 1px, transparent 1px) 0 100%,
+    linear-gradient(to left, #34495e 1px, transparent 1px) 100% 0,
+    linear-gradient(to top, #34495e 1px, transparent 1px) 100% 100%;
   background-repeat: no-repeat;
   background-size: 0px 0px;
   position: absolute;
@@ -346,7 +347,14 @@ body .lines {
   transition: background-size 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 body .angles {
-  background: linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 0, linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 0 0, linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 0, linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 100% 0, linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 100%, linear-gradient(to top, #a6afc0 2px, transparent 2px) 100% 100%, linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 100%, linear-gradient(to top, #a6afc0 2px, transparent 2px) 0 100%;
+  background: linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 0 0,
+    linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 0,
+    linear-gradient(to bottom, #a6afc0 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, #a6afc0 2px, transparent 2px) 100% 100%,
+    linear-gradient(to top, #a6afc0 2px, transparent 2px) 100% 100%,
+    linear-gradient(to right, #a6afc0 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, #a6afc0 2px, transparent 2px) 0 100%;
   background-repeat: no-repeat;
   background-size: 7px 7px;
   position: absolute;
@@ -365,12 +373,17 @@ body .angles {
 }
 
 .top-bottom-overflow-fade {
-  mask-image: linear-gradient(transparent, black 25%, black 70%, transparent 100%);
+  mask-image: linear-gradient(
+    transparent,
+    black 25%,
+    black 70%,
+    transparent 100%
+  );
 }
 
 swiper-button-next,
 .swiper-button-prev {
-  @apply  w-8 h-8 font-black rounded-full hidden !important;
+  @apply w-8 h-8 font-black rounded-full hidden !important;
 }
 
 .swiper:hover .swiper-button-next {
@@ -385,6 +398,24 @@ swiper-button-next,
   @apply text-xs text-white !important;
 }
 
-.loadoutsBg{
-  background: radial-gradient(circle at center,#282828 0,#0a0a0a 120%) #0a0a0a;
+.loadoutsBg {
+  background: radial-gradient(circle at center, #282828 0, #0a0a0a 120%) #0a0a0a;
+}
+
+.ripple {
+  display: block;
+  border-radius: 50%;
+  animation: pulseAnnotation 2s infinite;
+}
+
+@-webkit-keyframes pulseAnnotation {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+  }
 }

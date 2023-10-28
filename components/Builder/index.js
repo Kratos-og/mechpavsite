@@ -22,23 +22,6 @@ export default function Builder() {
   const [changeLoadouts, setChangeLoadouts] = useState(false);
   const [update, setUpdate] = useState(false);
   const [isLogin, setIsLogin] = useState(false);
-  useEffect(() => {
-    if (
-      selectedParts.torso &&
-      selectedParts.leftarm &&
-      selectedParts.rightarm &&
-      selectedParts.backpack &&
-      selectedParts.legs
-    ) {
-      setSave(true);
-    }
-  }, [
-    selectedParts.torso,
-    selectedParts.leftarm,
-    selectedParts.rightarm,
-    selectedParts.backpack,
-    selectedParts.legs,
-  ]);
 
   const onSelect = (type, index) => {
     const modSelection = { ...selectedParts };
@@ -110,47 +93,6 @@ export default function Builder() {
         setEditeMode={setEditeMode}
         setEditIndex={setEditIndex}
       />
-      {save && !editMode ? (
-        <button
-          className=" border-2 border-gray-400 absolute bottom-16 left-5 text-black p-3 bg-white/40 rounded-xl font-black tracking-widest"
-          onClick={() => {
-            saveLoadouts.current.push(selectedParts);
-          }}
-        >
-          SAVE LOADOUTS
-        </button>
-      ) : null}
-
-      {editMode && changeLoadouts && !update ? (
-        <>
-          <button
-            className="bg-white/10 border-2 border-gray-400 absolute bottom-16 left-28 text-black p-3 rounded-xl font-black tracking-widest"
-            onClick={() => {
-              saveLoadouts.current.splice(editIndex, 1, selectedParts);
-              setUpdate(true);
-            }}
-          >
-            UPDATE
-          </button>
-          <button
-            className="bg-white/10 border-2 border-gray-400 absolute bottom-16 left-5 text-black p-3 rounded-xl font-black tracking-widest"
-            onClick={() => {
-              setEditeMode(false);
-            }}
-          >
-            EXIT
-          </button>
-        </>
-      ) : editMode ? (
-        <button
-          className="bg-white/10 border-2 border-gray-400 absolute bottom-16 left-5 text-black p-3 rounded-xl font-black tracking-widest"
-          onClick={() => {
-            setEditeMode(false);
-          }}
-        >
-          EXIT
-        </button>
-      ) : null}
 
       <Bottom setShowMenu={setShowMenu} setShowSettings={setShowSettings} />
     </div>

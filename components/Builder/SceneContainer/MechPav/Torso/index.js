@@ -7,7 +7,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 export function Torso(props) {
     let model;
     let capsule;
-    console.log(props.selected)
+
     if (props.selected?.torso !== undefined) {
         model =
             useLoader(

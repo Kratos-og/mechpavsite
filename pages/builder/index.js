@@ -1,5 +1,4 @@
-import Builder from '@/components/Builder'
-import React, { useState } from 'react'
+import Builder from '@/components/Builder';
 
 export default function BuilderPage() {
   return (
