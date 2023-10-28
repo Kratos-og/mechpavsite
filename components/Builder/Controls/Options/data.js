@@ -1,6 +1,18 @@
 const data = {
   torso: [
-    { model: "MP_SBT_CT_Body", img: "Subterra_Torso_CR_thumb" },
+    {
+      model: "MP_SBT_CT_Body",
+      img: "Subterra_Torso_CR_thumb",
+      skin: { //variant
+        name: 'Crash Test',
+        FE_Code: 'CR',
+        BE_Code: 'CT'
+      },
+      type: { // class
+        name: 'Sub Terrain',
+        BE_Code: 'SBT'
+      }
+    },
     { model: "MP_SBT_ELM_Body", img: "Subterra_Torso_GR_thumb" },
     { model: "MP_SBT_CS_Body", img: "Subterra_Torso_HZ_thumb" },
     { model: "MP_SBT_JD_Body", img: "Subterra_Torso_JG_thumb" },
