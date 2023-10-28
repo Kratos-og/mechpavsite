@@ -1,5 +1,5 @@
 import SpinnerSm from "@/components/UI/SpinnerSm";
-import { useLoader } from "@react-three/fiber";
+import { act, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,6 +33,7 @@ const Options = props => {
             })
 
         }
+        console.log(active,index)
     }
 
     if (props.active) {
