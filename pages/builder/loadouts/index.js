@@ -56,8 +56,6 @@ export default function Loadouts() {
               <Canvas>
                 <SceneContainer active position={activeSlideIndex == 2 ? [1.5, -5, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 2 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[2], rightarm: data.rightarm[2], leftarm: data.leftarm[2], backpack: data.backpack[2], legs: data.legs[2] }} />
               </Canvas>
-              <div className={`${activeSlideIndex == 2 ? 'bg-black absolute bottom-10 left-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>EDIT</div>
-              <div className={`${activeSlideIndex == 2 ? 'bg-black absolute bottom-10 right-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>DELETE</div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -66,8 +64,6 @@ export default function Loadouts() {
               <Canvas>
                 <SceneContainer active position={activeSlideIndex == 3 ? [1.5, -5, 0]:[1.5, 0, 0]} scale={activeSlideIndex == 3 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[3], rightarm: data.rightarm[3], leftarm: data.leftarm[3], backpack: data.backpack[3], legs: data.legs[3] }} />
               </Canvas>
-              <div className={`${activeSlideIndex == 3 ? 'bg-black absolute bottom-10 left-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>EDIT</div>
-              <div className={`${activeSlideIndex == 3 ? 'bg-black absolute bottom-10 right-[25%]':"hidden"} text-pavia-green px-10 py-2 rounded-md `}>DELETE</div>
             </div>
           </SwiperSlide>
           <SwiperSlide></SwiperSlide>

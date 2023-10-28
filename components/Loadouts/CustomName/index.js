@@ -7,15 +7,15 @@ export default function CustomName (props) {
               <button className={`${props.activeSlideIndex == props.index ? 'bg-white/80':"hidden"} text-black px-10 py-2 rounded-md hover:bg-white hover:font-semibold`}>DELETE</button>
               <button className={`${props.activeSlideIndex == props.index ? 'bg-white/80':"hidden"} text-black px-10 py-2 rounded-md hover:bg-white hover:font-semibold`}>EDIT NAME</button>
             </div>
-            {props.activeSlideIndex == props.index && <div className="absolute bottom-0 h-screen flex -z-[1] gap-0">
-                <div className="bg-pavia-green/10 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/20 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/40 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/80 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/80 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/40 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/20 px-10 py-1 h-full"></div>
-                <div className="bg-pavia-green/10 px-10 py-1 h-full"></div>
+            {props.activeSlideIndex == props.index && <div className="">
+                {/* <div className="bg-white/10 px-10 py-1 h-full"></div> */}
+                <div className="bg-white/10 px-10 py-1 h-screen top-0 absolute w-[100%] left-0 light"></div>
+                <div className="bg-white/5 px-10 py-1 h-screen top-0 absolute w-[93%] left-5 light"></div>
+                <div className="bg-white/5 px-10 py-1 h-screen top-0 absolute w-[85%] left-10 light"></div>
+                {/* <div className="bg-white/80 px-10 py-1 h-screen top-0 absolute w-[60%] left-14"></div> */}
+                {/* <div className="bg-white/40 px-10 py-1 h-full"></div>
+                <div className="bg-white/20 px-10 py-1 h-full"></div> */}
+                {/* <div className="bg-white/10 px-10 py-1 h-full"></div> */}
               </div>}
         </>
     )
