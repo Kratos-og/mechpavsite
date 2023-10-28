@@ -9,7 +9,7 @@ import { BsFillGearFill } from "react-icons/bs";
 import Settings from "@/components/Builder/SceneContainer/Settings";
 import Bottom from "./Bottom";
 
-export default function Builder() {
+export default function Builder(props) {
   const [selectedParts, setSelectedParts] = useState({});
   const [loadingModels, setLoadingModels] = useState(true);
   const [env, setEnv] = useState("kloppenheim");
@@ -68,7 +68,7 @@ export default function Builder() {
           {showMenu &&
             <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  overflow-x-hidden">
               <div className="border-l-2 border-white">
-                <MainPartControls setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin} />
+                <MainPartControls setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={props.bearer} />
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
               </div>
             </div>
