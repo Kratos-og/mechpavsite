@@ -7,11 +7,9 @@ import { useEffect, useRef, useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { BsFillGearFill } from "react-icons/bs";
 import Settings from "@/components/Builder/SceneContainer/Settings";
-import { motion } from "framer-motion";
 import Bottom from "./Bottom";
 
 export default function Builder() {
-  const [activeMainPart, setActiveMainPart] = useState(null);
   const [selectedParts, setSelectedParts] = useState({});
   const [loadingModels, setLoadingModels] = useState(true);
   const [env, setEnv] = useState("kloppenheim");
@@ -42,11 +40,12 @@ export default function Builder() {
     selectedParts.legs,
   ]);
 
-  const onSelect = (type, name) => {
+  const onSelect = (type, index) => {
     const modSelection = { ...selectedParts };
-    modSelection[type] = name;
+    modSelection[type] = index;
     setSelectedParts(modSelection);
   };
+
   useEffect(() => {
     if (selectedParts === saveLoadouts.current[editIndex]) {
       setChangeLoadouts(false);
@@ -55,7 +54,6 @@ export default function Builder() {
       setUpdate(false);
     }
   }, [selectedParts, editIndex]);
-  console.log(changeLoadouts);
 
   useEffect(() => {
     //platform
@@ -87,7 +85,7 @@ export default function Builder() {
           {showMenu &&
             <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  overflow-x-hidden">
               <div className="border-l-2 border-white">
-                <MainPartControls active={activeMainPart} setActiveMainPart={setActiveMainPart} setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin} />
+                <MainPartControls setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={isLogin} />
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
               </div>
             </div>

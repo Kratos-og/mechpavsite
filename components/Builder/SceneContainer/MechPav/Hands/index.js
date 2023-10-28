@@ -16,7 +16,7 @@ export function Arms(props) {
         armL =
             useLoader(
                 GLTFLoader,
-                `/assets/models/leftarm/armL.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Arm-L.gltf`
             );
     }
 
@@ -31,7 +31,7 @@ export function Arms(props) {
         armR =
             useLoader(
                 GLTFLoader,
-                `/assets/models/rightarm/armR.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Arm-R.gltf`
             );
     }
     useLayoutEffect(() => {

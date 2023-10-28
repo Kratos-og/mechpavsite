@@ -14,21 +14,21 @@ const Options = props => {
     let items = [];
     const [loading, setLoading] = useState(null);
 
-    const onItemSelect = (active, item) => {
+    const onItemSelect = (active, index) => {
         try {
-            setLoading({ active, item });
+            setLoading({ active, index });
             let model = useLoader(
                 GLTFLoader,
-                `/assets/models/${active}/${item}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data[props.active][index]?.model}.gltf`
             );
             if (model?.scene) {
-                props.onSelect(active, item)
+                props.onSelect(active, index)
                 setLoading(null)
             }
         }
         catch (err) {
             Promise.resolve(err).then(e => {
-                props.onSelect(active, item)
+                props.onSelect(active, index)
                 setLoading(null)
             })
 
@@ -38,10 +38,10 @@ const Options = props => {
     if (props.active) {
         items = data[props.active]?.map((item, index) =>
             <SwiperSlide key={index} className={``}>
-                <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, item)} key={index}>
-                    {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
+                <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, index)} key={index}>
+                    {loading && loading.active == props.active && loading.index == index ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
                     <p className="w-full h-full">
-                        <img src={`/assets/images/previews/${props.active}/${item}.png`} className="" />
+                        <img src={`/assets/images/previews/${props.active}/${item.img}.png`} className="" />
                     </p>
                 </div>
             </SwiperSlide>

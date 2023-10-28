@@ -13,9 +13,7 @@ const Item = (props) => {
         </div>
 
       </p>
-      {props.active && (
-        <div className="mt-2 px-44 py-[1px] bg-gradient-to-r from-white/5 via-white to-white/5"></div>
-      )}
+      <div className="mt-2 px-44 py-[1px] bg-gradient-to-r from-white/5 via-white to-white/5"></div>
     </div>
   );
 };

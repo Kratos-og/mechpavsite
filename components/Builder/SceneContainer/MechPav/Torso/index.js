@@ -1,3 +1,4 @@
+import data from "@/components/Builder/Controls/Options/data";
 import { Float } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
@@ -6,18 +7,19 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 export function Torso(props) {
     let model;
     let capsule;
-    if (props.selected?.torso) {
+    console.log(props.selected)
+    if (props.selected?.torso !== undefined) {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/torso/${props.selected?.torso}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['torso'][props.selected?.torso]?.model}.gltf`
             );
     }
     else {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/torso/torso.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Body.gltf`
             );
         capsule = useLoader(
             GLTFLoader,

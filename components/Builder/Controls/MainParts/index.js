@@ -17,15 +17,15 @@ const MainPartControls = props => {
         <div className="flex justify-center items-center">
             {props.isLogin ?
             <div className="my-[35%] w-full">
-                <Item name="Torso" onClick={onClick} active={'torso'} type={'torso'} />
+                <Item name="Torso" onClick={onClick} type={'torso'} />
                 <Options active={'torso'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
-                <Item name="Left Arm" onClick={onClick} active={'leftarm'} type={'leftarm'} />
+                <Item name="Left Arm" onClick={onClick} type={'leftarm'} />
                 <Options active={'leftarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
-                <Item name="Right Arm" onClick={onClick} active={'rightarm'} type={'rightarm'} />
+                <Item name="Right Arm" onClick={onClick} type={'rightarm'} />
                 <Options active={'rightarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
-                <Item name="Backpack" onClick={onClick} active={'backpack'} type={'backpack'} />
+                <Item name="Backpack" onClick={onClick} type={'backpack'} />
                 <Options active={'backpack'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
-                <Item name="Legs" onClick={onClick} active={'legs'} type={'legs'} />
+                <Item name="Legs" onClick={onClick} type={'legs'} />
                 <Options active={'legs'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
             </div> :
             <div className=" w-full h-[100vh] flex flex-col justify-center items-center">

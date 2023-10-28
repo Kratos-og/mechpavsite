@@ -4,11 +4,26 @@ const data = {
       model: "MP_SBT_CT_Body",
       img: "Subterra_Torso_CR_thumb",
     },
-    "Subterra_Torso_GR_thumb",
-    "Subterra_Torso_HZ_thumb",
-    "Subterra_Torso_JG_thumb",
-    "Subterra_Torso_NV_thumb",
-    "Subterra_Torso_PL_thumb",
+    {
+      model: "MP_SBT_ELM_Body",
+      img: "Subterra_Torso_GR_thumb",
+    },
+    {
+      model: "MP_SBT_CS_Body",
+      img: "Subterra_Torso_HZ_thumb",
+    },
+    {
+      model: "MP_SBT_JD_Body",
+      img: "Subterra_Torso_JG_thumb",
+    },
+    {
+      model: "MP_SBT_LGD_Body",
+      img: "Subterra_Torso_NV_thumb",
+    },
+    {
+      model: "MP_SBT_LAB_Body",
+      img: "Subterra_Torso_PL_thumb",
+    },
     "Hydra_Torso_CR_thumb",
     "Hydra_Torso_DB_thumb",
     "Hydra_Torso_EM_thumb",
