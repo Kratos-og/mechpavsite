@@ -4,9 +4,26 @@ export default function CustomName(props) {
       <div className={`${props.activeSlideIndex == props.index ? 'bg-black absolute top-6 px-[20%]' : "bg-black absolute top-[25%] left-[33%] scale-75"} text-white px-5 py-2 rounded-md z-10 flex gap-5 tracking-widest`}>
         <p className="font-extrabold text-pavia-green">|</p>{props.children}<p className="font-extrabold text-pavia-green">|</p>
       </div>
-      <div className="absolute bottom-5 flex gap-3 z-10">
-        <button className={`${props.activeSlideIndex == props.index ? 'bg-white/80' : "hidden"} text-black px-10 py-2 rounded-md hover:bg-white hover:font-semibold`}>EDIT LOADOUT</button>
-        <button className={`${props.activeSlideIndex == props.index ? 'bg-white/80' : "hidden"} text-black px-10 py-2 rounded-md hover:bg-white hover:font-semibold`}>DELETE</button>
+      <div className="absolute w-full bottom-5 flex gap-3 z-10">
+
+      {props.activeSlideIndex == props.index &&  <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+          <div className="lines"></div>
+          <div className="angles"></div>
+          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+            <p>EDIT LOADOUT</p>
+          </div>
+          </div>
+          </button>}
+          {props.activeSlideIndex == props.index &&  <button className=' w-full mt-5 py-7  text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+          <div className="lines"></div>
+          <div className="angles"></div>
+          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
+            <p>DELETE</p>
+          </div>
+          </div>
+          </button>}
 
       </div>
       {props.activeSlideIndex == props.index && <div className="">

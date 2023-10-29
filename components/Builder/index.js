@@ -8,6 +8,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { BsFillGearFill } from "react-icons/bs";
 import Settings from "@/components/Builder/SceneContainer/Settings";
 import Bottom from "./Bottom";
+import MyAccount from "./MyAccount";
 
 export default function Builder(props) {
   const [selectedParts, setSelectedParts] = useState({});
@@ -70,9 +71,12 @@ export default function Builder(props) {
           setSelectedParts={setSelectedParts}
         />
       }
+      {
+        activeTab == 2 && <MyAccount activeTab={activeTab} setActiveTab={()=>{setActiveTab(0)}}/>
+      }
 
-      {props.bearer &&
-        <div className="max-lg:absolute bottom-[35%] left-0 w-screen">
+      {props.bearer && activeTab != 2 &&
+        <div className="max-lg:absolute bottom-[35%] left-0 w-screen ">
           <Bottom setShowSettings={setShowSettings} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       }
