@@ -2095,8 +2095,9 @@
 "path-type@^4.0.0":
   "version" "4.0.0"
 
-"pavia-storage-lib@https://github.com/Philipmarsh/pavia-javascript-storage-lib":
-  "resolved" "git+ssh://git@github.com/Philipmarsh/pavia-javascript-storage-lib.git#905a2477972ca32c143829436ae8c66608c5a4ec"
+"pavia-storage-lib@file:components/Common/pavia-storage-lib-0.1.0.tgz":
+  "integrity" "sha512-povmV9eCyPADbqMPozyryGvvMMHENWwNiFfHSomCZzHHao3s8zoz6V80Lxm+BCtfYSMEoxf3weYz0dykXbBhXw=="
+  "resolved" "file:components/Common/pavia-storage-lib-0.1.0.tgz"
   "version" "0.1.0"
   dependencies:
     "lodash" "^4.17.21"
