@@ -1,8 +1,7 @@
-import Settings from "@/components/Builder/SceneContainer/Settings";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { SceneContainer } from "../../../components/Loadouts/SceneContainer";
-import { AiOutlineDoubleRight } from "react-icons/ai";
+import data from "@/components/Builder/Controls/Options/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 // import { Navigation } from 'swiper';
@@ -13,54 +12,95 @@ import CustomName from "@/components/Loadouts/CustomName";
 
 export default function Loadouts() {
   const backend = [{
-        "Arm-L_Class":"DSP",
-        "Arm-L_Variant":"CT",
-        "Arm-R_Class":"DSP",
-        "Arm-R_Variant":"CS",
-        "Torso_Class":"DSP",
-        "Torso_Variant":"ELM",
-        "Legs_Class":"DSE",
-        "Legs_Variant":"JD",
-        "Backpack_Class":"DEF",
-        "Backpack_Variant":"LAB"
+    "Arm-L_Class": "DSP",
+    "Arm-L_Variant": "CT",
+    "Arm-R_Class": "DSP",
+    "Arm-R_Variant": "CS",
+    "Torso_Class": "DSP",
+    "Torso_Variant": "ELM",
+    "Legs_Class": "DSE",
+    "Legs_Variant": "JD",
+    "Backpack_Class": "DEF",
+    "Backpack_Variant": "LAB"
+  }, {
+    "Arm-L_Class": "DSP",
+    "Arm-L_Variant": "CT",
+    "Arm-R_Class": "DSP",
+    "Arm-R_Variant": "CS",
+    "Torso_Class": "DSP",
+    "Torso_Variant": "ELM",
+    "Legs_Class": "DSE",
+    "Legs_Variant": "JD",
+    "Backpack_Class": "DEF",
+    "Backpack_Variant": "LAB"
+  }, {
+    "Arm-L_Class": "DSP",
+    "Arm-L_Variant": "CT",
+    "Arm-R_Class": "DSP",
+    "Arm-R_Variant": "CS",
+    "Torso_Class": "DSP",
+    "Torso_Variant": "ELM",
+    "Legs_Class": "DSE",
+    "Legs_Variant": "JD",
+    "Backpack_Class": "DEF",
+    "Backpack_Variant": "LAB"
   }]
+  const [loadItems, setLoadItems] = useState([]);
 
-const torsoItems = [];
-const armLItems = [];
-const armRItems = [];
-const backpackItems =[];
-const legsItems =[];
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  useEffect(() => {
+    const items = getLoadOutItems();
+    setLoadItems(items)
+  }, [])
 
-    for (const key in backend) {
-      if (key.includes("Torso")) {
-          torsoItems.push(backend[key]);
-      }
-      if (key.includes("Arm-L")) {
-        armLItems.push(backend[key]);
+  const torsoItems = [];
+  const armLItems = [];
+  const armRItems = [];
+  const backpackItems = [];
+  const legsItems = [];
+
+  for (const key in backend) {
+    if (key.includes("Torso")) {
+      torsoItems.push(backend[key]);
+    }
+    if (key.includes("Arm-L")) {
+      armLItems.push(backend[key]);
     }
     if (key.includes("Arm-R")) {
       armRItems.push(backend[key]);
+    }
+    if (key.includes("Backpack")) {
+      backpackItems.push(backend[key]);
+    }
+    if (key.includes("Legs")) {
+      legsItems.push(backend[key]);
+    }
   }
-  if (key.includes("Backpack")) {
-    backpackItems.push(backend[key]);
-}
-if (key.includes("Legs")) {
-  legsItems.push(backend[key]);
-}
+
+
+  const getLoadOutItems = () => {
+    let res = backend.map(loadout => {
+      let torso = data['torso'].findIndex(item => item.type?.BE_Code == loadout['Torso_Class'] && item.skin?.BE_Code == loadout["Torso_Variant"]);
+      let rightarm = data['rightarm'].findIndex(item => item.type?.BE_Code == loadout['Arm-R_Class'] && item.skin?.BE_Code == loadout["Arm-R_Variant"]);
+      let leftarm = data['leftarm'].findIndex(item => item.type?.BE_Code == loadout['Arm-L_Class'] && item.skin?.BE_Code == loadout["Arm-L_Variant"]);
+      let backpack = data['backpack'].findIndex(item => item.type?.BE_Code == loadout['Backpack_Class'] && item.skin?.BE_Code == loadout["Backpack_Variant"]);
+      let legs = data['legs'].findIndex(item => item.type?.BE_Code == loadout['Legs_Class'] && item.skin?.BE_Code == loadout["Legs_Variant"]);
+      return { torso, rightarm, leftarm, backpack, legs };
+    });
+    return res;
   }
-  console.log([torsoItems,armLItems,armRItems,backpackItems,legsItems])
 
+  const [index, setIndex] = useState(1);
 
-  const data = { torso: ["torsoDEF", "torsoDSE", "torsoDSP"], rightarm: ["armRDEF", "armRDSE", "armRDSP"], leftarm: ["armLDEF", "armLDSE", "armLDSP"], backpack: ["backpackDEF", "backpackDSE", "backpackDSP"], legs: ["legsDEF", "legsDSE", "legsDSP"] }
-  const [index, setIndex] = useState(1)
-  const [selectedParts, setSelectedParts] = useState({ torso: data.torso[index], rightarm: data.rightarm[index], leftarm: data.leftarm[index], backpack: data.backpack[index], legs: data.legs[index] });
+  const loadoutItems = loadItems.map((item, i) => <SwiperSlide>
+    <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
+      <CustomName activeSlideIndex={activeSlideIndex} index={i}>TITANIUM</CustomName>
+      <Canvas className="cursor-pointer ">
+        <SceneContainer position={activeSlideIndex == i ? [2, -6, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 7.5 : 3} index={1} selectedParts={{ torso: item.torso, rightarm: item.rightarm, leftarm: item.leftarm, backpack: item.backpack, legs: item.legs }} />
+      </Canvas>
+    </div>
+  </SwiperSlide>)
 
-  const [activeSlideIndex, setActiveSlideIndex] = useState(0);
-
-  const onEnvChange = (env) => {
-    localStorage.setItem("env", env);
-    setEnv(env);
-  };
   return (
     <div className="h-screen w-screen ">
       <div className="w-full h-full flex">
@@ -72,38 +112,7 @@ if (key.includes("Legs")) {
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper">
           <SwiperSlide></SwiperSlide>
-          {/* <SwiperSlide>
-            <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
-              <CustomName activeSlideIndex={activeSlideIndex} index={0}>TITANIUM</CustomName>
-              <Canvas className="cursor-pointer ">
-                <SceneContainer active position={activeSlideIndex == 0 ? [2, -6, 0] : [1.5, 0, 0]} scale={activeSlideIndex == 0 ? 7.5 : 3} index={1} selectedParts={{ torso: data.torso[0], rightarm: data.rightarm[0], leftarm: data.leftarm[0], backpack: data.backpack[0], legs: data.legs[0] }} />
-              </Canvas>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-              <CustomName activeSlideIndex={activeSlideIndex} index={1}>VORTEX</CustomName>
-              <Canvas>
-                <SceneContainer active position={activeSlideIndex == 1 ? [1.5, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == 1 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[1], rightarm: data.rightarm[1], leftarm: data.leftarm[1], backpack: data.backpack[1], legs: data.legs[1] }} />
-              </Canvas>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-              <CustomName activeSlideIndex={activeSlideIndex} index={2}>CALYPSO</CustomName>
-              <Canvas>
-                <SceneContainer active position={activeSlideIndex == 2 ? [1.5, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == 2 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[2], rightarm: data.rightarm[2], leftarm: data.leftarm[2], backpack: data.backpack[2], legs: data.legs[2] }} />
-              </Canvas>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 `} key={index}>
-              <CustomName activeSlideIndex={activeSlideIndex} index={3}>WARDON</CustomName>
-              <Canvas>
-                <SceneContainer active position={activeSlideIndex == 3 ? [1.5, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == 3 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[3], rightarm: data.rightarm[3], leftarm: data.leftarm[3], backpack: data.backpack[3], legs: data.legs[3] }} />
-              </Canvas>
-            </div>
-          </SwiperSlide> */}
+          {loadoutItems}
           <SwiperSlide></SwiperSlide>
         </Swiper>
       </div>

@@ -1,19 +1,17 @@
 import { Float } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
-import { useLayoutEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
-
-
+import data from "@/components/Builder/Controls/Options/data";
 export function Backpack(props) {
     let model;
 
     if (props.selected?.backpack) {
-        model =
+        let modelX =
             useLoader(
                 GLTFLoader,
-                `/assets/models/backpack/${props.selected?.backpack}.gltf`
-            );
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['backpack'][props.selected?.backpack]?.model}.gltf`
+            ).scene;
+        model = modelX.clone();
     }
     return (
         model ? <Float
@@ -23,7 +21,7 @@ export function Backpack(props) {
             position={props.position}
             scale={props.scale}
         >
-            <primitive object={model.scene} />
+            <primitive object={model} />
         </Float> : null
     );
 }

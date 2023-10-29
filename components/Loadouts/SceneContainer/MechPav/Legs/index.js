@@ -1,24 +1,17 @@
-import { Box, Float } from "@react-three/drei";
-import { useFrame, useLoader } from "@react-three/fiber";
-import { useLayoutEffect, useRef } from "react";
+import { Float } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-
+import data from "@/components/Builder/Controls/Options/data";
 export function Legs(props) {
     let model;
 
     if (props.selected?.legs) {
-        model =
+        let modelX =
             useLoader(
                 GLTFLoader,
-                `/assets/models/legs/${props.selected?.legs}.gltf`
-            );
-    }
-    else {
-        model =
-            useLoader(
-                GLTFLoader,
-                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Legs.gltf`
-            );
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['legs'][props.selected?.legs]?.model}.gltf`
+            ).scene;
+        model = modelX.clone();
     }
     return (
         <Float
@@ -28,10 +21,7 @@ export function Legs(props) {
             position={props.position}
             scale={props.scale}
         >
-            <primitive object={model.scene} />
+            <primitive object={model} />
         </Float>
-        // <Box castShadow receiveShadow ref={boxRef} position={[0, 0.5, 0]}>
-        //     <meshStandardMaterial attach="material" color="white" />
-        // </Box>
     );
 }
