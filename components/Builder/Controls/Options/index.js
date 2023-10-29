@@ -1,28 +1,34 @@
 import SpinnerSm from "@/components/UI/SpinnerSm";
-import { useLoader } from "@react-three/fiber";
+import { act, useLoader } from "@react-three/fiber";
 import { useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { IoMdClose } from 'react-icons/io';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Navigation } from 'swiper';
+import "swiper/css/thumbs";
+import "swiper/css/navigation";
+import data from "./data"
+import {TiLockClosed} from "react-icons/ti"
+
 const Options = props => {
-    const data = { torso: ['torsoDEF', 'torsoDSE', 'torsoDSP'], leftarm: ['armLDEF', 'armLDSE', 'armLDSP'], rightarm: ['armRDEF', 'armRDSE', 'armRDSP'], backpack: ['backpackDEF', 'backpackDSE', 'backpackDSP'], legs: ['legsDEF', 'legsDSE', 'legsDSP'] };
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     let items = [];
     const [loading, setLoading] = useState(null);
-
-    const onItemSelect = (active, item) => {
+    const onItemSelect = (active, index) => {
         try {
-            setLoading({ active, item });
+            setLoading({ active, index });
             let model = useLoader(
                 GLTFLoader,
-                `/assets/models/${active}/${item}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data[props.active][index]?.model}.gltf`
             );
             if (model?.scene) {
-                props.onSelect(active, item)
+                props.onSelect(active, index)
                 setLoading(null)
             }
         }
         catch (err) {
             Promise.resolve(err).then(e => {
-                props.onSelect(active, item)
+                props.onSelect(active, index)
                 setLoading(null)
             })
 
@@ -30,22 +36,26 @@ const Options = props => {
     }
 
     if (props.active) {
-        items = data[props.active]?.map(item => <div className="w-full p-5 relative flex items-center justify-center hover:blurred-bg cursor-pointer rounded-lg" onClick={() => onItemSelect(props.active, item)}>
-            {loading && loading.active == props.active && loading.item == item ? <div className="absolute top-2 right-4"><SpinnerSm /></div> : null}
-            <img src={`/assets/images/previews/${props.active}/${item}.png`} className="w-24" />
-        </div>
+        items = data[props.active]?.map((item, index) =>
+            <SwiperSlide key={index} className={``}>
+                <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, index)} key={index}>
+                    {loading && loading.active == props.active && loading.index == index ? <div className="absolute top-6 right-4 scale-75"><SpinnerSm /></div> : null}
+                    {!props.ownNFT?.includes( index ) && <div className="absolute top-[17%] right-4"><TiLockClosed/></div>}
+                    <p className="w-full h-full">
+                        <img src={`/assets/images/previews/${props.active}/${item.img}.png`} className="" />
+                    </p>
+                </div>
+            </SwiperSlide>
         )
     }
 
     return (
-        <div className="w-[300px] p-5 relative h-[90%] blurred-bg rounded-md">
-            <div className="absolute top-3 right-4 cursor-pointer" onClick={props.close}>
-                <IoMdClose className="text-xl" />
-            </div>
-            <div className="pb-2 capitalize text-sm font-bold">{props.active}</div>
-            <div className="overflow-y-auto h-[90%] py-5 px-3 custom-scroll my-4">
+        <div className="relative  rounded-md ">
+            <Swiper modules={[Navigation]} slidesPerView={3} grabCursor className="w-full h-full" navigation={true} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)}>
+                <SwiperSlide> </SwiperSlide>
                 {items}
-            </div>
+                <SwiperSlide> </SwiperSlide>
+            </Swiper>
         </div>
     )
 }

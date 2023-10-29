@@ -1,37 +1,39 @@
+import data from "@/components/Builder/Controls/Options/data";
 import { Float } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
+
 export function Arms(props) {
     let armL, armR;
-    if (props.selected?.leftarm) {
+    if (props.selected?.leftarm !== undefined) {
         armL =
             useLoader(
                 GLTFLoader,
-                `/assets/models/leftarm/${props.selected?.leftarm}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['leftarm'][props.selected?.leftarm]?.model}.gltf`
             );
     }
     else {
         armL =
             useLoader(
                 GLTFLoader,
-                `/assets/models/leftarm/armL.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Arm-L.gltf`
             );
     }
 
-    if (props.selected?.rightarm) {
+    if (props.selected?.rightarm !== undefined) {
         armR =
             useLoader(
                 GLTFLoader,
-                `/assets/models/rightarm/${props.selected?.rightarm}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['rightarm'][props.selected?.rightarm]?.model}.gltf`
             );
     }
     else {
         armR =
             useLoader(
                 GLTFLoader,
-                `/assets/models/rightarm/armR.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Arm-R.gltf`
             );
     }
     useLayoutEffect(() => {
@@ -43,7 +45,7 @@ export function Arms(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[2, -4, 0]}
+            position={[0, -4, 0]}
             scale={7}
         >
             {armL ? <primitive object={armL.scene} /> : null}

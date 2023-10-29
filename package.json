@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emurgo/cardano-serialization-lib-browser": "^11.5.0",
+    "@auth0/nextjs-auth0": "^3.2.0",
     "@google/model-viewer": "^3.2.1",
     "@react-three/drei": "^9.14.3",
     "@react-three/fiber": "^8.0.26",
@@ -19,6 +20,8 @@
     "daisyui": "^2.51.6",
     "framer-motion": "^10.16.4",
     "lucid-cardano": "^0.10.7",
+    "pavia-storage-lib": "https://github.com/Philipmarsh/pavia-javascript-storage-lib",
+    "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "next": "13.4.19",
     "rc-slider": "^10.1.1",
@@ -27,6 +30,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "react-simple-typewriter": "^5.0.1",
+    "swiper": "^8.4.5",
     "three": "0.154.0"
   },
   "devDependencies": {
