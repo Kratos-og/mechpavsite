@@ -1,6 +1,6 @@
 import Settings from "@/components/Builder/SceneContainer/Settings";
 import { Canvas } from "@react-three/fiber";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SceneContainer } from "../../../components/Loadouts/SceneContainer";
 import { AiOutlineDoubleRight } from "react-icons/ai";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,6 +12,45 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import CustomName from "@/components/Loadouts/CustomName";
 
 export default function Loadouts() {
+  const backend = [{
+        "Arm-L_Class":"DSP",
+        "Arm-L_Variant":"CT",
+        "Arm-R_Class":"DSP",
+        "Arm-R_Variant":"CS",
+        "Torso_Class":"DSP",
+        "Torso_Variant":"ELM",
+        "Legs_Class":"DSE",
+        "Legs_Variant":"JD",
+        "Backpack_Class":"DEF",
+        "Backpack_Variant":"LAB"
+  }]
+
+const torsoItems = [];
+const armLItems = [];
+const armRItems = [];
+const backpackItems =[];
+const legsItems =[];
+
+    for (const key in backend) {
+      if (key.includes("Torso")) {
+          torsoItems.push(backend[key]);
+      }
+      if (key.includes("Arm-L")) {
+        armLItems.push(backend[key]);
+    }
+    if (key.includes("Arm-R")) {
+      armRItems.push(backend[key]);
+  }
+  if (key.includes("Backpack")) {
+    backpackItems.push(backend[key]);
+}
+if (key.includes("Legs")) {
+  legsItems.push(backend[key]);
+}
+  }
+  console.log([torsoItems,armLItems,armRItems,backpackItems,legsItems])
+
+
   const data = { torso: ["torsoDEF", "torsoDSE", "torsoDSP"], rightarm: ["armRDEF", "armRDSE", "armRDSP"], leftarm: ["armLDEF", "armLDSE", "armLDSP"], backpack: ["backpackDEF", "backpackDSE", "backpackDSP"], legs: ["legsDEF", "legsDSE", "legsDSP"] }
   const [index, setIndex] = useState(1)
   const [selectedParts, setSelectedParts] = useState({ torso: data.torso[index], rightarm: data.rightarm[index], leftarm: data.leftarm[index], backpack: data.backpack[index], legs: data.legs[index] });
@@ -33,7 +72,7 @@ export default function Loadouts() {
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
           slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper">
           <SwiperSlide></SwiperSlide>
-          <SwiperSlide>
+          {/* <SwiperSlide>
             <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
               <CustomName activeSlideIndex={activeSlideIndex} index={0}>TITANIUM</CustomName>
               <Canvas className="cursor-pointer ">
@@ -64,7 +103,7 @@ export default function Loadouts() {
                 <SceneContainer active position={activeSlideIndex == 3 ? [1.5, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == 3 ? 7 : 3} index={1} selectedParts={{ torso: data.torso[3], rightarm: data.rightarm[3], leftarm: data.leftarm[3], backpack: data.backpack[3], legs: data.legs[3] }} />
               </Canvas>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> */}
           <SwiperSlide></SwiperSlide>
         </Swiper>
       </div>

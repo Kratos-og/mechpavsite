@@ -17,7 +17,7 @@ export function Legs(props) {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/legs/legs.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Legs.gltf`
             );
     }
     return (

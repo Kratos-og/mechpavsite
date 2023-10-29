@@ -7,9 +7,7 @@ import Main_data from "../Options/data";
 
 const MainPartControls = props => {
     const [userNfts, setuserNft] = useState(["DefenderTorsoPL04846", "DefenderLeftArmPL04846", "DefenderRightArmPL04846", "DefenderBackPackPL04846", "DefenderLegsPL04846", "SubTerrainTorsoPL04846", "SubTerrainLeftArmPL04846", "SubTerrainRightArmPL04846", "SubTerrainBackPackPL04846", "SubTerrainLegsPL04846"]);
-    //this is to remove numbers
-    const NFTs = userNfts.map(str => str.replace(/\d/g, ''));
-    // const wordsToFind = ["SubTerrain", "DeepSea", "DeepSpace", "Defender", "Energy"];
+    let [ownNFTs , setOwnNFTs]=useState()
     useEffect(() => {
         if (userNfts.length)
             parseUserMechTokens();
@@ -46,7 +44,10 @@ const MainPartControls = props => {
                 objParts[item.part] = [partIndex]
             }
         })
-        console.log(objParts)
+        setOwnNFTs(objParts)
+        // console.log(ownNFTs)
+        // console.log("jiii")
+        // console.log(objParts)
     }
 
     const mechTypeParser = (tokens) => {
@@ -144,16 +145,6 @@ const MainPartControls = props => {
         });
         return res;
     }
-    const torsoItems = NFTs.filter(item => item.includes("Torso"));
-    const leftarmItems = NFTs.filter(item => item.includes("LeftArm"));
-    const rightarmItems = NFTs.filter(item => item.includes("RightArm"));
-    const backpackItems = NFTs.filter(item => item.includes("BackPack"));
-    const legsItems = NFTs.filter(item => item.includes("Legs"));
-
-    torsoItems.map((data_0) => {
-        Main_data.torso.map((data_1) => { console.log(data_1.type.name) })
-    })
-
 
     const [bool, setBool] = useState(false)
     const onClick = (type) => {
@@ -169,15 +160,15 @@ const MainPartControls = props => {
             {props.isLogin ?
                 <div className="lg:my-[35%] w-full h-full max-lg:absolute max-lg:bottom-0 max-lg:overflow-y-auto max-lg:bg-white/30">
                     <Item name="Torso" onClick={onClick} type={'torso'} />
-                    <Options active={'torso'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
+                    <Options ions active={'torso'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} ownNFT={ownNFTs?.torso}/>
                     <Item name="Left Arm" onClick={onClick} type={'leftarm'} />
-                    <Options active={'leftarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
+                    <Options active={'leftarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)}  ownNFT={ownNFTs?.leftarm}/>
                     <Item name="Right Arm" onClick={onClick} type={'rightarm'} />
-                    <Options active={'rightarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
+                    <Options active={'rightarm'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} ownNFT={ownNFTs?.rightarm}/>
                     <Item name="Backpack" onClick={onClick} type={'backpack'} />
-                    <Options active={'backpack'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
+                    <Options active={'backpack'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} ownNFT={ownNFTs?.backpack}/>
                     <Item name="Legs" onClick={onClick} type={'legs'} />
-                    <Options active={'legs'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
+                    <Options active={'legs'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} ownNFT={ownNFTs?.legs}/>
                 </div> :
                 <div className=" w-screen lg:h-screen flex flex-col justify-center items-center max-lg:absolute top-[20%]">
                     <p className="text-[#F7F8F3]">LOGIN TO CONTINUE</p>
