@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { TransactionUnspentOutput } from "@emurgo/cardano-serialization-lib-browser";
-import { Lucid, C } from "lucid-cardano";
 import SpinnerSm from "@/components/UI/SpinnerSm";
 
 const Wallet = props => {
     const [walletError, setWalletError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [wallet, onWalletSelect] = useState(null);
 
-    const onContinue = async () => {
+    const onContinue = async (wallet) => {
         try {
             if (!window.cardano) {
                 setLoading(false);
@@ -97,7 +95,7 @@ const Wallet = props => {
     }
 
     return (
-        <div className="">
+        <div className="absolute bg-white text-black text-sm p-7 w-[350px] ">
 
             {loading ?
                 <div className="flex justify-center">
@@ -105,50 +103,48 @@ const Wallet = props => {
                 </div>
                 :
                 <>
-                    <div className="font-bold uppercase mb-4">Connect wallet to continue</div>
-                    <div className='py-4 flex flex-col gap-4 h-[350px] overflow-y-auto overflow-x-hidden custom-scroll pr-3'>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'lace' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('lace')}>
+                    <div className="font-bold uppercase mb-4">Connect wallet</div>
+                    <div className='py-4 w-full flex flex-col gap-4 h-[350px] overflow-y-auto overflow-x-hidden custom-scroll pr-3'>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('lace')}>
                             <img src='/assets/images/wallets/lace.svg' className='w-4' />
                             <div>Lace Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'eternl' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('eternl')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('eternl')}>
                             <img src='/assets/images/wallets/eternl.png' className='w-4' />
                             <div>Eternl Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'nami' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('nami')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('nami')}>
                             <img src='/assets/images/wallets/nami.svg' className='w-4' />
                             <div>Nami Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'flint' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('flint')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('flint')}>
                             <img src='/assets/images/wallets/flint.svg' className='w-4' />
                             <div>Flint Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'gero' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('gero')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('gero')}>
                             <img src='/assets/images/wallets/gero.ico' className='w-4' />
                             <div>Gero Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'typhon' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('typhoncip30')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('typhoncip30')}>
                             <img src='/assets/images/wallets/typhon.png' className='w-4' />
                             <div>Typhon Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'vespr' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('vespr')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('vespr')}>
                             <img src='/assets/images/wallets/vespr.jpg' className='w-4' />
                             <div>Vespr Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'begin' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('begin')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('begin')}>
                             <img src='/assets/images/wallets/begin.png' className='w-4' />
                             <div>Begin Wallet</div>
                         </div>
-                        <div className={`flex items-center gap-2 hover:bg-white hover:text-black px-3 cursor-pointer transition-all will-change-transform py-2 ${wallet == 'nufi' ? 'bg-white text-black' : ''}`} onClick={() => onWalletSelect('nufi')}>
+                        <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2 `} onClick={() => onContinue('nufi')}>
                             <img src='/assets/images/wallets/nufi.png' className='w-4' />
                             <div>Nufi Wallet</div>
                         </div>
                     </div>
                 </>
             }
-            <button disabled={!wallet} onClick={onContinue} className="absolute disabled:border-gray-600 disabled:hover:bg-black disabled:hover:text-gray-600 disabled:hover:cursor-not-allowed disabled:text-gray-600 font-bold bottom-5 right-5 px-8 py-3 border cursor-pointer hover:bg-white hover:text-black transition-all">
-                Continue <span className="ml-2">&rarr;</span>
-            </button>
+
         </div>
     )
 }

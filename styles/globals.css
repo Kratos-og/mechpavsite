@@ -427,6 +427,13 @@ body .angles {
     transparent 100%
   );
 }
+
+.unboxSlider .swiper-button-next,
+.unboxSlider .swiper-button-prev {
+  @apply w-8 h-8 flex font-black rounded-full !important;
+}
+
+
 swiper-button-next,
 .swiper-button-prev {
   @apply w-8 h-8 font-black rounded-full hidden !important;

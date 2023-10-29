@@ -3,8 +3,8 @@ import { useLoader } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-export function Platform(props) {
-    let gltf = useLoader(GLTFLoader, 'https://d2k7v2lpob3n93.cloudfront.net/MP_Plinth.gltf')
+const Crate = props => {
+    let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb')
     useLayoutEffect(() => gltf.scene.traverse(o => o.isMesh && (o.castShadow = o.receiveShadow = true)),
         [])
     return (
@@ -12,10 +12,12 @@ export function Platform(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[0, -4.5, 0]}
-            scale={7}
+            position={[0, -1, 0]}
+            scale={3}
         >
             <primitive object={gltf.scene} />
         </Float>
     );
 }
+
+export default Crate;
