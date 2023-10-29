@@ -12,31 +12,15 @@ import Bottom from "./Bottom";
 export default function Builder(props) {
   const [selectedParts, setSelectedParts] = useState({});
   const [loadingModels, setLoadingModels] = useState(true);
+  const [activeTab, setActiveTab] = useState(0);
   const [env, setEnv] = useState("kloppenheim");
   const [showSettings, setShowSettings] = useState(false);
-  const [showMenu, setShowMenu] = useState(true);
-  const [save, setSave] = useState(false);
-  const saveLoadouts = useRef(new Array());
-  const [editMode, setEditeMode] = useState(false);
-  const [editIndex, setEditIndex] = useState();
-  const [changeLoadouts, setChangeLoadouts] = useState(false);
-  const [update, setUpdate] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
   const onSelect = (type, index) => {
     const modSelection = { ...selectedParts };
     modSelection[type] = index;
     setSelectedParts(modSelection);
   };
-
-  useEffect(() => {
-    if (selectedParts === saveLoadouts.current[editIndex]) {
-      setChangeLoadouts(false);
-    } else {
-      setChangeLoadouts(true);
-      setUpdate(false);
-    }
-  }, [selectedParts, editIndex]);
 
   useEffect(() => {
     //platform
@@ -58,20 +42,14 @@ export default function Builder(props) {
 
   return (
     <div className="w-full h-screen relative overflow-hidden" id="cont">
-      <div
-        className="py-1 px-3  border-2 border-black/30 cursor-pointer rounded-[0.3rem] absolute top-2 left-5 z-50 flex gap-3 justify-center items-center bg-white/40"
-        onClick={() => setShowSettings(true)}
-      >  <BsFillGearFill className="text-xl text-black" />
-      </div>
       {!loadingModels ? (
         <>
-          {showMenu &&
-            <div className="absolute lg:right-0 lg:h-screen z-40 lg:w-[25%] lg:top-bottom-overflow-fade custom-scroll bg-black/30 scroll-smooth overflow-x-hidden max-lg:w-[105%] max-lg:bottom-0 max-lg:h-[35%]">
-              <div className="lg:border-l-2 max-lg:border-t-2 border-white">
-                <MainPartControls setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={props.bearer} />
-                {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
-              </div>
+          {activeTab == 0 && <div className="absolute lg:right-0 lg:h-screen z-40 lg:w-[25%] lg:top-bottom-overflow-fade custom-scroll bg-black/30 scroll-smooth overflow-x-hidden max-lg:w-[105%] max-lg:bottom-0 max-lg:h-[35%]">
+            <div className="lg:border-l-2 max-lg:border-t-2 border-white">
+              <MainPartControls onSelect={onSelect} isLogin={props.bearer} />
+              {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
             </div>
+          </div>
           }
           <Canvas shadows="percentage">
             <SceneContainer selectedParts={selectedParts} env={env} />
@@ -82,23 +60,21 @@ export default function Builder(props) {
           <Spinner />
         </div>
       )}
-      <Settings
-        setEnv={onEnvChange}
-        show={showSettings}
-        env={env}
-        close={setShowSettings}
-        loadouts={saveLoadouts.current}
-        setClose={setShowSettings}
-        setSelectedParts={setSelectedParts}
-        setEditeMode={setEditeMode}
-        setEditIndex={setEditIndex}
-      />
+      {
+        activeTab == 1 && <Settings
+          setEnv={onEnvChange}
+          show={true}
+          env={env}
+          close={setShowSettings}
+          setClose={setShowSettings}
+          setSelectedParts={setSelectedParts}
+        />
+      }
 
-      {props.bearer && 
+      {props.bearer &&
         <div className="max-lg:absolute bottom-[35%] left-0 w-screen">
-      <Bottom setShowMenu={setShowMenu} setShowSettings={setShowSettings} />
+          <Bottom setShowSettings={setShowSettings} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
-      
       }
     </div>
   );

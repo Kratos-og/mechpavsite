@@ -1,14 +1,12 @@
 import Builder from '@/components/Builder';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { MechOperations } from '@/components/Common/pavia-lib/end_user/mech_operations';
 
 export default function BuilderPage() {
   const [bearer, setBearer] = useState();
 
   useEffect(() => {
     getToken();
-
   }, []);
 
   const getToken = async () => {
@@ -34,7 +32,7 @@ export default function BuilderPage() {
   }
 
   return (
-    <Builder bearer={bearer}/>
+    <Builder bearer={bearer} />
   )
 }
 BuilderPage.DisplayName = 'Builder';
