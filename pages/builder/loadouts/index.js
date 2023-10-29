@@ -91,7 +91,21 @@ export default function Loadouts() {
   }
 
   const [index, setIndex] = useState(1);
-
+  const breakpoints = {
+    // When the viewport is 320 pixels wide or larger
+    320: {
+      slidesPerView: 1, // Display 1 slide at a time
+    },
+    // When the viewport is 480 pixels wide or larger
+    480: {
+      slidesPerView: 1, // Display 2 slides at a time
+    },
+    // When the viewport is 768 pixels wide or larger
+    768: {
+      slidesPerView: 3, // Display 3 slides at a time
+    },
+    // You can add more breakpoints as needed
+  };
   const loadoutItems = loadItems.map((item, i) => <SwiperSlide>
     <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
       <CustomName activeSlideIndex={activeSlideIndex} index={i}>TITANIUM</CustomName>
@@ -104,13 +118,14 @@ export default function Loadouts() {
   return (
     <div className="h-screen w-screen ">
       <div className="w-full h-full flex">
+        {/* pc */}
         <Swiper cssMode={true}
           navigation={true}
           pagination={true}
           mousewheel={true}
           keyboard={true}
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper">
+          slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper max-lg:hidden">
           <SwiperSlide></SwiperSlide>
           {loadoutItems}
           <SwiperSlide></SwiperSlide>

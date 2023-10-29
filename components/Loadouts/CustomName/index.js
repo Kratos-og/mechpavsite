@@ -6,7 +6,10 @@ export default function CustomName(props) {
       </div>
       <div className="absolute w-full bottom-5 flex gap-3 z-10">
 
-      {props.activeSlideIndex == props.index &&  <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+      {props.activeSlideIndex == props.index && 
+      <div className="w-full flex gap-5">
+
+      <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
           <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
           <div className="lines"></div>
           <div className="angles"></div>
@@ -14,8 +17,8 @@ export default function CustomName(props) {
             <p>EDIT LOADOUT</p>
           </div>
           </div>
-          </button>}
-          {props.activeSlideIndex == props.index &&  <button className=' w-full mt-5 py-7  text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
+          </button>
+            <button className=' w-full mt-5 py-7  text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
           <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
           <div className="lines"></div>
           <div className="angles"></div>
@@ -23,7 +26,9 @@ export default function CustomName(props) {
             <p>DELETE</p>
           </div>
           </div>
-          </button>}
+          </button>
+      </div> 
+          }
 
       </div>
       {props.activeSlideIndex == props.index && <div className="">
