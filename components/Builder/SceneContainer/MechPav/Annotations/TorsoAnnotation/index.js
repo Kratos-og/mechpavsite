@@ -7,6 +7,7 @@ import data from "@/components/Builder/Controls/Options/data";
 
 const TorsoAnnotations = (props) => {
   const [display, setDisplay] = useState(false);
+  console.log(props)
   return (
     <Html
       position={[0, 7.5, 0]}
@@ -18,8 +19,8 @@ const TorsoAnnotations = (props) => {
       distanceFactor={4}
       scale={10}
     >
-       <div
-        className={`w-5 h-5 rounded-full bg-white ${props.selected!=="undefined" ? 'absolute':'hidden'}`}
+      <div
+        className={`w-5 h-5 rounded-full bg-white ${props.selected !== "undefined" ? 'absolute' : 'hidden'}`}
         onMouseEnter={() => {
           setDisplay(true);
         }}

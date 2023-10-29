@@ -372,14 +372,17 @@ body .angles {
   background-size: 14px 14px;
 }
 
-.top-bottom-overflow-fade {
-  mask-image: linear-gradient(
-    transparent,
-    black 25%,
-    black 70%,
-    transparent 100%
-  );
+@layer components {
+  .top-bottom-overflow-fade {
+    mask-image: linear-gradient(
+      transparent,
+      black 25%,
+      black 70%,
+      transparent 100%
+    );
+  }
 }
+
 .fadeformobile {
   mask-image: linear-gradient(
     transparent,
@@ -388,8 +391,13 @@ body .angles {
     transparent 100%
   );
 }
-.light{
-  mask-image: linear-gradient(transparent, black 0%, black 25%, transparent 100%);
+.light {
+  mask-image: linear-gradient(
+    transparent,
+    black 0%,
+    black 25%,
+    transparent 100%
+  );
 }
 swiper-button-next,
 .swiper-button-prev {
