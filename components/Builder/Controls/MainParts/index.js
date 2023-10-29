@@ -2,8 +2,11 @@ import { useState } from "react";
 import Options from "../Options";
 import Item from "./Item";
 import { IoClose } from 'react-icons/io5';
+import { data } from "@/components/Common/pavsData";
 
 const MainPartControls = props => {
+    const [NftHoldings,setNftHoldings]= useState(["DefenderTorsoPL04846","DefenderLeftArmPL04846","DefenderRightArmPL04846","DefenderBackPackPL04846","DefenderLegsPL04846"]);
+    // NftHoldings[0]
     const [bool, setBool] = useState(false)
     const onClick = (type) => {
         if (bool) {
@@ -16,7 +19,7 @@ const MainPartControls = props => {
     return (
         <div className="flex justify-center items-center">
             {props.isLogin ?
-                <div className="my-[35%] w-full">
+                <div className="lg:my-[35%] w-full h-full max-lg:absolute max-lg:bottom-0 max-lg:overflow-y-auto max-lg:bg-white/30">
                     <Item name="Torso" onClick={onClick} type={'torso'} />
                     <Options active={'torso'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
                     <Item name="Left Arm" onClick={onClick} type={'leftarm'} />
@@ -28,7 +31,7 @@ const MainPartControls = props => {
                     <Item name="Legs" onClick={onClick} type={'legs'} />
                     <Options active={'legs'} onSelect={props.onSelect} close={() => setActiveMainPart(null)} />
                 </div> :
-                <div className=" w-full h-[100vh] flex flex-col justify-center items-center">
+                <div className=" w-screen lg:h-screen flex flex-col justify-center items-center max-lg:absolute top-[20%]">
                     <p className="text-[#F7F8F3]">LOGIN TO CONTINUE</p>
                     <a href="/api/auth/login" className='w-[70%] h-[10%] mt-5 py-7 text-sm newButton relative text-[#002C3E] group font-light ' >
                         <div className='frame  w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>

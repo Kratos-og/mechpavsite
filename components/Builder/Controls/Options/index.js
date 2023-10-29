@@ -33,7 +33,6 @@ const Options = props => {
             })
 
         }
-        console.log(active,index)
     }
 
     if (props.active) {

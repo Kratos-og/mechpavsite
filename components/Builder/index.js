@@ -66,8 +66,8 @@ export default function Builder(props) {
       {!loadingModels ? (
         <>
           {showMenu &&
-            <div className="absolute right-0 h-screen z-40 w-[25%] top-bottom-overflow-fade overflow-y-scroll custom-scroll scroll-smooth bg-black/30  overflow-x-hidden">
-              <div className="border-l-2 border-white">
+            <div className="absolute lg:right-0 lg:h-screen z-40 lg:w-[25%] lg:top-bottom-overflow-fade custom-scroll bg-black/30 scroll-smooth overflow-x-hidden max-lg:w-[105%] max-lg:bottom-0 max-lg:h-[35%]">
+              <div className="lg:border-l-2 max-lg:border-t-2 border-white">
                 <MainPartControls setShowMenu={setShowMenu} onSelect={onSelect} setIsLogin={setIsLogin} isLogin={props.bearer} />
                 {/* {activeMainPart && <Options active={activeMainPart} onSelect={onSelect} close={() => setActiveMainPart(null)} />} */}
               </div>
@@ -94,7 +94,12 @@ export default function Builder(props) {
         setEditIndex={setEditIndex}
       />
 
+      {props.bearer && 
+        <div className="max-lg:absolute bottom-[35%] left-0 w-screen">
       <Bottom setShowMenu={setShowMenu} setShowSettings={setShowSettings} />
+        </div>
+      
+      }
     </div>
   );
 }

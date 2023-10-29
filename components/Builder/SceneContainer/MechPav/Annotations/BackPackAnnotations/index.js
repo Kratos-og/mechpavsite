@@ -1,25 +1,25 @@
 import { Html } from "@react-three/drei";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import BoxText from "../BoxText";
 import data from "@/components/Builder/Controls/Options/data";
 
-const TorsoAnnotations = (props) => {
+const BackPackAnnotations = (props) => {
   const [display, setDisplay] = useState(false);
   return (
     <Html
-      position={[0, 7.5, 0]}
+      position={[0, 12, -3]}
       style={{
         transition: "all 0.5s",
         opacity: 1,
         transform: `scale(4)`,
       }}
-      distanceFactor={4}
+      distanceFactor={5}
       scale={10}
     >
-       <div
-        className={`w-5 h-5 rounded-full bg-white ${props.selected!=="undefined" ? 'absolute':'hidden'}`}
+ <div
+        className={`w-5 h-5 rounded-full bg-white absolute rotate-180 ${props.selected!="undefined" ? 'absolute':'hidden'}`}
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -42,20 +42,21 @@ const TorsoAnnotations = (props) => {
         <AnimatePresence>
           {display && (
             <>
-              <motion.svg
+              <svg
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
                 x="0px"
                 y="0px"
-                width="200px"
-                height="90px"
-                viewBox="0 0 537.1 236"
+                width="100px"
+                height="108.8px"
+                viewBox="0 0 537.1 108.8"
+                className="rotate-180 absolute -left-[6rem] -bottom-11"
               >
                 <circle
                   class="st0"
-                  cx="516"
-                  cy="217.5"
+                  cx="493.5"
+                  cy="57.2"
                   r="9.8"
                   fill="#ffffff"
                 />
@@ -67,25 +68,24 @@ const TorsoAnnotations = (props) => {
                     transition: { delay: 0, duration: 0.5 },
                   }}
                   class="st1"
-                  d="M516,217.5V93.9c0-38.7-31.3-70-70-70H29.4"
+                  d="M489.2,57.2H25.1"
                   stroke="#ffffff"
-                  fillOpacity={0}
-                  strokeWidth={5}
+                  strokeWidth={10}
                 />
-              </motion.svg>
+              </svg>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: [0, 1, 0, 0, 1, 0, 1],
                   transition: { delay: 0.5, duration: 0.5 },
                 }}
-                className="px-10 bg-black/20 border-2 border-white ml-[170px] mb-[25%] rounded-md absolute"
+                className="px-7 bg-black/20 border-2 border-white  rounded-md absolute -left-[22rem] -bottom-8 rotate-180"
               >
                 <BoxText
-                  name={"torso"}
-                  class={data.torso[props.selected]?.type.name}
-                  skin={data.torso[props.selected]?.skin.FE_Name}
-                  variants={data.torso[props.selected]?.skin.BE_Name}
+                  name={"Back Pack"}
+                  class={data.backpack[props.selected]?.type.name}
+                  skin={data.backpack[props.selected]?.skin.FE_Name}
+                  variants={data.backpack[props.selected]?.skin.BE_Name}
                 />
               </motion.div>
             </>
@@ -96,4 +96,4 @@ const TorsoAnnotations = (props) => {
   );
 };
 
-export default TorsoAnnotations;
+export default BackPackAnnotations;

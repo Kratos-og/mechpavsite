@@ -31,7 +31,7 @@ const data = {
     {
       model: "MP_SBT_JD_Body",
       img: "Subterra_Torso_JG_thumb",
-      skin: { BE_Name:'Judgement',FE_Name: "Judgement", FE_Code: "JG", BE_Code: "JD" },
+      skin: { BE_Name:'JudgementDay',FE_Name: "Judgement", FE_Code: "JG", BE_Code: "JD" },
       type: { name: "Sub Terrain", BE_Code: "SBT" },
     },
     {

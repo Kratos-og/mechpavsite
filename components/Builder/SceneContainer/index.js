@@ -9,6 +9,7 @@ import Annotations from "./MechPav/Annotations";
 
 export function SceneContainer(props) {
     const lightRef = useRef(null);
+    console.log(props.selectedParts.torso)
     return (
         <Suspense fallback={null}>
             <directionalLight
@@ -34,7 +35,7 @@ export function SceneContainer(props) {
             <Arms selected={props.selectedParts} />
             <Backpack selected={props.selectedParts} />
             <Legs selected={props.selectedParts} />
-            <Annotations />
+            <Annotations selected={props.selectedParts}/>
         </Suspense>
     );
 }
