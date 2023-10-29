@@ -2,11 +2,26 @@ import { useState } from "react";
 import Options from "../Options";
 import Item from "./Item";
 import { IoClose } from 'react-icons/io5';
-import { data } from "@/components/Common/pavsData";
+import Main_data from "../Options/data";
+
 
 const MainPartControls = props => {
-    const [NftHoldings,setNftHoldings]= useState(["DefenderTorsoPL04846","DefenderLeftArmPL04846","DefenderRightArmPL04846","DefenderBackPackPL04846","DefenderLegsPL04846"]);
-    // NftHoldings[0]
+    const [NftHoldings,setNftHoldings]= useState(["DefenderTorsoPL04846","DefenderLeftArmPL04846","DefenderRightArmPL04846","DefenderBackPackPL04846","DefenderLegsPL04846","SubTerrainTorsoPL04846","SubTerrainLeftArmPL04846","SubTerrainRightArmPL04846","SubTerrainBackPackPL04846","SubTerrainLegsPL04846"]);
+    //this is to remove numbers
+    const NFTs = NftHoldings.map(str => str.replace(/\d/g, ''));
+    // const wordsToFind = ["SubTerrain", "DeepSea", "DeepSpace", "Defender", "Energy"];
+    
+      const torsoItems = NFTs.filter(item => item.includes("Torso"));
+      const leftarmItems = NFTs.filter(item => item.includes("LeftArm"));
+      const rightarmItems = NFTs.filter(item => item.includes("RightArm"));
+      const backpackItems = NFTs.filter(item => item.includes("BackPack"));
+      const legsItems = NFTs.filter(item => item.includes("Legs"));
+
+    torsoItems.map((data_0)=>{
+        Main_data.torso.map((data_1)=>{console.log(data_1.type.name  )})
+    })
+       
+    
     const [bool, setBool] = useState(false)
     const onClick = (type) => {
         if (bool) {
