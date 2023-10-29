@@ -1,10 +1,11 @@
-import Wallet from "@/components/Unboxing/Wallet";
+
 import { useRef, useState } from "react";
 import axios from '@/components/Common/axios';
 import Scene from "@/components/Unboxing/Scene";
 import { Canvas } from "@react-three/fiber";
 import Slides from "@/components/Unboxing/Slides";
 import SpinnerSm from "@/components/UI/SpinnerSm";
+import dynamic from 'next/dynamic';
 
 const Unbox = props => {
     const [assets, setAssets] = useState([]);
@@ -14,7 +15,10 @@ const Unbox = props => {
     const interval = useRef(null);
     const [nftData, setNftData] = useState(null);
     const [mintSuccess, setMintSuccess] = useState(false);
-
+    const Wallet = dynamic(
+        () => import('../../components/Unboxing/Wallet'),
+        { ssr: false }
+    );
     const onCrateSelect = (crateId) => {
         setSelected([...selected, crateId]);
     }
