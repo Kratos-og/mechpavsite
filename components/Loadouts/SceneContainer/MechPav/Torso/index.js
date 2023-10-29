@@ -17,7 +17,7 @@ export function Torso(props) {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/torso/torso.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Body.gltf`
             );
         capsule = useLoader(
             GLTFLoader,

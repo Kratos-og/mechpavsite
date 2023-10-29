@@ -8,12 +8,12 @@ import { Navigation } from 'swiper';
 import "swiper/css/thumbs";
 import "swiper/css/navigation";
 import data from "./data"
+import {TiLockClosed} from "react-icons/ti"
 
 const Options = props => {
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
     let items = [];
     const [loading, setLoading] = useState(null);
-
     const onItemSelect = (active, index) => {
         try {
             setLoading({ active, index });
@@ -40,6 +40,7 @@ const Options = props => {
             <SwiperSlide key={index} className={``}>
                 <div className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex ? 'scale-[1.5] duration-200 ease-in-out' : 'scale-75 duration-200 ease-in-out '}`} onClick={() => onItemSelect(props.active, index)} key={index}>
                     {loading && loading.active == props.active && loading.index == index ? <div className="absolute top-6 right-4 scale-75"><SpinnerSm /></div> : null}
+                    {!props.ownNFT.includes( index ) && <div className="absolute top-[17%] right-4"><TiLockClosed/></div>}
                     <p className="w-full h-full">
                         <img src={`/assets/images/previews/${props.active}/${item.img}.png`} className="" />
                     </p>
