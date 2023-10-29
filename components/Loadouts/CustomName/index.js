@@ -6,29 +6,29 @@ export default function CustomName(props) {
       </div>
       <div className="absolute w-full bottom-5 flex gap-3 z-10">
 
-      {props.activeSlideIndex == props.index && 
-      <div className="w-full flex gap-5">
+        {props.activeSlideIndex == props.index &&
+          <div className="w-full flex gap-5">
 
-      <button className=' w-full mt-5 py-7 text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
-          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
-          <div className="lines"></div>
-          <div className="angles"></div>
-          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
-            <p>EDIT LOADOUT</p>
+            <button className=' w-full mt-5 py-7 text-sm newButton relative text-black group font-light' onClick={() => setStart(true)}>
+              <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+                <div className="lines"></div>
+                <div className="angles"></div>
+                <div className='bg-white font-medium w-full h-full flex justify-center items-center'>
+                  <p>EDIT </p>
+                </div>
+              </div>
+            </button>
+            <button className=' w-full mt-5 py-7  text-sm newButton relative text-black group font-light' onClick={() => setStart(true)}>
+              <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
+                <div className="lines"></div>
+                <div className="angles"></div>
+                <div className='bg-white font-medium w-full h-full flex justify-center items-center'>
+                  <p>DELETE</p>
+                </div>
+              </div>
+            </button>
           </div>
-          </div>
-          </button>
-            <button className=' w-full mt-5 py-7  text-sm newButton relative text-pavia-green group font-light' onClick={() => setStart(true)}>
-          <div className='frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300'>
-          <div className="lines"></div>
-          <div className="angles"></div>
-          <div className='bg-gray-900 w-full h-full flex justify-center items-center'>
-            <p>DELETE</p>
-          </div>
-          </div>
-          </button>
-      </div> 
-          }
+        }
 
       </div>
       {props.activeSlideIndex == props.index && <div className="">

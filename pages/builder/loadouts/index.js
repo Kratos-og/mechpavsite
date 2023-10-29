@@ -110,7 +110,7 @@ export default function Loadouts() {
     <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
       <CustomName activeSlideIndex={activeSlideIndex} index={i}>TITANIUM</CustomName>
       <Canvas className="cursor-pointer ">
-        <SceneContainer position={activeSlideIndex == i ? [2, -6, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 7.5 : 3} index={1} selectedParts={{ torso: item.torso, rightarm: item.rightarm, leftarm: item.leftarm, backpack: item.backpack, legs: item.legs }} />
+        <SceneContainer position={activeSlideIndex == i ? [2, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 6.5 : 3} index={1} selectedParts={{ torso: item.torso, rightarm: item.rightarm, leftarm: item.leftarm, backpack: item.backpack, legs: item.legs }} />
       </Canvas>
     </div>
   </SwiperSlide>)
@@ -125,10 +125,10 @@ export default function Loadouts() {
           mousewheel={true}
           keyboard={true}
           modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-          slidesPerView={3} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper max-lg:hidden">
-          <SwiperSlide></SwiperSlide>
+          breakpoints={breakpoints} onSlideChange={(swiper) => setActiveSlideIndex(swiper.activeIndex)} className="w-full h-full mySwiper">
+          <SwiperSlide className=" hidden md:block"></SwiperSlide>
           {loadoutItems}
-          <SwiperSlide></SwiperSlide>
+          <SwiperSlide className=" hidden md:block"></SwiperSlide>
         </Swiper>
       </div>
 
