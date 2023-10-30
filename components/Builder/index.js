@@ -9,6 +9,7 @@ import { BsFillGearFill } from "react-icons/bs";
 import Settings from "@/components/Builder/SceneContainer/Settings";
 import Bottom from "./Bottom";
 import MyAccount from "./MyAccount";
+import axios from "axios";
 
 export default function Builder(props) {
   const [selectedParts, setSelectedParts] = useState({});
@@ -36,6 +37,17 @@ export default function Builder(props) {
     }
   }, []);
 
+  const saveLoadout = async (bearer) => {
+    try {
+      let payload;
+      const res = await axios.post('/api/pavia/saveLoadout', payload);
+      console.log(res.data)
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
   const onEnvChange = (env) => {
     localStorage.setItem("env", env);
     setEnv(env);
@@ -62,17 +74,10 @@ export default function Builder(props) {
         </div>
       )}
       {
-        activeTab == 1 && <Settings
-          setEnv={onEnvChange}
-          show={true}
-          env={env}
-          close={setShowSettings}
-          setClose={setShowSettings}
-          setSelectedParts={setSelectedParts}
-        />
+        activeTab == 1 && <Settings setEnv={onEnvChange} env={env} />
       }
       {
-        activeTab == 2 && <MyAccount activeTab={activeTab} setActiveTab={()=>{setActiveTab(0)}}/>
+        activeTab == 2 && <MyAccount activeTab={activeTab} setActiveTab={() => { setActiveTab(0) }} />
       }
 
       {props.bearer && activeTab != 2 &&
