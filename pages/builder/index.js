@@ -13,15 +13,14 @@ export default function BuilderPage() {
     try {
       const a = await axios.get('/api/accessToken');
       setBearer(a.data);
-      save(a.data)
+      getSavedMechs(a.data)
     }
     catch (err) {
       console.log(err)
     }
   }
 
-
-  const save = async (bearer) => {
+  const getSavedMechs = async (bearer) => {
     try {
       const a = await axios.get('/api/pavia/getSavedMechs');
       console.log(a.data)
