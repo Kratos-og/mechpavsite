@@ -150,7 +150,7 @@ const Unbox = props => {
             }
             <AnimatePresence>
                 {
-                    true &&
+                    mintSuccess &&
                     <motion.div className="w-screen h-screen bg-white absolute z-50" initial={{ y: '100%' }} animate={{ y: 0, transition: { delay: 2, duration: 0.25 } }}>
                         <Success nftData={nftData} />
                     </motion.div>

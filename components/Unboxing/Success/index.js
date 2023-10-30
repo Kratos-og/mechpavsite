@@ -22,7 +22,7 @@ const Success = props => {
             </Swiper>
             <div className="absolute w-full bottom-0 h-20 flex items-center gap-7 justify-end px-10">
                 <Link href="/minting">
-                    <div className="md:px-7 px-4  py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Mint More Crates</div>
+                    <div className="md:px-7 px-4 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Mint More Crates</div>
                 </Link>
                 <Link href="/builder">
                     <div className="md:px-7 px-4 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Go to Mech Builder</div>
