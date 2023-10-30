@@ -10,13 +10,13 @@ const Success = props => {
         <SwiperSlide>
             <div className="text-sm flex flex-col gap-3 w-80 select-none text-black">
                 <img src={item.image} className="w-full h-[95%] object-cover" />
-                <div className="font-bold">{item.name}</div>
+                <div className="font-bold">{item.metadata?.name ?? item.name}</div>
             </div>
         </SwiperSlide>
     )
     return (
         <div className="w-full h-full flex flex-col gap-5 items-center justify-center text-black">
-            <div className="text-[60px] font-bold uppercase tracking-wider max-md:text-2xl">2x Crates Unlocked</div>
+            <div className="text-[60px] font-bold uppercase tracking-wider max-md:text-2xl">{props.selected?.length}x Crates Unlocked</div>
             <Swiper modules={[Navigation]} slidesPerView={1} grabCursor navigation={true} className="w-80 text-center unboxSlider">
                 {slideItems}
             </Swiper>

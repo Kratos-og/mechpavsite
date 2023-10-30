@@ -17,7 +17,7 @@ const Unbox = props => {
     const interval = useRef(null);
     const [nftData, setNftData] = useState(null);
     const [mintSuccess, setMintSuccess] = useState(false);
-    const [confirmation,setConfirmation] = useState(false);
+    const [confirmation, setConfirmation] = useState(false);
     const Wallet = dynamic(
         () => import('../../components/Unboxing/Wallet'),
         { ssr: false }
@@ -34,6 +34,7 @@ const Unbox = props => {
     const onMintInitiate = async () => {
         try {
             setLoading(true);
+            setConfirmation(false);
             let data = (await axios.post(`/buy/653a351e79b53e832360b35b`,
                 {
                     utxoStrings: walletDetails.utxos,
@@ -131,28 +132,41 @@ const Unbox = props => {
             {!walletDetails && <Wallet setAssets={setAssets} onConnect={setWalletDetails} />}
             {assets.length && walletDetails ?
                 <>
-                    <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
-                        {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} confirmation={confirmation} onMintInitiate={onMintInitiate} setConfirmation={()=>setConfirmation(false)} numberOfCrates={selected.length}/>
-                            : <SpinnerSm />}
-                    </div>
-                    <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10 max-md:text-xs">
-                        <div className="uppercase tracking-wider font-semibold text-sm">Selected Crates: <span className="text-pavia-green">{selected.length}</span></div>
-                        {
-                            !loading ? <button onClick={()=>setConfirmation(true)} disabled={!selected.length} className="uppercase px-10 max-md:px-2 disabled:text-white py-3 disabled:bg-gray-700 disabled:cursor-not-allowed bg-white cursor-pointer text-black tracking-widest font-medium max-md:text-sm">
-                                Unbox Crates
-                            </button> :
-                                <div><SpinnerSm /></div>
-                                
-                        }
-                        
-                    </div>
-                </> : null
+                    {!confirmation ?
+                        <>
+                            <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
+                                {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} confirmation={confirmation} />
+                                    : <SpinnerSm />}
+
+                            </div>
+                            <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10 max-md:text-xs">
+                                <div className="uppercase tracking-wider font-semibold text-sm">Selected Crates: <span className="text-pavia-green">{selected.length}</span></div>
+                                {
+                                    !loading ? <button onClick={() => setConfirmation(true)} disabled={!selected.length} className="uppercase px-10 max-md:px-2 disabled:text-white py-3 disabled:bg-gray-700 disabled:cursor-not-allowed bg-white cursor-pointer text-black tracking-widest font-medium max-md:text-sm">
+                                        Unbox Crates
+                                    </button> :
+                                        <div><SpinnerSm /></div>
+                                }
+                            </div>
+                        </>
+                        :
+                        <div className="flex absolute flex-col gap-6 border-2 bg-white text-black p-6 w-[350px]">
+                            <div className="text-2xl font-bold uppercase tracking-wider">Unbox Confirm</div>
+                            <div className="text-sm">You have selected <span className="font-medium">{selected.length}x {selected.length == 1 ? 'Crate' : 'Crates'}</span> to be unboxed. Do you wanna continue? </div>
+                            <div className="flex flex-col gap-2 justify-around">
+                                <button onClick={() => setConfirmation(false)} className="bg-gray-600/75 hover:bg-gray-600/60 transition-all text-white px-4 py-3">CANCEL</button>
+                                <button onClick={onMintInitiate} className="bg-pavia-green text-white font-bold px-4 py-3">CONFIRM</button>
+                            </div>
+                        </div>}
+                </>
+                : null
             }
+
             <AnimatePresence>
                 {
                     mintSuccess &&
                     <motion.div className="w-screen h-screen bg-white absolute z-50" initial={{ y: '100%' }} animate={{ y: 0, transition: { delay: 2, duration: 0.25 } }}>
-                        <Success nftData={nftData} />
+                        <Success nftData={nftData} selected={selected}/>
                     </motion.div>
                 }
             </AnimatePresence>

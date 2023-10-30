@@ -20,7 +20,6 @@
     "daisyui": "^2.51.6",
     "framer-motion": "^10.16.4",
     "lodash": "^4.17.21",
-    "lucid-cardano": "^0.10.7",
     "moment": "^2.29.4",
     "next": "13.4.19",
     "pavia-storage-lib": "file:components/Common/pavia-storage-lib-0.1.0.tgz",
