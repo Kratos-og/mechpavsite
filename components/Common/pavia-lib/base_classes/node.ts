@@ -465,9 +465,9 @@ export abstract class Node implements IRootNode {
 
             //check that is was marked as clean
             if (!isSynchronisedCommit) {
-                Debug.assert(!was_properties || this.propertyTimestamp == this._commitTimestamp, `commit processing failed to mark Properties as committed: ${this.name}`);
-                Debug.assert(!was_hierarchy || this.hierarchyTimestamp == this._commitTimestamp, `commit processingfailed to mark Hierarchy as committed: ${this.name}`);
-                Debug.assert(!was_data || this.dataTimestamp == this._commitTimestamp, ` commit processing failed to mark Data as committed: ${this.name}`);
+                Debug.assert(!was_properties || this.propertyTimestamp === this._commitTimestamp, `commit processing failed to mark Properties as committed: ${this.name}`);
+                Debug.assert(!was_hierarchy || this.hierarchyTimestamp === this._commitTimestamp, `commit processingfailed to mark Hierarchy as committed: ${this.name}`);
+                Debug.assert(!was_data || this.dataTimestamp === this._commitTimestamp, ` commit processing failed to mark Data as committed: ${this.name}`);
 
                 //can't be marked as committed as for ancestor nodes (no data changes) we need a way to still get into this if statement to sync edit timestamp
                 //API.Assert( !HasStateChanges, $"{GetType().Name} commit processing failed to mark State as committed: {Name}" );

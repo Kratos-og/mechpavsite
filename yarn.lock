@@ -12,18 +12,6 @@
   "resolved" "https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz"
   "version" "5.2.0"
 
-"@auth0/auth0-react@^2.2.1":
-  "integrity" "sha512-4L4FZvSqIwzVk5mwWFbWzfJ4Zq11dgS0v4KIGKro5tL9dgOnBGq+Ino/1mzexPV1LJHBkfwXG4+IaPiQNz5CGg=="
-  "resolved" "https://registry.npmjs.org/@auth0/auth0-react/-/auth0-react-2.2.1.tgz"
-  "version" "2.2.1"
-  dependencies:
-    "@auth0/auth0-spa-js" "^2.1.2"
-
-"@auth0/auth0-spa-js@^2.1.2":
-  "integrity" "sha512-xdA65Z/U7++Y7L9Uwh8Q8OVOs6qgFz+fb7GAzHFjpr1icO37B//xdzLXm7ZRgA19RWrsNe1nme3h896igJSvvw=="
-  "resolved" "https://registry.npmjs.org/@auth0/auth0-spa-js/-/auth0-spa-js-2.1.2.tgz"
-  "version" "2.1.2"
-
 "@auth0/nextjs-auth0@^3.2.0":
   "integrity" "sha512-8vdoqEF+RfAAdG9O2r8QbRs95LraDYhDGlfTzQdGg5CYTBGUWO34EZOB9bZr0SgqnqaO9Qa4lgcrffsYPcvywg=="
   "resolved" "https://registry.npmjs.org/@auth0/nextjs-auth0/-/nextjs-auth0-3.2.0.tgz"
@@ -2525,7 +2513,7 @@
   dependencies:
     "prop-types" "^15.6.0"
 
-"react-dom@^16.11.0 || ^17 || ^18", "react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>=16.13", "react-dom@>=16.9.0", "react-dom@>=18.0", "react-dom@>=18.0.0", "react-dom@18.2.0":
+"react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>=16.13", "react-dom@>=16.9.0", "react-dom@>=18.0", "react-dom@>=18.0.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -2568,7 +2556,7 @@
   dependencies:
     "debounce" "^1.2.1"
 
-"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.11.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13", "react@>=16.8", "react@>=16.9.0", "react@>=17.0", "react@>=18.0", "react@>=18.0.0", "react@18.2.0":
+"react@*", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=16.13", "react@>=16.8", "react@>=16.9.0", "react@>=17.0", "react@>=18.0", "react@>=18.0.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

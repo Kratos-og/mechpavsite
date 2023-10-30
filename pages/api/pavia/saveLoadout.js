@@ -6,8 +6,10 @@ const saveLoadout = async (req, res) => {
     try {
         const { accessToken } = await getAccessToken(req, res);
         const mechOperations = new MechOperations(() => accessToken);
+        console.log(req.body)
+        const savedMechs = await mechOperations.getSavedMechs();
         let results = await mechOperations.saveChanges([{
-            name: 'Sample',
+            name: req.body?.name,
             properties: {
                 ...req.body?.properties
             }

@@ -9,77 +9,32 @@ import "swiper/css/thumbs";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import CustomName from "@/components/Loadouts/CustomName";
+import axios from "axios";
 
 export default function Loadouts() {
-  const backend = [{
-    "Arm-L_Class": "DSP",
-    "Arm-L_Variant": "CT",
-    "Arm-R_Class": "DSP",
-    "Arm-R_Variant": "CS",
-    "Torso_Class": "DSP",
-    "Torso_Variant": "ELM",
-    "Legs_Class": "DSE",
-    "Legs_Variant": "JD",
-    "Backpack_Class": "DEF",
-    "Backpack_Variant": "LAB"
-  }, {
-    "Arm-L_Class": "DSP",
-    "Arm-L_Variant": "CT",
-    "Arm-R_Class": "DSP",
-    "Arm-R_Variant": "CS",
-    "Torso_Class": "DSP",
-    "Torso_Variant": "ELM",
-    "Legs_Class": "DSE",
-    "Legs_Variant": "JD",
-    "Backpack_Class": "DEF",
-    "Backpack_Variant": "LAB"
-  }, {
-    "Arm-L_Class": "DSP",
-    "Arm-L_Variant": "CT",
-    "Arm-R_Class": "DSP",
-    "Arm-R_Variant": "CS",
-    "Torso_Class": "DSP",
-    "Torso_Variant": "ELM",
-    "Legs_Class": "DSE",
-    "Legs_Variant": "JD",
-    "Backpack_Class": "DEF",
-    "Backpack_Variant": "LAB"
-  }]
+  const [userLoadouts, setUserLoaduts] = useState([]);
   const [loadItems, setLoadItems] = useState([]);
 
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   useEffect(() => {
-    const items = getLoadOutItems();
-    setLoadItems(items)
+    getSavedMechs();
   }, [])
 
-  const torsoItems = [];
-  const armLItems = [];
-  const armRItems = [];
-  const backpackItems = [];
-  const legsItems = [];
-
-  for (const key in backend) {
-    if (key.includes("Torso")) {
-      torsoItems.push(backend[key]);
+  const getSavedMechs = async (bearer) => {
+    try {
+      const res = await axios.get('/api/pavia/getSavedMechs');
+      setUserLoaduts(res.data)
+      const items = getLoadOutItems(res.data);
+      setLoadItems(items)
     }
-    if (key.includes("Arm-L")) {
-      armLItems.push(backend[key]);
-    }
-    if (key.includes("Arm-R")) {
-      armRItems.push(backend[key]);
-    }
-    if (key.includes("Backpack")) {
-      backpackItems.push(backend[key]);
-    }
-    if (key.includes("Legs")) {
-      legsItems.push(backend[key]);
+    catch (err) {
+      console.log(err)
     }
   }
 
-
-  const getLoadOutItems = () => {
-    let res = backend.map(loadout => {
+  const getLoadOutItems = (items) => {
+    let res = items.map(item => {
+      let loadout = item.properties;
       let torso = data['torso'].findIndex(item => item.type?.BE_Code == loadout['Torso_Class'] && item.skin?.BE_Code == loadout["Torso_Variant"]);
       let rightarm = data['rightarm'].findIndex(item => item.type?.BE_Code == loadout['Arm-R_Class'] && item.skin?.BE_Code == loadout["Arm-R_Variant"]);
       let leftarm = data['leftarm'].findIndex(item => item.type?.BE_Code == loadout['Arm-L_Class'] && item.skin?.BE_Code == loadout["Arm-L_Variant"]);
@@ -108,7 +63,7 @@ export default function Loadouts() {
   };
   const loadoutItems = loadItems.map((item, i) => <SwiperSlide>
     <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
-      <CustomName activeSlideIndex={activeSlideIndex} index={i}>TITANIUM</CustomName>
+      <CustomName activeSlideIndex={activeSlideIndex} index={i}>{userLoadouts[i]?.name}</CustomName>
       <Canvas className="cursor-pointer ">
         <SceneContainer position={activeSlideIndex == i ? [2, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 6.5 : 3} index={1} selectedParts={{ torso: item.torso, rightarm: item.rightarm, leftarm: item.leftarm, backpack: item.backpack, legs: item.legs }} />
       </Canvas>
@@ -131,8 +86,6 @@ export default function Loadouts() {
           <SwiperSlide className=" hidden md:block"></SwiperSlide>
         </Swiper>
       </div>
-
-
     </div>
   );
 }

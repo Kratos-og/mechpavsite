@@ -19,9 +19,7 @@ const Options = (props) => {
       setLoading({ active, index });
       let model = useLoader(
         GLTFLoader,
-        `${process.env.NEXT_PUBLIC_MECH_FILES}/${
-          data[props.active][index]?.model
-        }.gltf`
+        `${process.env.NEXT_PUBLIC_MECH_FILES}/${data[props.active][index]?.model}.gltf`
       );
       if (model?.scene) {
         props.onSelect(active, index);
@@ -34,72 +32,43 @@ const Options = (props) => {
       });
     }
   };
-  console.log(props.ownNFTs)
-  if (props.active && !props.showOnlyOwnNFTs) {
-    items = data[props.active]?.map((item, index) => (
-      <SwiperSlide key={index}>
-        <div
-          className={`relative flex items-center justify-center py-10 ${
-            index === activeSlideIndex
-              ? "scale-[1.5] duration-200 ease-in-out"
-              : "scale-75 duration-200 ease-in-out "
+
+  let dataItems = data[props.active];
+  if (props.showOnlyUserOwned) {
+    dataItems = dataItems?.filter((item, index) => props.userOwned?.includes(index));
+  }
+
+  items = dataItems?.map((item, index) => (
+    <SwiperSlide key={index}>
+      <div
+        className={`relative flex items-center justify-center py-10 ${index === activeSlideIndex
+          ? "scale-[1.5] duration-200 ease-in-out"
+          : "scale-75 duration-200 ease-in-out "
           }`}
-          onClick={() => onItemSelect(props.active, index)}
-          key={index}
-        >
-          {loading &&
+        onClick={() => onItemSelect(props.active, index)}
+        key={index}
+      >
+        {loading &&
           loading.active == props.active &&
           loading.index == index ? (
-            <div className="absolute top-6 right-4 scale-75">
-              <SpinnerSm />
-            </div>
-          ) : null}
-          {!props.ownNFTs?.includes(index) && (
-            <div className="absolute top-[17%] right-4">
-              <TiLockClosed />
-            </div>
-          )}
-          <p className="w-full h-full">
-            <img
-              src={`/assets/images/previews/${props.active}/${item.img}.png`}
-              className=""
-            />
-          </p>
-        </div>
-      </SwiperSlide>
-    ));
-  }
-  if(props.showOnlyOwnNFTs){
-    items = data[props.active]?.map((item, index) => (
-        props.ownNFTs?.includes(index) && (
-        <SwiperSlide key={index}>
-          <div
-            className={`relative flex items-center justify-center py-10 ${
-              index === activeSlideIndex
-                ? "scale-[1.5] duration-200 ease-in-out"
-                : "scale-75 duration-200 ease-in-out "
-            }`}
-            onClick={() => onItemSelect(props.active, index)}
-            key={index}
-          >
-            {loading &&
-            loading.active == props.active &&
-            loading.index == index ? (
-              <div className="absolute top-6 right-4 scale-75">
-                <SpinnerSm />
-              </div>
-            ) : null}
-            <p className="w-full h-full">
-            <img
+          <div className="absolute top-6 right-4 scale-75">
+            <SpinnerSm />
+          </div>
+        ) : null}
+        {!props.userOwned?.includes(index) && (
+          <div className="absolute top-[17%] right-4">
+            <TiLockClosed />
+          </div>
+        )}
+        <p className="w-full h-full">
+          <img
             src={`/assets/images/previews/${props.active}/${item.img}.png`}
             className=""
           />
-          </p>
-          </div>
-          </SwiperSlide>
-          )
-      ));
-  }
+        </p>
+      </div>
+    </SwiperSlide>
+  ));
 
   return (
     <div className="relative  rounded-md ">

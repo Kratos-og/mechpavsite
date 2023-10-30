@@ -155,6 +155,9 @@ export class RemoteStorageNode extends Node {
         if (this.hasStateChanges) {
             this.markStateCommitted();
         }
+        if(this.hasPropertyChanges){
+            this.markPropertiesCommitted();
+        }
     }
 
 
