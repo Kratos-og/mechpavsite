@@ -17,6 +17,7 @@ const Unbox = props => {
     const interval = useRef(null);
     const [nftData, setNftData] = useState(null);
     const [mintSuccess, setMintSuccess] = useState(false);
+    const [confirmation,setConfirmation] = useState(false);
     const Wallet = dynamic(
         () => import('../../components/Unboxing/Wallet'),
         { ssr: false }
@@ -120,8 +121,8 @@ const Unbox = props => {
 
     return (
         <div className="w-full h-screen relative overflow-hidden flex items-center justify-center ">
-            <div className="absolute top-16 left-20">
-                <div className="text-[40px] font-bold uppercase tracking-wider">Unbox Mech Crates</div>
+            <div className="absolute top-16 left-20 max-md:left-16">
+                <div className="text-[40px] font-bold uppercase tracking-wider max-lg:text-2xl max-lg:mt-12 mt-2">Unbox Mech Crates</div>
                 {walletDetails && <div className="text-sm font-semibold uppercase tracking-wider">Crates Owned: <span className="text-pavia-green">{assets.length}</span></div>}
             </div>
             <Canvas>
@@ -131,23 +132,25 @@ const Unbox = props => {
             {assets.length && walletDetails ?
                 <>
                     <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
-                        {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} />
+                        {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} confirmation={confirmation} onMintInitiate={onMintInitiate} setConfirmation={()=>setConfirmation(false)} numberOfCrates={selected.length}/>
                             : <SpinnerSm />}
                     </div>
-                    <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10">
+                    <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10 max-md:text-xs">
                         <div className="uppercase tracking-wider font-semibold text-sm">Selected Crates: <span className="text-pavia-green">{selected.length}</span></div>
                         {
-                            !loading ? <button onClick={onMintInitiate} disabled={!selected.length} className="uppercase px-10 disabled:text-white py-3 disabled:bg-gray-700 disabled:cursor-not-allowed bg-white cursor-pointer text-black tracking-widest font-medium">
+                            !loading ? <button onClick={()=>setConfirmation(true)} disabled={!selected.length} className="uppercase px-10 max-md:px-2 disabled:text-white py-3 disabled:bg-gray-700 disabled:cursor-not-allowed bg-white cursor-pointer text-black tracking-widest font-medium max-md:text-sm">
                                 Unbox Crates
                             </button> :
-                                <SpinnerSm />
+                                <div><SpinnerSm /></div>
+                                
                         }
+                        
                     </div>
                 </> : null
             }
             <AnimatePresence>
                 {
-                    mintSuccess &&
+                    true &&
                     <motion.div className="w-screen h-screen bg-white absolute z-50" initial={{ y: '100%' }} animate={{ y: 0, transition: { delay: 2, duration: 0.25 } }}>
                         <Success nftData={nftData} />
                     </motion.div>

@@ -95,15 +95,16 @@ const Wallet = props => {
     }
 
     return (
-        <div className="absolute bg-white text-black text-sm p-7 w-[350px] ">
+        <div className="absolute text-black text-sm  w-[350px] ">
 
             {loading ?
-                <div className="flex justify-center">
+                <div className="flex justify-center scale-150">
                     <SpinnerSm />
                 </div>
                 :
-                <>
-                    <div className="font-bold uppercase mb-4">Connect wallet</div>
+                <div className="bg-white p-7">
+                    <div className="font-bold uppercase mb-4 max-lg:w-full max-lg:flex justify-center">Connect wallet</div>
+                    {walletError && <div className="font-bold uppercase mb-4 max-lg:w-full max-lg:flex justify-center text-xs text-red-400">ERROR: {walletError}</div>}
                     <div className='py-4 w-full flex flex-col gap-4 h-[350px] overflow-y-auto overflow-x-hidden custom-scroll pr-3'>
                         <div className={`flex items-center gap-2  px-3 cursor-pointer transition-all will-change-transform py-2`} onClick={() => onContinue('lace')}>
                             <img src='/assets/images/wallets/lace.svg' className='w-4' />
@@ -142,7 +143,7 @@ const Wallet = props => {
                             <div>Nufi Wallet</div>
                         </div>
                     </div>
-                </>
+                </div>
             }
 
         </div>

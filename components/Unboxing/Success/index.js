@@ -16,16 +16,16 @@ const Success = props => {
     )
     return (
         <div className="w-full h-full flex flex-col gap-5 items-center justify-center text-black">
-            <div className="text-[60px] font-bold uppercase tracking-wider">2x Crates Unlocked</div>
+            <div className="text-[60px] font-bold uppercase tracking-wider max-md:text-2xl">2x Crates Unlocked</div>
             <Swiper modules={[Navigation]} slidesPerView={1} grabCursor navigation={true} className="w-80 text-center unboxSlider">
                 {slideItems}
             </Swiper>
             <div className="absolute w-full bottom-0 h-20 flex items-center gap-7 justify-end px-10">
                 <Link href="/minting">
-                    <div className="px-7 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider">Mint More Crates</div>
+                    <div className="md:px-7 px-4  py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Mint More Crates</div>
                 </Link>
                 <Link href="/builder">
-                    <div className="px-7 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider">Go to Mech Builder</div>
+                    <div className="md:px-7 px-4 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Go to Mech Builder</div>
                 </Link>
             </div>
         </div>

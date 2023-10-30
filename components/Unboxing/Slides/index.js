@@ -15,8 +15,8 @@ const Slides = props => {
                         Add to unbox +
                     </div>
                     :
-                    <div onClick={() => props.onRemove(item)} className="bg-pavs-red hover:bg-pavs-red/75 cursor-pointer transition-all w-fit font-bold text-black uppercase m-auto px-3 py-1 rounded-full whitespace-nowrap">
-                        Remove
+                    <div onClick={() => props.onRemove(item)} className="bg-red-600 hover:bg-red-700 cursor-pointer transition-all w-fit font-bold text-black uppercase m-auto px-3 py-1 rounded-full whitespace-nowrap">
+                        Remove Selection
                     </div>
                 }
 
@@ -24,9 +24,19 @@ const Slides = props => {
         </SwiperSlide>
     )
     return (
-        <Swiper modules={[Navigation]} slidesPerView={1} navigation={true} className="w-80 text-center unboxSlider">
+        <div className="max-lg:mb-16">
+        {!props.confirmation && <Swiper modules={[Navigation]} slidesPerView={1} navigation={true} className="w-80 text-center unboxSlider">
             {slideItems}
-        </Swiper>
+        </Swiper>}
+        {props.confirmation && 
+        <div className="flex flex-col gap-6 border-2 border-white p-6">
+            <div>YOU HAVE SELECTED : <span className="text-pavia-green">{props.numberOfCrates} {props.numberOfCrates==1 ? 'CRATE':'CRATES'}</span> </div>
+            <div className="flex justify-around">
+            <button onClick={props.setConfirmation} className="bg-white text-black px-3 py-1">CANCEL</button>
+            <button onClick={props.onMintInitiate} className="bg-white text-black px-3 py-1">CONFIRM</button>
+            </div>
+            </div>}
+        </div>
     )
 }
 
