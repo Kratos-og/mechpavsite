@@ -8,12 +8,23 @@ const saveLoadout = async (req, res) => {
         const mechOperations = new MechOperations(() => accessToken);
         console.log(req.body)
         const savedMechs = await mechOperations.getSavedMechs();
-        let results = await mechOperations.saveChanges([{
-            name: req.body?.name,
-            properties: {
-                ...req.body?.properties
+        let isMod = false;
+        let payload = savedMechs.map(mech => {
+            if (mech.name == req.body?.name) {
+                isMod = true;
+                mech.properties = { ...req.body.properties }
             }
-        }]);
+            return { ...mech };
+        })
+        if (!isMod) {
+            payload.push({
+                name: req.body?.name,
+                properties: {
+                    ...req.body?.properties
+                }
+            })
+        }
+        let results = await mechOperations.saveChanges(payload);
 
         res.status(200).json(results)
     }

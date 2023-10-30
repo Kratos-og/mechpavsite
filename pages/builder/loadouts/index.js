@@ -1,10 +1,9 @@
 import { Canvas } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SceneContainer } from "../../../components/Loadouts/SceneContainer";
 import data from "@/components/Builder/Controls/Options/data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-// import { Navigation } from 'swiper';
 import "swiper/css/thumbs";
 import "swiper/css/navigation";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
@@ -14,8 +13,8 @@ import axios from "axios";
 export default function Loadouts() {
   const [userLoadouts, setUserLoaduts] = useState([]);
   const [loadItems, setLoadItems] = useState([]);
-
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
   useEffect(() => {
     getSavedMechs();
   }, [])
@@ -45,27 +44,22 @@ export default function Loadouts() {
     return res;
   }
 
-  const [index, setIndex] = useState(1);
   const breakpoints = {
-    // When the viewport is 320 pixels wide or larger
     320: {
-      slidesPerView: 1, // Display 1 slide at a time
+      slidesPerView: 1,
     },
-    // When the viewport is 480 pixels wide or larger
     480: {
-      slidesPerView: 1, // Display 2 slides at a time
+      slidesPerView: 1,
     },
-    // When the viewport is 768 pixels wide or larger
     768: {
-      slidesPerView: 3, // Display 3 slides at a time
+      slidesPerView: 3,
     },
-    // You can add more breakpoints as needed
   };
   const loadoutItems = loadItems.map((item, i) => <SwiperSlide>
-    <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={index}>
-      <CustomName activeSlideIndex={activeSlideIndex} index={i}>{userLoadouts[i]?.name}</CustomName>
+    <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={i}>
+      <CustomName activeSlideIndex={activeSlideIndex} index={i} item={item}>{userLoadouts[i]?.name}</CustomName>
       <Canvas className="cursor-pointer ">
-        <SceneContainer position={activeSlideIndex == i ? [2, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 6.5 : 3} index={1} selectedParts={{ torso: item.torso, rightarm: item.rightarm, leftarm: item.leftarm, backpack: item.backpack, legs: item.legs }} />
+        <SceneContainer position={activeSlideIndex == i ? [2, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 6.5 : 3} index={1} selectedParts={{ ...item }} />
       </Canvas>
     </div>
   </SwiperSlide>)
