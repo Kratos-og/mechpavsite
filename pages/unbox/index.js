@@ -6,6 +6,8 @@ import { Canvas } from "@react-three/fiber";
 import Slides from "@/components/Unboxing/Slides";
 import SpinnerSm from "@/components/UI/SpinnerSm";
 import dynamic from 'next/dynamic';
+import { AnimatePresence, motion } from 'framer-motion'
+import Success from "@/components/Unboxing/Success";
 
 const Unbox = props => {
     const [assets, setAssets] = useState([]);
@@ -117,30 +119,16 @@ const Unbox = props => {
     }
 
     return (
-        <div className="w-full h-screen relative flex items-center justify-center ">
+        <div className="w-full h-screen relative overflow-hidden flex items-center justify-center ">
             <div className="absolute top-16 left-20">
                 <div className="text-[40px] font-bold uppercase tracking-wider">Unbox Mech Crates</div>
                 {walletDetails && <div className="text-sm font-semibold uppercase tracking-wider">Crates Owned: <span className="text-pavia-green">{assets.length}</span></div>}
             </div>
-            {/* <div className="w-full relative border flex items-center justify-center border-gray-700 h-[600px]">
-                <div className="cursor-pointer absolute w-[95%] left-7 font-bold -top-6 p-5 border bg-white text-black uppercase">Mech Crates Unboxing</div>
-                {
-                    !assets.length ? <Wallet setAssets={setAssets} onConnect={setWalletDetails} /> :
-                        <div className="w-full h-full">
-                            <div className="flex flex-wrap gap-5 w-full h-full overflow-y-auto custom-scroll mt-5 items-center">
-                                {assets.map((item, i) => <Crate item={item} onClick={() => onCrateSelect(item)} />)}
-                            </div>
-                            <button onClick={onMintInitiate} disabled={!selected.length} className="absolute disabled:border-gray-600 disabled:hover:bg-black disabled:hover:text-gray-600 disabled:hover:cursor-not-allowed disabled:text-gray-600 font-bold bottom-5 right-5 px-8 py-3 border cursor-pointer hover:bg-white hover:text-black transition-all">
-                                Continue <span className="ml-2">&rarr;</span>
-                            </button>
-                        </div>
-                }
-            </div> */}
             <Canvas>
                 <Scene walletDetails={walletDetails} assets={assets} />
             </Canvas>
             {!walletDetails && <Wallet setAssets={setAssets} onConnect={setWalletDetails} />}
-            {assets.length && walletDetails &&
+            {assets.length && walletDetails ?
                 <>
                     <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
                         <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} />
@@ -154,8 +142,16 @@ const Unbox = props => {
                                 <SpinnerSm />
                         }
                     </div>
-                </>
+                </> : null
             }
+            <AnimatePresence>
+                {
+                    mintSuccess &&
+                    <motion.div className="w-screen h-screen bg-white absolute z-50" initial={{ y: '100%' }} animate={{ y: 0, transition: { delay: 2, duration: 0.25 } }}>
+                        <Success nftData={nftData} />
+                    </motion.div>
+                }
+            </AnimatePresence>
         </div>
     )
 }
