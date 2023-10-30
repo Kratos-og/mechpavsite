@@ -87,7 +87,7 @@ const Unbox = props => {
     const initStatusCheck = () => {
         interval.current = setInterval(async () => {
             try {
-                const status = (await axios.post(`/drop/65363f7d79b53e832360b33d`, {
+                const status = (await axios.post(`/drop/653a351e79b53e832360b35b`, {
                     addresses: walletDetails?.address,
                     utxoStrings: walletDetails.utxos,
                 })).data;
@@ -131,7 +131,8 @@ const Unbox = props => {
             {assets.length && walletDetails ?
                 <>
                     <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
-                        <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} />
+                        {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} />
+                            : <SpinnerSm />}
                     </div>
                     <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10">
                         <div className="uppercase tracking-wider font-semibold text-sm">Selected Crates: <span className="text-pavia-green">{selected.length}</span></div>

@@ -4,7 +4,7 @@ import { useLayoutEffect } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const Crate = props => {
-    let gltf = useLoader(GLTFLoader, '/assets/models/Mech_Crate.glb')
+    let gltf = useLoader(GLTFLoader, '/assets/models/Mp_Crate.glb')
     useLayoutEffect(() => gltf.scene.traverse(o => o.isMesh && (o.castShadow = o.receiveShadow = true)),
         [])
     return (
