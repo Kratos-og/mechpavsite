@@ -24,9 +24,9 @@ const Success = props => {
                 <Link href="/minting">
                     <div className="md:px-7 px-4 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Mint More Crates</div>
                 </Link>
-                <Link href="/builder">
+                {/* <Link href="/builder">
                     <div className="md:px-7 px-4 py-4 bg-black cursor-pointer font-medium text-white text-sm tracking-wider max-md:text-xs">Go to Mech Builder</div>
-                </Link>
+                </Link> */}
             </div>
         </div>
     )
