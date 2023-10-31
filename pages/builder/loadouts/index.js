@@ -9,11 +9,13 @@ import "swiper/css/navigation";
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import CustomName from "@/components/Loadouts/CustomName";
 import axios from "axios";
+import SpinnerSm from "@/components/UI/SpinnerSm";
 
 export default function Loadouts() {
   const [userLoadouts, setUserLoaduts] = useState([]);
   const [loadItems, setLoadItems] = useState([]);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getSavedMechs();
@@ -24,7 +26,8 @@ export default function Loadouts() {
       const res = await axios.get('/api/pavia/getSavedMechs');
       setUserLoaduts(res.data)
       const items = getLoadOutItems(res.data);
-      setLoadItems(items)
+      setLoadItems(items);
+      setLoading(false);
     }
     catch (err) {
       console.log(err)
@@ -66,7 +69,7 @@ export default function Loadouts() {
 
   return (
     <div className="h-screen w-screen ">
-      <div className="w-full h-full flex">
+      {!loading ? <div className="w-full h-full flex">
         {/* pc */}
         <Swiper cssMode={true}
           navigation={true}
@@ -79,7 +82,11 @@ export default function Loadouts() {
           {loadoutItems}
           <SwiperSlide className=" hidden md:block"></SwiperSlide>
         </Swiper>
-      </div>
+      </div> :
+        <div className="flex items-center justify-center w-full h-full">
+          <SpinnerSm />
+        </div>
+      }
     </div>
   );
 }
