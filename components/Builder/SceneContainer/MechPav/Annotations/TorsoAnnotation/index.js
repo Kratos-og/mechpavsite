@@ -20,7 +20,7 @@ const TorsoAnnotations = (props) => {
       scale={10}
     >
       <div
-        className={`w-5 h-5 rounded-full bg-white ${props.selected !== "undefined" ? 'absolute' : 'hidden'}`}
+        className={`w-4 h-4 rounded-full bg-pavia-green ${props.selected !== "undefined" ? 'absolute' : 'hidden'}`}
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -35,10 +35,11 @@ const TorsoAnnotations = (props) => {
             transition: {
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.5,
+              duration:0.5,
+              repeatDelay: 0.7,
             },
           }}
-          className="w-8 h-8 rounded-full bg-white/70 absolute -top-1.5 -left-1.5"
+          className="w-7 h-7 rounded-full bg-pavia-green/50 absolute -top-1.5 -left-1.5"
         ></motion.div>
         <AnimatePresence>
           {display && (

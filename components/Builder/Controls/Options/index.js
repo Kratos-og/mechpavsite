@@ -37,7 +37,6 @@ const Options = (props) => {
   if (props.showOnlyUserOwned) {
     dataItems = dataItems?.filter((item, index) => props.userOwned?.includes(index));
   }
-
   items = dataItems?.map((item, index) => (
     <SwiperSlide key={index}>
       <div

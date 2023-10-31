@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
 import Options from "../Options";
 import Item from "./Item";
-import Main_data, { torso } from "../Options/data";
+import Main_data from "../Options/data";
 import { mechPartParser, mechTypeParser, mechVariantParser } from "../Utils";
 
 const MainPartControls = (props) => {
-  const [userNfts, setuserNft] = useState(["DefenderTorsoPL04846", "DefenderLeftArmPL04846", "DefenderRightArmPL04846", "DefenderBackPackPL04846", "DefenderLegsPL04846", "SubTerrainTorsoPL04846", "SubTerrainLeftArmPL04846", "SubTerrainRightArmPL04846", "SubTerrainBackPackPL04846", "SubTerrainLegsPL04846"]);
+ 
   let [userOwned, setUserOwned] = useState()
 
   useEffect(() => {
-    if (userNfts.length)
+    if (props.userNfts.length)
       parseUserMechTokens();
   }, []);
 
   const parseUserMechTokens = () => {
     const data = [];
     //mech type
-    const types = mechTypeParser(userNfts);
+    const types = mechTypeParser(props.userNfts);
 
     //mechPart
-    const parts = mechPartParser(userNfts);
+    const parts = mechPartParser(props.userNfts);
 
     //mecVariants
-    const variants = mechVariantParser(userNfts);
+    const variants = mechVariantParser(props.userNfts);
 
     types.map((_, i) => {
       let item = {
