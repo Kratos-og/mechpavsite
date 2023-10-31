@@ -81,7 +81,7 @@ const TorsoAnnotations = (props) => {
                   opacity: [0, 1, 0, 0, 1, 0, 1],
                   transition: { delay: 0.5, duration: 0.5 },
                 }}
-                className="px-10 bg-black/20 border-2 border-white ml-[170px] mb-[25%] rounded-md absolute"
+                className="px-7 py-4 bg-black/20 border-2 border-white ml-[170px] mb-[25%] rounded-md absolute"
               >
                 <BoxText
                   name={"torso"}

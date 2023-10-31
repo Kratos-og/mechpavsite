@@ -81,7 +81,7 @@ const LegAnnotation = (props) => {
                   opacity: [0, 1, 0, 0, 1, 0, 1],
                   transition: { delay: 0.5, duration: 0.5 },
                 }}
-                className="px-7 bg-black/20 border-2 border-white  rounded-md absolute -left-[22rem] -bottom-8 rotate-180"
+                className="px-7 py-4 bg-black/20 border-2 border-white  rounded-md absolute -left-[22rem] -bottom-8 rotate-180"
               >
                 <BoxText
                   name={"Legs"}

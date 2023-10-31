@@ -9,7 +9,7 @@ const Item = (props) => {
       <p className="flex px-12 w-full">
         <div className="flex items-center gap-3">
           {props.name}
-          <div className=" bg-white px-2 py-1 rounded-md text-black text-xs">4</div>
+          {/* <div className=" bg-white px-2 py-1 rounded-md text-black text-xs">4</div> */}
         </div>
 
       </p>
