@@ -7,19 +7,21 @@ import "swiper/css";
 import { Navigation } from "swiper";
 import "swiper/css/thumbs";
 import "swiper/css/navigation";
-import data from "./data";
+import mainData from "./data";
 import { TiLockClosed } from "react-icons/ti";
 
 const Options = (props) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   let items = [];
   const [loading, setLoading] = useState(null);
+
   const onItemSelect = (active, index) => {
     try {
       setLoading({ active, index });
+      let dataItems = mainData;
       let model = useLoader(
         GLTFLoader,
-        `${process.env.NEXT_PUBLIC_MECH_FILES}/${data[props.active][index]?.model}.gltf`
+        `${process.env.NEXT_PUBLIC_MECH_FILES}/${dataItems[props.active][index]?.model}.gltf`
       );
       if (model?.scene) {
         props.onSelect(active, index);
@@ -33,10 +35,18 @@ const Options = (props) => {
     }
   };
 
-  let dataItems = data[props.active];
+  let dataItems = mainData[props.active];
   if (props.showOnlyUserOwned) {
-    dataItems = dataItems?.filter((item, index) => props.userOwned?.includes(index));
-  }
+    let partItems = [];
+    dataItems?.map((item, index) => {
+      if (props.userOwned?.includes(index)) {
+        let partIndex = props.userOwned?.indexOf(index);
+        partItems.push({ ...item, index: props.userOwned[partIndex] });
+      }
+    });
+    dataItems = partItems;
+  };
+  console.log(dataItems)
   items = dataItems?.map((item, index) => (
     <SwiperSlide key={index}>
       <div
@@ -44,7 +54,7 @@ const Options = (props) => {
           ? "scale-[1.5] duration-200 ease-in-out"
           : "scale-75 duration-200 ease-in-out "
           }`}
-        onClick={() => onItemSelect(props.active, index)}
+        onClick={() => onItemSelect(props.active, (item.index ?? index))}
         key={index}
       >
         {loading &&
@@ -54,7 +64,7 @@ const Options = (props) => {
             <SpinnerSm />
           </div>
         ) : null}
-        {!props.userOwned?.includes(index) && (
+        {!props.userOwned?.includes((item.index ?? index)) && (
           <div className="absolute top-[17%] right-4">
             <TiLockClosed />
           </div>

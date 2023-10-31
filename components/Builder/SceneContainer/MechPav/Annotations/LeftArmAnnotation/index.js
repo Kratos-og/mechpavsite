@@ -18,8 +18,8 @@ const LeftArmAnnotation = (props) => {
       distanceFactor={4}
       scale={10}
     >
- <div
-        className={`w-4 h-4 rounded-full bg-white absolute rotate-180 ${props.selected!=="undefined" ? 'absolute':'hidden'}`}
+      <div
+        className={`w-4 h-4 rounded-full bg-white absolute rotate-180 ${props.selected !== "undefined" ? 'absolute' : 'hidden'}`}
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -33,7 +33,7 @@ const LeftArmAnnotation = (props) => {
             scale: 1,
             transition: {
               repeat: Infinity,
-              duration:0.5,
+              duration: 0.5,
               ease: "easeInOut",
               repeatDelay: 0.5,
             },
