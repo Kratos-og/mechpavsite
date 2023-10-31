@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { animate, motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { AiFillCloseSquare } from "react-icons/ai";
-import SpinnerSm from "@/components/UI/SpinnerSm";
 import { minifyAddress } from "@/components/Common/utils";
 import Wallet from "./Wallet";
 import axios from "axios";
@@ -34,6 +33,11 @@ export default function MyAccount(props) {
     </li>
   ));
 
+  const onWalletaddSuccess = () => {
+    getUserWallets();
+    setAddWallet(false);
+  }
+
   return (
     <AnimatePresence>
       {props.activeTab == 2 && (
@@ -44,7 +48,7 @@ export default function MyAccount(props) {
               x: 1600,
               transition: { delay: 0, duration: 1, ease: "easeInOut" },
             }}
-            className="w-screen absolute top-0 h-screen bg-white z-10"
+            className="w-screen absolute top-0 h-screen bg-white z-[1000]"
           ></motion.div>
           <motion.div
             initial={{ x: -1500 }}
@@ -65,7 +69,7 @@ export default function MyAccount(props) {
               <div className="text-black flex w-full max-lg:h-[85%] justify-between text-sm max-lg:flex-col break-words">
                 <div>
                   <div className="uppercase tracking-wider font-semibold">Linked wallets</div>
-                  {wallets}
+                  {wallets.length ? wallets : <div className="mt-3">No wallets found.</div>}
                   {!addWallet && (
                     <button
                       className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light "
@@ -83,7 +87,7 @@ export default function MyAccount(props) {
                 </div>
                 {addWallet && (
                   <>
-                    <Wallet bearer={props.bearer} />
+                    <Wallet bearer={props.bearer} onWalletaddSuccess={onWalletaddSuccess}/>
                   </>
                 )}
               </div>

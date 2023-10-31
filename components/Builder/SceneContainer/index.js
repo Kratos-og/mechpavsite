@@ -35,7 +35,7 @@ export function SceneContainer(props) {
             <Arms selected={props.selectedParts} />
             <Backpack selected={props.selectedParts} />
             <Legs selected={props.selectedParts} />
-            <Annotations selected={props.selectedParts} saveInit={props.saveInit} />
+            <Annotations selected={props.selectedParts} saveInit={props.saveInit} activeTab={props.activeTab}/>
         </Suspense>
     );
 }

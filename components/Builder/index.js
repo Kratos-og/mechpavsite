@@ -145,9 +145,9 @@ export default function Builder(props) {
               </div>
             )}
             <Canvas shadows="percentage">
-              <SceneContainer selectedParts={selectedParts} env={env} saveInit={saveInit} />
+              <SceneContainer selectedParts={selectedParts} env={env} saveInit={saveInit} activeTab={activeTab} />
             </Canvas>
-            <AnimatePresence>
+            {props.bearer && <AnimatePresence>
               {selectedParts.torso >= 0 &&
                 selectedParts.leftarm >= 0 &&
                 selectedParts.rightarm >= 0 &&
@@ -167,6 +167,7 @@ export default function Builder(props) {
                   </motion.div>
                 )}
             </AnimatePresence>
+            }
           </>
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center">

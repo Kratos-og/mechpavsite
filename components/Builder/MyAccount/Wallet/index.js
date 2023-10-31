@@ -23,7 +23,7 @@ const Wallet = props => {
             const addr = await walletInstance.getChangeAddress();
             const nonce = await getNonce(addr);
             const cose = await walletInstance.signData(addr, nonce);
-            console.log(cose)
+            addNewWallet(addr, cose);
             setLoading(false);
         }
         catch (err) {
@@ -31,8 +31,6 @@ const Wallet = props => {
             setLoading(false)
         }
     }
-
-
 
     const getNonce = async (address) => {
         try {
@@ -60,7 +58,7 @@ const Wallet = props => {
                     Authorization: `Bearer ${props.bearer}`
                 }
             })).data;
-            console.log(res);
+            props.onWalletaddSuccess();
         }
         catch (err) {
             console.log(err)
@@ -69,7 +67,6 @@ const Wallet = props => {
 
     return (
         <div className="absolute text-sm w-[350px] ">
-
             {loading ?
                 <div className="flex justify-center scale-150">
                     <SpinnerSm />
@@ -118,7 +115,6 @@ const Wallet = props => {
                     </div>
                 </div>
             }
-
         </div>
     )
 }

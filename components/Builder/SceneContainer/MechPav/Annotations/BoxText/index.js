@@ -8,17 +8,17 @@ export default function BoxText(props) {
         <div className="font-bold text-lg capitalize">{props.name}</div>
       </div>
       <div className="flex gap-5 whitespace-nowrap">
-        <di className='w-16'v>Class</di>
+        <div className='w-16'>Class</div>
         <div className="font-bold text-lg capitalize">{props.class}</div>
       </div>
       <div className="flex gap-5 whitespace-nowrap">
-        <di className='w-16'v>Skin</di>
+        <div className='w-16'>Skin</div>
         <div className="font-bold text-lg capitalize">{props.skin}</div>
       </div>
-      <div className="flex gap-5 items-center whitespace-nowrap">
-        <di className='w-16'v>Variant</di>
+      {/* <div className="flex gap-5 items-center whitespace-nowrap">
+        <div className='w-16'>Variant</div>
         <div className="font-bold text-lg capitalize">{props.variants}</div>
-      </div>
+      </div> */}
     </>
   )
 }
