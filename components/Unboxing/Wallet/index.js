@@ -23,7 +23,6 @@ const Wallet = props => {
             const utxos = await walletInstance.getUtxos();
             const usedAddr = await walletInstance.getUsedAddresses();
             const unUsedAddr = await walletInstance.getUnusedAddresses();
-            setLoading(false);
             let resUtxos = utxos;
             if (wallet == 'eternl') {
                 let collateral = await walletInstance.getCollateral();
@@ -33,7 +32,6 @@ const Wallet = props => {
             props.onConnect({ name: wallet, address: [...usedAddr, ...unUsedAddr], utxos: resUtxos });
             props.setAssets(validTokens);
             setLoading(false);
-
         }
         catch (err) {
             setWalletError(err.message)

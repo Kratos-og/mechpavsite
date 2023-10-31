@@ -18,6 +18,8 @@ const Unbox = props => {
     const [nftData, setNftData] = useState(null);
     const [mintSuccess, setMintSuccess] = useState(false);
     const [confirmation, setConfirmation] = useState(false);
+    const [mintStatus, setMintStatus] = useState();
+
     const Wallet = dynamic(
         () => import('../../components/Unboxing/Wallet'),
         { ssr: false }
@@ -93,6 +95,7 @@ const Unbox = props => {
                     addresses: walletDetails?.address,
                     utxoStrings: walletDetails.utxos,
                 })).data;
+                setStatus(status.state);
                 if (status.state && status.state == 'None') {
                     clearInterval(interval.current);
                     getNftData();
@@ -120,6 +123,25 @@ const Unbox = props => {
         }
     }
 
+    const setStatus = (status) => {
+        switch (status) {
+            case "Pending payment":
+                setMintStatus("Awaiting Payment");
+                break;
+            case "Minting":
+                setMintStatus("Minting mech parts");
+                break;
+            case "Sending Nfts":
+                setMintStatus("Mech parts ready!");
+                break;
+            case "None":
+                setMintStatus("Mech parts sent! Fetching details");
+                break;
+            default:
+                setMintStatus(null);
+        }
+    }
+
     return (
         <div className="w-full h-screen relative overflow-hidden flex items-center justify-center ">
             <div className="absolute top-16 left-20 max-md:left-16">
@@ -136,7 +158,10 @@ const Unbox = props => {
                         <>
                             <div className="absolute -mt-40 z-50 w-full flex items-center justify-center">
                                 {!loading ? <Slides assets={assets} onAdd={onCrateSelect} selected={selected} onRemove={onCrateRemoved} confirmation={confirmation} />
-                                    : <SpinnerSm />}
+                                    : <div className="flex flex-col justify-center items-center gap-1">
+                                        <SpinnerSm />
+                                        {mintStatus && <div className="text-sm font-medium">Status: <span className="text-pavia-green">{mintStatus}</span></div>}
+                                    </div>}
 
                             </div>
                             <div className="absolute bottom-0 w-full h-20 bg-white/40 flex items-center justify-between px-10 max-md:text-xs">
@@ -152,7 +177,7 @@ const Unbox = props => {
                         :
                         <div className="flex absolute flex-col gap-6 border-2 bg-white text-black p-6 w-[350px]">
                             <div className="text-2xl font-bold uppercase tracking-wider">Unbox Confirm</div>
-                            <div className="text-sm">You have selected <span className="font-medium">{selected.length}x {selected.length == 1 ? 'Crate' : 'Crates'}</span> to be unboxed. Do you wanna continue? </div>
+                            <div className="text-sm">You have selected <span className="font-medium">{selected.length}x {selected.length == 1 ? 'Crate' : 'Crates'}</span> to be unboxed. Do you want to continue? </div>
                             <div className="flex flex-col gap-2 justify-around">
                                 <button onClick={() => setConfirmation(false)} className="bg-gray-600/75 hover:bg-gray-600/60 transition-all text-white px-4 py-3">CANCEL</button>
                                 <button onClick={onMintInitiate} className="bg-pavia-green text-white font-bold px-4 py-3">CONFIRM</button>
@@ -166,11 +191,11 @@ const Unbox = props => {
                 {
                     mintSuccess &&
                     <motion.div className="w-screen h-screen bg-white absolute z-50" initial={{ y: '100%' }} animate={{ y: 0, transition: { delay: 2, duration: 0.25 } }}>
-                        <Success nftData={nftData} selected={selected}/>
+                        <Success nftData={nftData} selected={selected} />
                     </motion.div>
                 }
             </AnimatePresence>
-        </div>
+        </div >
     )
 }
 
