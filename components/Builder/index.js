@@ -1,5 +1,4 @@
 import MainPartControls from "@/components/Builder/Controls/MainParts";
-import Options from "@/components/Builder/Controls/Options";
 import { SceneContainer } from "@/components/Builder/SceneContainer";
 import Spinner from "@/components/UI/Spinner";
 import { Canvas, useLoader } from "@react-three/fiber";
@@ -10,6 +9,7 @@ import Settings from "@/components/Builder/SceneContainer/Settings";
 import Bottom from "./Bottom";
 import MyAccount from "./MyAccount";
 import SaveModal from "./SaveModal";
+import axios from "axios";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 
 import {
@@ -17,6 +17,7 @@ import {
   mechTypeParser,
   mechVariantParser,
 } from "../Builder/Controls/Utils";
+import { hex2a } from "../Common/utils";
 
 export default function Builder(props) {
   const [selectedParts, setSelectedParts] = useState({});
@@ -32,24 +33,38 @@ export default function Builder(props) {
       setSelectedParts({ ...loadout })
     }
   }, [])
-  const [userNfts, setuserNft] = useState([
-    "DefenderTorsoPL04846",
-    "DefenderLeftArmPL04846",
-    "DefenderRightArmPL04846",
-    "DefenderBackPackPL04846",
-    "DefenderLegsPL04846",
-    "SubTerrainTorsoPL04846",
-    "SubTerrainLeftArmPL04846",
-    "SubTerrainRightArmPL04846",
-    "SubTerrainBackPackPL04846",
-    "SubTerrainLegsPL04846",
-  ]);
+  const [userNfts, setuserNfts] = useState([]);
 
   const onSelect = (type, index) => {
     const modSelection = { ...selectedParts };
     modSelection[type] = index;
     setSelectedParts(modSelection);
   };
+
+  useEffect(() => {
+    if (props.bearer)
+      getUserMrchParts();
+  }, [props.bearer]);
+
+  const getUserMrchParts = async () => {
+    try {
+      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
+        policies: ['c5aad03fa8b64786dda8592e6ea84673995b013354fe24ab98839688']
+      }, {
+        headers: {
+          Authorization: `Bearer ${props.bearer}`
+        }
+      })
+      let data = res.data;
+      let results = data.map(item => {
+        return hex2a(item.split('.')[1]);
+      })
+      setuserNfts(results)
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
 
   useEffect(() => {
     //platform

@@ -39,6 +39,7 @@ const SaveModal = props => {
                 properties: payload,
                 Pav: "Rex"
             });
+            sessionStorage.removeItem('loadoutEdit');
             props.setSaveInit(false);
         } catch (err) {
             console.log(err);

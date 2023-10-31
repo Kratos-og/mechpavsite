@@ -3,32 +3,14 @@ import Options from "../Options";
 import Item from "./Item";
 import Main_data from "../Options/data";
 import { mechPartParser, mechTypeParser, mechVariantParser } from "../Utils";
-import axios from "axios";
 
 const MainPartControls = (props) => {
-
   let [userOwned, setUserOwned] = useState()
 
   useEffect(() => {
-    getUserMrchParts();
     if (props.userNfts.length)
       parseUserMechTokens();
   }, []);
-
-  const getUserMrchParts = async () => {
-    try {
-      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
-        policies: ['c5aad03fa8b64786dda8592e6ea84673995b013354fe24ab98839688']
-      }, {
-        headers: {
-          Authorization: `Bearer ${props.isLogin}`
-        }
-      })
-    }
-    catch (err) {
-      console.log(err)
-    }
-  }
 
   const parseUserMechTokens = () => {
     const data = [];

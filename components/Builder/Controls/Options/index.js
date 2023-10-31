@@ -46,7 +46,6 @@ const Options = (props) => {
     });
     dataItems = partItems;
   };
-  console.log(dataItems)
   items = dataItems?.map((item, index) => (
     <SwiperSlide key={index}>
       <div
