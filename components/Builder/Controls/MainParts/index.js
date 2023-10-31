@@ -6,11 +6,12 @@ import { mechPartParser, mechTypeParser, mechVariantParser } from "../Utils";
 
 const MainPartControls = (props) => {
   let [userOwned, setUserOwned] = useState()
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     if (props.userNfts.length)
       parseUserMechTokens();
-  }, []);
+  }, [isChecked]);
 
   const parseUserMechTokens = () => {
     const data = [];
@@ -32,6 +33,7 @@ const MainPartControls = (props) => {
       data.push(item);
     });
     let objParts = {};
+    debugger;
     let result = data.map(item => {
       let mechItem = Main_data[item.part];
       let partIndex = mechItem.findIndex(partItem => partItem.type.BE_Code == item.type && partItem.skin.FE_Code == item.variant);
@@ -54,7 +56,6 @@ const MainPartControls = (props) => {
     }
     setBool(!bool);
   };
-  const [isChecked, setIsChecked] = useState(false);
 
   const handleToggle = () => {
     setIsChecked(!isChecked); // Toggle the state when the checkbox is clicked
