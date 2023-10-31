@@ -10,12 +10,15 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper';
 import CustomName from "@/components/Loadouts/CustomName";
 import axios from "axios";
 import SpinnerSm from "@/components/UI/SpinnerSm";
+import { useRouter } from "next/router";
 
 export default function Loadouts() {
   const [userLoadouts, setUserLoaduts] = useState([]);
   const [loadItems, setLoadItems] = useState([]);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     getSavedMechs();
@@ -24,13 +27,22 @@ export default function Loadouts() {
   const getSavedMechs = async (bearer) => {
     try {
       const res = await axios.get('/api/pavia/getSavedMechs');
+      if (!res.data?.length) {
+        setErr('No Loadouts Found!')
+      }
       setUserLoaduts(res.data)
       const items = getLoadOutItems(res.data);
       setLoadItems(items);
       setLoading(false);
     }
     catch (err) {
-      console.log(err)
+      console.log(err);
+      if (err.message == 'Request failed with status code 401') {
+        router.push('/builder');
+      }
+      else {
+        setErr(err.message?.toString());
+      }
     }
   }
 
@@ -83,8 +95,9 @@ export default function Loadouts() {
           <SwiperSlide className=" hidden md:block"></SwiperSlide>
         </Swiper>
       </div> :
-        <div className="flex items-center justify-center w-full h-full">
+        <div className="flex flex-col gap-2 items-center justify-center w-full h-full">
           <SpinnerSm />
+          <span className="text-sm text-pavs-red">{err}</span>
         </div>
       }
     </div>

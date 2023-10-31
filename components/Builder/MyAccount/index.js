@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { AiFillCloseSquare } from "react-icons/ai";
 import SpinnerSm from "@/components/UI/SpinnerSm";
 import { minifyAddress } from "@/components/Common/utils";
+import Wallet from "./Wallet";
 
 export default function MyAccount(props) {
   const [loading, setLoading] = useState(false);
@@ -84,7 +85,7 @@ export default function MyAccount(props) {
                 </div>
                 {addWallet && (
                   <>
-
+                    <Wallet />
                   </>
                 )}
               </div>

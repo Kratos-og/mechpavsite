@@ -110,16 +110,16 @@ const MainPartControls = (props) => {
         </div>
       ) : (
         <div className=" w-screen lg:h-screen flex flex-col justify-center items-center max-lg:absolute top-[20%]">
-          <p className="text-[#F7F8F3]">LOGIN TO CONTINUE</p>
+          <p className="text-[#F7F8F3] tracking-wider">LOGIN TO CONTINUE</p>
           <a
             href="/api/auth/login"
-            className="w-[70%] h-[10%] mt-5 py-7 text-sm newButton relative text-[#002C3E] group font-light "
+            className="w-[70%] h-16 mt-5 py-7 text-sm newButton relative text-[#002C3E] group font-light "
           >
             <div className="frame  w-full h-full p-1 group-hover:p-2 ease-in-out duration-300">
               <div className="lines"></div>
               <div className="angles"></div>
               <div className="bg-[#F7F8F3] w-full h-full flex justify-center items-center">
-                <p className="text-xl">LOGIN</p>
+                <p className="text-xl tracking-wider">LOGIN</p>
               </div>
             </div>
           </a>
