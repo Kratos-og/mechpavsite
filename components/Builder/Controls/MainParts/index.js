@@ -60,7 +60,7 @@ const MainPartControls = (props) => {
     setIsChecked(!isChecked); // Toggle the state when the checkbox is clicked
   };
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center select-none">
       {props.isLogin ? (
         <div className="lg:my-[35%] w-full h-full max-lg:absolute max-lg:bottom-0 max-lg:overflow-y-auto max-lg:bg-white/30">
           <div className="flex flex-col gap-2 px-3 items-end w-full max-lg:flex-row max-lg:mt-2">

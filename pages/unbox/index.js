@@ -25,7 +25,8 @@ const Unbox = props => {
         { ssr: false }
     );
     const onCrateSelect = (crateId) => {
-        setSelected([...selected, crateId]);
+        if (selected.length < 20)
+            setSelected([...selected, crateId]);
     }
 
     const onCrateRemoved = (crateId) => {

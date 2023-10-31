@@ -49,7 +49,7 @@ export default function Builder(props) {
   const getUserMechParts = async () => {
     try {
       let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
-        policies: ['c5aad03fa8b64786dda8592e6ea84673995b013354fe24ab98839688', '852526a77c45662e981181ed9b0afca13cfd8e45c169a20b37832ea7']
+        policies: ['c456d2a2e93a567988808d3a9520fc1004535fed5101d8439efdd6c0']
       }, {
         headers: {
           Authorization: `Bearer ${props.bearer}`
