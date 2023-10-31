@@ -18,8 +18,10 @@ const BackPackAnnotations = (props) => {
       distanceFactor={5}
       scale={10}
     >
- <div
-        className={`w-4 h-4 rounded-full bg-pavia-green absolute rotate-180 ${props.selected!="undefined" ? 'absolute':'hidden'}`}
+      <div
+        className={`w-4 h-4 rounded-full bg-white rotate-180 absolute z-40 ${
+          props.selected != "undefined" ? "absolute" : "hidden"
+        }`}
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -33,12 +35,12 @@ const BackPackAnnotations = (props) => {
             scale: 1,
             transition: {
               repeat: Infinity,
-              duration:0.5,
+              duration: 0.5,
               ease: "easeInOut",
               repeatDelay: 0.5,
             },
           }}
-          className="w-7 h-7 rounded-full bg-pavia-green/50 absolute -top-1.5 -left-1.5"
+          className="w-7 h-7 rounded-full bg-pavia-green/50 absolute -top-1.5 -left-1.5 z-[-1]"
         ></motion.div>
         <AnimatePresence>
           {display && (

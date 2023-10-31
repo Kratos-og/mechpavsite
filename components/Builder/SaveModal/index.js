@@ -13,6 +13,7 @@ const SaveModal = props => {
     const [lockRight,setLockedRight] = useState(true);
     const [lockBack,setLockedBack] = useState(true);
     const [lockLegs,setLockedLegs] = useState(true);
+    const [error,setError]= useState(false)
 
   const handleInputChange = (e) => {
     props.setMechName(e.target.value);
@@ -37,10 +38,14 @@ const SaveModal = props => {
         })
     },[props.userNfts])
 
-
+    const handleclick = ()=>{
+        if(props.mechName){
+            props.onClick()
+        }else setError("ERROR : MECH NAME IS REQUIRED !!")
+    }
     return (
         <>
-        {!props.sentToBackEnd && <div className="absolute w-full top-0 left-0 h-full flex items-center z-50 justify-center">
+        {props.sentToBackEnd === "pending" && <div className="absolute w-full top-0 left-0 h-full flex items-center z-50 justify-center">
         <div className="w-[400px] h-[450px] rounded-sm p-5 bg-black/90">
             <p className="flex justify-center h-full items-center flex-col gap-5">
             <span className="scale-150"><SpinnerSm/></span>
@@ -51,7 +56,7 @@ const SaveModal = props => {
 <div className="absolute w-full top-0 left-0 h-full flex items-center z-40 justify-center">
             <div className="w-[400px] h-[450px] rounded-sm p-5 bg-black/60">
                 <div className="relative">
-                    <button className="absolute text-xl right-0" onClick={() => props.setSaveInit(false)}><AiFillCloseSquare/></button>
+                    <button className="absolute text-xl right-0 " onClick={() => props.setSaveInit(false)}><AiFillCloseSquare/></button>
                     <div className="uppercase tracking-wider">Save loadout</div>
                     <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-3"></div>
                 </div>
@@ -85,11 +90,11 @@ const SaveModal = props => {
                                 <span>Legs</span>
                                 <Locked type={data.legs[props.selectedParts.legs].type.name} skin={data.legs[props.selectedParts.legs].skin.FE_Name} lock={lockLegs}/>
                             </div>
-                            {!props.mechName && <div className="text-red-600 text-xs bg-black/70 py-1 flex justify-center">ERROR : MECH NAME IS REQUIRED !!</div>}
+                            {error && <div className="text-red-600 text-xs bg-black/70 py-1 flex justify-center">{error}</div>}
                         </div>
-                        {!lockTorso&&!lockRight&&!lockLeft&&!lockLegs&&!lockBack&&props.mechName ?
+                        {!lockTorso&&!lockRight&&!lockLeft&&!lockLegs&&!lockBack ?
                         <div className={`flex items-center justify-center mt-5 `}>
-                        <button className={`px-10 bg-white text-black tracking-wider py-3 w-fit ${!lockTorso&&!lockRight&&!lockLeft&&!lockLegs&&!lockBack&&props.mechName ? " ":"cursor-not-allowed bg-gray-400"}`}  onClick={props.onClick} >CONFIRM</button>
+                        <button className={`px-10 bg-white text-black tracking-wider py-3 w-fit ${!lockTorso&&!lockRight&&!lockLeft&&!lockLegs&&!lockBack ? " ":"cursor-not-allowed bg-gray-400"}`}  onClick={handleclick} >CONFIRM</button>
                     </div>:
                         <div className={`flex items-center justify-center mt-2`}>
                         <button className={`px-10 text-black tracking-wider py-3 w-fit cursor-not-allowed bg-white/70`}>CONFIRM</button>
