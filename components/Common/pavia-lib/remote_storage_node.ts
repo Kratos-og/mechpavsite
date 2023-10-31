@@ -164,10 +164,10 @@ export class RemoteStorageNode extends Node {
 
     protected buildNodeState(): any {
         return {
-            editingTimestamp: this.dateToTicks(this.editingTimestamp),
-            propertiesTimestamp: this.dateToTicks(this.propertyTimestamp),
-            hierarchyTimestamp: this.dateToTicks(this.hierarchyTimestamp),
-            dataTimestamp: this.dateToTicks(this.dataTimestamp)
+            edittimestamp: this.dateToTicks(this.editingTimestamp),
+            propertytimestamp: this.dateToTicks(this.propertyTimestamp),
+            hierarchytimestamp: this.dateToTicks(this.hierarchyTimestamp),
+            datatimestamp: this.dateToTicks(this.dataTimestamp)
 
         }
     }

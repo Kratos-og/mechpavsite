@@ -189,6 +189,7 @@ export default function Builder(props) {
             setActiveTab={() => {
               setActiveTab(0);
             }}
+            bearer={props.bearer}
           />
         )}
         {props.bearer && activeTab != 2 && (

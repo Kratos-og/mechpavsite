@@ -12,7 +12,7 @@ export default function Index(props) {
       <div className="relative z-20 w-full flex items-center h-full px-10">
         <div onClick={() => props.setActiveTab(0)} className={`skew-x-[20deg] transition-all border-x-2 ${props.activeTab == 0 ? ' border-pavia-green active-shadow' : ' border-white/25 hover:active-shadow'} h-full flex items-center justify-center text-xs cursor-pointer px-5`}>
           <button className={` h-full uppercase tracking-wider skew-x-[-20deg]`}>
-            Loadout
+            Builder
           </button>
         </div>
         <div onClick={openLoadouts} className={`skew-x-[20deg] transition-all border-r-2 ${props.activeTab == 3 ? ' border-pavia-green active-shadow' : ' border-white/25 hover:active-shadow'} h-full flex items-center justify-center text-xs cursor-pointer px-5`}>

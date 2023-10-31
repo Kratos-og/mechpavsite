@@ -1,5 +1,6 @@
 import { useState } from "react";
 import SpinnerSm from "@/components/UI/SpinnerSm";
+import axios from "axios";
 
 const Wallet = props => {
     const [walletError, setWalletError] = useState("");
@@ -19,7 +20,10 @@ const Wallet = props => {
             }
             setLoading(true);
             const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
-            
+            const addr = await walletInstance.getChangeAddress();
+            const nonce = await getNonce(addr);
+            const cose = await walletInstance.signData(addr, nonce);
+            console.log(cose)
             setLoading(false);
         }
         catch (err) {
@@ -28,7 +32,40 @@ const Wallet = props => {
         }
     }
 
-   
+
+
+    const getNonce = async (address) => {
+        try {
+            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_API}/wallet/nonce`, {
+                address
+            }, {
+                headers: {
+                    Authorization: `Bearer ${props.bearer}`
+                }
+            })).data;
+            return res;
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+
+    const addNewWallet = async (address, cose) => {
+        try {
+            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_API}/wallet`, {
+                address,
+                cose
+            }, {
+                headers: {
+                    Authorization: `Bearer ${props.bearer}`
+                }
+            })).data;
+            console.log(res);
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <div className="absolute text-sm w-[350px] ">
