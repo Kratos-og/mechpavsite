@@ -33,6 +33,7 @@ export default function Wallet(props) {
         setWalletError(`${wallet} wallet not found.`);
         return;
       }
+      console.log(wallet)
       setLoading(true);
       const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
       const usedAddr = await walletInstance.getUsedAddresses();

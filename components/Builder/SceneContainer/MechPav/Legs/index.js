@@ -2,22 +2,23 @@ import { Box, Float } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useLayoutEffect, useRef } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import data from "@/components/Builder/Controls/Options/data";
 
 export function Legs(props) {
     let model;
 
-    if (props.selected?.legs) {
+    if (props.selected?.legs !== undefined) {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/legs/${props.selected?.legs}.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/${data['legs'][props.selected?.legs]?.model}.gltf`
             );
     }
     else {
         model =
             useLoader(
                 GLTFLoader,
-                `/assets/models/legs/legs.gltf`
+                `${process.env.NEXT_PUBLIC_MECH_FILES}/MP_Frame_Legs.gltf`
             );
     }
     useLayoutEffect(() => model.scene.traverse(o => o.isMesh && (o.castShadow = true)), [model])
@@ -26,7 +27,7 @@ export function Legs(props) {
             speed={0}
             rotationIntensity={0}
             floatIntensity={0}
-            position={[2, -4.1, 0]}
+            position={[0, -4.1, 0]}
             scale={7}
         >
             <primitive object={model.scene} />

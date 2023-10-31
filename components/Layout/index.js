@@ -27,7 +27,7 @@ const Layout = props => {
             <motion.div animate={{ scale: showMenu ? 0.85 : 1, transition: { duration: 0.4 } }} className="overflow-x-hidden">
                 {props.children}
             </motion.div>
-            {props.component !== 'Home' && props.component !== 'Lore' && props.component !== 'Minting' && <Footer />}
+            {props.component !== 'Home' && props.component !== 'Lore' && props.component !== 'Minting' && props.component!=="Builder" && props.component!== "Loadouts" && <Footer />}
         </div>
     )
 }
