@@ -9,7 +9,7 @@ import Main_Data from "../Controls/Options/data";
 const SaveModal = props => {
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false);
-    const [mechName, setMechName] = useState();
+    const [mechName, setMechName] = useState(props.selectedParts?.name);
 
     const handleInputChange = (e) => {
         setMechName(e.target.value);
@@ -37,6 +37,7 @@ const SaveModal = props => {
             const res = await axios.post("/api/pavia/saveLoadout", {
                 name: mechName,
                 properties: payload,
+                Pav: "Rex"
             });
             props.setSaveInit(false);
         } catch (err) {
@@ -65,7 +66,7 @@ const SaveModal = props => {
                             <div className="text-sm font-medium uppercase">Name your Mech</div>
                             <div className="mt-2 border-l-2">
                                 <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-3"></div>
-                                <input type="text" className="bg-transparent h-full text-white text-sm outline-none px-2 mt-1" placeholder="Mech Name" onChange={handleInputChange} value={props.mechName} />
+                                <input value={mechName} type="text" className="bg-transparent h-full text-white text-sm outline-none px-2 mt-1" placeholder="Mech Name" onChange={handleInputChange} />
                                 <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-2"></div>
                             </div>
                             <div className="mt-4">

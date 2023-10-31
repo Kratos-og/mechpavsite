@@ -26,6 +26,12 @@ export default function Builder(props) {
   const [saveInit, setSaveInit] = useState(false);
   const [userOwned, setUserOwned] = useState();
 
+  useEffect(() => {
+    if (sessionStorage.loadoutEdit) {
+      const loadout = JSON.parse(sessionStorage.loadoutEdit);
+      setSelectedParts({ ...loadout })
+    }
+  }, [])
   const [userNfts, setuserNft] = useState([
     "DefenderTorsoPL04846",
     "DefenderLeftArmPL04846",

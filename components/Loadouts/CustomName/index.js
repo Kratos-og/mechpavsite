@@ -9,7 +9,7 @@ export default function CustomName(props) {
   const onEdit = () => {
     setLoading(true);
     setTimeout(() => {
-      sessionStorage.loadoutEdit = JSON.stringify(props.item);
+      sessionStorage.loadoutEdit = JSON.stringify({ ...props.item, name: props.children });
       router.push('/builder');
     }, 1500)
   }
