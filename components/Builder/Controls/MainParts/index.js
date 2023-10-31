@@ -3,15 +3,32 @@ import Options from "../Options";
 import Item from "./Item";
 import Main_data, { torso } from "../Options/data";
 import { mechPartParser, mechTypeParser, mechVariantParser } from "../Utils";
+import axios from "axios";
 
 const MainPartControls = (props) => {
   const [userNfts, setuserNft] = useState(["DefenderTorsoPL04846", "DefenderLeftArmPL04846", "DefenderRightArmPL04846", "DefenderBackPackPL04846", "DefenderLegsPL04846", "SubTerrainTorsoPL04846", "SubTerrainLeftArmPL04846", "SubTerrainRightArmPL04846", "SubTerrainBackPackPL04846", "SubTerrainLegsPL04846"]);
   let [userOwned, setUserOwned] = useState()
 
   useEffect(() => {
+    getUserMrchParts();
     if (userNfts.length)
       parseUserMechTokens();
   }, []);
+
+  const getUserMrchParts=async()=>{
+    try{
+      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano',{
+        policies: ['c5aad03fa8b64786dda8592e6ea84673995b013354fe24ab98839688']
+      },{
+        headers:{
+          Authorization: `Bearer ${props.isLogin}`
+        }
+      })
+    }
+    catch(err){
+      console.log(err)
+    }
+  }
 
   const parseUserMechTokens = () => {
     const data = [];
