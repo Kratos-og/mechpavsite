@@ -55,7 +55,7 @@ const LeftArmAnnotation = (props) => {
                 className="rotate-180 absolute -left-[8rem] -bottom-11"
               >
                 <circle
-                  class="st0"
+                  className="st0"
                   cx="493.5"
                   cy="57.2"
                   r="9.8"
@@ -68,7 +68,7 @@ const LeftArmAnnotation = (props) => {
                     pathOffset: 0,
                     transition: { delay: 0, duration: 0.5 },
                   }}
-                  class="st1"
+                  className="st1"
                   d="M489.2,57.2H25.1"
                   stroke="#ffffff"
                   strokeWidth={10}

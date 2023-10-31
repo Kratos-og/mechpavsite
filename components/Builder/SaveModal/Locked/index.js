@@ -7,8 +7,8 @@ export default function Locked(props) {
       {props.lock && (
         <span className="text-white text-xl relative group">
           <TiLockClosed />
-          <span class="absolute top-7 z-50 scale-0 transition-all rounded bg-white p-[0.3rem] text-xs text-black group-hover:scale-100 whitespace-nowrap ">
-            You Dont own this mech part
+          <span className="absolute top-7 z-50 scale-0 transition-all rounded bg-white p-[0.3rem] text-xs text-black group-hover:scale-100 whitespace-nowrap ">
+            You do not own this mech part
           </span>
         </span>
       )}

@@ -10,7 +10,7 @@ const SaveModal = (props) => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [mechName, setMechName] = useState(props.selectedParts?.name);
-  const [pavName,setPavName] = useState("")
+  const [pavName, setPavName] = useState("")
   const pavs = [
     "Akira",
     "Alfonso",
@@ -30,9 +30,37 @@ const SaveModal = (props) => {
     "Rex",
     "Sparkles",
   ];
+  const [ownedPavs, setUserOwnedPavs] = useState([])
+
   const handleInputChange = (e) => {
+    console.log(e)
     setMechName(e.target.value);
   };
+
+  useEffect(() => {
+    if (props.bearer)
+      getUserOwnedPavs();
+  }, [])
+
+  const getUserOwnedPavs = async () => {
+    try {
+      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
+        policies: ['852526a77c45662e981181ed9b0afca13cfd8e45c169a20b37832ea7']
+      }, {
+        headers: {
+          Authorization: `Bearer ${props.bearer}`
+        }
+      })
+      let data = res.data;
+      let results = data.map(item => {
+        return hex2a(item.split('.')[1])?.replace(/[0-9]/g, '');
+      })
+      setUserOwnedPavs(results)
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
 
   const saveLoadout = async () => {
     try {
@@ -40,7 +68,7 @@ const SaveModal = (props) => {
         setError("ERROR : MECH NAME IS REQUIRED ");
         return;
       }
-      if(!pavName){
+      if (!pavName) {
         setError("ERROR : SELECT A PAV");
         return;
       }
@@ -81,26 +109,37 @@ const SaveModal = (props) => {
     props.userNfts?.leftarm?.includes(props.selectedParts?.leftarm) &&
     props.userNfts?.rightarm?.includes(props.selectedParts?.rightarm) &&
     props.userNfts?.backpack?.includes(props.selectedParts?.backpack) &&
-    props.userNfts?.legs?.includes(props.selectedParts?.legs);
+    props.userNfts?.legs?.includes(props.selectedParts?.legs) &&
+    pavName;
 
-  const pavsLists = pavs.map((pavs, index) => (
-    <li key={index} onClick={()=>console.log(pavs)}>
-      <div className="flex">
-        <div className="w-14">
-          <img
-            src={`assets/images/PavsNoBackground/${pavs}.png`}
-            alt={`${pavs}`}
-          />
-        </div>
-        <a>{pavs}</a>
-      </div>
-    </li>
-  ));
+  const onPavChoose = (pavs) => {
+    document.activeElement.blur();
+    setPavName(pavs)
+  }
+
+  const pavsLists = [];
+
+  pavs.map((pavs, index) => {
+    if (ownedPavs.includes(pavs)) {
+      pavsLists.push(
+        <li key={index} className="w-full">
+          <a onClick={() => onPavChoose(pavs)}>
+            <img
+              src={`assets/images/PavsNoBackground/${pavs}.png`}
+              alt={`${pavs}`}
+              className="w-14"
+            />
+            <span>{pavs}</span>
+          </a>
+        </li>
+      )
+    }
+  });
 
   return (
     <>
       <div className="absolute w-full top-0 left-0 h-full flex items-center z-40 justify-center">
-        <div className="w-[400px] h-[450px] rounded-sm p-5 bg-black/60">
+        <div className="w-[400px] rounded-sm p-5 bg-black/60">
           {!loading ? (
             <>
               <div className="relative">
@@ -128,16 +167,19 @@ const SaveModal = (props) => {
                   />
                   <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-2"></div>
                 </div>
-                <details className="dropdown w-full">
-                  <summary className="m-1 btn w-full">Choose Mech</summary>
-                  <ul
-                    className=" shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-full h-[13vh] overflow-y-hidden 
-                        text-black custom-scroll" 
-                  >
-                    {pavsLists}
+                <div className="text-sm font-medium uppercase mt-4">
+                  Choose a mech pav
+                </div>
+                <div className="dropdown w-full">
+                  <label tabIndex={0} className="btn bg-transparent border hover:bg-white hover:text-black border-white mt-4 rounded-none text-white w-full">
+                    {pavName ? pavName : 'Mech pavs'}
+                  </label>
+                  <ul tabIndex={0} className="flex flex-col menu dropdown-content bg-white w-full overflow-y-auto h-60 px-2 rounded-none py-3 flex-nowrap
+                        text-black custom-scroll">
+                    {pavsLists.length ? pavsLists : <div className="w-full h-full flex items-center justify-center text-xs font-medium">You do not own any mech pavs</div>}
                   </ul>
-                </details>
-                {pavName && <div className="text-xs">You Have Selected : <span className="text-pavia-green">{pavName}</span></div>}
+                </div>
+
                 <div className="mt-4">
                   <div className="text-sm font-medium uppercase">
                     Mech Parts
@@ -219,6 +261,10 @@ const SaveModal = (props) => {
                         }
                       />
                     </div>
+                    <div className=" ml-1 py-1 flex items-center justify-between">
+                      <span>Mech Pav </span>
+                      <div className="text-pavia-green">{pavName ?? 'NA'}</div>
+                    </div>
                     {error && (
                       <div className="text-red-600 text-xs bg-black/70 py-1 flex justify-center">
                         {error}
@@ -228,9 +274,8 @@ const SaveModal = (props) => {
                   <div className={`flex items-center justify-center mt-5 `}>
                     <button
                       disabled={!isValid}
-                      className={`px-10 disabled:bg-white/70 bg-white text-black tracking-wider py-3 w-fit ${
-                        !isValid ? "cursor-not-allowed bg-gray-400" : ""
-                      }`}
+                      className={`px-10 disabled:bg-white/70 bg-white text-black tracking-wider py-3 w-fit ${!isValid ? "cursor-not-allowed bg-gray-400" : ""
+                        }`}
                       onClick={saveLoadout}
                     >
                       CONFIRM

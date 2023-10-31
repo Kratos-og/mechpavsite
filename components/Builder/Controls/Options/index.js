@@ -70,7 +70,7 @@ const Options = (props) => {
         )}
         <p className="w-full h-full">
           <img
-            src={`/assets/images/previews/${props.active}/${item.img}.png`}
+            src={`${process.env.NEXT_PUBLIC_MECH_FILES}/${props.active}/${item.img}.png`}
             className=""
           />
         </p>

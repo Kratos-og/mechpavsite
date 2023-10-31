@@ -64,10 +64,10 @@ const MainPartControls = (props) => {
       {props.isLogin ? (
         <div className="lg:my-[35%] w-full h-full max-lg:absolute max-lg:bottom-0 max-lg:overflow-y-auto max-lg:bg-white/30">
           <div className="flex flex-col gap-2 px-3 items-end w-full max-lg:flex-row max-lg:mt-2">
-            <span class="text-sm font-medium text-white">
+            <span className="text-sm font-medium text-white">
               USER OWNED ONLY
             </span>
-            <label class="relative inline-flex items-center cursor-pointer">
+            <label className="relative inline-flex items-center cursor-pointer">
               <input type="checkbox" className="toggle toggle-sm" checked={isChecked} onChange={handleToggle} />
             </label>
           </div>
