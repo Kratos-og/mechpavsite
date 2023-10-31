@@ -57,6 +57,7 @@ export default function Builder(props) {
       })
       let data = res.data;
       let results = data.map(item => {
+        console.log(hex2a(item.split('.')[1]))
         return hex2a(item.split('.')[1]);
       })
       setuserNfts(results)

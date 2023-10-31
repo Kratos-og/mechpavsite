@@ -5,6 +5,7 @@ import Locked from "./Locked";
 import SpinnerSm from "@/components/UI/SpinnerSm";
 import axios from "axios";
 import Main_Data from "../Controls/Options/data";
+import { hex2a } from "@/components/Common/utils";
 
 const SaveModal = (props) => {
   const [error, setError] = useState(false);
