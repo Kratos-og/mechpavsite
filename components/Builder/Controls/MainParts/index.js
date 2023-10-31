@@ -1,31 +1,31 @@
 import { useEffect, useState } from "react";
 import Options from "../Options";
 import Item from "./Item";
-import Main_data, { torso } from "../Options/data";
+import Main_data from "../Options/data";
 import { mechPartParser, mechTypeParser, mechVariantParser } from "../Utils";
 import axios from "axios";
 
 const MainPartControls = (props) => {
-  const [userNfts, setuserNft] = useState(["DefenderTorsoPL04846", "DefenderLeftArmPL04846", "DefenderRightArmPL04846", "DefenderBackPackPL04846", "DefenderLegsPL04846", "SubTerrainTorsoPL04846", "SubTerrainLeftArmPL04846", "SubTerrainRightArmPL04846", "SubTerrainBackPackPL04846", "SubTerrainLegsPL04846"]);
+
   let [userOwned, setUserOwned] = useState()
 
   useEffect(() => {
     getUserMrchParts();
-    if (userNfts.length)
+    if (props.userNfts.length)
       parseUserMechTokens();
   }, []);
 
-  const getUserMrchParts=async()=>{
-    try{
-      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano',{
+  const getUserMrchParts = async () => {
+    try {
+      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
         policies: ['c5aad03fa8b64786dda8592e6ea84673995b013354fe24ab98839688']
-      },{
-        headers:{
+      }, {
+        headers: {
           Authorization: `Bearer ${props.isLogin}`
         }
       })
     }
-    catch(err){
+    catch (err) {
       console.log(err)
     }
   }
@@ -33,13 +33,13 @@ const MainPartControls = (props) => {
   const parseUserMechTokens = () => {
     const data = [];
     //mech type
-    const types = mechTypeParser(userNfts);
+    const types = mechTypeParser(props.userNfts);
 
     //mechPart
-    const parts = mechPartParser(userNfts);
+    const parts = mechPartParser(props.userNfts);
 
     //mecVariants
-    const variants = mechVariantParser(userNfts);
+    const variants = mechVariantParser(props.userNfts);
 
     types.map((_, i) => {
       let item = {
@@ -113,7 +113,7 @@ const MainPartControls = (props) => {
           <Item name="Backpack" onClick={onClick} type={"backpack"} />
           <Options
             active={"backpack"}
-            onSelect={props.onSelect}x
+            onSelect={props.onSelect} x
             userOwned={userOwned?.backpack}
             showOnlyUserOwned={isChecked}
           />
