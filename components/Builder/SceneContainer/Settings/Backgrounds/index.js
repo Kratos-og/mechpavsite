@@ -15,11 +15,23 @@ const Backgrounds = props => {
         </SwiperSlide>)
 
     return (
-        <div className="flex flex-wrap gap-4 items-center justify-center text-center">
+        <>
+        <div className="flex flex-wrap gap-4 items-center justify-center text-center max-lg:hidden">
             <Swiper modules={[Navigation]} slidesPerView={5} spaceBetween={20} grabCursor className="w-full h-full" navigation={true}>
                 {items}
             </Swiper>
         </div>
+        <div className="flex flex-wrap gap-4 items-center justify-center text-center lg:hidden max-md:hidden ">
+            <Swiper modules={[Navigation]} slidesPerView={3} spaceBetween={20} grabCursor className="w-full h-full" navigation={true}>
+                {items}
+            </Swiper>
+        </div>
+        <div className="flex flex-wrap gap-4 items-center justify-center text-center md:hidden">
+            <Swiper modules={[Navigation]} slidesPerView={1} spaceBetween={20} grabCursor className="w-full h-full" navigation={true}>
+                {items}
+            </Swiper>
+        </div>
+        </>
     )
 }
 

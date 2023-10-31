@@ -7,7 +7,7 @@ import data from "@/components/Builder/Controls/Options/data";
 
 const TorsoAnnotations = (props) => {
   const [display, setDisplay] = useState(false);
-  console.log(props)
+  console.log(props);
   return (
     <Html
       position={[0, 7.5, 0]}
@@ -20,7 +20,9 @@ const TorsoAnnotations = (props) => {
       scale={10}
     >
       <div
-        className={`w-5 h-5 rounded-full bg-white ${props.selected !== "undefined" ? 'absolute' : 'hidden'}`}
+        className={`w-4 h-4 rounded-full bg-white ${
+          props.selected !== "undefined" ? "absolute" : "hidden"
+        }`}
         onMouseEnter={() => {
           setDisplay(true);
         }}
@@ -29,16 +31,17 @@ const TorsoAnnotations = (props) => {
         }}
       >
         <motion.div
-          initial={{ scale: 0 }}
+          initial={{ scale: 0.5 }}
           animate={{
             scale: 1,
             transition: {
               repeat: Infinity,
               ease: "easeInOut",
-              repeatDelay: 0.5,
+              duration: 0.5,
+              repeatDelay: 0.7,
             },
           }}
-          className="w-8 h-8 rounded-full bg-white/70 absolute -top-1.5 -left-1.5"
+          className="w-7 h-7 rounded-full bg-pavia-green/60 absolute -top-1.5 -left-1.5 z-[-1]"
         ></motion.div>
         <AnimatePresence>
           {display && (

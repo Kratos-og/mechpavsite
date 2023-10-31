@@ -16,9 +16,9 @@ const Settings = props => {
         //         </div>
         //     </div>
         // </Modal>
-        <div className="h-52 absolute select-none py-4 bottom-8 w-full z-50 lg:bg-gradient-to-r from-[#000] via-white/25">
+        <div className="h-52 absolute select-none py-4 lg:bottom-8 w-full z-50 lg:bg-gradient-to-r from-[#000] via-white/25 bottom-0 max-lg:bg-white/20 max-lg:bottom-12">
             <div className="absolute top-0 h-0.5 w-full bg-gradient-to-r from-transparent via-white to-transparent max-lg:hidden"></div>
-            <div className={`px-5 py-2 text-sm uppercase tracking-wider`}>Background HDRs</div>
+            <div className={`px-5 py-2 text-sm uppercase tracking-wider `}>Background HDRs</div>
             <div className="px-10">
                 <Backgrounds setEnv={props.setEnv} env={props.env} />
             </div>
