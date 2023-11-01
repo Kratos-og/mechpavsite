@@ -11,6 +11,10 @@ const saveLoadout = async (req, res) => {
         const savedMechs = await mechOperations.getSavedMechs();
         let isMod = false;
         let payload = savedMechs.map(mech => {
+            // Game requires the id field to be a string of an integer value
+            if(req.body?.properties){
+                req.body.properties.ID = "0"
+            }
             if (mech.name == req.body?.name) {
                 isMod = true;
                 mech.properties = { ...req.body.properties }
@@ -18,10 +22,8 @@ const saveLoadout = async (req, res) => {
             return { ...mech };
         })
         if (!isMod) {
-            // Game requires the id field to be a string of an integer value
-            if(req.body){
-                req.body.properties.ID = "0"
-            }
+            
+            
             payload.push({
                 name: req.body?.name,
                 properties: {
