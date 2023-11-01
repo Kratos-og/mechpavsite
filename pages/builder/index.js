@@ -19,8 +19,7 @@ export default function BuilderPage() {
     }
   };
 
-  //return <Builder bearer={bearer} />;
-  return <div></div>
+  return <Builder bearer={bearer} />;
 }
 
 BuilderPage.DisplayName = 'Builder';
