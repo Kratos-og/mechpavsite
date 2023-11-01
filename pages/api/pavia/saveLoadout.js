@@ -17,6 +17,10 @@ const saveLoadout = async (req, res) => {
             return { ...mech };
         })
         if (!isMod) {
+            // Game requires the id field to be a string of an integer value
+            if(req.body){
+                req.body.id = "0"
+            }
             payload.push({
                 name: req.body?.name,
                 properties: {
