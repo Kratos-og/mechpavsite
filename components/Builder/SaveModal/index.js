@@ -97,7 +97,8 @@ const SaveModal = (props) => {
         "Backpack_Variant":
           Main_Data.backpack[props.selectedParts.backpack].skin.BE_Code,
         "DateCreated": new Date(Date.now()).toUTCString(),
-        "Pav": pavName
+        "Pav": pavName,
+        "ID": "0"
       };
       const res = await axios.post("/api/pavia/saveLoadout", {
         name: mechName,
