@@ -73,7 +73,7 @@ const SaveModal = (props) => {
         setError("ERROR : SELECT A PAV");
         return;
       }
-      if(!pavs.includes("pavName")){
+      if(!pavs.includes(pavName)){
         setError("ERROR : INVALID PAV NAME");
         return;
       }
