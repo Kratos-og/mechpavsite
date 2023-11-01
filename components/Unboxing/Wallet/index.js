@@ -28,7 +28,7 @@ const Wallet = props => {
                 let collateral = await walletInstance.getCollateral();
                 resUtxos = [...utxos, ...collateral]
             }
-            const validTokens = getValidTokens(resUtxos, ["29cd56a575e5c1dc3a03ff687f0651d728b28fee52a932b508242b4a"]);
+            const validTokens = getValidTokens(resUtxos, ["5744a4314e38c3b551fbc56626803903b63b88da240796169b02a8ef"]);
             props.onConnect({ name: wallet, address: [...usedAddr, ...unUsedAddr], utxos: resUtxos });
             props.setAssets(validTokens);
             setLoading(false);
