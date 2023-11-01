@@ -81,9 +81,10 @@ export default function Loadouts() {
 
   return (
     <div className="h-screen w-screen ">
+    <button className=" text-white">Go Back</button>
       {!loading ? <div className="w-full h-full flex">
         {/* pc */}
-        <button className=" text-white">Go Back</button>
+        
         <Swiper cssMode={true}
           navigation={true}
           pagination={true}
