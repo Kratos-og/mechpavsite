@@ -170,6 +170,7 @@ const SaveModal = (props) => {
                     type="text"
                     className="bg-transparent h-full text-white text-sm outline-none px-2 mt-1"
                     placeholder="Mech Name"
+                    maxLength={30}
                     onChange={handleInputChange}
                   />
                   <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-2"></div>

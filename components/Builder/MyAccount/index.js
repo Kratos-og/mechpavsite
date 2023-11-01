@@ -71,7 +71,7 @@ export default function MyAccount(props) {
                   <div className="uppercase tracking-wider font-semibold">Linked wallets</div>
                   {wallets.length ? wallets : <div className="mt-3">No wallets found.</div>}
                   {!addWallet && (
-                    <button
+                    {/* <button
                       className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light "
                       onClick={() => setAddWallet(true)}
                     >
@@ -82,7 +82,7 @@ export default function MyAccount(props) {
                           <div>Add Wallet</div>
                         </div>
                       </div>
-                    </button>
+                    </button> */}
                   )}
                 </div>
                 {addWallet && (
