@@ -55,7 +55,7 @@ export const mechTypeParser = (tokens) => {
         if (token.includes('Defender')) {
             res.push('DEF')
         }
-        else if (token.includes('SubTerrain')) {
+        else if (token.includes('Subterra')) {
             res.push('SBT')
         }
         else if (token.includes('Hydra')) {

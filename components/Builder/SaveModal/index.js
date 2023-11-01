@@ -45,7 +45,7 @@ const SaveModal = (props) => {
 
   const getUserOwnedPavs = async () => {
     try {
-      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
+      let res = await axios.post(process.env.NEXT_PUBLIC_PAVIA_GAME_API + '/v1/wallet/old/cardano', {
         policies: ['852526a77c45662e981181ed9b0afca13cfd8e45c169a20b37832ea7']
       }, {
         headers: {
@@ -73,7 +73,7 @@ const SaveModal = (props) => {
         setError("ERROR : SELECT A PAV");
         return;
       }
-      if(!pavs.includes(pavName)){
+      if (!pavs.includes(pavName)) {
         setError("ERROR : INVALID PAV NAME");
         return;
       }
