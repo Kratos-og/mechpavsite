@@ -73,6 +73,10 @@ const SaveModal = (props) => {
         setError("ERROR : SELECT A PAV");
         return;
       }
+      if(!pavs.includes("pavName")){
+        setError("ERROR : INVALID PAV NAME");
+        return;
+      }
       setLoading(true);
       let payload = {
         "Arm-L_Class":
@@ -92,6 +96,8 @@ const SaveModal = (props) => {
           Main_Data.backpack[props.selectedParts.backpack].type.BE_Code,
         "Backpack_Variant":
           Main_Data.backpack[props.selectedParts.backpack].skin.BE_Code,
+        "DateCreated": new Date(Date.now()).toUTCString(),
+        "Pav": pavName
       };
       const res = await axios.post("/api/pavia/saveLoadout", {
         name: mechName,
