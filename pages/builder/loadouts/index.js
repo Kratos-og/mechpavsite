@@ -71,7 +71,7 @@ export default function Loadouts() {
     },
   };
   const loadoutItems = loadItems.map((item, i) => <SwiperSlide>
-    <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10 -z-10`} key={i}>
+    <div className={`relative flex flex-col w-full h-full duration-300 items-center justify-center py-10`} key={i}>
       <CustomName activeSlideIndex={activeSlideIndex} index={i} item={item}>{userLoadouts[i]?.name}</CustomName>
       <Canvas className="cursor-pointer ">
         <SceneContainer position={activeSlideIndex == i ? [2, -5, 0] : [1.5, 0, 0]} scale={activeSlideIndex == i ? 6.5 : 3} index={1} selectedParts={{ ...item }} />
@@ -80,8 +80,8 @@ export default function Loadouts() {
   </SwiperSlide>)
 
   return (
-    <div className="h-screen w-screen ">
-    <button className=" text-white">Go Back</button>
+    <div className="h-screen w-screen -z-10">
+    {/* <button className=" text-white">Go Back</button> */}
       {!loading ? <div className="w-full h-full flex">
         {/* pc */}
         
