@@ -6,13 +6,13 @@ const data = {
       skin: {
         //variant
         BE_Name: "CrashTest",
-        FE_Name: "Crash Test",
+        FE_Name: "Crash",
         FE_Code: "CR",
         BE_Code: "CT",
       },
       type: {
         // class
-        name: "Subterranean",
+        name: "Subterra",
         BE_Code: "SBT",
       },
     },
@@ -20,35 +20,35 @@ const data = {
       model: "MP_SBT_ELM_Body",
       img: "Subterra_Torso_GR_thumb",
       skin: { BE_Name: 'Elemental', FE_Name: "Granite", FE_Code: "GR", BE_Code: "ELM" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_CS_Body",
       img: "Subterra_Torso_HZ_thumb",
       skin: { BE_Name: 'Recon', FE_Name: "Hazard", FE_Code: "HZ", BE_Code: "CS" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_JD_Body",
       img: "Subterra_Torso_JG_thumb",
       skin: { BE_Name: 'JudgementDay', FE_Name: "Judgement", FE_Code: "JG", BE_Code: "JD" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LGD_Body",
       img: "Subterra_Torso_NV_thumb",
       skin: { BE_Name: 'Legendary', FE_Name: "Nova", FE_Code: "NV", BE_Code: "LGD" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LAB_Body",
       img: "Subterra_Torso_PL_thumb",
       skin: { BE_Name: 'Pavia Lab', FE_Name: "Pavia Labs", FE_Code: "PL", BE_Code: "LAB" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_DSE_CT_Body", img: "Hydra_Torso_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Hydra", BE_Code: "DSE" },
     },
     {
@@ -78,7 +78,7 @@ const data = {
     },
     {
       model: "MP_DSP_CT_Body", img: "Recon_Torso_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Recon", BE_Code: "DSP" },
     },
     {
@@ -113,7 +113,7 @@ const data = {
     },
     {
       model: "MP_DEF_CT_Body", img: "Defender_Torso_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Defender", BE_Code: "DEF" },
     },
     {
@@ -138,7 +138,7 @@ const data = {
     },
     {
       model: "MP_NRG_CT_Body", img: "Reactor_Torso_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Reactor", BE_Code: "NRG" },
     },
     {
@@ -171,42 +171,42 @@ const data = {
     {
       model: "MP_SBT_CT_Arm-L",
       img: "Subterra_Left Arm_CR_thumb",
-      skin: { BE_Name: 'CrashTest', FE_Name: "Crash Test", FE_Code: "CR", BE_Code: "CT" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      skin: { BE_Name: 'CrashTest', FE_Name: "Crash", FE_Code: "CR", BE_Code: "CT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_ELM_Arm-L",
       img: "Subterra_Left Arm_GR_thumb",
       skin: { FE_Name: 'Granite', BE_Name: "Elemental", FE_Code: "GR", BE_Code: "ELM" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_CS_Arm-L",
       img: "Subterra_Left Arm_HZ_thumb",
       skin: { BE_Name: 'Recon', FE_Name: "Hazard", FE_Code: "HZ", BE_Code: "CS" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_JD_Arm-L",
       img: "Subterra_Left Arm_JG_thumb",
       skin: { BE_Name: 'JudgementDay', FE_Name: "Judgement", FE_Code: "JG", BE_Code: "JD" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LGD_Arm-L",
       img: "Subterra_Left Arm_NV_thumb",
       skin: { FE_Name: "Nova", BE_Name: "Legendary", FE_Code: "NV", BE_Code: "LGD" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LAB_Arm-L",
       img: "Subterra_Left Arm_PL_thumb",
       skin: { BE_Name: 'Pavia Lab', FE_Name: "Pavia Labs", FE_Code: "PL", BE_Code: "LAB" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_DSE_CT_Arm-L", img: "Hydra_Left Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Hydra", BE_Code: "DSE" },
     },
     {
@@ -236,7 +236,7 @@ const data = {
     },
     {
       model: "MP_DSP_CT_Arm-L", img: "Recon_Left Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Recon", BE_Code: "DSP" },
     },
     {
@@ -271,7 +271,7 @@ const data = {
     },
     {
       model: "MP_DEF_CT_Arm-L", img: "Defender_Left Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Defender", BE_Code: "DEF" },
     },
     {
@@ -296,7 +296,7 @@ const data = {
     },
     {
       model: "MP_NRG_CT_Arm-L", img: "Reactor_Left Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Reactor", BE_Code: "NRG" },
     },
     {
@@ -329,37 +329,37 @@ const data = {
     {
       model: "MP_SBT_CT_Arm-R",
       img: "Subterra_Right Arm_CR_thumb",
-      skin: { FE_Name: "Crash Test", BE_Name: "CrashTest", FE_Code: "CR", BE_Code: "CT" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      skin: { FE_Name: "Crash", BE_Name: "CrashTest", FE_Code: "CR", BE_Code: "CT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_ELM_Arm-R", img: "Subterra_Right Arm_GR_thumb",
       skin: { BE_Name: "Elemental", BE_Code: "ELM", FE_Name: "Granite", FE_Code: "GR" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_CS_Arm-R", img: "Subterra_Right Arm_HZ_thumb",
       skin: { BE_Name: "Recon", BE_Code: "CS", FE_Name: "Hazard", FE_Code: "HZ" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_JD_Arm-R", img: "Subterra_Right Arm_JG_thumb",
       skin: { BE_Code: "JD", BE_Name: "JudgementDay", FE_Code: "JG", FE_Name: "Judgement" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LGD_Arm-R", img: "Subterra_Right Arm_NV_thumb",
       skin: { BE_Code: "LGD", BE_Name: "Legendary", FE_Code: "NV", FE_Name: "Nova" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LAB_Arm-R", img: "Subterra_Right Arm_PL_thumb",
       skin: { BE_Code: "LAB", BE_Name: "Pavia Lab", FE_Code: "PL", FE_Name: "Pavia Labs" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_DSE_CT_Arm-R", img: "Hydra_Right Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Hydra", BE_Code: "DSE" },
     },
     {
@@ -389,7 +389,7 @@ const data = {
     },
     {
       model: "MP_DSP_CT_Arm-R", img: "Recon_Right Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Recon", BE_Code: "DSP" },
     },
     {
@@ -424,7 +424,7 @@ const data = {
     },
     {
       model: "MP_DEF_CT_Arm-R", img: "Defender_Right Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Defender", BE_Code: "DEF" },
     },
     {
@@ -449,7 +449,7 @@ const data = {
     },
     {
       model: "MP_NRG_CT_Arm-R", img: "Reactor_Right Arm_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Reactor", BE_Code: "NRG" },
     },
     {
@@ -481,37 +481,37 @@ const data = {
   backpack: [
     {
       model: "MP_SBT_CT_Backpack", img: "Subterra_Back Pack_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_ELM_Backpack", img: "Subterra_Back Pack_GR_thumb",
       skin: { BE_Code: "ELM", BE_Name: "Elemental", FE_Code: "GR", FE_Name: "Granite" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_CS_Backpack", img: "Subterra_Back Pack_HZ_thumb",
       skin: { BE_Code: "CS", BE_Name: "Recon", FE_Code: "HZ", FE_Name: "Hazard" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_JD_Backpack", img: "Subterra_Back Pack_JG_thumb",
       skin: { BE_Code: "JD", BE_Name: "JudgementDay", FE_Code: "JG", FE_Name: "Judgement" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LGD_Backpack", img: "Subterra_Back Pack_NV_thumb",
       skin: { BE_Code: "LGD", BE_Name: "Legendary", FE_Code: "NV", FE_Name: "Nova" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LAB_Backpack", img: "Subterra_Back Pack_PL_thumb",
       skin: { BE_Code: "LAB", BE_Name: "Pavia Lab", FE_Code: "PL", FE_Name: "Pavia Labs" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_DSE_CT_Backpack", img: "Hydra_Back Pack_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Hydra", BE_Code: "DSE" },
     },
     {
@@ -541,7 +541,7 @@ const data = {
     },
     {
       model: "MP_DSP_CT_Backpack", img: "Recon_Back Pack_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Recon", BE_Code: "DSP" },
     },
     {
@@ -576,7 +576,7 @@ const data = {
     },
     {
       model: "MP_DEF_CT_Backpack", img: "Defender_Back Pack_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Defender", BE_Code: "DEF" },
     },
     {
@@ -601,7 +601,7 @@ const data = {
     },
     {
       model: "MP_NRG_CT_Backpack", img: "Reactor_Back Pack_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Reactor", BE_Code: "NRG" },
     },
     {
@@ -633,37 +633,37 @@ const data = {
   legs: [
     {
       model: "MP_SBT_CT_Legs", img: "Subterra_Legs_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_ELM_Legs", img: "Subterra_Legs_GR_thumb",
       skin: { BE_Code: "ELM", BE_Name: "Elemental", FE_Code: "GR", FE_Name: "Granite" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_CS_Legs", img: "Subterra_Legs_HZ_thumb",
       skin: { BE_Code: "CS", BE_Name: "Recon", FE_Code: "HZ", FE_Name: "Hazard" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_JD_Legs", img: "Subterra_Legs_JG_thumb",
       skin: { BE_Code: "JD", BE_Name: "JudgementDay", FE_Code: "JG", FE_Name: "Judgement" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LGD_Legs", img: "Subterra_Legs_NV_thumb",
       skin: { BE_Code: "LGD", BE_Name: "Legendary", FE_Code: "NV", FE_Name: "Nova" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_SBT_LAB_Legs", img: "Subterra_Legs_PL_thumb",
       skin: { BE_Code: "LAB", BE_Name: "Pavia Lab", FE_Code: "PL", FE_Name: "Pavia Labs" },
-      type: { name: "Subterranean", BE_Code: "SBT" },
+      type: { name: "Subterra", BE_Code: "SBT" },
     },
     {
       model: "MP_DSE_CT_Legs", img: "Hydra_Legs_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Hydra", BE_Code: "DSE" },
     },
     {
@@ -694,7 +694,7 @@ const data = {
     },
     {
       model: "MP_DSP_CT_Legs", img: "Recon_Legs_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Recon", BE_Code: "DSP" },
     },
     {
@@ -729,7 +729,7 @@ const data = {
     },
     {
       model: "MP_DEF_CT_Legs", img: "Defender_Legs_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Defender", BE_Code: "DEF" },
     },
     {
@@ -754,7 +754,7 @@ const data = {
     },
     {
       model: "MP_NRG_CT_Legs", img: "Reactor_Legs_CR_thumb",
-      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash Test" },
+      skin: { BE_Code: "CT", BE_Name: "CrashTest", FE_Code: "CR", FE_Name: "Crash" },
       type: { name: "Reactor", BE_Code: "NRG" },
     },
     {
