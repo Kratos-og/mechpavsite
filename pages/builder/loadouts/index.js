@@ -80,9 +80,10 @@ export default function Loadouts() {
   </SwiperSlide>)
 
   return (
-    <div className="h-screen w-screen ">
+    <div className="h-screen w-screen -z-10">
       {!loading ? <div className="w-full h-full flex">
         {/* pc */}
+        
         <Swiper cssMode={true}
           navigation={true}
           pagination={true}

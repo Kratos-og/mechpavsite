@@ -45,7 +45,7 @@ const SaveModal = (props) => {
 
   const getUserOwnedPavs = async () => {
     try {
-      let res = await axios.post('https://esw2jqlntk.execute-api.eu-west-1.amazonaws.com/pg-dev/v1/wallet/old/cardano', {
+      let res = await axios.post(process.env.NEXT_PUBLIC_PAVIA_GAME_API + '/v1/wallet/old/cardano', {
         policies: ['852526a77c45662e981181ed9b0afca13cfd8e45c169a20b37832ea7']
       }, {
         headers: {
@@ -73,6 +73,10 @@ const SaveModal = (props) => {
         setError("ERROR : SELECT A PAV");
         return;
       }
+      if (!pavs.includes(pavName)) {
+        setError("ERROR : INVALID PAV NAME");
+        return;
+      }
       setLoading(true);
       let payload = {
         "Arm-L_Class":
@@ -92,6 +96,9 @@ const SaveModal = (props) => {
           Main_Data.backpack[props.selectedParts.backpack].type.BE_Code,
         "Backpack_Variant":
           Main_Data.backpack[props.selectedParts.backpack].skin.BE_Code,
+        "DateCreated": new Date(Date.now()).toUTCString(),
+        "Pav": pavName,
+        "ID": "0"
       };
       const res = await axios.post("/api/pavia/saveLoadout", {
         name: mechName,
@@ -164,6 +171,7 @@ const SaveModal = (props) => {
                     type="text"
                     className="bg-transparent h-full text-white text-sm outline-none px-2 mt-1"
                     placeholder="Mech Name"
+                    maxLength={30}
                     onChange={handleInputChange}
                   />
                   <div className="h-0.5 w-full bg-gradient-to-r from-white via-white to-transparent mt-2"></div>

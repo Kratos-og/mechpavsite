@@ -2,6 +2,7 @@
 import { MechOperations } from '@/components/Common/pavia-lib/end_user/mech_operations';
 import { getAccessToken } from '@auth0/nextjs-auth0';
 
+// TODO: put in some validation of the data here so user can't screw up db nodes
 const saveLoadout = async (req, res) => {
     try {
         const { accessToken } = await getAccessToken(req, res);
@@ -10,6 +11,10 @@ const saveLoadout = async (req, res) => {
         const savedMechs = await mechOperations.getSavedMechs();
         let isMod = false;
         let payload = savedMechs.map(mech => {
+            // Game requires the id field to be a string of an integer value
+            if(req.body?.properties){
+                req.body.properties.ID = "0"
+            }
             if (mech.name == req.body?.name) {
                 isMod = true;
                 mech.properties = { ...req.body.properties }
@@ -17,6 +22,8 @@ const saveLoadout = async (req, res) => {
             return { ...mech };
         })
         if (!isMod) {
+            
+            
             payload.push({
                 name: req.body?.name,
                 properties: {
