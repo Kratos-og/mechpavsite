@@ -1,4 +1,4 @@
-import { handleAuth, handleLogin } from '@auth0/nextjs-auth0';
+import { handleAuth, handleLogin, handleLogout } from '@auth0/nextjs-auth0';
 
 export default handleAuth({
     async login(req, res) {
@@ -13,6 +13,16 @@ export default handleAuth({
                 returnTo: '/builder'
             });
         } catch (error) {
+            res.status(error.status || 400).end(error.message);
+        }
+    },
+    async logout(req,res) {
+        try{
+            console.log("Attempting logout");
+            await handleLogout(req, res, {
+                returnTo: '/builder'
+            });
+        } catch(error){
             res.status(error.status || 400).end(error.message);
         }
     }

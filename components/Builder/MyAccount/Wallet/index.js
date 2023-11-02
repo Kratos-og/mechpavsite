@@ -22,6 +22,7 @@ const Wallet = props => {
             const walletInstance = await window.cardano[wallet.toLowerCase()]?.enable();
             const addr = await walletInstance.getChangeAddress();
             const nonce = await getNonce(addr);
+            console.log(nonce);
             const cose = await walletInstance.signData(addr, nonce);
             addNewWallet(addr, cose);
             setLoading(false);
@@ -34,14 +35,14 @@ const Wallet = props => {
 
     const getNonce = async (address) => {
         try {
-            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_API}/wallet/nonce`, {
+            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_GAME_API}/v1/wallet/old/jwt`, {
                 address
             }, {
                 headers: {
                     Authorization: `Bearer ${props.bearer}`
                 }
             })).data;
-            return res;
+            return res.secretMessage;
         }
         catch (err) {
             console.log(err)
@@ -50,7 +51,7 @@ const Wallet = props => {
 
     const addNewWallet = async (address, cose) => {
         try {
-            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_API}/wallet`, {
+            const res = (await axios.post(`${process.env.NEXT_PUBLIC_PAVIA_GAME_API}/v1/wallet/old/jwt/confirm`, {
                 address,
                 cose
             }, {
