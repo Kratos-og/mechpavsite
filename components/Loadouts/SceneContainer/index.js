@@ -8,6 +8,7 @@ import { Torso } from "./MechPav/Torso";
 
 export function SceneContainer(props) {
     const lightRef = useRef(null);
+    const lightRef2 = useRef(null);
     return (
         <Suspense fallback={null}>
             <directionalLight
@@ -16,6 +17,7 @@ export function SceneContainer(props) {
             />
 
             <spotLight ref={lightRef} position={[10, 0, 0]} intensity={2} />
+            <spotLight ref={lightRef} position={[-10, 0, 0]} intensity={2} />
         
             <PerspectiveCamera makeDefault fov={50} position={[0, 5, 25]} />
 
