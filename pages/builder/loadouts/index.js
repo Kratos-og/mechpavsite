@@ -81,7 +81,6 @@ export default function Loadouts() {
 
   return (
     <div className="h-screen w-screen -z-10">
-    {/* <button className=" text-white">Go Back</button> */}
       {!loading ? <div className="w-full h-full flex">
         {/* pc */}
         
