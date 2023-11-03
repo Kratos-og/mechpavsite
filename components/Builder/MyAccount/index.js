@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'next/link';
 import { animate, motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import { AiFillCloseSquare } from "react-icons/ai";
@@ -16,12 +17,12 @@ export default function MyAccount(props) {
 
   const getUserWallets = async () => {
     try {
-      const res = (await axios.get(`${process.env.NEXT_PUBLIC_PAVIA_API}/user`, {
+      const res = (await axios.get(`${process.env.NEXT_PUBLIC_PAVIA_GAME_API}/v1/user/old-method`, {
         headers: {
           Authorization: `Bearer ${props.bearer}`
         }
       })).data;
-      setUserWallets(res?.wallets);
+      setUserWallets(res?.cardanoAddresses ?? []);
     }
     catch (err) {
       console.log(err)
@@ -29,7 +30,7 @@ export default function MyAccount(props) {
   }
   const wallets = userWallets.map((address, index) => (
     <li key={index} className="lg:mt-2 mt-1 list-disc max-md:text-xs">
-      {minifyAddress(address?.shelley_address, 12)}
+      {address}
     </li>
   ));
 
@@ -71,7 +72,7 @@ export default function MyAccount(props) {
                   <div className="uppercase tracking-wider font-semibold">Linked wallets</div>
                   {wallets.length ? wallets : <div className="mt-3">No wallets found.</div>}
                   {!addWallet && (
-                    {/* <button
+                    <button
                       className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light "
                       onClick={() => setAddWallet(true)}
                     >
@@ -82,16 +83,33 @@ export default function MyAccount(props) {
                           <div>Add Wallet</div>
                         </div>
                       </div>
-                    </button> */}
+                    </button>
+
                   )}
                 </div>
+
                 {addWallet && (
                   <>
-                    <Wallet bearer={props.bearer} onWalletaddSuccess={onWalletaddSuccess}/>
+                    <Wallet bearer={props.bearer} onWalletaddSuccess={onWalletaddSuccess} />
                   </>
                 )}
-              </div>
 
+              </div>
+              <button
+                className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light "
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = '/api/auth/logout';
+                }}
+              >
+                <div className="frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300">
+                  <div className="lines"></div>
+                  <div className="angles"></div>
+                  <div className=" bg-red-300 h-full w-full flex justify-center items-center gap-3">
+                    <div>Logout</div>
+                  </div>
+                </div>
+              </button>
               <button
                 className="absolute top-5 right-5 text-black text-4xl z-50"
                 onClick={props.setActiveTab}

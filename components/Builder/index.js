@@ -48,7 +48,6 @@ export default function Builder(props) {
 
   const getUserMechParts = async () => {
     try {
-      // TODO: this needs to point to prod
       let res = await axios.post(process.env.NEXT_PUBLIC_PAVIA_GAME_API + '/v1/wallet/old/cardano', {
         policies: ['c456d2a2e93a567988808d3a9520fc1004535fed5101d8439efdd6c0']
       }, {
@@ -183,7 +182,6 @@ export default function Builder(props) {
             setSaveInit={setSaveInit}
             userNfts={userOwned}
             bearer={props.bearer}
-            // TODO: Do we have access to the saved layouts here already or not?
           />
         )}
         {activeTab == 1 && <Settings setEnv={onEnvChange} env={env} />}
@@ -196,8 +194,8 @@ export default function Builder(props) {
             bearer={props.bearer}
           />
         )}
-        {props.bearer && activeTab != 2 && (
-          <div className="max-lg:absolute bottom-[35%] left-0 w-screen ">
+        {props.bearer && (
+          <div className="max-lg:absolute bottom-[35%] left-0 w-screen  z-30">
             <Bottom activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
         )}

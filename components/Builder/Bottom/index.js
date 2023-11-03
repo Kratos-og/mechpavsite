@@ -20,11 +20,11 @@ export default function Index(props) {
             My Loadouts
           </button>
         </div>
-        {/* <div onClick={() => props.setActiveTab(2)} className={`skew-x-[20deg] transition-all border-r-2 ${props.activeTab == 2 ? ' border-pavia-green active-shadow' : ' border-white/25 hover:active-shadow'} h-full flex items-center justify-center text-xs cursor-pointer px-5`}>
+        <div onClick={() => props.setActiveTab(2)} className={`skew-x-[20deg] transition-all border-r-2 ${props.activeTab == 2 ? ' border-pavia-green active-shadow' : ' border-white/25 hover:active-shadow'} h-full flex items-center justify-center text-xs cursor-pointer px-5`}>
           <button className={` h-full uppercase tracking-wider skew-x-[-20deg]`}>
             MY Account
           </button>
-        </div> */}
+        </div>
         <div onClick={() => props.setActiveTab(1)} className={`skew-x-[20deg] transition-all border-r-2 ${props.activeTab == 1 ? ' border-pavia-green active-shadow' : ' border-white/25 hover:active-shadow'} h-full flex items-center justify-center text-xs cursor-pointer px-5`}>
           <button className={` h-full uppercase tracking-wider skew-x-[-20deg]`}>
             Settings
