@@ -63,8 +63,6 @@ export default function MyAccount(props) {
             }}
             className="absolute w-screen h-screen bg-white top-0"
           >
-            <button className="text-black"
-            onClick={(e)=>{console.log("done")}}>Back</button>
             <div className="w-full h-full lg:p-20 p-10">
               <div className="text-7xl tracking-widest font-bold text-black lg:pt-5 max-lg:text-2xl pb-10">
                 MY ACCOUNT
