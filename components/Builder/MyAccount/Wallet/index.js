@@ -69,8 +69,8 @@ const Wallet = props => {
     return (
         <div className="absolute text-sm w-[350px] ">
             {loading ?
-                <div className="flex justify-center scale-150">
-                    <SpinnerSm />
+                <div >
+                    {/* <SpinnerSm /> */}
                 </div>
                 :
                 <div className="bg-white p-7">

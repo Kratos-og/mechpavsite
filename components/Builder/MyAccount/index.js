@@ -71,11 +71,8 @@ export default function MyAccount(props) {
                 <div>
                   <div className="uppercase tracking-wider font-semibold">Linked wallets</div>
                   {wallets.length ? wallets : <div className="mt-3">No wallets found.</div>}
-                  {!addWallet && (
-                    <button
-                      className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light "
-                      onClick={() => setAddWallet(true)}
-                    >
+                  <div className="dropdown">
+                    <button tabIndex={0} className="lg:w-52 w-52 mt-10 lg:py-9 py-7 text-sm newButton relative text-black group font-light">
                       <div className="frame w-full h-full p-1 group-hover:p-2 ease-in-out duration-300">
                         <div className="lines"></div>
                         <div className="angles"></div>
@@ -84,15 +81,13 @@ export default function MyAccount(props) {
                         </div>
                       </div>
                     </button>
-
-                  )}
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                      <Wallet bearer={props.bearer} onWalletaddSuccess={onWalletaddSuccess} />
+                    </ul>
+                  </div>
                 </div>
 
-                {addWallet && (
-                  <>
-                    <Wallet bearer={props.bearer} onWalletaddSuccess={onWalletaddSuccess} />
-                  </>
-                )}
+
 
               </div>
               <button
