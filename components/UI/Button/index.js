@@ -23,7 +23,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute right-0 w-[0.15rem] h-full text-[#14fecd] rotate-180 group-hover:translate-x-0 translate-x-1 duration-200 ease-in-out"
+                        " absolute right-0 w-[0.15rem] h-full text-pavs-red rotate-180 group-hover:translate-x-0 translate-x-1 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -40,7 +40,7 @@ const Button = (props) => {
                     viewBox="0 0 3 74"
                     astro-icon="button-border"
                     className={
-                        " absolute left-0 w-[0.15rem] h-full text-[#14fecd] -translate-x-1 group-hover:translate-x-0 duration-200 ease-in-out"
+                        " absolute left-0 w-[0.15rem] h-full text-pavs-red -translate-x-1 group-hover:translate-x-0 duration-200 ease-in-out"
                     }
                 >
                     <motion.path
@@ -63,7 +63,7 @@ const Button = (props) => {
                         },
                         { paddingRight: "61%", transition: { delay: 1, duration: 0.5 } },
                     ]}
-                    className="bg-[#14fecd] p-2 absolute"
+                    className="bg-pavs-red p-2 absolute"
                 />
                 {/* Dot */}
 
@@ -80,14 +80,14 @@ const Button = (props) => {
                 <motion.div
                     initial={{ display: "none", y: 0 }}
                     animate={{ display: "block", transition: { delay: 2.5 } }}
-                    className=" text-[#000000] uppercase absolute z-[2] text-xs w-full h-full hover:bg-transparent pt-5 bg-[#14fecd]"
+                    className=" text-[#000000] uppercase absolute z-[2] text-xs w-full h-full hover:bg-transparent pt-5 bg-pavs-red"
                 >
                     <motion.div 
                     className=" w-full h-4 overflow-hidden">
                         <div className="group-hover:-translate-y-3 duration-300 ease-in-out">
                             {props.children}
                         </div>
-                        <div className=" text-[#14fecd] mb-3 group-hover:-translate-y-4 duration-300 ease-in-out">
+                        <div className=" text-pavs-red mb-3 group-hover:-translate-y-4 duration-300 ease-in-out">
                             {props.children}
                         </div>
                     </motion.div>
