@@ -6,6 +6,7 @@ import {
 import { useRef, useState } from "react";
 import Button from "../../UI/Button";
 import Link from "next/link";
+import WhiteButton from "@/components/UI/WhiteButton";
 
 const Section = (props) => {
   const [isInView, setIsInView] = useState(false);
@@ -37,7 +38,7 @@ const Section = (props) => {
                   }}
                   className="xl:text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative -ml-[3px] text-[2rem]"
                 >
-                  <span>MECH MINT</span>
+                  <span>EXPLORE 0xLAND</span>
                 </motion.p>
                 <motion.div
                   initial={{ paddingRight: "0rem", width: 0 }}
@@ -85,12 +86,10 @@ const Section = (props) => {
                 >
                   <div className="flex flex-col gap-4">
                     <div>
-                      PURCHASE A MECH CRATE NFT AND UNBOX LATER TO REVEAL 5 RANDOMLY SELECTED PARTS, GUARANTEED TO FORM A COMPLETE MECH.
+                      PARCELS OF 0xLAND FORMS YOUR BASE WITHIN THE PAVIA METAVERSE. THER ARE 60,000 PARCELS AVAILABLE. ALSO CONTAINED WITHIN THE 0x CONTINENT ARE ESTATES BELONGING TO WELL KNOW EVM BASED PROJECTS AND A NUMBER OF PAVIA PORTALS.
                     </div>
                     <div>
-                      BUILD YOUR MECH TO USE AS AN AVATAR TO EXPLORE PAVIA AND ENJOY A FUTURE OF EXCLUSIVE MECH UTILITY.
-                      COLLECT, BUILD AND INTERCHANGE NFT MECH PARTS USING OUR CUSTOM ONLINE MECH BUILDER.
-
+                      PORTALS ARE YOUR GATEWAY TO THE REST OF THE PAVIA EXPERIENCE AND BEYOND
                     </div>
                   </div>
                 </motion.div>
@@ -123,22 +122,36 @@ const Section = (props) => {
 
           <AnimatePresence>
             {isInView && (
-              <Link href={"/mint"}>
-                <motion.div
-                  exit={{ display: "none" }}
-                  className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
-                >
-                  <div className=" pointer-events-auto">
-                    <Button>LEARN MORE</Button>
-                  </div>
-                </motion.div>
-              </Link>
+              <div className="flex items-center gap-5">
+                <Link href={"/mint"}>
+                  <motion.div
+                    exit={{ display: "none" }}
+                    className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                  >
+                    <div className=" pointer-events-auto">
+                      <Button>MINT 0xLAND</Button>
+                    </div>
+                  </motion.div>
+                </Link>
+                <Link href={"/unbox"}>
+                  <motion.div
+                    exit={{ display: "none" }}
+                    className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                  >
+                    <div className=" pointer-events-auto">
+                      <WhiteButton>VIEW 0xMAP</WhiteButton>
+                    </div>
+                  </motion.div>
+                </Link>
+              </div>
             )}
           </AnimatePresence>
         </div>
-      </motion.div>
-    </div>
+      </motion.div >
+    </div >
   );
 };
+
+
 
 export default Section;

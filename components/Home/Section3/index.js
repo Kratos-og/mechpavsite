@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import Button from "../../UI/Button";
 import Link from "next/link";
+import WhiteButton from "@/components/UI/WhiteButton";
 
 const Section = (props) => {
   const [isInView, setIsInView] = useState(false);
@@ -42,7 +43,7 @@ const Section = (props) => {
                     }}
                     className="text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative lg:-ml-[5px] max-md:text-[2rem]"
                   >
-                    <span>EXPLORE THE LORE</span>
+                    <span>0xMECH MINT</span>
                   </motion.p>
                   <motion.div
                     initial={{ paddingRight: "0rem", width: 0 }}
@@ -92,10 +93,16 @@ const Section = (props) => {
                   >
                     <div className="flex flex-col gap-4 w-full">
                       <div>
-                        MECHS ARE PILOTED BY PAVS. LEARN MORE ABOUT THESE MYSTERIOUS CREATURES, WHERE THEY CAME FROM AND HOW MECHS CAME TO BE.
+                        ALL 5 CLASSES OF 0xMECHS REQUIRE A PILOT WHICH IS A 0xPAV, THESE IN-GAME CREATURES COME IN 20 VARIETIES WITH VARYING RARITY AND TRAITS.
                       </div>
                       <div>
-                        READ THROUGH CHRONOLOGICAL EVENTS AND DISCOVER HOW PAVS AND MECHS COMBINED TO BECOME THE ULTIMATE FORCE.
+                        MINT A 0xMECH CRATE NFT WHICH WILL UNBOX AT A LATER DATE TO REVEAL 5 RANDOMLY SELECTED PARTS WHICH ARE GUARANTEED TO FORM A COMPLETE 0xMECH.
+                      </div>
+                      <div>
+                        ONCE BUILT WITH A 0xPAV PILOT ADDED YOUR 0XMECH CAN BE UTILISED AS YOUR AVATAR TO EXPLORE THE PAVIA PLAYGROUND WHILST WE FINALISE THE FULL GAME BUID. ALL 0xMECH PARTS ARE INTERCHANGEABLE AND TRADABLE ON SECONDARY MARKETS ALLOWING OWNERS TO COLLECT & ASSEMBLE A COMPLETE CLASS.
+                      </div>
+                      <div>
+                        WAVE 1 STRICTLY LIMITED TO 5K 0xPAVS and 5K 0xMECH CRATES.
                       </div>
                     </div>
                   </motion.div>
@@ -130,14 +137,28 @@ const Section = (props) => {
             </AnimatePresence>
             <AnimatePresence>
               {isInView && (
-                <Link href={"/Lore"}>
-                  <motion.div
-                    exit={{ display: "none" }}
-                    className="relative flex md:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.7rem]"
-                  >
-                    <Button onClick={() => console.log('click')}>LEARN MORE</Button>
-                  </motion.div>
-                </Link>
+                <div className="flex items-center gap-5">
+                  <Link href={"/mint"}>
+                    <motion.div
+                      exit={{ display: "none" }}
+                      className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                    >
+                      <div className=" pointer-events-auto">
+                        <Button>MINT 0xPAVS</Button>
+                      </div>
+                    </motion.div>
+                  </Link>
+                  <Link href={"/unbox"}>
+                    <motion.div
+                      exit={{ display: "none" }}
+                      className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                    >
+                      <div className=" pointer-events-auto">
+                        <WhiteButton>MINT 0xMECHS</WhiteButton>
+                      </div>
+                    </motion.div>
+                  </Link>
+                </div>
               )}
             </AnimatePresence>
           </div>

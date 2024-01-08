@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Button from "../../UI/Button";
 import Footer from "@/components/Layout/Footer";
+import WhiteButton from "@/components/UI/WhiteButton";
 
 const Section = (props) => {
   const [isInView, setIsInView] = useState(false);
@@ -34,7 +35,7 @@ const Section = (props) => {
                   }}
                   className="text-[70px] 2xl:text-[90px] font-bold overflow-hidden tracking-wider w-fit relative max-md:text-[2rem]"
                 >
-                  <span>MARKETPLACE</span>
+                  <span>TRADE</span>
                 </motion.p>
                 <motion.div
                   initial={{ paddingRight: "0rem", width: 0 }}
@@ -81,7 +82,7 @@ const Section = (props) => {
                     className="z-40 relative lg:text-[11px] tracking-widest text-[0.5rem]"
                   >
                     <div className="flex flex-col gap-4">
-                      <div>BROWSE THE COMPLETE COLLECTION OF PAVS.</div>
+                      <div>0xLAND, 0xPAVS AND 0xMECHS (VIA CRATES INITIALLY) ARE FULLY TRADABLE GAMING ASSETS. SCROLL UP TO PURCHASE WHILST MINTS ARE LIVE, OTHERWISE YOU CAN BUY 0x PAVIA ASSETS AT THE FOLLOWING LOCATIONS.</div>
                       <div>
                         USE THE CUSTOM FILTERS TO SEARCH BY EVENT, TRAITS AND
                         MUCH MORE. SEARCH THE LATEST MARKETS WHILE YOU BUY, SELL
@@ -118,14 +119,39 @@ const Section = (props) => {
                 </div>
                 <AnimatePresence>
                   {isInView && (
-                    <Link href="/pavs">
-                      <motion.div
-                        exit={{ display: "none" }}
-                        className="relative flex md:pt-5 mb-1 pointer-events-auto lg:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
-                      >
-                        <Button>LEARN MORE</Button>
-                      </motion.div>
-                    </Link>
+
+                    <div className=" flex flex-row gap-8">
+                      <a href={"https://app.uniswap.org/"} target="_blank">
+                        <motion.div
+                          exit={{ display: "none" }}
+                          className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                        >
+                          <div className=" pointer-events-auto">
+                            <Button>BUY $PAVIA</Button>
+                          </div>
+                        </motion.div>
+                      </a>
+                      <Link href={"/minting"}>
+                        <motion.div
+                          exit={{ display: "none" }}
+                          className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                        >
+                          <div className=" pointer-events-auto">
+                            <Button>MINT 0xLAND</Button>
+                          </div>
+                        </motion.div>
+                      </Link>
+                      <Link href={"/unbox"}>
+                        <motion.div
+                          exit={{ display: "none" }}
+                          className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                        >
+                          <div className=" pointer-events-auto">
+                            <WhiteButton>MINT 0xPAVS & MECHS</WhiteButton>
+                          </div>
+                        </motion.div>
+                      </Link>
+                    </div>
                   )}
                 </AnimatePresence>
               </>
