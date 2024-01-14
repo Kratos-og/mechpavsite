@@ -137,7 +137,7 @@ const Section = (props) => {
             </AnimatePresence>
             <AnimatePresence>
               {isInView && (
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-5 max-md:justify-center max-md:gap-9 max-md:pt-3">
                   <Link href={"/mint"}>
                     <motion.div
                       exit={{ display: "none" }}

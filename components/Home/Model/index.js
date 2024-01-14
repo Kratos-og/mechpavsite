@@ -42,11 +42,11 @@ const Model = props => {
                 //up
                 //goal -> camOrbit = 0deg 105deg 6m, camTarget = 0m 1m 0m
                 let perc = (val / 33) * 100 - 100;
-                theta = -60 - (perc * (60 / 100));
-                phi = 110 + (perc * (5 / 100));
-                radius = 2 - (perc * (4 / 100))
-                camPhi = 1.1 + (perc * (0.1 / 100));
-                camRad = -0.5 - (perc * (0.2 / 100))
+                theta = -25 - (perc * (60 / 100)); //-60
+                phi = 100 + (perc * (5 / 100));  //110
+                radius = -5 - (perc * (4 / 100)) //2
+                camPhi = 1.2 + (perc * (0.1 / 100)); //1.1
+                camRad = 1 - (perc * (0.2 / 100)) // -0.5
                 orbitModel(theta, phi, radius, 0, camPhi, camRad);
             }
         }
@@ -117,8 +117,9 @@ const Model = props => {
     return (
         <div className='w-full h-full fixed top-0 pointer-events-none overflow-hidden'>
             <Script src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js" type='module'></Script>
-            <model-viewer loading="eager" style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/invaderPav.glb" camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m">
-            </model-viewer>
+            {/* camera-orbit="0deg 105deg 6m" camera-target="0m 1m -0.3m" */}
+            <model-viewer loading="eager" style={{ opacity: show ? 1 : 0 }} id="mech-model" src="/assets/models/invaderPav.glb" camera-orbit="25deg 100deg -5m" camera-target="-0.8m 1.4m -0.1m">
+            </model-viewer> 
         </div>
     )
 }

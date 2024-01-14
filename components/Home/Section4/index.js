@@ -64,7 +64,7 @@ const Section = (props) => {
             )}
           </AnimatePresence>
         </div>
-        <div className="relative lg:w-1/4 w-full overflow-hidden">
+        <div className="relative lg:w-[30%] w-full overflow-hidden">
           <AnimatePresence>
             {isInView && (
               <>
@@ -117,11 +117,12 @@ const Section = (props) => {
                     className="bg-white absolute h-full top-0"
                   ></motion.div>
                 </div>
+
                 <AnimatePresence>
                   {isInView && (
-
-                    <div className=" flex flex-row gap-8">
-                      <a href={"https://app.uniswap.org/"} target="_blank">
+                    <div>
+                    <div className="flex gap-8 justify-around max-md:justify-center max-md:gap-9 max-md:pt-3">
+                        <a href={"https://app.uniswap.org/"} target="_blank">
                         <motion.div
                           exit={{ display: "none" }}
                           className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
@@ -131,6 +132,7 @@ const Section = (props) => {
                           </div>
                         </motion.div>
                       </a>
+
                       <Link href={"/minting"}>
                         <motion.div
                           exit={{ display: "none" }}
@@ -141,17 +143,21 @@ const Section = (props) => {
                           </div>
                         </motion.div>
                       </Link>
-                      <Link href={"/unbox"}>
-                        <motion.div
-                          exit={{ display: "none" }}
-                          className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
-                        >
-                          <div className=" pointer-events-auto">
-                            <WhiteButton>MINT 0xPAVS & MECHS</WhiteButton>
-                          </div>
-                        </motion.div>
-                      </Link>
+
+
                     </div>
+                    <Link href={"/unbox"} className="flex flex-col items-center">
+
+                    <motion.div
+                      exit={{ display: "none" }}
+                      className="relative flex md:pt-4 mb-1 xl:ml-1 max-md:scale-75 max-md:ml-[-2.5rem]"
+                    >
+                      <div className=" pointer-events-auto">
+                        <WhiteButton>MINT 0xPAVS & MECHS</WhiteButton>
+                      </div>
+                    </motion.div>
+                  </Link>
+                  </div>
                   )}
                 </AnimatePresence>
               </>

@@ -1,5 +1,4 @@
 import Button from "@/components/UI/Button";
-import Mouse from "@/components/UI/Svg/Mouse";
 import WhiteButton from "@/components/UI/WhiteButton";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
@@ -39,7 +38,7 @@ const Hero = (props) => {
                       transition: { delay: 0.5 },
                     }}
                     exit={{ visibility: "hidden" }}
-                    className="xl:-ml-3 xl:text-[208px] 2xl:text-[298px] font-bold tracking-wider whitespace-nowrap text-[3.3rem]"
+                    className="xl:-ml-3 xl:text-[208px] 2xl:text-[298px] font-bold tracking-wider whitespace-nowrap text-[4.5rem]"
                   >
                     0xPAVIA
                   </motion.span>
@@ -83,7 +82,7 @@ const Hero = (props) => {
                             visibility: "visible",
                             transition: { delay: 0.5 },
                           }}
-                          className="flex flex-col gap-4 max-sm:text-[0.4rem] w-2/3 md:w-full"
+                          className="flex flex-col gap-4 max-sm:text-[0.5rem] w-2/3 md:w-full"
                         >
                           <div className="uppercase">
                             WELCOME TO 0xPAVIA THE PAVIA METAVERSE EXPANSION AND YOUR CHANCE TO OWN 0XLAND AND 0XMECHS WHICH FORM PART OF THE EXCITING PAVIA GAMING METAVERSE.
@@ -95,14 +94,15 @@ const Hero = (props) => {
                             IN 2021 PAVIA SOLD ALL CARDANO BASED LANDS AND WAS 13X OVER SUBSCRIBED. THE CARDANO CONTINENT IS FULL OF OVER 16,000 LAND OWNERS, MANY OF WHOM OWN CARDANO PAVS & MECHS. DID SOMEONE SAY CROSS-CHAIN BATTLE?
                           </div>
                         </motion.div>
+                        
                         <AnimatePresence>
                           <motion.div
                             initial={{ y: 50, opacity: 0 }}
                             animate={{ y: props.init && props.loadVal && 5, opacity: props.init && props.loadVal && 1, transition: { delay: 1 } }}
                             exit={{ display: "none" }}
-                            className="pt-2 relative flex justify-center w-fit xl:w-full ml-7 md:ml-0"
+                            className="pt-2 relative flex w-fit xl:w-full ml-7 md:ml-0"
                           >
-                            <div className=" flex flex-row gap-8">
+                            <div className="flex gap-8 max-md:gap-5">
                               <a href={"https://app.uniswap.org/"} target="_blank">
                                 <motion.div
                                   exit={{ display: "none" }}
