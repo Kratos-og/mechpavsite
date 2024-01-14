@@ -3,6 +3,7 @@ import WhiteButton from "@/components/UI/WhiteButton";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
+import Metamask from "../Metamask";
 
 const Hero = (props) => {
   const [isInView, setIsInView] = useState(true);
@@ -18,6 +19,7 @@ const Hero = (props) => {
       className="w-full h-screen snap-child-start overflow-x-hidden"
       id="hero"
     >
+      <Metamask></Metamask>
       <div className="fixed pointer-events-none w-full left-0 xl:top-0 h-screen flex flex-col items-center xl:justify-center justify-start top-[20%] md:top-[10%] ">
         <div className="relative overflow-hidden mt-[6%] pl-8 xl:pl-0 xl:mx-28">
           <AnimatePresence>
@@ -103,6 +105,7 @@ const Hero = (props) => {
                             className="pt-2 relative flex w-fit xl:w-full ml-7 md:ml-0"
                           >
                             <div className="flex gap-8 max-md:gap-5">
+                            
                               <a href={"https://app.uniswap.org/"} target="_blank">
                                 <motion.div
                                   exit={{ display: "none" }}
