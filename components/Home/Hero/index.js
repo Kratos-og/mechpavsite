@@ -2,11 +2,13 @@ import Button from "@/components/UI/Button";
 import WhiteButton from "@/components/UI/WhiteButton";
 import { AnimatePresence, motion, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Metamask from "../Metamask";
+import { BrowserView, MobileView } from 'react-device-detect';
 
 const Hero = (props) => {
   const [isInView, setIsInView] = useState(true);
+
   useMotionValueEvent(props.progress, "change", (latest) => {
     if (latest.toFixed(2) == 0) {
       setIsInView(true);
@@ -14,13 +16,14 @@ const Hero = (props) => {
       setIsInView(false);
     }
   });
+
   return (
     <div
       className="w-full h-screen snap-child-start overflow-x-hidden"
       id="hero"
     >
-      <Metamask></Metamask>
-      <div className="fixed pointer-events-none w-full left-0 xl:top-0 h-screen flex flex-col items-center xl:justify-center justify-start top-[20%] md:top-[10%] ">
+      <BrowserView><Metamask/></BrowserView> 
+      <div className="fixed pointer-events-none w-full left-0 xl:top-0 h-screen flex flex-col items-center xl:justify-center justify-start top-[0%] md:top-[10%] ">
         <div className="relative overflow-hidden mt-[6%] pl-8 xl:pl-0 xl:mx-28">
           <AnimatePresence>
             {isInView && (
